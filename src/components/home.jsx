@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "reactstrap";
 import Article from "./article";
+import SlickCover from "./SlickCover";
 
 function Home() {
     return (
@@ -8,6 +9,7 @@ function Home() {
             <hr />
             <Container>
                 <Article />
+                <SlickCover />
             </Container>
         </div>
     );
