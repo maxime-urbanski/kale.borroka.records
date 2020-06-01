@@ -1,10 +1,7 @@
 import React from 'react';
 
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import './menu.css';
 
-import './menu.css'
 import bfm from './img/bfm.jpg';
 import brixtoncats from './img/brixtoncats.jpg';
 import grabuge from './img/grabuge.jpg';
@@ -15,6 +12,7 @@ import sharpcut from './img/sharpcut.jpg';
 import traitre from './img/traitre.jpg';
 import urbanvietcong from './img/urbanvietcong.jpg';
 import va from './img/va.jpg';
+
 
 const cover = [
     {name: 'Brigada Flores Magon', image: bfm, id: 350705 },
@@ -30,25 +28,15 @@ const cover = [
 ];
 
 
-export default class SlickCover extends React.Component {
-  render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 300,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      width: 50
-    };
-    return (
-      <div>
-        <Slider {...settings}>
+ function SlickCover () {
+      return (
+        <div className="container-fluid">   
             {cover.map((item) => {
                 return (
-                <img src={item.image} alt={item.name} className="coverPicture"/>
-            )})}
-        </Slider>
-      </div>
-    );
+                <img src={item.image} alt={item.name} key={item.id} className="coverPicture"/>
+              )})}
+        </div>
+      )
   }
-}
+
+  export default SlickCover;

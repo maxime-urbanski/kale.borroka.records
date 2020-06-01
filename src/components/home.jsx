@@ -6,11 +6,12 @@ import SlickCover from "./SlickCover";
 function Home() {
     return (
         <div>
-            <hr />
+            
             <Container>
                 <Article />
-                <SlickCover />
             </Container>
+            <SlickCover />
+            
         </div>
     );
 }

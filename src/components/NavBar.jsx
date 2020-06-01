@@ -36,7 +36,7 @@ function MenuNav() {
                     <Nav className="mr-auto " navbar>
                         {menu.map((item) => {
                             return (
-                                <NavItem>
+                                <NavItem key={item.name}>
                                     <NavLink tag={Link} to={item.link}>
                                         {item.name}
                                     </NavLink>

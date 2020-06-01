@@ -1,0 +1,202 @@
+[
+    {
+        "id": 350705 ,
+        "artiste": "Brigada Flores Magon",
+        "name": "ST",
+        "image": "./img/bfm.jpg", 
+        "price" : "11€", 
+        "format" : "LP"
+    },
+    {
+        "id": 6763714,
+        "artiste": "Brixton Cats",
+        "name": "Quartier Maudit",
+        "image": " `${./img/brixtoncats.jpg}`",
+        "price" : "10€", 
+        "format" : "LP"
+    },
+    {
+        "id": 12202674 ,
+        "artiste": "Grabuge",
+        "name": "Perdu D'avance",
+        "image": "grabuge", 
+        "price" : "10€", 
+        "format" : "LP"
+    },
+    {
+        "id": 9477937,
+        "artiste": "Keltoi",
+        "name": "Son da rua",
+        "image": "keltoi", 
+        "price" : "13€",
+        "format" : "LP"    
+    },
+    {
+        "id": 12539863,
+        "artiste": "Kronstadt",
+        "name": "ST",
+        "image": "kronstadt", 
+        "price" : "10€", 
+        "format" : "LP"       
+    },
+    {
+        "id": 11415341,
+        "artiste": "Moscow Death Brigade", 
+        "name": "Boltcutter",
+        "image": "mdb",
+        "price": "13€", 
+        "format": "LP"    
+    },
+    {
+        "id": 13312057,
+        "artiste": "SharpxCut",
+        "name": "Trouble from the street",
+        "image": "sharpcut",
+        "price" : "10€", 
+        "format": "LP"   
+    },
+    {
+        "id": 13236389 ,
+        "artiste": "Traitre",
+        "name": "discographie",
+        "image": "traitre", 
+        "price" : "13€", 
+        "format" : "LP"    
+    },
+    {
+        "id": 13008350,
+        "artiste": "Urban Vietcong",
+        "name": "Storai tra bottiglie e ciminiere",
+        "image": "urbanvietcong", 
+        "price" : "13€",
+        "format": "LP"        
+    },
+    {
+        "id": 10364210, 
+        "artiste": "Various Artist",
+        "name": "Oi! in Head, Punk in heart",
+        "image": "va",  
+        "price" : "11€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 9207145,
+        "artiste": "Death or Glory", 
+        "name": "Fearless",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 14994437,
+        "artiste": "Death or Glory", 
+        "name": "Can't stop Me",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 4988617,
+        "artiste": "The Midnight Rovers", 
+        "name": "Rockin' Class",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 4106520,
+        "artiste": "Skuds and Panic People", 
+        "name": "Lachez les bombes",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 10464304,
+        "artiste": "Knock Out", 
+        "name": "Tiempo muertos, Ritmos inmortales",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 10595877,
+        "artiste": "Cartouche", 
+        "name": "A venir",
+        "image": "va",  
+        "price" : "11€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 3356565,
+        "artiste": "65 Mines Street", 
+        "name": "ST",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 3907774,
+        "artiste": "Opcio k-95", 
+        "name": "Reneix",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 1316250,
+        "artiste": "210", 
+        "name": "Пыль В Глаза ",
+        "image": "va",  
+        "price" : "12€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 3018198,
+        "artiste": "Jeunesse Apatride", 
+        "name": " Black Block 'N' Roll / La Victoire Sommeille ",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 14421523,
+        "artiste": "Messed Up", 
+        "name": " Всё во что ты веришь / Everything You Believe In ",
+        "image": "va",  
+        "price" : "13€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 12019515,
+        "artiste": "Enraged Minority", 
+        "name": " A world to win ",
+        "image": "va",  
+        "price" : "12€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 8299937,
+        "artiste": "Bull Brigade", 
+        "name": " Vita Liberta ",
+        "image": "va",  
+        "price" : "12€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 9230162,
+        "artiste": "Stumbling Pins", 
+        "name": " Common Angst ",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "LP"         
+    },
+    {
+        "id": 12589838,
+        "artiste": "Bull Brigade, Non Servium" , 
+        "name": " Common Angst ",
+        "image": "va",  
+        "price" : "10€", 
+        "format" : "10"         
+    }    
+]

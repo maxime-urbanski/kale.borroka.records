@@ -26,7 +26,7 @@ function Article() {
                         className="mx-auto mt-5 mb-5"
                     />
                 </Row>
-                <Row>OI! OI! Oi!</Row>
+                
             </Col>
         </Row>
     );
