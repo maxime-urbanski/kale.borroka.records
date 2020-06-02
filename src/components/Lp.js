@@ -1,28 +1,28 @@
-import bfm from "./img/bfm.jpg";
-import brixtoncats from "./img/brixtoncats.jpg";
-import grabuge from "./img/grabuge.jpg";
-import keltoi from "./img/keltoi.jpg";
-import kronstadt from "./img/kronstadt.jpg";
-import mdb from "./img/mdb.jpg";
-import sharpcut from "./img/sharpcut.jpg";
-import traitre from "./img/traitre.jpg";
-import urbanvietcong from "./img/urbanvietcong.jpg";
-import va from "./img/va.jpg";
-import fearless from "./img/fearless.jpg";
-import cant from "./img/cantstopme.jpg";
-import rock from "./img/rockinclass.jpg";
-import lacher from "./img/lacher.jpg";
-import tiempos from "./img/10464304.jpg";
-import venir from "./img/10595877.jpg";
-import mines from "./img/3356565.jpg";
-import reneix from "./img/3907774.jpeg";
-import russe from "./img/russe.jpg";
-import black from "./img/3018198.jpg";
-import messed from "./img/14421523.jpg";
-import win from "./img/enraged.jpg";
-import liberta from "./img/8299937.jpg";
-import stumbling from "./img/stumbling.jpg";
-import chaos from "./img/12589838.jpg";
+import bfm from "./img/lp/bfm.jpg";
+import brixtoncats from "./img/lp/brixtoncats.jpg";
+import grabuge from "./img/lp/grabuge.jpg";
+import keltoi from "./img/lp/keltoi.jpg";
+import kronstadt from "./img/lp/kronstadt.jpg";
+import mdb from "./img/lp/mdb.jpg";
+import sharpcut from "./img/lp/sharpcut.jpg";
+import traitre from "./img/lp/traitre.jpg";
+import urbanvietcong from "./img/lp/urbanvietcong.jpg";
+import va from "./img/lp/va.jpg";
+import fearless from "./img/lp/fearless.jpg";
+import cant from "./img/lp/cantstopme.jpg";
+import rock from "./img/lp/rockinclass.jpg";
+import skuds from "./img/lp/skuds.jpg";
+import tiempos from "./img/lp/10464304.jpg";
+import venir from "./img/lp/10595877.jpg";
+import mines from "./img/lp/3356565.jpg";
+import reneix from "./img/lp/3907774.jpeg";
+import russe from "./img/lp/russe.jpg";
+import black from "./img/lp/3018198.jpg";
+import messed from "./img/lp/14421523.jpg";
+import win from "./img/lp/enraged.jpg";
+import liberta from "./img/lp/8299937.jpg";
+import stumbling from "./img/lp/stumbling.jpg";
+import chaos from "./img/lp/12589838.jpg";
 
 const article = [
     {
@@ -132,8 +132,8 @@ const article = [
     {
         id: 4106520,
         artiste: "Skuds and Panic People",
-        name: `${lacher}`,
-        image: "./img/bfm.jpg",
+        name: "Lachez les Bombes",
+        image: `${skuds}`,
         price: "10€",
         format: "LP",
     },

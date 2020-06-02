@@ -5,6 +5,7 @@ import MenuNav from "./NavBar";
 import ban from "./img/ban.png";
 import Home from "./home";
 import LP from "./LpList";
+import EpList from "./EpList";
 
 function Router() {
     return (
@@ -17,7 +18,7 @@ function Router() {
                 <Route exact path="/" component={Home} />
                 <Route path="/lp" component={LP} />
                 <Route path="/lp/:lpId" component={""} />
-                <Route path="/ep" component={""} />
+                <Route path="/ep" component={EpList} />
                 <Route path="/ep/:epId" component={""} />
                 <Route path="/production" component={""} />
                 <Route path="/divers" component={""} />
