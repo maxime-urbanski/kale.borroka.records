@@ -6,6 +6,7 @@ import ban from "./img/ban.png";
 import Home from "./home";
 import LP from "./LpList";
 import EpList from "./EpList";
+import divers from "./Divers";
 
 function Router() {
     return (
@@ -20,7 +21,7 @@ function Router() {
                 <Route path="/EP" component={EpList} />
                 <Route path="/EP/:epId" component={""} />
                 <Route path="/Production" component={""} />
-                <Route path="/Divers" component={""} />
+                <Route path="/Divers" component={divers} />
                 <Route path="/Divers/fanzine" component={""} />
                 <Route path="/Divers/IPEH" component={""} />
             </Switch>

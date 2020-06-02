@@ -16,8 +16,8 @@ const menu = [
     { name: "Actu", link: "/" },
     { name: "LP/10", link: "/LP" },
     { name: "EP/CD", link: "/EP" },
-    { name: "Production", link: "/production" },
-    { name: "Divers", link: "/divers" },
+    { name: "Production", link: "/Production" },
+    { name: "Divers", link: "/Divers" },
 ];
 function MenuNav() {
     const [isOpen, setIsOpen] = useState(false);
