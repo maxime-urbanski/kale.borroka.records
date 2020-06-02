@@ -16,10 +16,10 @@ function Router() {
 
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/lp" component={LP} />
-                <Route path="/lp/:lpId" component={""} />
-                <Route path="/ep" component={EpList} />
-                <Route path="/ep/:epId" component={""} />
+                <Route path="/LP" component={LP} />
+                <Route path="/LP/:lpId" component={""} />
+                <Route path="/EP" component={EpList} />
+                <Route path="/EP/:epId" component={""} />
                 <Route path="/production" component={""} />
                 <Route path="/divers" component={""} />
             </Switch>

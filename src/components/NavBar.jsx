@@ -14,8 +14,8 @@ import "./menu.css";
 
 const menu = [
     { name: "Actu", link: "/" },
-    { name: "LP/10", link: "/lp" },
-    { name: "EP/CD", link: "/ep" },
+    { name: "LP/10", link: "/LP" },
+    { name: "EP/CD", link: "/EP" },
     { name: "Production", link: "/production" },
     { name: "Divers", link: "/divers" },
 ];

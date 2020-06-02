@@ -35,7 +35,7 @@ class VinyleDetails extends React.Component() {
     }
     render() {
         return <p> Oi!
-            <
+            
         </p>;
     }
 }
