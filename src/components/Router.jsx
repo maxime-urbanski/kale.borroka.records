@@ -6,9 +6,6 @@ import ban from "./img/ban.png";
 import Home from "./home";
 import LP from "./LpList";
 
-
-
-
 function Router() {
     return (
         <BrowserRouter>

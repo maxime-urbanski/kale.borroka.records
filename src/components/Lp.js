@@ -8,6 +8,21 @@ import sharpcut from "./img/sharpcut.jpg";
 import traitre from "./img/traitre.jpg";
 import urbanvietcong from "./img/urbanvietcong.jpg";
 import va from "./img/va.jpg";
+import fearless from "./img/fearless.jpg";
+import cant from "./img/cantstopme.jpg";
+import rock from "./img/rockinclass.jpg";
+import lacher from "./img/lacher.jpg";
+import tiempos from "./img/10464304.jpg";
+import venir from "./img/10595877.jpg";
+import mines from "./img/3356565.jpg";
+import reneix from "./img/3907774.jpeg";
+import russe from "./img/russe.jpg";
+import black from "./img/3018198.jpg";
+import messed from "./img/14421523.jpg";
+import win from "./img/enraged.jpg";
+import liberta from "./img/8299937.jpg";
+import stumbling from "./img/stumbling.jpg";
+import chaos from "./img/12589838.jpg";
 
 const article = [
     {
@@ -94,7 +109,7 @@ const article = [
         id: 9207145,
         artiste: "Death or Glory",
         name: "Fearless",
-        image: "./img/bfm.jpg",
+        image: `${fearless}`,
         price: "10€",
         format: "LP",
     },
@@ -102,7 +117,7 @@ const article = [
         id: 14994437,
         artiste: "Death or Glory",
         name: "Can't stop Me",
-        image: "./img/bfm.jpg",
+        image: `${cant}`,
         price: "10€",
         format: "LP",
     },
@@ -110,14 +125,14 @@ const article = [
         id: 4988617,
         artiste: "The Midnight Rovers",
         name: "Rockin' Class",
-        image: "./img/bfm.jpg",
+        image: `${rock}`,
         price: "10€",
         format: "LP",
     },
     {
         id: 4106520,
         artiste: "Skuds and Panic People",
-        name: "Lachez les bombes",
+        name: `${lacher}`,
         image: "./img/bfm.jpg",
         price: "10€",
         format: "LP",
@@ -126,7 +141,7 @@ const article = [
         id: 10464304,
         artiste: "Knock Out",
         name: "Tiempo muertos, Ritmos inmortales",
-        image: "./img/bfm.jpg",
+        image: `${tiempos}`,
         price: "10€",
         format: "LP",
     },
@@ -134,7 +149,7 @@ const article = [
         id: 10595877,
         artiste: "Cartouche",
         name: "A venir",
-        image: "./img/bfm.jpg",
+        image: `${venir}`,
         price: "11€",
         format: "LP",
     },
@@ -142,7 +157,7 @@ const article = [
         id: 3356565,
         artiste: "65 Mines Street",
         name: "ST",
-        image: "./img/bfm.jpg",
+        image: `${mines}`,
         price: "10€",
         format: "LP",
     },
@@ -150,7 +165,7 @@ const article = [
         id: 3907774,
         artiste: "Opcio k-95",
         name: "Reneix",
-        image: "./img/bfm.jpg",
+        image: `${reneix}`,
         price: "10€",
         format: "LP",
     },
@@ -158,7 +173,7 @@ const article = [
         id: 1316250,
         artiste: "210",
         name: "Пыль В Глаза ",
-        image: "./img/bfm.jpg",
+        image: `${russe}`,
         price: "12€",
         format: "LP",
     },
@@ -166,7 +181,7 @@ const article = [
         id: 3018198,
         artiste: "Jeunesse Apatride",
         name: " Black Block 'N' Roll / La Victoire Sommeille ",
-        image: "./img/bfm.jpg",
+        image: `${black}`,
         price: "10€",
         format: "LP",
     },
@@ -174,7 +189,7 @@ const article = [
         id: 14421523,
         artiste: "Messed Up",
         name: " Всё во что ты веришь / Everything You Believe In ",
-        image: "./img/bfm.jpg",
+        image: `${messed}`,
         price: "13€",
         format: "LP",
     },
@@ -182,7 +197,7 @@ const article = [
         id: 12019515,
         artiste: "Enraged Minority",
         name: " A world to win ",
-        image: "./img/bfm.jpg",
+        image: `${win}`,
         price: "12€",
         format: "LP",
     },
@@ -190,7 +205,7 @@ const article = [
         id: 8299937,
         artiste: "Bull Brigade",
         name: " Vita Liberta ",
-        image: "./img/bfm.jpg",
+        image: `${liberta}`,
         price: "12€",
         format: "LP",
     },
@@ -198,15 +213,15 @@ const article = [
         id: 9230162,
         artiste: "Stumbling Pins",
         name: " Common Angst ",
-        image: "./img/bfm.jpg",
+        image: `${stumbling}`,
         price: "10€",
         format: "LP",
     },
     {
         id: 12589838,
         artiste: "Bull Brigade, Non Servium",
-        name: " Common Angst ",
-        image: "./img/bfm.jpg",
+        name: " The Chaos Brotherhood ",
+        image: `${chaos}`,
         price: "10€",
         format: "10",
     },
