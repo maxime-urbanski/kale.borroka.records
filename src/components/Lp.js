@@ -26,7 +26,7 @@ import chaos from "./img/lp/12589838.jpg";
 
 const article = [
     {
-        id: 350705,
+        id: 9219786,
         artiste: "Brigada Flores Magon",
         name: "ST",
         image: `${bfm}`,
@@ -170,7 +170,7 @@ const article = [
         format: "LP",
     },
     {
-        id: 1316250,
+        id: 11579597,
         artiste: "210",
         name: "Пыль В Глаза ",
         image: `${russe}`,
