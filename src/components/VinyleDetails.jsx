@@ -31,6 +31,7 @@ class VinyleDetails extends React.Component {
     }
 
     render() {
+        const img = this.props.location.pathname
         const {
             artists_sort,
             title,
@@ -44,7 +45,7 @@ class VinyleDetails extends React.Component {
             <Container>
                 <Col>
                     <Row>
-                        <img src={this.props.image} alt="" />
+                        <img src={`./img${img}`} alt="" />
                         <h1 className="mt-5 position">
                             {artists_sort} - {title}
                         </h1>
@@ -60,6 +61,9 @@ class VinyleDetails extends React.Component {
                     </Row>
                     <Row>
                         <p>{""}</p>
+                    </Row>
+                    <Row>
+                        oi
                     </Row>
                 </Col>
             </Container>
