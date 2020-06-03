@@ -1,18 +1,10 @@
 import React from "react";
 
-import {
-    Container,
-    Row,
-    Col    
-} from "reactstrap";
-import { Link } from "react-router-dom";
-
+import { Container, Row, Col } from "reactstrap";
 
 import "./menu.css";
 import epArticle from "./EP";
 import CardArticle from "./CardArticle";
-
-
 
 function EpList() {
     return (
@@ -23,8 +15,10 @@ function EpList() {
                 </Row>
                 <Row className="position">
                     {epArticle.map((item) => {
-                        return (
-                            <CardArticle {...item}/>
+                        return item.quantity > 0 ? (
+                            <CardArticle {...item} />
+                        ) : (
+                            ""
                         );
                     })}
                 </Row>

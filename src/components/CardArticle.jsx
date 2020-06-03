@@ -11,8 +11,6 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import VinyleDetails from "./VinyleDetails";
-
 function CardArticle({ id, image, name, artiste, format, price }) {
     return (
         <Card className="m-5 cardSize" key={id}>
@@ -25,7 +23,9 @@ function CardArticle({ id, image, name, artiste, format, price }) {
                 <CardTitle>{name}</CardTitle>
                 <CardSubtitle>{format}</CardSubtitle>
                 <CardText>Prix: {price}</CardText>
-                <Link to={`/${format}/${id}`}>Article</Link>
+                <Button tag={Link} to={`/${format}/${id}`}>
+                    Article
+                </Button>
             </CardBody>
         </Card>
     );

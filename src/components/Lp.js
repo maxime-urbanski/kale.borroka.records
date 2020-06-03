@@ -32,6 +32,7 @@ const article = [
         image: `${bfm}`,
         price: "11€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 6763714,
@@ -40,6 +41,7 @@ const article = [
         image: `${brixtoncats}`,
         price: "10€",
         format: "LP",
+        quantity: "3",
     },
     {
         id: 12202674,
@@ -48,6 +50,7 @@ const article = [
         image: `${grabuge}`,
         price: "10€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 9477937,
@@ -56,6 +59,7 @@ const article = [
         image: `${keltoi}`,
         price: "13€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 12539863,
@@ -64,6 +68,7 @@ const article = [
         image: `${kronstadt}`,
         price: "10€",
         format: "LP",
+        quantity: "3",
     },
     {
         id: 11415341,
@@ -72,6 +77,7 @@ const article = [
         image: `${mdb}`,
         price: "13€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 13312057,
@@ -80,6 +86,7 @@ const article = [
         image: `${sharpcut}`,
         price: "10€",
         format: "LP",
+        quantity: "2",
     },
     {
         id: 13236389,
@@ -88,6 +95,7 @@ const article = [
         image: `${traitre}`,
         price: "13€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 13008350,
@@ -96,6 +104,7 @@ const article = [
         image: `${urbanvietcong}`,
         price: "13€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 10364210,
@@ -104,6 +113,7 @@ const article = [
         image: `${va}`,
         price: "11€",
         format: "LP",
+        quantity: "2",
     },
     {
         id: 9207145,
@@ -112,6 +122,7 @@ const article = [
         image: `${fearless}`,
         price: "10€",
         format: "LP",
+        quantity: "2",
     },
     {
         id: 14994437,
@@ -120,6 +131,7 @@ const article = [
         image: `${cant}`,
         price: "10€",
         format: "LP",
+        quantity: "2",
     },
     {
         id: 4988617,
@@ -128,6 +140,7 @@ const article = [
         image: `${rock}`,
         price: "10€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 4106520,
@@ -136,6 +149,7 @@ const article = [
         image: `${skuds}`,
         price: "10€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 10464304,
@@ -152,6 +166,7 @@ const article = [
         image: `${venir}`,
         price: "11€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 3356565,
@@ -160,6 +175,7 @@ const article = [
         image: `${mines}`,
         price: "10€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 3907774,
@@ -168,6 +184,7 @@ const article = [
         image: `${reneix}`,
         price: "10€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 11579597,
@@ -176,6 +193,7 @@ const article = [
         image: `${russe}`,
         price: "12€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 3018198,
@@ -184,6 +202,7 @@ const article = [
         image: `${black}`,
         price: "10€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 14421523,
@@ -192,6 +211,7 @@ const article = [
         image: `${messed}`,
         price: "13€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 12019515,
@@ -200,6 +220,7 @@ const article = [
         image: `${win}`,
         price: "12€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 8299937,
@@ -208,6 +229,7 @@ const article = [
         image: `${liberta}`,
         price: "12€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 9230162,
@@ -216,6 +238,7 @@ const article = [
         image: `${stumbling}`,
         price: "10€",
         format: "LP",
+        quantity: "1",
     },
     {
         id: 12589838,
@@ -224,6 +247,7 @@ const article = [
         image: `${chaos}`,
         price: "10€",
         format: "10",
+        quantity: "1",
     },
 ];
 

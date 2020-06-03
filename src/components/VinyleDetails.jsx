@@ -44,7 +44,7 @@ class VinyleDetails extends React.Component {
             <Container>
                 <Col>
                     <Row>
-                        <img src="" alt="" />
+                        <img src={this.props.image} alt="" />
                         <h1 className="mt-5 position">
                             {artists_sort} - {title}
                         </h1>

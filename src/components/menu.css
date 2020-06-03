@@ -15,3 +15,10 @@
     justify-content: center;
     border: bold;
 }
+
+.overCard {
+    transform: scale(1);
+}
+.overCard :hover {
+    transform: scale(1.3);
+}

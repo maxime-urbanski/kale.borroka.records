@@ -16,6 +16,7 @@ const epArticle = [
         image: `${reve}`,
         price: "6€",
         format: "EP",
+        quantity: "2",
     },
     {
         id: 13638113,
@@ -24,6 +25,7 @@ const epArticle = [
         image: `${lendemain}`,
         price: "6€",
         format: "EP",
+        quantity: "1",
     },
     {
         id: 5369418,
@@ -32,6 +34,7 @@ const epArticle = [
         image: `${guillotina}`,
         price: "6€",
         format: "EP",
+        quantity: "1",
     },
     {
         id: 5369418,
@@ -40,6 +43,7 @@ const epArticle = [
         image: `${remembering}`,
         price: "5€",
         format: "EP",
+        quantity: "1",
     },
     {
         id: 10056501,
@@ -47,7 +51,8 @@ const epArticle = [
         name: "Working Class Pride",
         image: `${working}`,
         price: "6€",
-        format: "EP", 
+        format: "EP",
+        quantity: "1",
     },
     {
         id: 13312034,
@@ -55,7 +60,8 @@ const epArticle = [
         name: "10 Jahre RASH LE",
         image: `${leipzig}`,
         price: "6€",
-        format: "EP", 
+        format: "EP",
+        quantity: "2",
     },
     {
         id: 14201735,
@@ -63,7 +69,8 @@ const epArticle = [
         name: "ST",
         image: `${zero}`,
         price: "6€",
-        format: "EP", 
+        format: "EP",
+        quantity: "2",
     },
     {
         id: 9943868,
@@ -72,6 +79,7 @@ const epArticle = [
         image: `${pressure}`,
         price: "6€",
         format: "EP",
+        quantity: "1",
     },
     {
         id: 7373465,
@@ -80,8 +88,8 @@ const epArticle = [
         image: `${collin}`,
         price: "6€",
         format: "EP",
-    }
-
+        quantity: "1",
+    },
 ];
 
 export default epArticle;

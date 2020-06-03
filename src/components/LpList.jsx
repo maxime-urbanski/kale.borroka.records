@@ -1,10 +1,6 @@
 import React from "react";
 
-import {
-    Container,
-    Row,
-    Col
-} from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 import lp from "./Lp";
 import "./menu.css";
@@ -19,8 +15,10 @@ function LpList() {
                 </Row>
                 <Row className="position">
                     {lp.map((item) => {
-                        return (
+                        return item.quantity > 0 ? (
                             <CardArticle {...item} />
+                        ) : (
+                            ""
                         );
                     })}
                 </Row>
