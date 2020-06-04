@@ -29,7 +29,7 @@ function MenuNav() {
                 color="light"
                 light
                 expand="md"
-                className=" mx-auto fixed-top style"
+                className=" mx-auto fixed-top style nav-pills shadow p-3 mb-5 bg-white"
             >
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>

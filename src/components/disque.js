@@ -23,10 +23,18 @@ import win from "./img/lp/enraged.jpg";
 import liberta from "./img/lp/8299937.jpg";
 import stumbling from "./img/lp/stumbling.jpg";
 import chaos from "./img/lp/12589838.jpg";
+import reve from "./img/ep/13848683.jpg";
+import lendemain from "./img/ep/13638113.jpg";
+import guillotina from "./img/ep/5369418.jpg";
+import remembering from "./img/ep/4269405.jpg";
+import working from "./img/ep/10056501.jpg";
+import leipzig from "./img/ep/13312034.jpg";
+import zero from "./img/ep/14201735.jpg";
+import pressure from "./img/ep/9943868.jpg";
+import collin from "./img/ep/7373465.jpg";
 
-const article = [
-    {
-        id: 9219786,
+export default {
+    "9219786": {
         artiste: "Brigada Flores Magon",
         name: "ST",
         image: `${bfm}`,
@@ -34,8 +42,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 6763714,
+    "6763714": {
         artiste: "Brixton Cats",
         name: "Quartier Maudit",
         image: `${brixtoncats}`,
@@ -43,8 +50,7 @@ const article = [
         format: "LP",
         quantity: "3",
     },
-    {
-        id: 12202674,
+    "12202674": {
         artiste: "Grabuge",
         name: "Perdu D'avance",
         image: `${grabuge}`,
@@ -52,8 +58,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 9477937,
+    "9477937": {
         artiste: "Keltoi",
         name: "Son da rua",
         image: `${keltoi}`,
@@ -61,8 +66,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 12539863,
+    "12539863": {
         artiste: "Kronstadt",
         name: "ST",
         image: `${kronstadt}`,
@@ -70,8 +74,7 @@ const article = [
         format: "LP",
         quantity: "3",
     },
-    {
-        id: 11415341,
+    "11415341": {
         artiste: "Moscow Death Brigade",
         name: "Boltcutter",
         image: `${mdb}`,
@@ -79,8 +82,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 13312057,
+    "13312057": {
         artiste: "SharpxCut",
         name: "Trouble from the street",
         image: `${sharpcut}`,
@@ -88,8 +90,7 @@ const article = [
         format: "LP",
         quantity: "2",
     },
-    {
-        id: 13236389,
+    "13236389": {
         artiste: "Traitre",
         name: "discographie",
         image: `${traitre}`,
@@ -97,8 +98,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 13008350,
+    "13008350": {
         artiste: "Urban Vietcong",
         name: "Storai tra bottiglie e ciminiere",
         image: `${urbanvietcong}`,
@@ -106,8 +106,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 10364210,
+    "10364210": {
         artiste: "Various Artist",
         name: "Oi! in Head, Punk in heart",
         image: `${va}`,
@@ -115,8 +114,7 @@ const article = [
         format: "LP",
         quantity: "2",
     },
-    {
-        id: 9207145,
+    "9207145": {
         artiste: "Death or Glory",
         name: "Fearless",
         image: `${fearless}`,
@@ -124,8 +122,7 @@ const article = [
         format: "LP",
         quantity: "2",
     },
-    {
-        id: 14994437,
+    "14994437": {
         artiste: "Death or Glory",
         name: "Can't stop Me",
         image: `${cant}`,
@@ -133,8 +130,7 @@ const article = [
         format: "LP",
         quantity: "2",
     },
-    {
-        id: 4988617,
+    "4988617": {
         artiste: "The Midnight Rovers",
         name: "Rockin' Class",
         image: `${rock}`,
@@ -142,8 +138,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 4106520,
+    "4106520": {
         artiste: "Skuds and Panic People",
         name: "Lachez les Bombes",
         image: `${skuds}`,
@@ -151,17 +146,14 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 10464304,
+    "10464304": {
         artiste: "Knock Out",
         name: "Tiempo muertos, Ritmos inmortales",
         image: `${tiempos}`,
         price: "10€",
         format: "LP",
-        quantity: "1",
     },
-    {
-        id: 10595877,
+    "10595877 ": {
         artiste: "Cartouche",
         name: "A venir",
         image: `${venir}`,
@@ -169,8 +161,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 3356565,
+    "3356565 ": {
         artiste: "65 Mines Street",
         name: "ST",
         image: `${mines}`,
@@ -178,8 +169,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 3907774,
+    "3907774": {
         artiste: "Opcio k-95",
         name: "Reneix",
         image: `${reneix}`,
@@ -187,8 +177,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 11579597,
+    "11579597 ": {
         artiste: "210",
         name: "Пыль В Глаза ",
         image: `${russe}`,
@@ -196,8 +185,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 3018198,
+    "3018198 ": {
         artiste: "Jeunesse Apatride",
         name: " Black Block 'N' Roll / La Victoire Sommeille ",
         image: `${black}`,
@@ -205,8 +193,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 14421523,
+    "14421523": {
         artiste: "Messed Up",
         name: " Всё во что ты веришь / Everything You Believe In ",
         image: `${messed}`,
@@ -214,8 +201,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 12019515,
+    "12019515": {
         artiste: "Enraged Minority",
         name: " A world to win ",
         image: `${win}`,
@@ -223,8 +209,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 8299937,
+    "8299937": {
         artiste: "Bull Brigade",
         name: " Vita Liberta ",
         image: `${liberta}`,
@@ -232,8 +217,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 9230162,
+    "9230162": {
         artiste: "Stumbling Pins",
         name: " Common Angst ",
         image: `${stumbling}`,
@@ -241,8 +225,7 @@ const article = [
         format: "LP",
         quantity: "1",
     },
-    {
-        id: 12589838,
+    "12589838 ": {
         artiste: "Bull Brigade, Non Servium",
         name: " The Chaos Brotherhood ",
         image: `${chaos}`,
@@ -250,6 +233,76 @@ const article = [
         format: "10",
         quantity: "1",
     },
-];
-
-export default article;
+    "13848683": {
+        artiste: "Les Partisans",
+        name: "Rêves d'enfance/ Rien à perdre",
+        image: `${reve}`,
+        price: "6€",
+        format: "EP",
+        quantity: "2",
+    },
+    "13638113": {
+        artiste: "Les Partisans",
+        name: "Les lendemains qui dansent",
+        image: `${lendemain}`,
+        price: "6€",
+        format: "EP",
+        quantity: "1",
+    },
+    "5369418": {
+        artiste: "Knock Out",
+        name: "Que silbe la guillotina",
+        image: `${guillotina}`,
+        price: "6€",
+        format: "EP",
+        quantity: "1",
+    },
+    "4269405": {
+        artiste: "Wasted Youth",
+        name: "Remembering means fighting",
+        image: `${remembering}`,
+        price: "5€",
+        format: "EP",
+        quantity: "1",
+    },
+    "10056501": {
+        artiste: "Union Blood",
+        name: "Working Class Pride",
+        image: `${working}`,
+        price: "6€",
+        format: "EP",
+        quantity: "1",
+    },
+    "13312034": {
+        artiste: "VA - Red Skins Over Leipzig",
+        name: "10 Jahre RASH LE",
+        image: `${leipzig}`,
+        price: "6€",
+        format: "EP",
+        quantity: "2",
+    },
+    "14201735": {
+        artiste: "Année Zéro",
+        name: "ST",
+        image: `${zero}`,
+        price: "6€",
+        format: "EP",
+        quantity: "2",
+    },
+    "9943868": {
+        artiste: "T-killas",
+        name: "Kicking the pressure",
+        image: `${pressure}`,
+        price: "6€",
+        format: "EP",
+        quantity: "1",
+    },
+    "7373465": {
+        artiste: "VA - Tribute To Runnin Riot",
+        name: "We're here for a good time, not a long time",
+        image: `${collin}`,
+        price: "6€",
+        format: "EP",
+        quantity: "1",
+    },
+};

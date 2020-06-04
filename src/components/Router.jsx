@@ -13,7 +13,7 @@ function Router() {
     return (
         <BrowserRouter>
             <MenuNav />
-            <img className="mt-5" src={ban} alt="baniere" />
+            <img className="mt-5 " src={ban} alt="baniere" />
             <hr />
             <Switch>
                 <Route path="/LP/:id" component={VinyleDetails} />

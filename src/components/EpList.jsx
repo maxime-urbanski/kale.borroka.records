@@ -16,7 +16,7 @@ function EpList() {
                 <Row className="position">
                     {epArticle.map((item) => {
                         return item.quantity > 0 ? (
-                            <CardArticle {...item} />
+                            <CardArticle {...item} key={item.id} />
                         ) : (
                             ""
                         );
