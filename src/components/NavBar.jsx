@@ -16,8 +16,8 @@ const menu = [
     { name: "Actu", link: "/" },
     { name: "LP/10", link: "/LP" },
     { name: "EP/CD", link: "/EP" },
-    { name: "Production", link: "/production" },
-    { name: "Divers", link: "/divers" },
+    { name: "Production", link: "/Production" },
+    { name: "Divers", link: "/Divers" },
 ];
 function MenuNav() {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ function MenuNav() {
                 color="light"
                 light
                 expand="md"
-                className=" mx-auto fixed-top style"
+                className=" mx-auto fixed-top style nav-pills shadow p-3 mb-5 bg-white"
             >
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
