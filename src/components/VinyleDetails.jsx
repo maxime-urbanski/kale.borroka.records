@@ -98,6 +98,7 @@ class VinyleDetails extends React.Component {
                     <Row>
                         <p> Prix: {allArticles[id]?.price}</p>
                     </Row>
+                    <Row>oi</Row>
                 </Col>
             </Container>
         );
