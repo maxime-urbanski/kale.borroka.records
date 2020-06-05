@@ -7,8 +7,26 @@ import "./menu.css";
 import CardArticle from "./CardArticle";
 import Footer from "./Footer";
 
+
+
+
+$('#demo').pagination({
+    dataSource: [1, 2, 3, 4, 5, 6, 7,],
+    pageSize: 5,
+    showPrevious: false,
+    showNext: false,
+    callback: function(data, pagination) {
+        // template method of yourself
+        var html = template(data);
+        dataContainer.html(html);
+    }
+})
+
+
+
 function LpList() {
     return (
+        <div>
         <Container>
             <Col>
                 <Row className="position">
@@ -24,8 +42,9 @@ function LpList() {
                     </Row>
                 </Row>
             </Col>
-            <Footer />
         </Container>
+        <Footer />
+        </div>
     );
 }
 

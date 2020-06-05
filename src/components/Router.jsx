@@ -23,6 +23,8 @@ function Router() {
                 <Route path="/LP/:id" component={VinyleDetails} />
                 <Route path="/EP/:id" component={VinyleDetails} />
                 <Route exact path="/" component={Home} />
+                <Route exact path="/kale-borroka-records" component={""} />
+                <Route exact path="/contact" component={""} />
                 <Route path="/LP" component={LP} />
                 <Route path="/EP" component={EpList} />
                 <Route path="/Production" component={""} />
