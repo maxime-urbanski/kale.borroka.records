@@ -247,7 +247,7 @@ const article = [
         name: " The Chaos Brotherhood ",
         image: `${chaos}`,
         price: "10€",
-        format: "10",
+        format: "LP",
         quantity: "1",
     },
 ];

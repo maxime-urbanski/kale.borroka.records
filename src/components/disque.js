@@ -153,7 +153,7 @@ export default {
         price: "10€",
         format: "LP",
     },
-    "10595877 ": {
+    "10595877": {
         artiste: "Cartouche",
         name: "A venir",
         image: `${venir}`,
@@ -161,7 +161,7 @@ export default {
         format: "LP",
         quantity: "1",
     },
-    "3356565 ": {
+    "3356565": {
         artiste: "65 Mines Street",
         name: "ST",
         image: `${mines}`,
@@ -177,15 +177,15 @@ export default {
         format: "LP",
         quantity: "1",
     },
-    "11579597 ": {
+    "11579597": {
         artiste: "210",
-        name: "Пыль В Глаза ",
+        name: "Пыль В Глаза",
         image: `${russe}`,
         price: "12€",
         format: "LP",
         quantity: "1",
     },
-    "3018198 ": {
+    "3018198": {
         artiste: "Jeunesse Apatride",
         name: " Black Block 'N' Roll / La Victoire Sommeille ",
         image: `${black}`,
@@ -225,12 +225,12 @@ export default {
         format: "LP",
         quantity: "1",
     },
-    "12589838 ": {
-        artiste: "Bull Brigade, Non Servium",
+    "12589838": {
+        artiste: "Non Servium, Bull Brigade ",
         name: " The Chaos Brotherhood ",
         image: `${chaos}`,
         price: "10€",
-        format: "10",
+        format: "LP",
         quantity: "1",
     },
     "13848683": {

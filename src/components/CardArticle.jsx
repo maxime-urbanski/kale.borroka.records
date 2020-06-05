@@ -32,7 +32,7 @@ function CardArticle({ id, image, name, artiste, format, price }) {
                 <CardTitle>{name}</CardTitle>
                 <CardSubtitle>{format}</CardSubtitle>
                 <CardText>Prix: {price}</CardText>
-                <Button tag={Link} to={`/${format}/${id}`} image={this.props.image}>
+                <Button tag={Link} to={`/${format}/${id}`}>
                     Article
                 </Button>
             </CardBody>

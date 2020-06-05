@@ -3,6 +3,7 @@ import Axios from "axios";
 import { Container, Col, Row, Table } from "reactstrap";
 
 import allArticles from "./disque";
+import Footer from "./Footer";
 
 class VinyleDetails extends React.Component {
     constructor(props) {
@@ -42,23 +43,32 @@ class VinyleDetails extends React.Component {
             year,
             notes,
             labels,
+            videos,
         } = this.state.lp;
         return (
-            <Container>
-                <Col>
+            <div>
+                <Container>
                     <Row>
-                        <h1 className="mt-3 position">
-                            {artists_sort} - {title}
-                        </h1>
+                        <Col className="cole-md-6">
+                            <h1 className="mt-3 justify-content-center">
+                                {artists_sort} - {title}
+                            </h1>
+                        </Col>
                     </Row>
 
-                    <Row>
-                        <Col>
+                    <Row className="mt-5">
+                        <Col className="cole-md-6">
                             <Row>
                                 <h3>{styles}</h3>
                             </Row>
                             <Row>
                                 <h4>{year}</h4>
+                            </Row>
+                            <Row>
+                                <h3> Prix: {allArticles[id]?.price}</h3>
+                            </Row>
+                            <Row className="mt-5 justify-content-center">
+                                <p>{notes}</p>
                             </Row>
                         </Col>
                         <Col>
@@ -66,41 +76,50 @@ class VinyleDetails extends React.Component {
                                 src={allArticles[id]?.image}
                                 alt={id}
                                 width="300px"
-                                className="mt-2 mb-3"
+                                className="mb-3 float-right"
                             />
                         </Col>
                     </Row>
-
                     <Row>
-                        <p>{notes}</p>
+                        <Col className="mt-5">
+                            <Table className="col-md-8 offset-md-2 table table-striped table-dark">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Titre</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tracklist &&
+                                        tracklist.map((item) => {
+                                            return (
+                                                <tr key={id}>
+                                                    <th>{item.position} </th>
+                                                    <td>{item.title} </td>
+                                                </tr>
+                                            );
+                                        })}
+                                </tbody>
+                            </Table>
+                        </Col>
                     </Row>
                     <Row>
-                        <Table className="table table-striped table-dark">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Titre</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {tracklist &&
-                                    tracklist.map((item) => {
-                                        return (
-                                            <tr key={id}>
-                                                <th>{item.position} </th>
-                                                <td>{item.title} </td>
-                                            </tr>
-                                        );
-                                    })}
-                            </tbody>
-                        </Table>
+                        {videos &&
+                            videos.map((item) => {
+                                return (
+                                    <div className="embed-responsive embed-responsive-16by9">
+                                        <iframe
+                                            className="embed-responsive-item"
+                                            src={item.uri}
+                                            allowfullscreen
+                                        ></iframe>
+                                    </div>
+                                );
+                            })}
                     </Row>
-                    <Row>
-                        <p> Prix: {allArticles[id]?.price}</p>
-                    </Row>
-                    <Row>oi</Row>
-                </Col>
-            </Container>
+                </Container>
+                <Footer />
+            </div>
         );
     }
 }

@@ -5,6 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 import lp from "./Lp";
 import "./menu.css";
 import CardArticle from "./CardArticle";
+import Footer from "./Footer";
 
 function LpList() {
     return (
@@ -23,6 +24,7 @@ function LpList() {
                     </Row>
                 </Row>
             </Col>
+            <Footer />
         </Container>
     );
 }

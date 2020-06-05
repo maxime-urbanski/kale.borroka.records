@@ -9,12 +9,16 @@ import EpList from "./EpList";
 import divers from "./Divers";
 import VinyleDetails from "./VinyleDetails";
 
+import "./menu.css";
+
 function Router() {
     return (
         <BrowserRouter>
             <MenuNav />
-            <img className="mt-5 " src={ban} alt="baniere" />
-            <hr />
+            <div className="mt-5 cOlor">
+                <img src={ban} alt="baniere" />
+            </div>
+
             <Switch>
                 <Route path="/LP/:id" component={VinyleDetails} />
                 <Route path="/EP/:id" component={VinyleDetails} />
