@@ -35,7 +35,7 @@ class VinyleDetails extends React.Component {
 
     render() {
         const id = this.props.match.params.id;
-        const modul = id % 2 === 0;
+        
         const {
             artists_sort,
             title,

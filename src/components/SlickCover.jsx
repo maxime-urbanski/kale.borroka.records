@@ -17,8 +17,7 @@ function SlickCover() {
                         className="coverPicture"
                     />
                 );
-            })}
-            {epArticle.map((item) => {
+            }) || epArticle.map((item) => {
                 return (
                     <img
                         src={item.image}
@@ -28,7 +27,6 @@ function SlickCover() {
                     />
                 );
             })}
-
         </div>
     );
 }

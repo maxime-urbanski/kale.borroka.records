@@ -7,6 +7,7 @@ import fb from "./img/fb.png"
 import pt from "./img/pt.png"
 import { Link } from "react-router-dom";
 
+
 function Footer() {
     return (
         <Container fluid={true} className="bg-primary footer">

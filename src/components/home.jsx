@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useDebugValue } from "react";
 import { Container } from "reactstrap";
 import Article from "./article";
 import SlickCover from "./SlickCover";
+import Footer from "./Footer";
 
 function Home() {
     return (
@@ -10,7 +11,10 @@ function Home() {
                 <Article />
             </Container>
             <SlickCover />
+            <Footer />
         </div>
+        
+        
     );
 }
 

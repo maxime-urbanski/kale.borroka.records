@@ -5,9 +5,11 @@ import { Container, Row, Col } from "reactstrap";
 import "./menu.css";
 import epArticle from "./EP";
 import CardArticle from "./CardArticle";
+import Footer from "./Footer";
 
 function EpList() {
     return (
+        <div>
         <Container>
             <Col>
                 <Row className="position">
@@ -24,6 +26,8 @@ function EpList() {
                 </Row>
             </Col>
         </Container>
+        <Footer />
+        </div>
     );
 }
 
