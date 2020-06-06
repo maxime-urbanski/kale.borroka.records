@@ -7,8 +7,38 @@ import leipzig from "./img/ep/13312034.jpg";
 import zero from "./img/ep/14201735.jpg";
 import pressure from "./img/ep/9943868.jpg";
 import collin from "./img/ep/7373465.jpg";
+import skin2 from "./img/ep/15431270.jpg";
+import skin from "./img/ep/1751408.jpg";
+import skinw from "./img/ep/15432976.jpg";
 
 const epArticle = [
+    {
+        id: 15431270,
+        artiste: "Knock Out",
+        name: "Rock'n'roll Skinhead",
+        image: `${skin2}`,
+        price: "10€",
+        format: "EP",
+        quantity: "1",
+    },
+    {
+        id: 15432976,
+        artiste: "Knock Out",
+        name: "Rock'n'roll Skinhead",
+        image: `${skinw}`,
+        price: "7.5€",
+        format: "EP",
+        quantity: "2",
+    },
+    {
+        id: 15018551,
+        artiste: "Knock Out",
+        name: "Rock'n'roll Skinhead",
+        image: `${skin}`,
+        price: "7.5€",
+        format: "EP",
+        quantity: "2",
+    },
     {
         id: 13848683,
         artiste: "Les Partisans",
