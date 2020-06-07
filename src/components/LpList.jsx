@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Row, Col, Pagination } from "reactstrap";
+import { Container, Row, Col, Pagination, PaginationItem } from "reactstrap";
 
 import "./menu.css";
 import CardArticle from "./CardArticle";
@@ -47,6 +47,7 @@ class LpList extends React.Component {
                         </Row>
                     </Col>
                 </Container>
+                
                 <Footer />
             </div>
         );

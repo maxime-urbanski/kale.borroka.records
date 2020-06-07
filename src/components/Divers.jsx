@@ -12,8 +12,8 @@ function divers () {
         <Container>
             <Row>
                 <Col>
-                    <img src={fanzine} alt="fanzine" width="300px" className="m-5" tag={Link} to="/Divers/fanzine" />
-                    <img src={ipeh} alt="ipeh antifaxista" width="300px" className="m-5" tag={Link} to="/Divers/IPEH" />
+                    <Link to="/Divers/fanzine"><img src={fanzine} alt="fanzine" width="300px" className="m-5"/></Link>
+                    <Link to="/Divers/IPEH"><img src={ipeh} alt="ipeh antifaxista" width="300px" className="m-5" /></Link>
                 
                 </Col>
             </Row>

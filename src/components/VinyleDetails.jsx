@@ -1,9 +1,10 @@
 import React from "react";
 import Axios from "axios";
-import { Container, Col, Row, Table } from "reactstrap";
+import { Container, Col, Row, Table, Button,  } from "reactstrap";
 
 import allArticles from "./disque";
 import Footer from "./Footer";
+import ModalBuy from "./ModalBuy";
 
 class VinyleDetails extends React.Component {
     constructor(props) {
@@ -67,6 +68,9 @@ class VinyleDetails extends React.Component {
                             </Row>
                             <Row>
                                 <h1 className="badge badge-success text-wrap test" > Prix: {allArticles[id]?.price}</h1>
+                            </Row>
+                            <Row>
+                            <ModalBuy image={allArticles[id]?.image} price={allArticles[id]?.price} id={this.props.match.params.id} fullname ={`${artists_sort} - ${title}`}/>
                             </Row>
                             <Row className="mt-5 justify-content-center">
                                 <p>{notes}</p>

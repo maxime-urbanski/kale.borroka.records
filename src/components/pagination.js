@@ -1,34 +1,34 @@
 import React from 'react';
 import article from "./Lp";
 import disque from "./disque"
+import { Link } from 'react-router-dom';
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 class Paginationtest extends React.Component {
-    render () {
-        const { cardsPerPage, totalCards, paginate, nextPage, prevPage } = this.props
-        const pageNumbers = [];
-                        
-            for (let i=1; 1 < Math.ceil( totalCards.length / cardsPerPage); i++ ) {
-            pageNumbers.push(i);
-        }
-        return (
-            <nav className="pagination justify-content-center">
-                <li className="page-item">
-                    <a className="page-link" href="#">Previous</a>
-                </li>
+    render () {        
+        const pageNumbers = ["1", "2", "3", "4", "5"];        
+        return (    
+            <Pagination size="lg" aria-label="Page navigation example">
+                <PaginationItem>
+                     <PaginationLink first href="#" />
+                </PaginationItem>
+                <PaginationItem>
+                    <PaginationLink previous tag={Link} to={`/LP/:${pageNumbers.toString - "1"}`} />
+                </PaginationItem>
                 {pageNumbers.map(num => (
-                    <li className="page-item" key={num}>
-                        <a onClick={() => paginate(num)} href="#" className="page-link">{num}</a>
-                    </li>
+                    <PaginationItem>
+                        <PaginationLink tag={Link} to={`/LP/:${num}`}>{num}</PaginationLink>
+                    </PaginationItem>
                 )
-
                 )}
-                <li className="page-item">
-                    <a className="page-link" href="#">Next</a>
-                </li>
-
-
-            </nav>
-        )
+                <PaginationItem>
+                    <PaginationLink next href="#" />
+                </PaginationItem>
+                <PaginationItem>
+                    <PaginationLink last href="#" />
+                </PaginationItem>
+            </Pagination>           
+        );
     }
 }
 

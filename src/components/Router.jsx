@@ -10,6 +10,7 @@ import divers from "./Divers";
 import VinyleDetails from "./VinyleDetails";
 
 import "./menu.css";
+import Footer from "./Footer";
 
 function Router() {
     return (
@@ -17,14 +18,16 @@ function Router() {
             <MenuNav />
             <div className="mt-5 cOlor">
                 <img src={ban} alt="baniere" />
-            </div>
+            </div>          
 
             <Switch>
                 <Route path="/LP/:id" component={VinyleDetails} />
+                <Route path='/LP/:page' component={LP} />
                 <Route path="/EP/:id" component={VinyleDetails} />
                 <Route exact path="/" component={Home} />
-                <Route exact path="/kale-borroka-records" component={""} />
+                <Route exact path="/crew" component={""} />
                 <Route exact path="/contact" component={""} />
+                <Route exact path="/how-to-buy" component={""} />
                 <Route path="/LP" component={LP} />
                 <Route path="/EP" component={EpList} />
                 <Route path="/Production" component={""} />
