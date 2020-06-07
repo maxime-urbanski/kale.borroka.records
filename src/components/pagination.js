@@ -1,12 +1,13 @@
 import React from 'react';
-
+import article from "./Lp";
+import disque from "./disque"
 
 class Paginationtest extends React.Component {
     render () {
-        const { cardsPerPage, totalCard, paginate, nextPage, prevPage } = this.props
+        const { cardsPerPage, totalCards, paginate, nextPage, prevPage } = this.props
         const pageNumbers = [];
-
-        for (let i=1; 1 < Math.ceil( totalCard.length / cardsPerPage); i++ ) {
+                        
+            for (let i=1; 1 < Math.ceil( totalCards.length / cardsPerPage); i++ ) {
             pageNumbers.push(i);
         }
         return (

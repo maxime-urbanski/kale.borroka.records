@@ -2,12 +2,13 @@ import React from "react";
 
 import { Container, Row, Col, Pagination } from "reactstrap";
 
-import lp from "./Lp";
 import "./menu.css";
 import CardArticle from "./CardArticle";
 import Footer from "./Footer";
 import Paginationtest from "./pagination";
 import article from "./Lp";
+import disque from './disque'
+
 
 
 class LpList extends React.Component {
@@ -18,13 +19,12 @@ class LpList extends React.Component {
             cardsPerPage: "9"
         }
 
-
     }
     render () {
         const { currentPage, cardsPerPage } = this.state;
         const indexLastCards = currentPage * cardsPerPage;
         const indexFirstCards = indexLastCards - cardsPerPage;
-        const currentCards = lp.slice(indexFirstCards, indexLastCards);
+        const currentCards = article.slice(indexFirstCards, indexLastCards);
 
         return (
             <div>
@@ -33,9 +33,9 @@ class LpList extends React.Component {
                         <Row className="position">
                             <h1 className="mt-3 position">Tous nos LP/10"</h1>
                             <Row className="position">
-                                {lp.map((item) => {
+                                {currentCards.map((item) => {
                                     return item.quantity > 0 ? (
-                                        <CardArticle {...item} currentCards={currentCards}/>
+                                        <CardArticle {...item} />
                                     ) : (
                                         ""
                                     );
@@ -43,7 +43,7 @@ class LpList extends React.Component {
                             </Row>
                         </Row>
                         <Row>
-                            <Paginationtest  cardsPerPage={cardsPerPage} totalCard={lp.length}/>
+                            <Paginationtest  cardsPerPage={cardsPerPage} totalCards={article}/>
                         </Row>
                     </Col>
                 </Container>

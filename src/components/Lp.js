@@ -252,4 +252,6 @@ const article = [
     },
 ];
 
+console.log(article.length);
+
 export default article;

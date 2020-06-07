@@ -11,7 +11,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-function CardArticle({ id, image, name, artiste, format, price, currentCards }) {
+function CardArticle({ id, image, name, artiste, format, price, }) {
     return (
         <div className="hvr-grow">
             

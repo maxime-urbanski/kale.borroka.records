@@ -36,7 +36,7 @@ import skin2 from "./img/ep/15431270.jpg";
 import skin from "./img/ep/1751408.jpg";
 import skinw from "./img/ep/15432976.jpg";
 
-export default {
+const disque = {
     "15432976": {
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
@@ -333,3 +333,5 @@ export default {
         quantity: "1",
     },
 };
+
+export default disque;
