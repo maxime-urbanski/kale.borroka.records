@@ -1,8 +1,10 @@
 import React from "react";
 import Axios from "axios";
-import { Container, Col, Row, Table } from "reactstrap";
+import { Container, Col, Row, Table, Button,  } from "reactstrap";
 
 import allArticles from "./disque";
+import Footer from "./Footer";
+import ModalBuy from "./ModalBuy";
 
 class VinyleDetails extends React.Component {
     constructor(props) {
@@ -34,6 +36,7 @@ class VinyleDetails extends React.Component {
 
     render() {
         const id = this.props.match.params.id;
+        
         const {
             artists_sort,
             title,
@@ -42,65 +45,88 @@ class VinyleDetails extends React.Component {
             year,
             notes,
             labels,
+            videos,
         } = this.state.lp;
         return (
-            <Container>
-                <Col>
+            <div>
+                <Container>
                     <Row>
-                        <h1 className="mt-3 position">
-                            {artists_sort} - {title}
-                        </h1>
+                        <Col className="cole-md-6 ">
+                            <h1 className="mt-3 justify-content-center text-monospace font-weight-bold font-weight-bold">
+                                {artists_sort} - {title}
+                            </h1>
+                        </Col>
                     </Row>
 
-                    <Row>
-                        <Col>
+                    <Row className="mt-5">
+                        <Col className="col-md-6">
                             <Row>
                                 <h3>{styles}</h3>
                             </Row>
                             <Row>
-                                <h4>{year}</h4>
+                                <h4 className="font-italic">{year}</h4>
+                            </Row>
+                            <Row>
+                                <h1 className="badge badge-success text-wrap test" > Prix: {allArticles[id]?.price}</h1>
+                            </Row>
+                            <Row>
+                            <ModalBuy image={allArticles[id]?.image} price={allArticles[id]?.price} id={this.props.match.params.id} fullname ={`${artists_sort} - ${title}`}/>
+                            </Row>
+                            <Row className="mt-5 justify-content-center">
+                                <p>{notes}</p>
+                            </Row>
+                            <Row>
+                                
+                                {labels && labels.map((item) => {
+                                    return (
+                                    <Col>
+                                        <p className="justify-content-center mt-1 badge badge-warning font-italic text-wrap">{item.name}</p>
+                                    </Col>  
+                                      
+                                    )
+                                })}
+                                
                             </Row>
                         </Col>
-                        <Col>
+                        <Col>                           
                             <img
                                 src={allArticles[id]?.image}
                                 alt={id}
-                                width="300px"
-                                className="mt-2 mb-3"
-                            />
+                                width="300px"                                
+                                className="mb-3 float-right" 
+                            /> 
+                          
                         </Col>
                     </Row>
-
                     <Row>
-                        <p>{notes}</p>
+                        <Col className="mt-5 mb-5">
+                            <Table className="col-md-8 offset-md-2 table table-striped table-dark ">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Titre</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tracklist &&
+                                        tracklist.map((item) => {
+                                            return (
+                                                <tr key={id}>
+                                                    <th>{item.position} </th>
+                                                    <td>{item.title} </td>
+                                                </tr>
+                                            );
+                                        })}
+                                </tbody>
+                            </Table>
+                        </Col>
                     </Row>
                     <Row>
-                        <Table className="table table-striped table-dark">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Titre</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {tracklist &&
-                                    tracklist.map((item) => {
-                                        return (
-                                            <tr key={id}>
-                                                <th>{item.position} </th>
-                                                <td>{item.title} </td>
-                                            </tr>
-                                        );
-                                    })}
-                            </tbody>
-                        </Table>
+                        
                     </Row>
-                    <Row>
-                        <p> Prix: {allArticles[id]?.price}</p>
-                    </Row>
-                    <Row>oi</Row>
-                </Col>
-            </Container>
+                </Container>
+                <Footer />
+            </div>
         );
     }
 }

@@ -11,10 +11,12 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-function CardArticle({ id, image, name, artiste, format, price }) {
+function CardArticle({ id, image, name, artiste, format, price, }) {
     return (
-        <Card
-            className="m-5 cardSize border-danger border-top-0 border-left-0 rounded-top shadow-lg p-3 mb-5 bg-white"
+        <div className="hvr-grow">
+            
+        <Card 
+            className="m-5 cardSize border-danger border-top-0 border-left-0 rounded-top shadow-lg p-3 mb-5 bg-white "
             key={id}
         >
             <CardImg
@@ -32,11 +34,12 @@ function CardArticle({ id, image, name, artiste, format, price }) {
                 <CardTitle>{name}</CardTitle>
                 <CardSubtitle>{format}</CardSubtitle>
                 <CardText>Prix: {price}</CardText>
-                <Button tag={Link} to={`/${format}/${id}`} image={this.props.image}>
+                <Button tag={Link} to={`/${format}/${id}`}>
                     Article
                 </Button>
             </CardBody>
         </Card>
+        </div>
     );
 }
 

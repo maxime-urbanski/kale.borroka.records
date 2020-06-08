@@ -32,8 +32,35 @@ import leipzig from "./img/ep/13312034.jpg";
 import zero from "./img/ep/14201735.jpg";
 import pressure from "./img/ep/9943868.jpg";
 import collin from "./img/ep/7373465.jpg";
+import skin2 from "./img/ep/15431270.jpg";
+import skin from "./img/ep/1751408.jpg";
+import skinw from "./img/ep/15432976.jpg";
 
-export default {
+const disque = {
+    "15432976": {
+        artiste: "Knock Out",
+        name: "Rock'n'roll Skinhead",
+        image: `${skinw}`,
+        price: "7.5€",
+        format: "EP",
+        quantity: "1",
+    },
+    "15431270": {
+        artiste: "Knock Out",
+        name: "Rock'n'roll Skinhead",
+        image: `${skin2}`,
+        price: "10€",
+        format: "EP",
+        quantity: "1",
+    },
+    "15018551": {        
+        artiste: "Knock Out",
+        name: "Rock'n'roll Skinhead",
+        image: `${skin}`,
+        price: "7.5€",
+        format: "EP",
+        quantity: "2",
+    },
     "9219786": {
         artiste: "Brigada Flores Magon",
         name: "ST",
@@ -153,7 +180,7 @@ export default {
         price: "10€",
         format: "LP",
     },
-    "10595877 ": {
+    "10595877": {
         artiste: "Cartouche",
         name: "A venir",
         image: `${venir}`,
@@ -161,7 +188,7 @@ export default {
         format: "LP",
         quantity: "1",
     },
-    "3356565 ": {
+    "3356565": {
         artiste: "65 Mines Street",
         name: "ST",
         image: `${mines}`,
@@ -177,15 +204,15 @@ export default {
         format: "LP",
         quantity: "1",
     },
-    "11579597 ": {
+    "11579597": {
         artiste: "210",
-        name: "Пыль В Глаза ",
+        name: "Пыль В Глаза",
         image: `${russe}`,
         price: "12€",
         format: "LP",
         quantity: "1",
     },
-    "3018198 ": {
+    "3018198": {
         artiste: "Jeunesse Apatride",
         name: " Black Block 'N' Roll / La Victoire Sommeille ",
         image: `${black}`,
@@ -225,12 +252,12 @@ export default {
         format: "LP",
         quantity: "1",
     },
-    "12589838 ": {
-        artiste: "Bull Brigade, Non Servium",
+    "12589838": {
+        artiste: "Non Servium, Bull Brigade ",
         name: " The Chaos Brotherhood ",
         image: `${chaos}`,
         price: "10€",
-        format: "10",
+        format: "LP",
         quantity: "1",
     },
     "13848683": {
@@ -306,3 +333,5 @@ export default {
         quantity: "1",
     },
 };
+
+export default disque;
