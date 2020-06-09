@@ -23,8 +23,6 @@ class EpList extends React.Component {
         const currentCards = epArticle.slice(indexFirstCards, indexLastCards);
 
         const paginate = (pageNum) => this.setState({ currentPage: pageNum });
-        const pageNext = () => this.setState({ currentCards: currentPage + 1 });
-        const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
         const format = "EP";
 
         return (
