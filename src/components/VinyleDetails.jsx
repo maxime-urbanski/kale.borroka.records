@@ -1,10 +1,18 @@
 import React from "react";
 import Axios from "axios";
-import { Container, Col, Row, Table, Button } from "reactstrap";
+import {
+    Container,
+    Col,
+    Row,
+    Table,
+    BreadcrumbItem,
+    Breadcrumb,
+} from "reactstrap";
 
 import allArticles from "./disque";
 import Footer from "./Footer";
 import ModalBuy from "./ModalBuy";
+import { Link } from "react-router-dom";
 
 class VinyleDetails extends React.Component {
     constructor(props) {
@@ -49,6 +57,20 @@ class VinyleDetails extends React.Component {
         return (
             <div>
                 <Container>
+                    <Breadcrumb listTag="div">
+                        <BreadcrumbItem tag={Link} to={"/"}>
+                            Home
+                        </BreadcrumbItem>
+                        <BreadcrumbItem
+                            tag={Link}
+                            to={`/${allArticles[id]?.format}`}
+                        >
+                            {allArticles[id]?.format}
+                        </BreadcrumbItem>
+                        <BreadcrumbItem tactive tag="span">
+                            {`${artists_sort} - ${title}`}
+                        </BreadcrumbItem>
+                    </Breadcrumb>
                     <Row>
                         <Col className="cole-md-6 ">
                             <h1 className="mt-3 justify-content-center text-monospace font-weight-bold font-weight-bold">
