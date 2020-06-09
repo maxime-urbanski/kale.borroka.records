@@ -1,6 +1,6 @@
 import React from "react";
 import Axios from "axios";
-import { Container, Col, Row, Table, Button,  } from "reactstrap";
+import { Container, Col, Row, Table, Button } from "reactstrap";
 
 import allArticles from "./disque";
 import Footer from "./Footer";
@@ -36,7 +36,7 @@ class VinyleDetails extends React.Component {
 
     render() {
         const id = this.props.match.params.id;
-        
+
         const {
             artists_sort,
             title,
@@ -45,7 +45,6 @@ class VinyleDetails extends React.Component {
             year,
             notes,
             labels,
-            videos,
         } = this.state.lp;
         return (
             <div>
@@ -67,35 +66,42 @@ class VinyleDetails extends React.Component {
                                 <h4 className="font-italic">{year}</h4>
                             </Row>
                             <Row>
-                                <h1 className="badge badge-success text-wrap test" > Prix: {allArticles[id]?.price}</h1>
+                                <h1 className="badge badge-success text-wrap test">
+                                    {" "}
+                                    Prix: {allArticles[id]?.price}
+                                </h1>
                             </Row>
                             <Row>
-                            <ModalBuy image={allArticles[id]?.image} price={allArticles[id]?.price} id={this.props.match.params.id} fullname ={`${artists_sort} - ${title}`}/>
+                                <ModalBuy
+                                    image={allArticles[id]?.image}
+                                    price={allArticles[id]?.price}
+                                    id={this.props.match.params.id}
+                                    fullname={`${artists_sort} - ${title}`}
+                                />
                             </Row>
                             <Row className="mt-5 justify-content-center">
                                 <p>{notes}</p>
                             </Row>
                             <Row>
-                                
-                                {labels && labels.map((item) => {
-                                    return (
-                                    <Col>
-                                        <p className="justify-content-center mt-1 badge badge-warning font-italic text-wrap">{item.name}</p>
-                                    </Col>  
-                                      
-                                    )
-                                })}
-                                
+                                {labels &&
+                                    labels.map((item) => {
+                                        return (
+                                            <Col>
+                                                <p className="justify-content-center mt-1 badge badge-warning font-italic text-wrap">
+                                                    {item.name}
+                                                </p>
+                                            </Col>
+                                        );
+                                    })}
                             </Row>
                         </Col>
-                        <Col>                           
+                        <Col>
                             <img
                                 src={allArticles[id]?.image}
                                 alt={id}
-                                width="300px"                                
-                                className="mb-3 float-right" 
-                            /> 
-                          
+                                width="300px"
+                                className="mb-3 float-right"
+                            />
                         </Col>
                     </Row>
                     <Row>
@@ -121,9 +127,7 @@ class VinyleDetails extends React.Component {
                             </Table>
                         </Col>
                     </Row>
-                    <Row>
-                        
-                    </Row>
+                    <Row></Row>
                 </Container>
                 <Footer />
             </div>

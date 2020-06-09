@@ -1,30 +1,32 @@
 import React from "react";
 
-import { Container, Row, Col, Pagination, PaginationItem } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 import "./menu.css";
 import CardArticle from "./CardArticle";
 import Footer from "./Footer";
-import Paginationtest from "./pagination";
+
 import article from "./Lp";
-import disque from './disque'
-
-
+import PaginationDistro from "./pagination";
 
 class LpList extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
-        this.state = {            
+        this.state = {
             currentPage: "1",
-            cardsPerPage: "9"
-        }
-
+            cardsPerPage: "9",
+        };
     }
-    render () {
+    render() {
         const { currentPage, cardsPerPage } = this.state;
         const indexLastCards = currentPage * cardsPerPage;
         const indexFirstCards = indexLastCards - cardsPerPage;
         const currentCards = article.slice(indexFirstCards, indexLastCards);
+
+        const paginate = (pageNum) => this.setState({ currentPage: pageNum });
+        const pageNext = () => this.setState({ currentCards: currentPage + 1 });
+        const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
+        const format = "LP";
 
         return (
             <div>
@@ -43,11 +45,19 @@ class LpList extends React.Component {
                             </Row>
                         </Row>
                         <Row>
-                            <Paginationtest  cardsPerPage={cardsPerPage} totalCards={article}/>
+                            <PaginationDistro
+                                cardsPerPage={cardsPerPage}
+                                totalCards={article}
+                                paginate={paginate}
+                                pageNext={pageNext}
+                                pagePrev={pagePrev}
+                                currentPage={currentPage}
+                                format={format}
+                            />
                         </Row>
                     </Col>
                 </Container>
-                
+
                 <Footer />
             </div>
         );

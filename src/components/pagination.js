@@ -1,35 +1,50 @@
-import React from 'react';
+import React from "react";
 import article from "./Lp";
-import disque from "./disque"
-import { Link } from 'react-router-dom';
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import epArticle from "./EP";
+import { Link } from "react-router-dom";
+import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
-class Paginationtest extends React.Component {
-    render () {        
-        const pageNumbers = ["1", "2", "3", "4", "5"];        
-        return (    
-            <Pagination size="lg" aria-label="Page navigation example">
-                <PaginationItem>
-                     <PaginationLink first href="#" />
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink previous tag={Link} to={`/LP/:${pageNumbers.toString - "1"}`} />
-                </PaginationItem>
-                {pageNumbers.map(num => (
-                    <PaginationItem>
-                        <PaginationLink tag={Link} to={`/LP/:${num}`}>{num}</PaginationLink>
-                    </PaginationItem>
-                )
-                )}
-                <PaginationItem>
-                    <PaginationLink next href="#" />
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink last href="#" />
-                </PaginationItem>
-            </Pagination>           
+class PaginationDistro extends React.Component {
+    render() {
+        const { cardsPerPage, format, paginate } = this.props;
+
+        const pageNumbers = [];
+        if (format === "LP") {
+            for (
+                let i = 1;
+                i < Math.ceil(article.length / cardsPerPage + 1);
+                i++
+            ) {
+                pageNumbers.push(i);
+            }
+        } else {
+            for (
+                let j = 1;
+                j < Math.ceil(epArticle.length / cardsPerPage + 1);
+                j++
+            ) {
+                pageNumbers.push(j);
+            }
+        }
+
+        return (
+            <div className="mx-auto mt-3 mb-3">
+                <Pagination size="lg" aria-label="Page navigation example">
+                    {pageNumbers.map((num) => (
+                        <PaginationItem>
+                            <PaginationLink
+                                onClick={() => paginate(num)}
+                                tag={Link}
+                                to={`/${format}:${num}`}
+                            >
+                                {num}
+                            </PaginationLink>
+                        </PaginationItem>
+                    ))}
+                </Pagination>
+            </div>
         );
     }
 }
 
-export default Paginationtest;
+export default PaginationDistro;

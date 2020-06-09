@@ -24,7 +24,7 @@ import liberta from "./img/lp/8299937.jpg";
 import stumbling from "./img/lp/stumbling.jpg";
 import chaos from "./img/lp/12589838.jpg";
 
-const article = [
+const LParticle = [
     {
         id: 9219786,
         artiste: "Brigada Flores Magon",
@@ -252,6 +252,4 @@ const article = [
     },
 ];
 
-console.log(article.length);
-
-export default article;
+export default LParticle;

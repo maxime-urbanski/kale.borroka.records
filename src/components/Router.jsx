@@ -21,7 +21,8 @@ function Router() {
 
             <Switch>
                 <Route path="/LP/:id" component={VinyleDetails} />
-                <Route path="/LP/:page" component={LP} />
+                <Route path="/LP:page" component={LP} />
+                <Route path="/EP:page" component={EpList} />
                 <Route path="/EP/:id" component={VinyleDetails} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/crew" component={""} />
