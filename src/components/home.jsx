@@ -1,4 +1,4 @@
-import React, { useDebugValue } from "react";
+import React from "react";
 import { Container } from "reactstrap";
 import Article from "./article";
 import SlickCover from "./SlickCover";
@@ -13,8 +13,6 @@ function Home() {
             <SlickCover />
             <Footer />
         </div>
-        
-        
     );
 }
 
