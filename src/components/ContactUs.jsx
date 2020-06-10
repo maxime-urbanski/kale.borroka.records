@@ -28,9 +28,9 @@ function ContactUs() {
             </Row>
             <Row>
                 <Col>
-                    <Form>
+                    <Form method="POST" data-netlify="true">
                         <FormGroup>
-                            <Label for="emaill">Email</Label>
+                            <Label for="email">Email</Label>
                             <Input
                                 type="email"
                                 name="email"
