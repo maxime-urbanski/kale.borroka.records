@@ -42,7 +42,7 @@ class LpList extends React.Component {
                     </Breadcrumb>
                     <Col>
                         <Row className="position">
-                            <h1 className="mt-3 position">Tous nos LP/10"</h1>
+                            <h1 className="mt-3 position">Tous nos LP & 10"</h1>
                             <Row className="position">
                                 {currentCards.map((item) => {
                                     return item.quantity > 0 ? (
