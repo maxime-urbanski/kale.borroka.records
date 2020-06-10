@@ -50,12 +50,12 @@ function Footer() {
                         </a>
                     </Row>
                     <Row>
-                        <a href="kale.borroka.records@protonmail.com">
+                        <a href="">
                             <img
                                 src={pt}
                                 alt="Protonmail icon"
                                 className="mt-5 pr-2"
-                                width="38%"
+                                width="34%"
                             />
                         </a>
                     </Row>
@@ -63,8 +63,7 @@ function Footer() {
             </Row>
             <Row>
                 <p className="mx-auto text-light">
-                    2020 Kale Borroka Records All right reserved . Made 100% DIY
-                    !
+                    2020 Kale Borroka Records All right reserved . 100% DIY !
                 </p>
             </Row>
         </Container>

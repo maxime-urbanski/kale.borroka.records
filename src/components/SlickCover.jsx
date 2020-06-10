@@ -17,16 +17,17 @@ function SlickCover() {
                         className="coverPicture"
                     />
                 );
-            }) || epArticle.map((item) => {
-                return (
-                    <img
-                        src={item.image}
-                        alt={item.name}
-                        key={item.id}
-                        className="coverPicture"
-                    />
-                );
-            })}
+            }) ||
+                epArticle.map((item) => {
+                    return (
+                        <img
+                            src={item.image}
+                            alt={item.name}
+                            key={item.id}
+                            className="coverPicture"
+                        />
+                    );
+                })}
         </div>
     );
 }
