@@ -37,7 +37,7 @@ class LpList extends React.Component {
                             Home
                         </BreadcrumbItem>
                         <BreadcrumbItem active tag="span">
-                            LP &10"
+                            LP & 10"
                         </BreadcrumbItem>
                     </Breadcrumb>
                     <Col>
