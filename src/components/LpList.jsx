@@ -1,14 +1,13 @@
 import React from "react";
 
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
+import { Link } from "react-router-dom";
 
 import "./menu.css";
-import CardArticle from "./CardArticle";
-import Footer from "./Footer";
-
 import article from "./Lp";
+import CardArticle from "./CardArticle";
 import PaginationDistro from "./pagination";
-import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 class LpList extends React.Component {
     constructor(props) {
@@ -34,7 +33,7 @@ class LpList extends React.Component {
                 <Container>
                     <Breadcrumb listTag="div" className="breadcrumb">
                         <BreadcrumbItem tag={Link} to={"/"}>
-                            Home
+                            KALE BORROKA RECORDS
                         </BreadcrumbItem>
                         <BreadcrumbItem active tag="span">
                             LP & 10"

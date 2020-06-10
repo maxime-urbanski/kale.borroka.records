@@ -25,20 +25,22 @@ function MenuNav() {
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
-            <Navbar                
+            <Navbar
                 secondary
                 expand="md"
-                className="  mx-auto fixed-top style nav-pills  shadow p-3 mb-5 bg-primary"
+                className="  mx-auto fixed-top style nav-pills shadow p-3 mb-5 bg-primary"
             >
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto " navbar>
                         {menu.map((item) => {
                             return (
-                                <NavItem className="nav-justified" key={item.name}>
+                                <NavItem
+                                    className="nav-justified text-white"
+                                    key={item.name}
+                                >
                                     <NavLink tag={Link} to={item.link}>
                                         {item.name}
-                                        
                                     </NavLink>
                                 </NavItem>
                             );

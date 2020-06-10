@@ -8,11 +8,11 @@ import {
     BreadcrumbItem,
     Breadcrumb,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 import allArticles from "./disque";
-import Footer from "./Footer";
 import ModalBuy from "./ModalBuy";
-import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 class VinyleDetails extends React.Component {
     constructor(props) {
@@ -59,7 +59,7 @@ class VinyleDetails extends React.Component {
                 <Container>
                     <Breadcrumb listTag="div">
                         <BreadcrumbItem tag={Link} to={"/"}>
-                            Home
+                            KALE BORROKA RECORDS
                         </BreadcrumbItem>
                         <BreadcrumbItem
                             tag={Link}

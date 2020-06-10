@@ -1,13 +1,13 @@
 import React from "react";
 
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
+import { Link } from "react-router-dom";
 
 import "./menu.css";
 import epArticle from "./EP";
 import CardArticle from "./CardArticle";
-import Footer from "./Footer";
 import PaginationDistro from "./pagination";
-import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 class EpList extends React.Component {
     constructor(props) {
@@ -31,7 +31,7 @@ class EpList extends React.Component {
                 <Container>
                     <Breadcrumb listTag="div">
                         <BreadcrumbItem tag={Link} to={"/"}>
-                            Home
+                            KALE BORROKA RECORDS
                         </BreadcrumbItem>
                         <BreadcrumbItem tactive tag="span">
                             EP & CD

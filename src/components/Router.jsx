@@ -11,6 +11,7 @@ import VinyleDetails from "./VinyleDetails";
 
 import "./menu.css";
 import HowBuy from "./HowBuy";
+import ContactUs from "./ContactUs";
 
 function Router() {
     return (
@@ -27,7 +28,7 @@ function Router() {
                 <Route path="/EP/:id" component={VinyleDetails} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/crew" component={""} />
-                <Route exact path="/contact" component={""} />
+                <Route exact path="/contact" component={ContactUs} />
                 <Route exact path="/how-to-buy" component={HowBuy} />
                 <Route path="/LP" component={LP} />
                 <Route path="/EP" component={EpList} />
