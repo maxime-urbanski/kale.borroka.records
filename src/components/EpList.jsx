@@ -1,12 +1,13 @@
 import React from "react";
 
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 
 import "./menu.css";
 import epArticle from "./EP";
 import CardArticle from "./CardArticle";
 import Footer from "./Footer";
 import PaginationDistro from "./pagination";
+import { Link } from "react-router-dom";
 
 class EpList extends React.Component {
     constructor(props) {
@@ -23,13 +24,19 @@ class EpList extends React.Component {
         const currentCards = epArticle.slice(indexFirstCards, indexLastCards);
 
         const paginate = (pageNum) => this.setState({ currentPage: pageNum });
-        const pageNext = () => this.setState({ currentCards: currentPage + 1 });
-        const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
         const format = "EP";
 
         return (
             <div>
                 <Container>
+                    <Breadcrumb listTag="div">
+                        <BreadcrumbItem tag={Link} to={"/"}>
+                            Home
+                        </BreadcrumbItem>
+                        <BreadcrumbItem tactive tag="span">
+                            EP & CD
+                        </BreadcrumbItem>
+                    </Breadcrumb>
                     <Col>
                         <Row className="position">
                             <h1 className="mt-3 position">Tous nos EP/CD</h1>

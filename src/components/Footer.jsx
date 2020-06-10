@@ -55,7 +55,7 @@ function Footer() {
                                 src={pt}
                                 alt="Protonmail icon"
                                 className="mt-5 pr-2"
-                                width="40%"
+                                width="38%"
                             />
                         </a>
                     </Row>
