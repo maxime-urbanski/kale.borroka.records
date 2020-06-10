@@ -40,17 +40,17 @@ function Footer() {
                 </Col>
                 <Col className="col-md-1 ">
                     <Row>
-                        <Link to="https://www.facebook.com/kale.borroka.records/">
+                        <a href="https://www.facebook.com/kale.borroka.records/">
                             <img
                                 src={fb}
                                 alt="facebook icon"
                                 className="mt-5 pr-2 "
                                 width="30%"
                             />
-                        </Link>
+                        </a>
                     </Row>
                     <Row>
-                        <a href="">
+                        <a href="kale.borroka.records@protonmail.com">
                             <img
                                 src={pt}
                                 alt="Protonmail icon"

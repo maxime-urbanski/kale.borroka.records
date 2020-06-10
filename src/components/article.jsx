@@ -7,7 +7,7 @@ function Article() {
     return (
         <Row>
             <Col>
-                <h1 className="mt-5">Nouvelles Arrivages !</h1>
+                <h1 className="mt-5">Nouveaux Arrivages !</h1>
                 <Row>
                     <p>
                         {" "}
@@ -26,7 +26,6 @@ function Article() {
                         className="mx-auto mt-5 mb-5"
                     />
                 </Row>
-                
             </Col>
         </Row>
     );
