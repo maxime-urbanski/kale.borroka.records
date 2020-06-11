@@ -13,7 +13,9 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-function ContactUs() {
+
+function ContactUs() {  
+    
     return (
         <Container>
             <Row>
@@ -28,7 +30,8 @@ function ContactUs() {
             </Row>
             <Row>
                 <Col>
-                    <Form name="contact" method="POST" data-netlify="true">
+                    <Form id="contactMe" onSubmit={(e) =>{
+                                e.preventDefault()}}>
                         <FormGroup>
                             <Label for="email">Email</Label>
                             <Input
@@ -54,7 +57,7 @@ function ContactUs() {
                             <Label for="message">Message</Label>
                             <Input
                                 type="textarea"
-                                name="text"
+                                name="message"
                                 id="exampleText"
                             />
                         </FormGroup>

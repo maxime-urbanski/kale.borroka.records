@@ -38,8 +38,7 @@ function Article() {
                     <img
                         src={news}
                         alt="news arrivals"
-                        center
-                        width="50%"
+                        center                        
                         className="mx-auto mt-5 mb-5"
                     />
                 </Row>

@@ -9,8 +9,7 @@ function Home() {
     return (
         <div>
             <Container>
-                <MiniArticle />
-                <Article />
+                <MiniArticle />                
             </Container>
             <SlickCover />
             <Footer />
