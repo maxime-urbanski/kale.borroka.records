@@ -30,8 +30,10 @@ function ContactUs() {
             </Row>
             <Row>
                 <Col>
+
                     <Form id="contactMe" onSubmit={(e) =>{
                                 e.preventDefault()}}>
+
                         <FormGroup>
                             <Label for="email">Email</Label>
                             <Input
@@ -43,11 +45,7 @@ function ContactUs() {
                         </FormGroup>
                         <FormGroup>
                             <Label for="exampleSelect">Select</Label>
-                            <Input
-                                type="select"
-                                name="select"
-                                id="exampleSelect"
-                            >
+                            <Input type="select" name="select" id="select">
                                 <option>Commande</option>
                                 <option>Groupe</option>
                                 <option>Autre</option>
@@ -57,7 +55,9 @@ function ContactUs() {
                             <Label for="message">Message</Label>
                             <Input
                                 type="textarea"
-                                name="message"
+
+                                message"
+
                                 id="exampleText"
                             />
                         </FormGroup>
