@@ -28,7 +28,7 @@ function ContactUs() {
             </Row>
             <Row>
                 <Col>
-                    <Form method="POST" data-netlify="true">
+                    <Form name="contact" method="POST" data-netlify="true">
                         <FormGroup>
                             <Label for="email">Email</Label>
                             <Input
@@ -46,20 +46,19 @@ function ContactUs() {
                                 id="exampleSelect"
                             >
                                 <option>Commande</option>
-                                <option>Expeditions</option>
                                 <option>Groupe</option>
                                 <option>Autre</option>
                             </Input>
                         </FormGroup>
                         <FormGroup>
-                            <Label for="exampleText">Text Area</Label>
+                            <Label for="message">Message</Label>
                             <Input
                                 type="textarea"
                                 name="text"
                                 id="exampleText"
                             />
                         </FormGroup>
-                        <Button>Submit</Button>
+                        <Button type="submit">Go !</Button>
                     </Form>
                 </Col>
             </Row>
