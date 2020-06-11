@@ -28,7 +28,7 @@ function ContactUs() {
             </Row>
             <Row>
                 <Col>
-                    <Form method="POST" data-netlify="true">
+                    <Form id="contactUs" onSubmit={this.handleSubmit}>
                         <FormGroup>
                             <Label for="email">Email</Label>
                             <Input
@@ -40,11 +40,7 @@ function ContactUs() {
                         </FormGroup>
                         <FormGroup>
                             <Label for="exampleSelect">Select</Label>
-                            <Input
-                                type="select"
-                                name="select"
-                                id="exampleSelect"
-                            >
+                            <Input type="select" name="select" id="select">
                                 <option>Commande</option>
                                 <option>Expeditions</option>
                                 <option>Groupe</option>
@@ -55,7 +51,8 @@ function ContactUs() {
                             <Label for="exampleText">Text Area</Label>
                             <Input
                                 type="textarea"
-                                name="text"
+                                name="
+                                message"
                                 id="exampleText"
                             />
                         </FormGroup>
