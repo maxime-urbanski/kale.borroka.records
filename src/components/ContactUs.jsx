@@ -13,7 +13,9 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-function ContactUs() {
+
+function ContactUs() {  
+    
     return (
         <Container>
             <Row>
@@ -28,7 +30,10 @@ function ContactUs() {
             </Row>
             <Row>
                 <Col>
-                    <Form id="contactUs" onSubmit={this.handleSubmit}>
+
+                    <Form id="contactMe" onSubmit={(e) =>{
+                                e.preventDefault()}}>
+
                         <FormGroup>
                             <Label for="email">Email</Label>
                             <Input
@@ -42,21 +47,21 @@ function ContactUs() {
                             <Label for="exampleSelect">Select</Label>
                             <Input type="select" name="select" id="select">
                                 <option>Commande</option>
-                                <option>Expeditions</option>
                                 <option>Groupe</option>
                                 <option>Autre</option>
                             </Input>
                         </FormGroup>
                         <FormGroup>
-                            <Label for="exampleText">Text Area</Label>
+                            <Label for="message">Message</Label>
                             <Input
                                 type="textarea"
-                                name="
+
                                 message"
+
                                 id="exampleText"
                             />
                         </FormGroup>
-                        <Button>Submit</Button>
+                        <Button type="submit">Go !</Button>
                     </Form>
                 </Col>
             </Row>

@@ -3,12 +3,13 @@ import { Container } from "reactstrap";
 import Article from "./article";
 import SlickCover from "./SlickCover";
 import Footer from "./Footer";
+import MiniArticle from "./MiniatureArticle ";
 
 function Home() {
     return (
         <div>
             <Container>
-                <Article />
+                <MiniArticle />                
             </Container>
             <SlickCover />
             <Footer />

@@ -93,7 +93,7 @@ const LParticle = [
         artiste: "Traitre",
         name: "discographie",
         image: `${traitre}`,
-        price: "13€",
+        price: "12€",
         format: "LP",
         quantity: "1",
     },

@@ -12,10 +12,9 @@ function Article() {
                 <Row>
                     <p className="text-justify-center">
                         {" "}
-                        Ca vient tout juste d'arriver. On a la dernière pépite
-                        de Knock Out, avec une reprise de Camera Silens ("Rien
-                        qu'en trainant => Deambular") Differente version
-                        disponible:
+                        On a la dernière pépite
+                        de Knock Out, avec une reprise de Rien qu'en trainant de Camera Silens !
+                        Les trois version sont dispo au shop: 
                         <br /> - Version disque Or et pochette{" "}
                         <Link to="/EP/15432976"> blanche </Link>( limitée à 218
                         exemplaires).
@@ -39,8 +38,7 @@ function Article() {
                     <img
                         src={news}
                         alt="news arrivals"
-                        center
-                        width="50%"
+                        center                        
                         className="mx-auto mt-5 mb-5"
                     />
                 </Row>
