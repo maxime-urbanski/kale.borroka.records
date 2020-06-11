@@ -55,9 +55,7 @@ function ContactUs() {
                             <Label for="message">Message</Label>
                             <Input
                                 type="textarea"
-
-                                message"
-
+                                name="message"
                                 id="exampleText"
                             />
                         </FormGroup>
