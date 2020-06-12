@@ -8,6 +8,7 @@ import {
     Row,
     Col,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const ModalBuy = (props) => {
     const { image, price, id, fullname } = props;
@@ -39,11 +40,12 @@ const ModalBuy = (props) => {
                                 <Row>
                                     <p className="text-justify">
                                         Pour commander, rien de plus simple,
-                                        envoie un mail à
+                                        contact nous via la page <Link to="/Contact">Contact</Link> ou directement sur 
                                         "kale.borroka.records@protonmail.com",
-                                        avec les disques et/ou autres object que
-                                        tu désires, et nous te recontactons au
-                                        plus vite pour te donner le total de ta
+                                        avec les disques et/ou autres objects que
+                                        tu désires. <br />
+                                        Nous te recontacterons au
+                                        plus vite avec le total de ta
                                         commande avec les frais de ports !{" "}
                                     </p>
                                 </Row>
