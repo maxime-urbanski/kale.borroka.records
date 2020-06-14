@@ -17,6 +17,7 @@ function Router() {
     return (
         <BrowserRouter>
             <MenuNav />
+            
             <div className="mt-5 cOlor">
                 <img src={ban} alt="baniere" />
             </div>

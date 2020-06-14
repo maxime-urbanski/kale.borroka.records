@@ -1,17 +1,20 @@
 import React from "react";
 import { Container } from "reactstrap";
-import Article from "./article";
-import SlickCover from "./SlickCover";
+
 import Footer from "./Footer";
 import MiniArticle from "./MiniatureArticle ";
+import Cover from "./SlickCover";
+
+
+
 
 function Home() {
     return (
         <div>
             <Container>
                 <MiniArticle />                
-            </Container>
-            <SlickCover />
+            </Container>       
+            <Cover />
             <Footer />
         </div>
     );

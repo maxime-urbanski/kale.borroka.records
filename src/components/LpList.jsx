@@ -18,10 +18,12 @@ class LpList extends React.Component {
         };
     }
     render() {
+        const alpha = article.filter((item) => item.artiste).sort();
+        console.log(alpha);       
         const { currentPage, cardsPerPage } = this.state;
         const indexLastCards = currentPage * cardsPerPage;
         const indexFirstCards = indexLastCards - cardsPerPage;
-        const currentCards = article.slice(indexFirstCards, indexLastCards);
+        const currentCards = alpha.slice(indexFirstCards, indexLastCards);
 
         const paginate = (pageNum) => this.setState({ currentPage: pageNum });
         const pageNext = () => this.setState({ currentCards: currentPage + 1 });

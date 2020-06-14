@@ -45,8 +45,7 @@ function MenuNav() {
                                 </NavItem>
                             );
                         })}
-                    </Nav>
-                    <NavbarText>Kale Borroka Records</NavbarText>
+                    </Nav>                    
                 </Collapse>
             </Navbar>
         </div>

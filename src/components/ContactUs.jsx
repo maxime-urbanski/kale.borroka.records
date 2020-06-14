@@ -12,11 +12,13 @@ import {
     BreadcrumbItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 
 function ContactUs() {  
     
     return (
+        <>
         <Container>
             <Row>
                 <Breadcrumb listTag="div" className="breadcrumb">
@@ -59,11 +61,14 @@ function ContactUs() {
                                 id="exampleText"
                             />
                         </FormGroup>
-                        <Button type="submit">Go !</Button>
+                        <Button type="submit" className="mb-5">Go !</Button>
                     </Form>
                 </Col>
             </Row>
-        </Container>
+        </Container >
+        
+        <Footer />
+        </>
     );
 }
 
