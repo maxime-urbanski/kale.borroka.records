@@ -10,6 +10,7 @@ import collin from "./img/ep/7373465.jpg";
 import skin2 from "./img/ep/15431270.jpg";
 import skin from "./img/ep/1751408.jpg";
 import skinw from "./img/ep/15432976.jpg";
+import compare from "./Compare";
 
 const epArticle = [
     {
@@ -121,5 +122,7 @@ const epArticle = [
         quantity: "1",
     },
 ];
+
+epArticle.sort(compare)
 
 export default epArticle;

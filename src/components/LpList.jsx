@@ -8,6 +8,7 @@ import article from "./Lp";
 import CardArticle from "./CardArticle";
 import PaginationDistro from "./pagination";
 import Footer from "./Footer";
+import disque from "./disque";
 
 class LpList extends React.Component {
     constructor(props) {
@@ -17,13 +18,11 @@ class LpList extends React.Component {
             cardsPerPage: "9",
         };
     }
-    render() {
-        const alpha = article.filter((item) => item.artiste).sort();
-        console.log(alpha);       
+    render() {  
         const { currentPage, cardsPerPage } = this.state;
         const indexLastCards = currentPage * cardsPerPage;
         const indexFirstCards = indexLastCards - cardsPerPage;
-        const currentCards = alpha.slice(indexFirstCards, indexLastCards);
+        const currentCards = article.slice(indexFirstCards, indexLastCards);
 
         const paginate = (pageNum) => this.setState({ currentPage: pageNum });
         const pageNext = () => this.setState({ currentCards: currentPage + 1 });

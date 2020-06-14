@@ -21,14 +21,13 @@ const menu = [
 ];
 function MenuNav() {
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
             <Navbar
                 secondary
                 expand="md"
-                className="  mx-auto fixed-top style nav-pills shadow p-3 mb-5 bg-primary"
+                className="md-auto fixed-top style nav-pills shadow p-3 mb-5 bg-primary"
             >
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>

@@ -1,11 +1,11 @@
 .coverPicture {    
     margin: 0px, 10px, 50px, 10px;
-    transform: scale(1);
+    transform: scale(1) !important;
 
 }
 
 .coverPicture :hover {
-    transform: scale(1.3);
+    transform: scale(1.3) !important;
 }
 
 .cOlor {

@@ -40,8 +40,9 @@ const ModalBuy = (props) => {
                                 <Row>
                                     <p className="text-justify">
                                         Pour commander, rien de plus simple,
-                                        contact nous via la page <Link to="/Contact">Contact</Link> ou directement sur 
-                                        "kale.borroka.records@protonmail.com",
+                                        contact nous via la page <Link to="/Contact">Contact</Link>,<br/>
+                                        via la page <a href="https://www.facebook.com/kale.borroka.records/" target="blanck">facebook</a> ou envoie un mail à <br/> 
+                                        "kale.borroka.records@protonmail.com".
                                         avec les disques et/ou autres objects que
                                         tu désires. <br />
                                         Nous te recontacterons au

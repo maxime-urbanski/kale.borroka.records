@@ -23,6 +23,7 @@ import win from "./img/lp/enraged.jpg";
 import liberta from "./img/lp/8299937.jpg";
 import stumbling from "./img/lp/stumbling.jpg";
 import chaos from "./img/lp/12589838.jpg";
+import compare from "./Compare";
 
 const LParticle = [
     {
@@ -251,5 +252,7 @@ const LParticle = [
         quantity: "1",
     },
 ];
+
+LParticle.sort(compare)
 
 export default LParticle;

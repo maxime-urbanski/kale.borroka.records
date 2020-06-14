@@ -11,12 +11,12 @@ class SlickCover extends React.Component {
     render() {
         const settings = {
             dots: false,
-            infinite: true,speed: 500,
-            slidesToShow: 8,
-            slidesToScroll: 3,
+            infinite: true,
+            slidesToShow: 9,
+            slidesToScroll: 2,
             autoplay: true,
-            speed: 5000,
-            autoplaySpeed: 5000,
+            speed: 10000,
+            autoplaySpeed: 10000,
             cssEase: "linear",
             responsive: [
                 {
@@ -51,12 +51,12 @@ class SlickCover extends React.Component {
             <Slider {...settings}>
                 {lp.map((item) => {
                     return (
+                        
                         <img
                             src={item.image}
                             alt={item.name}
                             key={item.id}
                             className="coverPicture mr-2 ml-2"
-                            width="190px"
                         />
                     );
                      })}
