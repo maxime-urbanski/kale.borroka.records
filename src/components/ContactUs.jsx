@@ -43,6 +43,7 @@ class ContactUs extends React.Component {
                 const status = res.status;
                 console.log(status);
                 this.setState({isSubmited : true, name : "", email :"", message:""})
+                alert('Message envoyée')
             })
             .catch((error) => {
                 this.setState({ isError: true });
