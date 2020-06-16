@@ -8,7 +8,7 @@ import article from "./Lp";
 import CardArticle from "./CardArticle";
 import PaginationDistro from "./pagination";
 import Footer from "./Footer";
-import disque from "./disque";
+
 
 class LpList extends React.Component {
     constructor(props) {
@@ -25,8 +25,8 @@ class LpList extends React.Component {
         const currentCards = article.slice(indexFirstCards, indexLastCards);
 
         const paginate = (pageNum) => this.setState({ currentPage: pageNum });
-        const pageNext = () => this.setState({ currentCards: currentPage + 1 });
-        const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
+        const pageNext = () => this.setState({ currentCards: "currentPage + 1" });
+        const pagePrev = () => this.setState({ currentCards: "currentPage - 1" });
         const format = "LP";
 
         return (
@@ -37,7 +37,7 @@ class LpList extends React.Component {
                             KALE BORROKA RECORDS
                         </BreadcrumbItem>
                         <BreadcrumbItem active tag="span">
-                            LP & 10"
+                            LP &amp; 10"
                         </BreadcrumbItem>
                     </Breadcrumb>
                     <Col>

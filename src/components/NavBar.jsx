@@ -6,19 +6,25 @@ import {
     Nav,
     NavItem,
     NavLink,
-    NavbarText,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,    
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
 import "./menu.css";
 
 const menu = [
-    { name: "Actu", link: "/" },
-    { name: "LP/10", link: "/LP" },
-    { name: "EP/CD", link: "/EP" },
+    { name: "Actu", link: "/" },    
     { name: "Production", link: "/Production" },
     { name: "Divers", link: "/Divers" },
 ];
+const shop = [
+    {name:"LP", link:"/LP" },
+    {name:"EP", link:"/EP"},
+    {name:"CD", link:"/CD" }
+]
 function MenuNav() {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
@@ -35,16 +41,32 @@ function MenuNav() {
                     <Nav className="mr-auto " navbar>
                         {menu.map((item) => {
                             return (
+                                <>
                                 <NavItem
                                     className="nav-justified text-white"
                                     key={item.name}
-                                >
+                                    >
                                     <NavLink tag={Link} to={item.link}>
                                         {item.name}
                                     </NavLink>
                                 </NavItem>
+                              </>
                             );
                         })}
+                        <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav caret>
+                               Music Shop
+                            </DropdownToggle>
+                            <DropdownMenu left>
+                            {shop.map(i => {
+                                return (
+                                    <DropdownItem>
+                                        <Link to={i.link}><h6>{i.name}</h6></Link>
+                                    </DropdownItem>                                  
+                                )
+                            })}
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
                     </Nav>                    
                 </Collapse>
             </Navbar>

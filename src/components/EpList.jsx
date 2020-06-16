@@ -34,7 +34,7 @@ class EpList extends React.Component {
                             KALE BORROKA RECORDS
                         </BreadcrumbItem>
                         <BreadcrumbItem tactive tag="span">
-                            EP & CD
+                            EP 
                         </BreadcrumbItem>
                     </Breadcrumb>
                     <Col>
