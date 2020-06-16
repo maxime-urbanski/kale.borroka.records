@@ -37,7 +37,7 @@ class ContactUs extends React.Component {
             fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            //body: encode({ "form-name": "contact", ...this.state }),
+            body: encode({ "form-name": "contactUs", ...this.state }),
             })
             .then((res) => {
                 const status = res.status;
@@ -67,7 +67,7 @@ class ContactUs extends React.Component {
                 <Row>
                     <Col>
 
-                        <Form id="contactMe" onSubmit={this.handleSubmit}>
+                        <Form id="contactUs" onSubmit={this.handleSubmit}>
 
                             <FormGroup>
                                 <Label for="email">Email</Label>
