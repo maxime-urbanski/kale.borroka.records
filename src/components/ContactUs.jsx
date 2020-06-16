@@ -31,13 +31,19 @@ class ContactUs extends React.Component {
             [e.target.name]: e.target.value,
             });
         }    
-    
+        
+        
+        encode = (data) => {
+             Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }    
         handleSubmit = (e) => {
             e.preventDefault();
             fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            
+            body: encode({ "form-name": "contactUs", ...this.state }),
             })
             .then((res) => {
                 const status = res.status;
