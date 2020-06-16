@@ -37,7 +37,7 @@ class ContactUs extends React.Component {
             fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contactUs", ...this.state }),
+            
             })
             .then((res) => {
                 const status = res.status;
