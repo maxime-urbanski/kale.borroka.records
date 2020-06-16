@@ -88,8 +88,7 @@ class ContactUs extends React.Component {
                                     type="textarea"
                                     name="message"
                                     id="exampleText"
-                                    onChange={this.onChange}
-                                    value={this.state.message}
+                                    
                                 />
                             </FormGroup>
                             <Button type="submit" className="mb-5">Go !</Button>
