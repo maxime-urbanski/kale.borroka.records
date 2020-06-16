@@ -15,6 +15,12 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+  
 class ContactUs extends React.Component {  
     constructor (props) {
         super(props);
@@ -32,12 +38,7 @@ class ContactUs extends React.Component {
             });
         }    
         
-        
-        encode = (data) => {
-             Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }    
+            
         handleSubmit = (e) => {
             e.preventDefault();
             fetch("/", {
