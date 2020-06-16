@@ -22,9 +22,15 @@ class ContactUs extends React.Component {
             email: '',
             message: '',
             isSubmited: false
-        }        
+        }
+        this.onChange = this.onChange.bind(this);        
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+        onChange(e) {
+            this.setState({
+            [e.target.name]: e.target.value,
+            });
+        }    
     
         handleSubmit = (e) => {
             e.preventDefault();
@@ -88,7 +94,8 @@ class ContactUs extends React.Component {
                                     type="textarea"
                                     name="message"
                                     id="exampleText"
-                                    
+                                    onChange={this.onChange}
+                                    value={this.state.message}
                                 />
                             </FormGroup>
                             <Button type="submit" className="mb-5">Go !</Button>
