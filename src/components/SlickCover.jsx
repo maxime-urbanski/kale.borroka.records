@@ -16,7 +16,7 @@ class SlickCover extends React.Component {
             slidesToScroll: 2,
             autoplay: true,
             speed: 10000,
-            autoplaySpeed: 10000,
+            autoplaySpeed: 15000,
             cssEase: "linear",
             responsive: [
                 {

@@ -28,6 +28,7 @@ function MenuNav() {
                 secondary
                 expand="md"
                 className="md-auto fixed-top style nav-pills shadow p-3 mb-5 bg-primary"
+                width="100vw"
             >
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
