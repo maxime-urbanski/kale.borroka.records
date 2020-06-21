@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Jumbotron, Col } from 'reactstrap';
+import { Container, Jumbotron} from 'reactstrap';
 import tof from './img/art1.jpg'
 import { Link } from 'react-router-dom';
 
