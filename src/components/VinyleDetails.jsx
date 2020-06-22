@@ -110,9 +110,9 @@ class VinyleDetails extends React.Component {
                                     labels.map((item) => {
                                         return (
                                             <Col>
-                                                <p className="justify-content-center mt-1 badge badge-warning font-italic text-wrap">
+                                                <h1 className="justify-content-center test badge badge-pill badge-info font-italic text-wrap">
                                                     {item.name}
-                                                </p>
+                                                </h1>
                                             </Col>
                                         );
                                     })}
