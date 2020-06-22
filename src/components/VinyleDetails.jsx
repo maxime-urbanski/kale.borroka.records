@@ -89,7 +89,7 @@ class VinyleDetails extends React.Component {
                                 <h4 className="font-italic">{year}</h4>
                             </Row>
                             <Row>
-                                <h1 className="badge badge-success text-wrap test">
+                                <h1 className="badge badge-success text-wrap test pt-auto pb-auto bagdePrice">
                                     {" "}
                                     Prix: {allArticles[id]?.price}
                                 </h1>

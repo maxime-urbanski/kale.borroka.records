@@ -1,7 +1,7 @@
 import modern from './img/cd/11030823.jpg';
 import suburb from './img/cd/2870756.jpg';
 import kabal from './img/cd/4903172.jpg';
-import grabuge from './img/lp/grabuge.jpg';
+import air from './img/cd/cd.jpg'
 import debout from './img/cd/1190014.jpg';
 import block from './img/cd/5257966.jpg';
 import humanity from './img/cd/1620891.jpg';
@@ -25,9 +25,9 @@ const cd = [
         artiste: "Modern Attack",
         name: "The Last Minute",
         image: `${modern}`,
-        price: "Libre",
         format: "CD",
         quantity: "2",
+        price: "Libre",
     },
     {
         id: 2870756,
@@ -48,10 +48,10 @@ const cd = [
         quantity: "3",
     },
     {
-        id: 12202674,
+        id: 10390983,
         artiste: "Grabuge",
         name: "Perdu D'avance",
-        image: `${grabuge}`,
+        image: `${air}`,
         price: "5€",
         format: "CD",
         quantity: "1",
