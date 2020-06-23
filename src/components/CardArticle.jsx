@@ -9,6 +9,7 @@ import {
     CardTitle,
     Button,
 } from "reactstrap";
+import ModalBuy from "./ModalBuy";
 import { Link } from "react-router-dom";
 
 function CardArticle({ id, image, name, artiste, format, price }) {
@@ -33,9 +34,13 @@ function CardArticle({ id, image, name, artiste, format, price }) {
                     <CardTitle>{name}</CardTitle>
                     <CardSubtitle>{format}</CardSubtitle>
                     <CardText>Prix: {price}</CardText>
-                    <Button tag={Link} to={`/${format}/${id}`}>
-                        Details
-                    </Button>
+                    {format === "fanzine" ? (
+                        <ModalBuy image={image} price={price} />
+                    ) : (
+                        <Button tag={Link} to={`/${format}/${id}`}>
+                            Details
+                        </Button>
+                    )}
                 </CardBody>
             </Card>
         </div>

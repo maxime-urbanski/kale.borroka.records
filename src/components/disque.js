@@ -307,7 +307,7 @@ const disque = {
         artiste: "Wasted Youth",
         name: "Remembering means fighting",
         image: `${remembering}`,
-        price: "5€",
+        price: "Libre",
         format: "EP",
         quantity: "1",
     },

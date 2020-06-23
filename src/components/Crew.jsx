@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Media } from "reactstrap";
+import { Container, Media } from "reactstrap";
 import "./crew.css";
 import Footer from "./Footer";
 import icon from "./img/icon.jpg";

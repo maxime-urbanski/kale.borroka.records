@@ -21,7 +21,7 @@
 
 .cardSize {
     width: 250px;
-    height: 530px;
+    height: auto;
 }
 
 .position {
@@ -80,5 +80,5 @@
 .breadcrumb {
     background-color: transparent;
     border: none;
-    font-size: 1em;
+    font-size: 1.2em;
 }

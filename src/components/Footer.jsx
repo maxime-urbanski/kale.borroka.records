@@ -50,7 +50,7 @@ function Footer() {
                         </a>
                     </Row>
                     <Row>
-                        <a href="">
+                        <a href="https://www.facebook.com/kale.borroka.records/">
                             <img
                                 src={pt}
                                 alt="Protonmail icon"
