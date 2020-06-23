@@ -5,7 +5,7 @@ import MenuNav from "./NavBar";
 import Home from "./home";
 import LP from "./LpList";
 import EpList from "./EpList";
-import cd from "./CD";
+
 import divers from "./Divers";
 import VinyleDetails from "./VinyleDetails";
 import fanzineList from "./fanzineList";
@@ -27,6 +27,7 @@ function Router() {
                 <Route path="/LP/:id" component={VinyleDetails} />
                 <Route path="/EP/:id" component={VinyleDetails} />
                 <Route path="/CD/:id" component={VinyleDetails} />
+                <Route path="/Divers/fanzine" component={fanzineList} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/crew" component={Crew} />
                 <Route exact path="/contact" component={ContactUs} />
@@ -36,7 +37,6 @@ function Router() {
                 <Route path="/EP" component={EpList} />
                 <Route path="/Production" component={""} />
                 <Route path="/Divers" component={divers} />
-                <Route path="/Divers/fanzine" component={fanzineList} />
                 <Route path="/Divers/IPEH" component={""} />
             </Switch>
         </BrowserRouter>
