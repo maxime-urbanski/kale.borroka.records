@@ -8,7 +8,7 @@ import EpList from "./EpList";
 import cd from "./CD";
 import divers from "./Divers";
 import VinyleDetails from "./VinyleDetails";
-
+import fanzineList from "./fanzineList";
 import "./menu.css";
 import HowBuy from "./HowBuy";
 import ContactUs from "./ContactUs";
@@ -18,9 +18,8 @@ import cdList from "./cdList";
 function Router() {
     return (
         <BrowserRouter>
-            <MenuNav />            
-            <div className="mt-5 ban">              
-            </div>
+            <MenuNav />
+            <div className="mt-5 ban"></div>
             <Switch>
                 <Route path="/CD:page" component={cdList} />
                 <Route path="/LP:page" component={LP} />
@@ -37,7 +36,7 @@ function Router() {
                 <Route path="/EP" component={EpList} />
                 <Route path="/Production" component={""} />
                 <Route path="/Divers" component={divers} />
-                <Route path="/Divers/fanzine" component={""} />
+                <Route path="/Divers/fanzine" component={fanzineList} />
                 <Route path="/Divers/IPEH" component={""} />
             </Switch>
         </BrowserRouter>

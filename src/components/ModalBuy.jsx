@@ -29,7 +29,9 @@ const ModalBuy = (props) => {
                         <Row>
                             <Col className="col-md-4 ">
                                 <img src={image} alt={id} width="150px" />
-                                <h4 className="mt-4">Prix: {price}</h4>
+                                <h4 className="badge badge-success text-wrap test pt-auto pb-auto bagdePrice mt-4 ml-2">
+                                    Prix: {price}
+                                </h4>
                             </Col>
                             <Col className="col-md-8">
                                 <Row>
@@ -40,14 +42,22 @@ const ModalBuy = (props) => {
                                 <Row>
                                     <p className="text-justify">
                                         Pour commander, rien de plus simple,
-                                        contact nous via la page <Link to="/Contact">Contact</Link>,<br/>
-                                        via la page <a href="https://www.facebook.com/kale.borroka.records/" target="blanck">facebook</a> ou envoie un mail à <br/> 
+                                        contact nous via la page{" "}
+                                        <Link to="/Contact">Contact</Link>,
+                                        <br />
+                                        via{" "}
+                                        <a
+                                            href="https://www.facebook.com/kale.borroka.records/"
+                                            target="blanck"
+                                        >
+                                            facebook
+                                        </a>{" "}
+                                        ou envoie un mail à <br />
                                         "kale.borroka.records@protonmail.com".
-                                        avec les disques et/ou autres objects que
-                                        tu désires. <br />
-                                        Nous te recontacterons au
-                                        plus vite avec le total de ta
-                                        commande avec les frais de ports !{" "}
+                                        avec les articles que tu désires. <br />
+                                        Nous te recontactons au plus vite avec
+                                        le total de ta commande, frais de ports
+                                        compris !{" "}
                                     </p>
                                 </Row>
                             </Col>

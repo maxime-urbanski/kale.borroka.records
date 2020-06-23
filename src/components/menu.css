@@ -45,6 +45,16 @@
     text-align: center;
 }
 
+.label {
+    display: flex;
+    flex-wrap: wrap;
+    width: 8rem;
+    height: 2.5rem;
+    font-size: medium;
+    align-items: center;
+    margin: auto;
+}
+
 .footer {
     height: 210px;
 }
