@@ -1,32 +1,81 @@
 import React from "react";
 import { Container, Col, Row } from "reactstrap";
 import Footer from "./Footer";
+import disque from "./img/disque.png";
+import send from "./img/send.png";
+import listen from "./img/listen.png";
+import { Link } from "react-router-dom";
+import "./howbuy.css";
 
 function HowBuy() {
     return (
         <div>
             <Container>
-                <Col>
-                    <Row>
-                        <h2 className="mt-5 mb-5 mx-auto">
-                            Comment passer commande ?
-                        </h2>
-                    </Row>
-                    <Row>
-                        <p className="text-justify mb-5">
-                            {" "}
-                            Pour passer commande, il suffit d'envoyer un mail a
-                            kale.borroka.records@protonmail.com en indiquant les
-                            articles voulus. Une fois la commande reçue, nous
-                            vous recontactons pour vous confirmez la
-                            disponibilitée des articles, et le totale de la
-                            commande, frais de port compris. Les commandes sont
-                            traitées rapidement, et envoyer avec Chronopost.
-                            Pour le paiement, nous acceptons Paypals et les
-                            virements bancaires.
-                        </p>
-                    </Row>
-                </Col>
+                <Row>
+                    <h2 className="mt-5 mb-5 mx-auto">
+                        Comment passer commande ?
+                    </h2>
+                </Row>
+                <Row>
+                    <Col>
+                        <Row>
+                            <img src={disque} alt="ok" className="mx-auto" />
+                        </Row>
+                        <Row>
+                            <h3 className="mx-auto mt-3">
+                                Je choisis mes articles
+                            </h3>
+                        </Row>
+                    </Col>
+                    <Col>
+                        <Row>
+                            <img src={send} alt="ok" className="mx-auto" />
+                        </Row>
+                        <Row className="mx-auto">
+                            <h3 className="mx-auto mt-3">
+                                J'envoi ma liste par mail / via{" "}
+                                <Link to="/contact">Contact</Link>{" "}
+                            </h3>
+                        </Row>
+                    </Col>
+                    <Col>
+                        <Row>
+                            <img src={listen} alt="ok" className="mx-auto" />
+                        </Row>
+                        <Row className="mx-auto">
+                            <h3 className="mx-auto mt-3">
+                                Je fais profiter tout le voisinage{" "}
+                            </h3>
+                        </Row>
+                    </Col>
+                </Row>
+                <hr className="hrBuy mt-5 " />
+                <Row>
+                    <h5 className="text-justify mt-5 mb-5">
+                        {" "}
+                        Pour passer commande, il suffit d'envoyer un mail à
+                        kale.borroka.records@protonmail.com, ou en passant par{" "}
+                        <Link to="/contact">Contact Nous</Link>, en indiquant
+                        les articles voulus. <br />
+                        Si tu as des articles en "Prix Libre", n'oublie pas de
+                        nous donner le montant que tu désires mettre pour
+                        l'objet en question. <br />
+                        Une fois la commande reçue, nous te recontactons pour te
+                        confirmer la disponibilitée des articles, et le totale
+                        de la commande, frais de port compris.
+                        <br /> Les commandes sont traitées rapidement, et
+                        envoyer avec Chronopost (où transporteur de ton choix),
+                        avec la possibilité de remise en main propre. <br />{" "}
+                        Pour le paiement, nous acceptons Paypals et les
+                        virements bancaires.
+                    </h5>
+                </Row>
+                <Row>
+                    <p className="text-right font-italic">
+                        {" "}
+                        L'équipe de Kale Borrorka Records{" "}
+                    </p>
+                </Row>
             </Container>
             <Footer />
         </div>

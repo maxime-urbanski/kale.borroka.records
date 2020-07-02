@@ -54,14 +54,14 @@ class fanzineList extends React.Component {
                                 );
                             })}
                         </Row>
-                        <Row>
+                        {/* <Row>
                             <PaginationDistro
                                 cardsPerPage={cardsPerPage}
                                 totalCards={fanzineList}
                                 paginate={paginate}
                                 format={format}
                             />
-                        </Row>
+                        </Row> */}
                     </Col>
                 </Container>
                 <Footer />
