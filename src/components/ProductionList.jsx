@@ -50,7 +50,7 @@ class ProductionList extends React.Component {
                                 KALE BORROKA RECORDS
                             </h1>
                             <Row className="position">
-                                <Table className="table table-striped table-dark mt-5">
+                                <Table className="table table-striped table-dark mt-5 mb-5">
                                     <thead>
                                         <tr>
                                             <th>#</th>

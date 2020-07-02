@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Col, Row } from "reactstrap";
+import { Container, Col, Row, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import Footer from "./Footer";
 import disque from "./img/disque.png";
 import send from "./img/send.png";
@@ -11,6 +11,14 @@ function HowBuy() {
     return (
         <div>
             <Container>
+                <Breadcrumb listTag="div">
+                    <BreadcrumbItem tag={Link} to={"/"}>
+                        KALE BORROKA RECORDS
+                    </BreadcrumbItem>
+                    <BreadcrumbItem tactive tag="span">
+                        COMMENT COMMANDER
+                    </BreadcrumbItem>
+                </Breadcrumb>
                 <Row>
                     <h2 className="mt-5 mb-5 mx-auto">
                         Comment passer commande ?
