@@ -253,6 +253,6 @@ const LParticle = [
     },
 ];
 
-LParticle.sort(compare)
+LParticle.sort(compare);
 
 export default LParticle;

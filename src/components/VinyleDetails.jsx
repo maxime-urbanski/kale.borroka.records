@@ -82,8 +82,12 @@ class VinyleDetails extends React.Component {
                     <Row className="mt-5">
                         <Col className="col-md-6">
                             <Row>
-                                {styles && styles[0]} {styles && styles[1]}{" "}
-                                {styles && styles[2] ? styles && styles[2] : ""}
+                                <h3>
+                                    {styles && styles[0]} {styles && styles[1]}{" "}
+                                    {styles && styles[2]
+                                        ? styles && styles[2]
+                                        : ""}
+                                </h3>
                             </Row>
                             <Row>
                                 <h4 className="font-italic">{year}</h4>

@@ -9,7 +9,6 @@ import CardArticle from "./CardArticle";
 import PaginationDistro from "./pagination";
 import Footer from "./Footer";
 
-
 class LpList extends React.Component {
     constructor(props) {
         super(props);
@@ -18,15 +17,17 @@ class LpList extends React.Component {
             cardsPerPage: "9",
         };
     }
-    render() {  
+    render() {
         const { currentPage, cardsPerPage } = this.state;
         const indexLastCards = currentPage * cardsPerPage;
         const indexFirstCards = indexLastCards - cardsPerPage;
         const currentCards = article.slice(indexFirstCards, indexLastCards);
 
         const paginate = (pageNum) => this.setState({ currentPage: pageNum });
-        const pageNext = () => this.setState({ currentCards: "currentPage + 1" });
-        const pagePrev = () => this.setState({ currentCards: "currentPage - 1" });
+        const pageNext = () =>
+            this.setState({ currentCards: "currentPage + 1" });
+        const pagePrev = () =>
+            this.setState({ currentCards: "currentPage - 1" });
         const format = "LP";
 
         return (

@@ -1,23 +1,23 @@
-import modern from './img/cd/11030823.jpg';
-import suburb from './img/cd/2870756.jpg';
-import kabal from './img/cd/4903172.jpg';
-import air from './img/cd/cd.jpg'
-import debout from './img/cd/1190014.jpg';
-import block from './img/cd/5257966.jpg';
-import humanity from './img/cd/1620891.jpg';
-import gilbert from './img/cd/2956512.jpg';
-import tulamort from './img/cd/15068582.jpg';
-import molest from './img/cd/3191336.jpg';
-import yuka from './img/cd/3302833.jpg';
-import hvb from './img/cd/3765006.jpg';
-import cartouche from './img/cd/6209348.jpg';
-import binouze from './img/cd/4903181.jpg';
-import resaka from './img/cd/6972435.jpg';
-import casa2 from './img/cd/4058353.jpg';
-import casa3 from './img/cd/5279758.jpg';
-import casa4 from './img/cd/7128563.jpg';
-import compare from './Compare';
-
+import modern from "./img/cd/11030823.jpg";
+import suburb from "./img/cd/2870756.jpg";
+import kabal from "./img/cd/4903172.jpg";
+import air from "./img/cd/cd.jpg";
+import debout from "./img/cd/1190014.jpg";
+import block from "./img/cd/5257966.jpg";
+import humanity from "./img/cd/1620891.jpg";
+import gilbert from "./img/cd/2956512.jpg";
+import tulamort from "./img/cd/15068582.jpg";
+import molest from "./img/cd/3191336.jpg";
+import yuka from "./img/cd/3302833.jpg";
+import hvb from "./img/cd/3765006.jpg";
+import cartouche from "./img/cd/6209348.jpg";
+import binouze from "./img/cd/4903181.jpg";
+import resaka from "./img/cd/6972435.jpg";
+import casa2 from "./img/cd/4058353.jpg";
+import casa3 from "./img/cd/5279758.jpg";
+import casa4 from "./img/cd/7128563.jpg";
+import union from "./img/cd/union.jpg";
+import compare from "./Compare";
 
 const cd = [
     {
@@ -182,7 +182,16 @@ const cd = [
         format: "CD",
         quantity: "2",
     },
-]
+    {
+        id: 7128563,
+        artiste: "Union Thugs",
+        name: "Folklore Ouvrier",
+        image: `${union}`,
+        price: "8€",
+        format: "CD",
+        quantity: "45",
+    },
+];
 
 cd.sort(compare);
 export default cd;

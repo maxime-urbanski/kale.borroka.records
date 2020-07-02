@@ -14,6 +14,7 @@ import HowBuy from "./HowBuy";
 import ContactUs from "./ContactUs";
 import Crew from "./Crew";
 import cdList from "./cdList";
+import ProductionList from "./ProductionList";
 
 function Router() {
     return (
@@ -28,6 +29,7 @@ function Router() {
                 <Route path="/EP/:id" component={VinyleDetails} />
                 <Route path="/CD/:id" component={VinyleDetails} />
                 <Route path="/Divers/fanzine" component={fanzineList} />
+                <Route path="/Production" component={ProductionList} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/crew" component={Crew} />
                 <Route exact path="/contact" component={ContactUs} />
@@ -35,7 +37,6 @@ function Router() {
                 <Route path="/LP" component={LP} />
                 <Route path="/CD" component={cdList} />
                 <Route path="/EP" component={EpList} />
-                <Route path="/Production" component={""} />
                 <Route path="/Divers" component={divers} />
                 <Route path="/Divers/IPEH" component={""} />
             </Switch>
