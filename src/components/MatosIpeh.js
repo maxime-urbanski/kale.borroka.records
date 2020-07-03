@@ -1,6 +1,8 @@
+import skin2 from "./"
+
 const matosIpeh = [
     {
-        id: ,
+        id:"" ,
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
@@ -9,7 +11,7 @@ const matosIpeh = [
         quantity: "1",
     },
     {
-        id: ,
+        id:"" ,
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
@@ -18,7 +20,7 @@ const matosIpeh = [
         quantity: "1",
     },
     {
-        id:,
+        id:"",
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
@@ -27,7 +29,7 @@ const matosIpeh = [
         quantity: "1",
     },
     {
-        id: ,
+        id:"" ,
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
@@ -36,7 +38,7 @@ const matosIpeh = [
         quantity: "1",
     },
     {
-        id: ,
+        id:"",
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
@@ -45,7 +47,7 @@ const matosIpeh = [
         quantity: "1",
     },
     {
-        id: ,
+        id:"" ,
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
@@ -54,7 +56,7 @@ const matosIpeh = [
         quantity: "1",
     },
     {
-        id: ,
+        id:"" ,
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
@@ -63,7 +65,7 @@ const matosIpeh = [
         quantity: "1",
     },
     {
-        id: ,
+        id:"" ,
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
@@ -72,7 +74,7 @@ const matosIpeh = [
         quantity: "1",
     },
     {
-        id: ,
+        id: "",
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
@@ -81,7 +83,7 @@ const matosIpeh = [
         quantity: "1",
     },
     {
-        id: ,
+        id:"",
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skin2}`,
