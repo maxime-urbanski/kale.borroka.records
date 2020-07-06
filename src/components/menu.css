@@ -1,87 +1,104 @@
 .coverPicture {
-    margin: 0px, 10px, 50px, 10px;
-    transform: scale(1) !important;
+  margin: 0px, 10px, 50px, 10px;
+  transform: scale(1) !important;
 }
 
 .coverPicture :hover {
-    transform: scale(1.3) !important;
+  transform: scale(1.3) !important;
 }
 
-.ban {
-    background-color: white;
-    background-image: url("./img/ban.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 300px;
-}
-
-.container-fluid {
-    padding: 0;
-}
-
-.cardSize {
-    width: 250px;
-    height: auto;
-}
-.photoProd {
-    width: 20%;
-    height: auto;
-}
-.position {
-    justify-content: center;
-    border: bold;
-}
-
-.overCard {
-    transform: scale(1);
-}
-.overCard :hover {
-    transform: scale(1.3);
-}
-
-.test {
-    width: 8rem;
-    height: 2.5rem;
-    padding-top: 12px;
-    margin: 0 20 0 0px;
-    font-size: large;
-    text-align: center;
-}
-
-.label {
-    display: flex;
-    flex-wrap: wrap;
-    width: 8rem;
-    height: 2.5rem;
-    font-size: medium;
-    align-items: center;
-    margin: auto;
+.logoFooter {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 50%;
 }
 
 .footer {
-    height: 210px;
+  display: flex;
+}
+.ban {
+  background-color: white;
+  background-image: url("./img/ban.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.cardSize {
+  width: 250px;
+  height: auto;
+}
+.photoProd {
+  width: 20%;
+  height: auto;
+}
+.position {
+  justify-content: center;
+  border: bold;
+}
+
+.overCard {
+  transform: scale(1);
+}
+.overCard :hover {
+  transform: scale(1.3);
+}
+
+.test {
+  width: 8rem;
+  height: 2.5rem;
+  padding-top: 12px;
+  margin: 0 20 0 0px;
+  font-size: large;
+  text-align: center;
+}
+
+.label {
+  display: flex;
+  flex-wrap: wrap;
+  width: 8rem;
+  height: 2.5rem;
+  font-size: medium;
+  align-items: center;
+  margin: auto;
+}
+
+.footer {
+  height: 220px;
+}
+.end {
+  background-color: black;
+  color: blanchedalmond;
+  font-size: large;
+  height: 35px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .hvr-grow {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 }
 .hvr-grow:hover,
 .hvr-grow:focus,
 .hvr-grow:active {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .breadcrumb {
-    background-color: transparent;
-    border: none;
-    font-size: 1.2em;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2em;
 }

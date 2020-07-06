@@ -3,7 +3,7 @@ import { Container, Col, Row, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import Footer from "./Footer";
 import disque from "./img/disque.png";
 import send from "./img/send.png";
-import listen from "./img/listen.png";
+import search from "./img/search.png";
 import { Link } from "react-router-dom";
 import "./howbuy.css";
 
@@ -27,7 +27,7 @@ function HowBuy() {
                 <Row>
                     <Col>
                         <Row>
-                            <img src={disque} alt="ok" className="mx-auto" />
+                            <img src={search} alt="ok" className="mx-auto" />
                         </Row>
                         <Row>
                             <h3 className="mx-auto mt-3">
@@ -48,7 +48,7 @@ function HowBuy() {
                     </Col>
                     <Col>
                         <Row>
-                            <img src={listen} alt="ok" className="mx-auto" />
+                            <img src={disque} alt="ok" className="mx-auto" />
                         </Row>
                         <Row className="mx-auto">
                             <h3 className="mx-auto mt-3">
