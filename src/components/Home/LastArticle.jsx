@@ -1,23 +1,20 @@
 import React from "react";
-
-import "../menu.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import lp from "../PageShop/marchandise/Lp";
-
+import { Row } from "reactstrap";
 import Slider from "react-slick";
 
-class SlickCover extends React.Component {
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import lastItem from "../PageShop/marchandise/lastItems";
+import CardArticle from "../PageShop/CardArticle";
+
+class LastArticle extends React.Component {
   render() {
     const settings = {
       dots: false,
       infinite: true,
-      slidesToShow: 9,
-      slidesToScroll: 2,
-      autoplay: true,
-      speed: 10000,
-      autoplaySpeed: 15000,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
       cssEase: "linear",
       responsive: [
         {
@@ -47,22 +44,23 @@ class SlickCover extends React.Component {
       ],
     };
     return (
-      <div className="container-fluid">
+      <>
+        <Row>
+          <h3 className="mx-auto">Dernier Arrivé !</h3>
+        </Row>
+
         <Slider {...settings}>
-          {lp.map((item) => {
+          {lastItem.map((item) => {
             return (
-              <img
-                src={item.image}
-                alt={item.name}
-                key={item.id}
-                className="coverPicture mr-2 ml-2"
-              />
+              <div className="mt-2 mb-5">
+                <CardArticle {...item} />
+              </div>
             );
           })}
         </Slider>
-      </div>
+      </>
     );
   }
 }
 
-export default SlickCover;
+export default LastArticle;

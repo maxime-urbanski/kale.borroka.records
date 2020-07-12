@@ -3,20 +3,24 @@ import { Container } from "reactstrap";
 
 import Footer from "../Footer/Footer";
 import MiniArticle from "./MiniatureArticle ";
-import Cover from "./SlickCover";
+
 import How from "./How";
+import Dispo from "./Dispo";
+
+import LastArticle from "./LastArticle";
 
 function Home() {
-    return (
-        <div>
-            <Container>
-                <MiniArticle />
-            </Container>
-            <Cover />
-            <How />
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      <Container fluid>
+        <LastArticle />
+        <How />
+      </Container>
+      <div className="Parrallax"></div>
+      <Dispo />
+      <Footer />
+    </div>
+  );
 }
 
 export default Home;
