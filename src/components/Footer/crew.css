@@ -1,0 +1,12 @@
+.Parrallax {
+    background-image: url("../Img/icon.jpg");
+    background-size: 10%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+h1 {
+    font-size: 5em;
+}

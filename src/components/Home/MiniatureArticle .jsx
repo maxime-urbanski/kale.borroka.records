@@ -1,21 +1,20 @@
-import React from 'react';
-import { Container, Jumbotron} from 'reactstrap';
-import tof from './img/art1.jpg'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Container, Jumbotron } from "reactstrap";
+import tof from "../Img/art1.jpg";
+import { Link } from "react-router-dom";
 
-
-function MiniArticle () {
+function MiniArticle() {
     return (
         <Container>
             <Jumbotron className="mt-5 mb-5 border border-secondary bg-white">
-                <div className="media">                
-                    <img src={tof} alt="test" width="200px"/>
-                        <div className="media-body mx-auto">
-                            <h2>Nouveaux Arrivages</h2>
-                            <p className="text-justify-center">
+                <div className="media">
+                    <img src={tof} alt="test" width="200px" />
+                    <div className="media-body mx-auto">
+                        <h2>Nouveaux Arrivages</h2>
+                        <p className="text-justify-center">
                             {" "}
-                            On a la dernière pépite
-                            de Knock Out. Les trois version sont dispo au shop: 
+                            On a la dernière pépite de Knock Out. Les trois
+                            version sont dispo au shop:
                             <br />
                             -Version faite à la{" "}
                             <Link to="/EP/15431270">
@@ -23,8 +22,8 @@ function MiniArticle () {
                             </Link>
                             ( limitée à 100 exemplaires, vendue avec son pin's).
                             <br /> - Version disque Or et pochette{" "}
-                            <Link to="/EP/15432976"> blanche </Link>( limitée à 218
-                            exemplaires).
+                            <Link to="/EP/15432976"> blanche </Link>( limitée à
+                            218 exemplaires).
                             <br />- Version disque Or et pochette{" "}
                             <Link to="/EP/15018551">noire</Link> ( limitée à 218
                             exemplaires). <br />
@@ -33,14 +32,14 @@ function MiniArticle () {
                                 VA - Oi! in Head, Punk in Heart.{" "}
                             </Link>{" "}
                             <br />
-                            Un bien grand merci à CROM RECORDS pour la collaboration
-                            !
+                            Un bien grand merci à CROM RECORDS pour la
+                            collaboration !
                         </p>
-                        </div>
+                    </div>
                 </div>
-                </Jumbotron>
+            </Jumbotron>
         </Container>
-    )
+    );
 }
 
 export default MiniArticle;

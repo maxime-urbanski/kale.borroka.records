@@ -1,6 +1,6 @@
-import bra8 from "./img/fanzine/bra8.jpg";
-import bra9 from "./img/fanzine/bra9.jpg";
-import compare from "./Compare";
+import bra8 from "../../Img/fanzine/bra8.jpg";
+import bra9 from "../../Img/fanzine/bra9.jpg";
+import compare from "../../Function/Compare";
 
 const fanzine = [
     {

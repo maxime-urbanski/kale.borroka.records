@@ -1,6 +1,6 @@
 import React from "react";
-import article from "./Lp";
-import epArticle from "./EP";
+import article from "../PageShop/marchandise/Lp";
+import epArticle from "../PageShop/marchandise/EP";
 import { Link } from "react-router-dom";
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 

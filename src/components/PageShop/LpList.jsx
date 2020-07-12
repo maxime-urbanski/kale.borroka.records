@@ -3,14 +3,13 @@ import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import "./menu.css";
-
+import "../menu.css";
+import article from "./marchandise/Lp";
 import CardArticle from "./CardArticle";
-import PaginationDistro from "./pagination";
-import Footer from "./Footer";
-import cd from "./CD";
+import PaginationDistro from "../Function/pagination";
+import Footer from "../Footer/Footer";
 
-class cdList extends React.Component {
+class LpList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,49 +21,57 @@ class cdList extends React.Component {
         const { currentPage, cardsPerPage } = this.state;
         const indexLastCards = currentPage * cardsPerPage;
         const indexFirstCards = indexLastCards - cardsPerPage;
-        const currentCards = cd.slice(indexFirstCards, indexLastCards);
+        const currentCards = article.slice(indexFirstCards, indexLastCards);
 
         const paginate = (pageNum) => this.setState({ currentPage: pageNum });
-        const format = "CD";
+        const pageNext = () =>
+            this.setState({ currentCards: "currentPage + 1" });
+        const pagePrev = () =>
+            this.setState({ currentCards: "currentPage - 1" });
+        const format = "LP";
 
         return (
             <div>
                 <Container>
-                    <Breadcrumb listTag="div">
+                    <Breadcrumb listTag="div" className="breadcrumb">
                         <BreadcrumbItem tag={Link} to={"/"}>
                             KALE BORROKA RECORDS
                         </BreadcrumbItem>
-                        <BreadcrumbItem tactive tag="span">
-                            CD
+                        <BreadcrumbItem active tag="span">
+                            LP &amp; 10"
                         </BreadcrumbItem>
                     </Breadcrumb>
                     <Col>
                         <Row className="position">
-                            <h1 className="mt-3 position">Tous nos CD</h1>
-                        </Row>
-                        <Row className="position">
-                            {currentCards.map((item) => {
-                                return item.quantity > 0 ? (
-                                    <CardArticle {...item} key={item.id} />
-                                ) : (
-                                    ""
-                                );
-                            })}
+                            <h1 className="mt-3 position">Tous nos LP & 10"</h1>
+                            <Row className="position">
+                                {currentCards.map((item) => {
+                                    return item.quantity > 0 ? (
+                                        <CardArticle {...item} />
+                                    ) : (
+                                        ""
+                                    );
+                                })}
+                            </Row>
                         </Row>
                         <Row>
                             <PaginationDistro
                                 cardsPerPage={cardsPerPage}
-                                totalCards={cd}
+                                totalCards={article}
                                 paginate={paginate}
+                                pageNext={pageNext}
+                                pagePrev={pagePrev}
+                                currentPage={currentPage}
                                 format={format}
                             />
                         </Row>
                     </Col>
                 </Container>
+
                 <Footer />
             </div>
         );
     }
 }
 
-export default cdList;
+export default LpList;

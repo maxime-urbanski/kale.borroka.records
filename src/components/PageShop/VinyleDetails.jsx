@@ -10,9 +10,9 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import allArticles from "./disque";
+import allArticles from "./marchandise/disque";
 import ModalBuy from "./ModalBuy";
-import Footer from "./Footer";
+import Footer from "../Footer/Footer";
 
 class VinyleDetails extends React.Component {
     constructor(props) {

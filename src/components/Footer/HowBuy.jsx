@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Col, Row, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import Footer from "./Footer";
-import disque from "./img/disque.png";
-import send from "./img/send.png";
-import search from "./img/search.png";
+import disque from "../Img/disque.png";
+import send from "../Img/send.png";
+import search from "../Img/search.png";
 import { Link } from "react-router-dom";
 import "./howbuy.css";
 

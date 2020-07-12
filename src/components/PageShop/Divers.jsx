@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 
-import fanzine from "./img/fanzine_4.png";
-import ipeh from "./img/ipeh.jpg";
+import fanzine from "../Img/fanzine_4.png";
+import ipeh from "../Img/ipeh.jpg";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import Footer from "../Footer/Footer";
 
 function divers() {
     return (

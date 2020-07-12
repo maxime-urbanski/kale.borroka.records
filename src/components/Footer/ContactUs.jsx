@@ -12,7 +12,7 @@ import {
     BreadcrumbItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import Footer from "../Footer/Footer";
 
 const encode = (data) => {
     return Object.keys(data)
@@ -121,7 +121,6 @@ class ContactUs extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-
                 <Footer />
             </>
         );

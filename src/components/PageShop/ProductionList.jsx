@@ -8,10 +8,10 @@ import {
     Table,
 } from "reactstrap";
 //import PaginationDistro from "./pagination";
-import production from "./production";
-import Footer from "./Footer";
+import production from "../PageShop/marchandise/production";
+import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
-import "./menu.css";
+import "../menu.css";
 
 class ProductionList extends React.Component {
     constructor(props) {

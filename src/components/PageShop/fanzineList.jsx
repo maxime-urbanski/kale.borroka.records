@@ -3,12 +3,12 @@ import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import "./menu.css";
+import "../menu.css";
 
 import CardArticle from "./CardArticle";
-import PaginationDistro from "./pagination";
-import Footer from "./Footer";
-import fanzine from "./Fanzine";
+import PaginationDistro from "../Function/pagination";
+import Footer from "../Footer/Footer";
+import fanzine from "./marchandise/Fanzine";
 
 class fanzineList extends React.Component {
     constructor(props) {

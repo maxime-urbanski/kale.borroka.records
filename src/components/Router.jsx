@@ -2,19 +2,19 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import MenuNav from "./NavBar";
 
-import Home from "./home";
-import LP from "./LpList";
-import EpList from "./EpList";
+import Home from "./Home/home";
+import LP from "./PageShop/LpList";
+import EpList from "./PageShop/EpList";
 
-import divers from "./Divers";
-import VinyleDetails from "./VinyleDetails";
-import fanzineList from "./fanzineList";
+import divers from "./PageShop/Divers";
+import VinyleDetails from "./PageShop/VinyleDetails";
+import fanzineList from "./PageShop/fanzineList";
 import "./menu.css";
-import HowBuy from "./HowBuy";
-import ContactUs from "./ContactUs";
-import Crew from "./Crew";
-import cdList from "./cdList";
-import ProductionList from "./ProductionList";
+import HowBuy from "./Footer/HowBuy";
+import ContactUs from "./Footer/ContactUs";
+import Crew from "./Footer/Crew";
+import cdList from "./PageShop/cdList";
+import ProductionList from "./PageShop/ProductionList";
 
 function Router() {
     return (

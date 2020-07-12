@@ -9,22 +9,22 @@ import {
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem,    
+    DropdownItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
 import "./menu.css";
 
 const menu = [
-    { name: "Actu", link: "/" },    
+    { name: "Actu", link: "/" },
     { name: "Production", link: "/Production" },
     { name: "Divers", link: "/Divers" },
 ];
 const shop = [
-    {name:"LP", link:"/LP" },
-    {name:"EP", link:"/EP"},
-    {name:"CD", link:"/CD" }
-]
+    { name: "LP", link: "/LP" },
+    { name: "EP", link: "/EP" },
+    { name: "CD", link: "/CD" },
+];
 function MenuNav() {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
@@ -33,7 +33,7 @@ function MenuNav() {
             <Navbar
                 secondary
                 expand="md"
-                className="md-auto fixed-top style nav-pills shadow p-3 mb-5 bg-primary"
+                className="md-auto fixed-top style  shadow p-3 mb-5 bg-primary"
                 width="100vw"
             >
                 <NavbarToggler onClick={toggle} />
@@ -42,32 +42,40 @@ function MenuNav() {
                         {menu.map((item) => {
                             return (
                                 <>
-                                <NavItem
-                                    className="nav-justified text-white"
-                                    key={item.name}
+                                    <NavItem
+                                        className="nav-justified text-white hvr-grow"
+                                        key={item.name}
                                     >
-                                    <NavLink tag={Link} to={item.link}>
-                                        {item.name}
-                                    </NavLink>
-                                </NavItem>
-                              </>
+                                        <NavLink
+                                            tag={Link}
+                                            to={item.link}
+                                            className="text-white"
+                                        >
+                                            {item.name}
+                                        </NavLink>
+                                    </NavItem>
+                                </>
                             );
                         })}
-                        <UncontrolledDropdown nav inNavbar>
+                        <UncontrolledDropdown nav inNavbar className="hvr-grow">
                             <DropdownToggle nav caret>
-                               Music Shop
+                                Music Shop
                             </DropdownToggle>
                             <DropdownMenu left>
-                            {shop.map(i => {
-                                return (
-                                    <DropdownItem>
-                                        <Link to={i.link}><h6>{i.name}</h6></Link>
-                                    </DropdownItem>                                  
-                                )
-                            })}
+                                {shop.map((i) => {
+                                    return (
+                                        <DropdownItem>
+                                            <Link to={i.link}>
+                                                <h6 className="hvr-grow">
+                                                    {i.name}
+                                                </h6>
+                                            </Link>
+                                        </DropdownItem>
+                                    );
+                                })}
                             </DropdownMenu>
                         </UncontrolledDropdown>
-                    </Nav>                    
+                    </Nav>
                 </Collapse>
             </Navbar>
         </div>
