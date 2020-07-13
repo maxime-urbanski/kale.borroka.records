@@ -1,13 +1,12 @@
 import React from "react";
 
-import { Container, Row, Col, Toast, ToastHeader, ToastBody } from "reactstrap";
+import { Container, Row, Col, Toast, ToastBody } from "reactstrap";
 
 import LParticle from "../PageShop/marchandise/Lp";
 import { Link } from "react-router-dom";
 import epArticle from "../PageShop/marchandise/EP";
 
 import cd from "../PageShop/marchandise/CD";
-import LpList from "../PageShop/LpList";
 
 function Dispo() {
   return (

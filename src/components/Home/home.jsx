@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "reactstrap";
 
 import Footer from "../Footer/Footer";
-import MiniArticle from "./MiniatureArticle ";
 
 import How from "./How";
 import Dispo from "./Dispo";

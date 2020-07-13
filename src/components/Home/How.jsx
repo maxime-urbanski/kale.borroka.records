@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Col, Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import { Link } from "react-router-dom";
 import disque from "../Img/disque.png";
 import send from "../Img/send.png";
