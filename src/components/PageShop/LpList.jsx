@@ -3,7 +3,8 @@ import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import "../menu.css";
+import styles from "./pageShop.module.css";
+
 import article from "./marchandise/Lp";
 import CardArticle from "./CardArticle";
 import PaginationDistro from "../Function/pagination";
@@ -32,7 +33,7 @@ class LpList extends React.Component {
 
         return (
             <div>
-                <Container fluid>
+                <Container>
                     <Breadcrumb listTag="div" className="breadcrumb">
                         <BreadcrumbItem tag={Link} to={"/"}>
                             KALE BORROKA RECORDS
@@ -43,11 +44,13 @@ class LpList extends React.Component {
                     </Breadcrumb>
                     <Col>
                         <Row className="position">
-                            <h1 className="mt-3 position">Tous nos LP & 10"</h1>
+                            <h1 className={styles.title}>Tous nos LP & 10"</h1>
                             <Row className="position">
                                 {currentCards.map((item) => {
                                     return item.quantity > 0 ? (
-                                        <CardArticle {...item} />
+                                        <div className={styles.position}>
+                                            <CardArticle {...item} />
+                                        </div>
                                     ) : (
                                         ""
                                     );

@@ -1,0 +1,11 @@
+.position {
+    margin-right: 3em !important;
+    margin-left: 3em !important;
+}
+
+.title {
+    font-size: 3em;
+    font-style: italic;
+    margin: 1.5em 0 0.5em 0;
+    font-weight: bold;
+}
