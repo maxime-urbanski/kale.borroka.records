@@ -1,0 +1,22 @@
+.title {
+    font-size: 3em;
+    font-style: italic;
+    margin: 1.5em 0;
+    font-weight: bold;
+}
+
+.hrBuy {
+    width: 75%;
+    border-top: solid !important;
+    border-bottom: 5px;
+}
+.explain {
+    font-size: 1.4em;
+    margin-top: 30px;
+    text-align: justify;
+}
+
+.team {
+    font-style: italic;
+    font-size: 1.3em;
+}

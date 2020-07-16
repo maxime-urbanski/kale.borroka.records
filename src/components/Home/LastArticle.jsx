@@ -2,6 +2,8 @@ import React from "react";
 import { Row } from "reactstrap";
 import Slider from "react-slick";
 
+import styles from "./home.module.css";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import lastItem from "../PageShop/marchandise/lastItems";
@@ -13,8 +15,8 @@ class LastArticle extends React.Component {
             dots: false,
             infinite: true,
             speed: 500,
-            slidesToShow: 5,
-            slidesToScroll: 5,
+            slidesToShow: 4,
+            slidesToScroll: 4,
             cssEase: "linear",
             responsive: [
                 {
@@ -46,7 +48,9 @@ class LastArticle extends React.Component {
         return (
             <>
                 <Row>
-                    <h3 className="mx-auto">Dernier Arrivé !</h3>
+                    <h2 className={`${styles.title} mx-auto`}>
+                        Ca vient d'arriver dans le shop !
+                    </h2>
                 </Row>
 
                 <Slider {...settings}>

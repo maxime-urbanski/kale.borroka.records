@@ -19,6 +19,14 @@ class fanzineList extends React.Component {
         };
     }
     render() {
+        const { currentPage, cardsPerPage } = this.state;
+        const indexLastCards = currentPage * cardsPerPage;
+        const indexFirstCards = indexLastCards - cardsPerPage;
+        const currentCards = fanzine.slice(indexFirstCards, indexLastCards);
+
+        // const paginate = (pageNum) => this.setState({ currentPage: pageNum });
+        // const format = "fanzine";
+
         return (
             <>
                 <Container>

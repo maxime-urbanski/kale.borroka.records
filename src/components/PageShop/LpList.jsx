@@ -32,7 +32,7 @@ class LpList extends React.Component {
 
         return (
             <div>
-                <Container>
+                <Container fluid>
                     <Breadcrumb listTag="div" className="breadcrumb">
                         <BreadcrumbItem tag={Link} to={"/"}>
                             KALE BORROKA RECORDS

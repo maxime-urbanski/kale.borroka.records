@@ -5,7 +5,8 @@ import disque from "../Img/disque.png";
 import send from "../Img/send.png";
 import search from "../Img/search.png";
 import { Link } from "react-router-dom";
-import "./howbuy.css";
+
+import styles from "./howbuy.module.css";
 
 function HowBuy() {
     return (
@@ -20,7 +21,7 @@ function HowBuy() {
                     </BreadcrumbItem>
                 </Breadcrumb>
                 <Row>
-                    <h2 className="mt-5 mb-5 mx-auto">
+                    <h2 className={`${styles.title} mx-auto`}>
                         Comment passer commande ?
                     </h2>
                 </Row>
@@ -41,7 +42,7 @@ function HowBuy() {
                         </Row>
                         <Row className="mx-auto">
                             <h3 className="mx-auto mt-3">
-                                J'envoi ma liste par mail / via{" "}
+                                J'envoie ma liste par mail / via{" "}
                                 <Link to="/contact">Contact</Link>{" "}
                             </h3>
                         </Row>
@@ -52,18 +53,17 @@ function HowBuy() {
                         </Row>
                         <Row className="mx-auto">
                             <h3 className="mx-auto mt-3">
-                                Je fais profiter tout le voisinage{" "}
+                                Je fais profiter tout le voisinage
                             </h3>
                         </Row>
                     </Col>
                 </Row>
-                <hr className="hrBuy mt-5 " />
+                <hr className={`${styles.hrBuy} mt-5`} />
                 <Row>
-                    <h5 className="text-justify mt-5 mb-5">
-                        {" "}
+                    <p className={styles.explain}>
                         Pour passer commande, il suffit d'envoyer un mail à
-                        kale.borroka.records@protonmail.com, ou en passant par{" "}
-                        <Link to="/contact">Contact Nous</Link>, en indiquant
+                        kale.borroka.records@protonmail.com, ou en passant par
+                        <Link to="/contact"> Contact Nous</Link>, en indiquant
                         les articles voulus. <br />
                         Si tu as des articles en "Prix Libre", n'oublie pas de
                         nous donner le montant que tu désires mettre pour
@@ -73,15 +73,14 @@ function HowBuy() {
                         de la commande, frais de port compris.
                         <br /> Les commandes sont traitées rapidement, et
                         envoyer avec Chronopost (où transporteur de ton choix),
-                        avec la possibilité de remise en main propre. <br />{" "}
+                        avec la possibilité de remise en main propre. <br />
                         Pour le paiement, nous acceptons Paypals et les
                         virements bancaires.
-                    </h5>
+                    </p>
                 </Row>
                 <Row>
-                    <p className="text-right font-italic">
-                        {" "}
-                        L'équipe de Kale Borrorka Records{" "}
+                    <p className={styles.team}>
+                        L'équipe de Kale Borrorka Records
                     </p>
                 </Row>
             </Container>
