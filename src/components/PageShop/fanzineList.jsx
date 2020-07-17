@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import "../menu.css";
+import styles from "./pageShop.module.css";
 
 import CardArticle from "./CardArticle";
 
@@ -30,25 +30,29 @@ class fanzineList extends React.Component {
         return (
             <>
                 <Container>
-                    <Breadcrumb listTag="div">
+                    <Breadcrumb className={styles.breadCrumb} listTag="div">
                         <BreadcrumbItem tag={Link} to={"/"}>
                             KALE BORROKA RECORDS
                         </BreadcrumbItem>
                         <BreadcrumbItem tag={Link} to={"/divers"}>
                             DIVERS
                         </BreadcrumbItem>
-                        <BreadcrumbItem tactive tag="span">
+                        <BreadcrumbItem active tag="span">
                             FANZINE
                         </BreadcrumbItem>
                     </Breadcrumb>
                     <Col>
-                        <Row className="position">
-                            <h1 className="mt-3 position">Tous nos Fanzines</h1>
+                        <Row>
+                            <h1 className={`${styles.position} mx-auto`}>
+                                Tous nos Fanzines
+                            </h1>
                         </Row>
-                        <Row className="position">
+                        <Row>
                             {currentCards.map((item) => {
                                 return item.quantity > 0 ? (
-                                    <CardArticle {...item} key={item.id} />
+                                    <div className={styles.position}>
+                                        <CardArticle {...item} key={item.id} />
+                                    </div>
                                 ) : (
                                     ""
                                 );

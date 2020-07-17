@@ -3,7 +3,8 @@ import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import "../menu.css";
+import styles from "./pageShop.module.css";
+
 import epArticle from "./marchandise/EP";
 import CardArticle from "./CardArticle";
 import PaginationDistro from "../Function/pagination";
@@ -24,27 +25,31 @@ class EpList extends React.Component {
         const currentCards = epArticle.slice(indexFirstCards, indexLastCards);
 
         const paginate = (pageNum) => this.setState({ currentPage: pageNum });
+        // const pageNext = () => this.setState({ currentCards: currentPage + 1 });
+        // const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
         const format = "EP";
 
         return (
             <div>
                 <Container>
-                    <Breadcrumb listTag="div">
+                    <Breadcrumb className={styles.breadCrumb} listTag="div">
                         <BreadcrumbItem tag={Link} to={"/"}>
                             KALE BORROKA RECORDS
                         </BreadcrumbItem>
-                        <BreadcrumbItem tactive tag="span">
+                        <BreadcrumbItem active tag="span">
                             EP
                         </BreadcrumbItem>
                     </Breadcrumb>
                     <Col>
-                        <Row className="position">
-                            <h1 className="mt-3 position">Tous nos EP</h1>
+                        <Row>
+                            <h1 className={styles.title}>Tous nos EP</h1>
                         </Row>
-                        <Row className="position">
+                        <Row>
                             {currentCards.map((item) => {
                                 return item.quantity > 0 ? (
-                                    <CardArticle {...item} key={item.id} />
+                                    <div className={styles.position}>
+                                        <CardArticle {...item} key={item.id} />
+                                    </div>
                                 ) : (
                                     ""
                                 );

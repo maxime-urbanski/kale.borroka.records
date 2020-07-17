@@ -1,3 +1,9 @@
+.breadCrumb {
+    background-color: transparent;
+    border: none;
+    font-size: 1.4em;
+}
+
 .position {
     margin-right: 3em !important;
     margin-left: 3em !important;
@@ -6,6 +12,8 @@
 .title {
     font-size: 3em;
     font-style: italic;
-    margin: 1.5em 0 0.5em 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
     font-weight: bold;
 }

@@ -15,6 +15,7 @@ function Home() {
         <div>
             <Container fluid>
                 <LastArticle />
+                <hr className={styles.hrBuy} />
                 <How />
             </Container>
             <div className={styles.Parrallax}></div>
