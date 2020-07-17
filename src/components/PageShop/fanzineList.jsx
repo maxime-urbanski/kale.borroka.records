@@ -11,6 +11,7 @@ import Footer from "../Footer/Footer";
 import fanzine from "./marchandise/Fanzine";
 
 class fanzineList extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -59,6 +60,9 @@ class fanzineList extends React.Component {
                             })}
                         </Row>
                         {/* <Row>
+
+            {/* <Row>
+
                             <PaginationDistro
                                 cardsPerPage={cardsPerPage}
                                 totalCards={fanzineList}
@@ -66,11 +70,11 @@ class fanzineList extends React.Component {
                                 format={format}
                             />
                         </Row> */}
-                    </Col>
-                </Container>
-                <Footer />
-            </>
-        );
-    }
+          </Col>
+        </Container>
+        <Footer />
+      </>
+    );
+  }
 }
 export default fanzineList;
