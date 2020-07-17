@@ -61,7 +61,7 @@ const disque = {
         artiste: "Knock Out",
         name: "Rock'n'roll Skinhead",
         image: `${skinw}`,
-        price: "7",
+        price: "7€",
         format: "EP",
         quantity: "1",
     },

@@ -67,7 +67,7 @@ class VinyleDetails extends React.Component {
                         >
                             {allArticles[id]?.format}
                         </BreadcrumbItem>
-                        <BreadcrumbItem tactive tag="span">
+                        <BreadcrumbItem active tag="span">
                             {`${artists_sort} - ${title}`}
                         </BreadcrumbItem>
                     </Breadcrumb>

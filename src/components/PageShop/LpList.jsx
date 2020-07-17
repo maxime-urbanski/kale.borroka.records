@@ -3,7 +3,8 @@ import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import "../menu.css";
+import styles from "./pageShop.module.css";
+
 import article from "./marchandise/Lp";
 import CardArticle from "./CardArticle";
 import PaginationDistro from "../Function/pagination";
@@ -24,16 +25,14 @@ class LpList extends React.Component {
         const currentCards = article.slice(indexFirstCards, indexLastCards);
 
         const paginate = (pageNum) => this.setState({ currentPage: pageNum });
-        const pageNext = () =>
-            this.setState({ currentCards: "currentPage + 1" });
-        const pagePrev = () =>
-            this.setState({ currentCards: "currentPage - 1" });
+        const pageNext = () => this.setState({ currentCards: currentPage + 1 });
+        const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
         const format = "LP";
 
         return (
             <div>
                 <Container>
-                    <Breadcrumb listTag="div" className="breadcrumb">
+                    <Breadcrumb className={styles.breadCrumb} listTag="div">
                         <BreadcrumbItem tag={Link} to={"/"}>
                             KALE BORROKA RECORDS
                         </BreadcrumbItem>
@@ -41,13 +40,18 @@ class LpList extends React.Component {
                             LP &amp; 10"
                         </BreadcrumbItem>
                     </Breadcrumb>
+
                     <Col>
-                        <Row className="position">
-                            <h1 className="mt-3 position">Tous nos LP & 10"</h1>
-                            <Row className="position">
+                        <Row>
+                            <h1 className={styles.title}>
+                                Tous nos LP &amp; 10"
+                            </h1>
+                            <Row className="md-auto">
                                 {currentCards.map((item) => {
                                     return item.quantity > 0 ? (
-                                        <CardArticle {...item} />
+                                        <div className={styles.position}>
+                                            <CardArticle {...item} />
+                                        </div>
                                     ) : (
                                         ""
                                     );

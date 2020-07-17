@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import "./menu.css";
+import styles from "./navbar.module.css";
 
 const menu = [
     { name: "Actu", link: "/" },
@@ -33,8 +33,7 @@ function MenuNav() {
             <Navbar
                 secondary
                 expand="md"
-                className="md-auto fixed-top style  shadow p-3 mb-5 bg-primary"
-                width="100vw"
+                className={`${styles.navHeight} fixed-top shadow p-3 bg-primary`}
             >
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
@@ -49,7 +48,7 @@ function MenuNav() {
                                         <NavLink
                                             tag={Link}
                                             to={item.link}
-                                            className="text-white"
+                                            className={`${styles.linkNav}`}
                                         >
                                             {item.name}
                                         </NavLink>
@@ -58,7 +57,11 @@ function MenuNav() {
                             );
                         })}
                         <UncontrolledDropdown nav inNavbar className="hvr-grow">
-                            <DropdownToggle nav caret>
+                            <DropdownToggle
+                                className={`${styles.linkNav}`}
+                                nav
+                                caret
+                            >
                                 Music Shop
                             </DropdownToggle>
                             <DropdownMenu left>
