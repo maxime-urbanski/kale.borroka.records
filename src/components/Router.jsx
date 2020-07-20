@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import MenuNav from "./NavBar";
+import MenuNav from "./NavBar/NavBar";
 
 import Home from "./Home/home";
 import LP from "./PageShop/LpList";
@@ -15,11 +15,18 @@ import ContactUs from "./Footer/ContactUs";
 import Crew from "./Footer/Crew";
 import cdList from "./PageShop/cdList";
 import ProductionList from "./PageShop/ProductionList";
+import { Row } from "reactstrap";
+import TopNav from "./NavBar/TopNav";
 
 function Router() {
     return (
         <BrowserRouter>
-            <MenuNav />
+            <Row>
+                <TopNav />
+            </Row>
+            <Row>
+                <MenuNav />
+            </Row>
             <div className="mt-5 ban"></div>
             <Switch>
                 <Route path="/CD:page" component={cdList} />

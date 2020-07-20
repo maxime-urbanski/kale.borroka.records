@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-import "bootswatch/dist/sandstone/bootstrap.min.css";
+import "bootswatch/dist/lux/bootstrap.min.css";
+
+import "./i18n";
 import App from "./App";
 
 ReactDOM.render(

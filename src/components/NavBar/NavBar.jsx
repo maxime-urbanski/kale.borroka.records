@@ -12,6 +12,7 @@ import {
     DropdownItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { withNamespaces } from "react-i18next";
 
 import styles from "./navbar.module.css";
 
@@ -31,9 +32,9 @@ function MenuNav() {
     return (
         <div>
             <Navbar
-                secondary
+                color="warning"
                 expand="md"
-                className={`${styles.navHeight} fixed-top shadow p-3 bg-primary`}
+                className={`${styles.navHeight} fixed-top bg-primary mb-5`}
             >
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
@@ -42,7 +43,7 @@ function MenuNav() {
                             return (
                                 <>
                                     <NavItem
-                                        className="nav-justified text-white hvr-grow"
+                                        className="nav-justified hvr-grow"
                                         key={item.name}
                                     >
                                         <NavLink
@@ -85,4 +86,4 @@ function MenuNav() {
     );
 }
 
-export default MenuNav;
+export default withNamespaces()(MenuNav);

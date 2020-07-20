@@ -1,22 +1,21 @@
 import React from "react";
 
 import { Container, Row, Col, Toast, ToastBody } from "reactstrap";
+import { Link } from "react-router-dom";
+import { withNamespaces } from "react-i18next";
 
 import styles from "./home.module.css";
 
 import LParticle from "../PageShop/marchandise/Lp";
-import { Link } from "react-router-dom";
 import epArticle from "../PageShop/marchandise/EP";
 
 import cd from "../PageShop/marchandise/CD";
 
-function Dispo() {
+function Dispo({ t }) {
     return (
         <Container fluid className="mt-2">
             <Row>
-                <h2 className={`${styles.title} mx-auto`}>
-                    Article toujours disponible
-                </h2>
+                <h2 className={`${styles.title} mx-auto`}>{t("dispo")}</h2>
             </Row>
             <Row>
                 <Col xs={4}>
@@ -49,7 +48,8 @@ function Dispo() {
                                                     styles.toastHomePrice
                                                 }
                                             >
-                                                Prix: {item.price}
+                                                {t("prix")}
+                                                {item.price}
                                             </p>
                                         </ToastBody>
                                     </Toast>
@@ -59,7 +59,7 @@ function Dispo() {
                                 className="text-decoration-none mx-auto"
                                 to="/LP"
                             >
-                                <p className={styles.more}> voir plus</p>
+                                <p className={styles.more}> {t("more")}</p>
                             </Link>
                         </div>
                     </Row>
@@ -98,7 +98,7 @@ function Dispo() {
                                                         styles.toastHomePrice
                                                     }
                                                 >
-                                                    Prix: {item.price}
+                                                    {t("prix")} {item.price}
                                                 </p>
                                             </ToastBody>
                                         </Toast>
@@ -110,7 +110,7 @@ function Dispo() {
                                 className="text-decoration-none mx-auto"
                                 to="/EP"
                             >
-                                <p className={styles.more}> voir plus</p>
+                                <p className={styles.more}>{t("more")}</p>
                             </Link>
                         </div>
                     </Row>
@@ -150,7 +150,11 @@ function Dispo() {
                                                         styles.toastHomePrice
                                                     }
                                                 >
-                                                    Prix: {item.price}
+                                                    {" "}
+                                                    {item.price === "Libre"
+                                                        ? `${t("libre")}`
+                                                        : `${t("prix")}
+                                                    ${item.price}`}
                                                 </p>
                                             </ToastBody>
                                         </Toast>
@@ -161,7 +165,7 @@ function Dispo() {
                                 className="text-decoration-none mx-auto"
                                 to="/CD"
                             >
-                                <p className={styles.more}> voir plus</p>
+                                <p className={styles.more}>{t("more")}</p>
                             </Link>
                         </div>
                     </Row>
@@ -171,4 +175,4 @@ function Dispo() {
     );
 }
 
-export default Dispo;
+export default withNamespaces()(Dispo);
