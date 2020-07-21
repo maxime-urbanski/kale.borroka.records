@@ -1,6 +1,7 @@
 import React from "react";
+import i18n from "../../i18n";
 
-import { Button } from "reactstrap";
+import styles from "./navbar.module.css";
 
 import eus from "../Img/flag/eus.png";
 import fr from "../Img/flag/fr.png";
@@ -9,14 +10,10 @@ import fb from "../Img/fb.png";
 import yt from "../Img/yt.png";
 import pt from "../Img/pt.png";
 
-import styles from "./navbar.module.css";
-import { useState } from "react";
-import i18n from "../../i18n";
-
 function TopNav() {
-    const [clickFr, setClickFr] = useState(false);
-    const [clickEus, setClickEus] = useState(false);
-    const [clickEn, setClickEn] = useState(false);
+    // const [clickFr, setClickFr] = useState(false);
+    // const [clickEus, setClickEus] = useState(false);
+    // const [clickEn, setClickEn] = useState(false);
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
@@ -53,33 +50,21 @@ function TopNav() {
 
             <img
                 onClick={() => changeLanguage("fr")}
-                className={
-                    clickFr === true
-                        ? `${styles.flagClick} ml-4`
-                        : `${styles.flag} ml-4`
-                }
+                className={`${styles.flag} ml-4`}
                 src={fr}
                 alt="french flag"
             />
             <hr className={styles.hr} />
             <img
                 onClick={() => changeLanguage("eus")}
-                className={
-                    clickEus === true
-                        ? `${styles.flagClick} ml-4`
-                        : `${styles.flag} ml-4`
-                }
+                className={`${styles.flag} ml-4`}
                 src={eus}
                 alt="euskadi flag"
             />
             <hr className={styles.hr} />
             <img
                 onClick={() => changeLanguage("en")}
-                className={
-                    clickEn === true
-                        ? `${styles.flagClick} ml-4`
-                        : `${styles.flag} ml-4`
-                }
+                className={`${styles.flag} ml-4`}
                 src={en}
                 alt="england flag"
             />

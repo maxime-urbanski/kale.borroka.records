@@ -9,12 +9,14 @@ import {
     Button,
     Row,
 } from "reactstrap";
+
+import { withNamespaces } from "react-i18next";
+import { Link } from "react-router-dom";
+import ModalBuy from "./ModalBuy";
+
 import styles from "./card.module.css";
 
-import ModalBuy from "./ModalBuy";
-import { Link } from "react-router-dom";
-
-function CardArticle({ id, image, name, artiste, format, price }) {
+function CardArticle({ id, image, name, artiste, format, price, t }) {
     return (
         <div className={`${styles.hvrGrow} mt-5`}>
             <Card
@@ -37,8 +39,12 @@ function CardArticle({ id, image, name, artiste, format, price }) {
                     {format === "fanzine" ? (
                         <ModalBuy image={image} price={price} />
                     ) : (
-                        <Button tag={Link} to={`/${format}/${id}`}>
-                            Details
+                        <Button
+                            className={styles.bouton}
+                            tag={Link}
+                            to={`/${format}/${id}`}
+                        >
+                            {t("details")}
                         </Button>
                     )}
                 </CardBody>
@@ -47,4 +53,4 @@ function CardArticle({ id, image, name, artiste, format, price }) {
     );
 }
 
-export default CardArticle;
+export default withNamespaces()(CardArticle);

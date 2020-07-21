@@ -1,7 +1,7 @@
 .cardSize {
     width: 280px;
     height: auto;
-    border-color: lightcoral !important;
+    border-color: #d9534f !important;
 }
 
 .img {
@@ -43,4 +43,9 @@
 .hvrGrow:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+.bouton {
+    background-color: #d9534f;
+    color: white;
 }

@@ -1,10 +1,9 @@
 import React from "react";
-import { Container, Col, Row, Breadcrumb, BreadcrumbItem } from "reactstrap";
-import Footer from "./Footer";
-import disque from "../Img/disque.png";
-import send from "../Img/send.png";
-import search from "../Img/search.png";
+import { Container, Row, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
+
+import Footer from "./Footer";
+import How from "../Home/How";
 
 import styles from "./howbuy.module.css";
 
@@ -21,42 +20,7 @@ function HowBuy() {
                     </BreadcrumbItem>
                 </Breadcrumb>
                 <Row>
-                    <h2 className={`${styles.title} mx-auto`}>
-                        Comment passer commande ?
-                    </h2>
-                </Row>
-                <Row>
-                    <Col>
-                        <Row>
-                            <img src={search} alt="ok" className="mx-auto" />
-                        </Row>
-                        <Row>
-                            <h3 className="mx-auto mt-3">
-                                Je choisis mes articles
-                            </h3>
-                        </Row>
-                    </Col>
-                    <Col>
-                        <Row>
-                            <img src={send} alt="ok" className="mx-auto" />
-                        </Row>
-                        <Row className="mx-auto">
-                            <h3 className="mx-auto mt-3">
-                                J'envoie ma liste par mail / via{" "}
-                                <Link to="/contact">Contact</Link>{" "}
-                            </h3>
-                        </Row>
-                    </Col>
-                    <Col>
-                        <Row>
-                            <img src={disque} alt="ok" className="mx-auto" />
-                        </Row>
-                        <Row className="mx-auto">
-                            <h3 className="mx-auto mt-3">
-                                Je fais profiter tout le voisinage
-                            </h3>
-                        </Row>
-                    </Col>
+                    <How />
                 </Row>
                 <hr className={`${styles.hrBuy} mt-5`} />
                 <Row>

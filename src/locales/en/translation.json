@@ -7,5 +7,7 @@
     "dispo": "Item still available",
     "prix": "Price: ",
     "libre": "Free price",
-    "more": "See more ..."
+    "more": "See more ...",
+    "details": "Details",
+    "titre": "Title"
 }

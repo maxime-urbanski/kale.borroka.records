@@ -32,13 +32,16 @@ function MenuNav() {
     return (
         <div>
             <Navbar
-                color="warning"
                 expand="md"
                 className={`${styles.navHeight} fixed-top bg-primary mb-5`}
             >
-                <NavbarToggler onClick={toggle} />
+                <NavbarToggler
+                    onClick={toggle}
+                    color="success"
+                    className={styles.col}
+                />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto " navbar>
+                    <Nav navbar>
                         {menu.map((item) => {
                             return (
                                 <>

@@ -9,6 +9,10 @@ import {
     Breadcrumb,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { withNamespaces } from "react-i18next";
+import YouTube from "react-youtube";
+
+import style from "./details.module.css";
 
 import allArticles from "./marchandise/disque";
 import ModalBuy from "./ModalBuy";
@@ -53,7 +57,19 @@ class VinyleDetails extends React.Component {
             year,
             notes,
             labels,
+            videos,
         } = this.state.lp;
+
+        const opts = {
+            height: "175",
+            width: "350",
+            playerVars: {
+                autoplay: 0,
+            },
+        };
+
+        const { t } = this.props;
+        const priceFree = allArticles[id]?.price;
         return (
             <div>
                 <Container>
@@ -72,13 +88,13 @@ class VinyleDetails extends React.Component {
                         </BreadcrumbItem>
                     </Breadcrumb>
                     <Row>
-                        <Col className="cole-md-6 ">
-                            <h1 className="mt-3 justify-content-center text-monospace font-weight-bold font-weight-bold">
+                        <Col>
+                            <h2 className={style.title}>
                                 {artists_sort} - {title}
-                            </h1>
+                            </h2>
                         </Col>
                     </Row>
-
+                    <hr className={style.hr} />
                     <Row className="mt-5">
                         <Col className="col-md-6">
                             <Row>
@@ -90,13 +106,17 @@ class VinyleDetails extends React.Component {
                                 </h3>
                             </Row>
                             <Row>
-                                <h4 className="font-italic">{year}</h4>
+                                <h4 className={style.year}>{year}</h4>
                             </Row>
+
                             <Row>
-                                <h1 className="badge badge-success text-wrap test pt-auto pb-auto bagdePrice">
-                                    {" "}
-                                    Prix: {allArticles[id]?.price}
-                                </h1>
+                                <div className={style.badge}>
+                                    <p className={style.price}>
+                                        {priceFree === "Libre"
+                                            ? `${t("libre")}`
+                                            : `${t("prix")}${priceFree}`}
+                                    </p>
+                                </div>
                             </Row>
                             <Row>
                                 <ModalBuy
@@ -109,22 +129,8 @@ class VinyleDetails extends React.Component {
                             <Row className="mt-5 justify-content-center">
                                 <p>{notes}</p>
                             </Row>
-                            <Row>
-                                {labels &&
-                                    labels.map((item) => {
-                                        return (
-                                            <>
-                                                <h1
-                                                    className="justify-content-center
-                                                 badge badge-pill badge-warning label mb-3 font-italic text-wrap"
-                                                >
-                                                    {item.name}
-                                                </h1>
-                                            </>
-                                        );
-                                    })}
-                            </Row>
                         </Col>
+
                         <Col>
                             <img
                                 src={allArticles[id]?.image}
@@ -135,12 +141,24 @@ class VinyleDetails extends React.Component {
                         </Col>
                     </Row>
                     <Row>
+                        {labels &&
+                            labels.map((item) => {
+                                return (
+                                    <div className={`${style.label} mx-auto`}>
+                                        <p className={style.name}>
+                                            {item.name}
+                                        </p>
+                                    </div>
+                                );
+                            })}
+                    </Row>
+                    <Row>
                         <Col className="mt-5 mb-5">
                             <Table className="col-md-8 offset-md-2 table table-striped table-dark ">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Titre</th>
+                                        <th>{t("titre")}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -157,12 +175,37 @@ class VinyleDetails extends React.Component {
                             </Table>
                         </Col>
                     </Row>
-                    <Row></Row>
+                    <hr className={style.hr} />
+                    <Row>
+                        {videos &&
+                            videos
+                                .map((item) => {
+                                    const uriId = item.uri.split("=")[1];
+                                    return (
+                                        <div className={style.video}>
+                                            <Row>
+                                                <Col
+                                                    lg={2}
+                                                    className={style.video}
+                                                >
+                                                    <YouTube
+                                                        videoId={uriId}
+                                                        opts={opts}
+                                                        onReady={this._onReady}
+                                                    />
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    );
+                                })
+                                .slice(1, 3)}
+                    </Row>
                 </Container>
+
                 <Footer />
             </div>
         );
     }
 }
 
-export default VinyleDetails;
+export default withNamespaces()(VinyleDetails);

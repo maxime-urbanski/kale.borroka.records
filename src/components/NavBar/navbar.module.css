@@ -3,7 +3,7 @@
     font-size: 1.2em !important;
 }
 .linkNav:hover {
-    color: red !important;
+    color: #d9534f !important;
 }
 
 .navHeight {
@@ -14,10 +14,14 @@
 }
 
 .hr {
-    border-color: red;
+    border-color: #d9534f;
     width: 20px;
     transform: rotate(90deg);
     margin: 0;
+}
+
+.col {
+    color: red;
 }
 
 .navTop {
@@ -25,7 +29,7 @@
     background-color: white;
     display: flex;
     height: 60px;
-    justify-content: end;
+    justify-content: flex-end;
     position: fixed;
     width: 100vw;
     z-index: 1;
@@ -39,6 +43,7 @@
     height: 30px;
     margin: 10px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .flag:hover {
