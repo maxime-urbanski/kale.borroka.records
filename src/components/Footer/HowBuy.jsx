@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import How from "../Home/How";
 
-import styles from "./howbuy.module.css";
+import styles from "../Styles/howbuy.module.css";
 
 function HowBuy() {
     return (

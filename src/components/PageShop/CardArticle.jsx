@@ -14,7 +14,7 @@ import { withNamespaces } from "react-i18next";
 import { Link } from "react-router-dom";
 import ModalBuy from "./ModalBuy";
 
-import styles from "./card.module.css";
+import styles from "../Styles/card.module.css";
 
 function CardArticle({ id, image, name, artiste, format, price, t }) {
     return (

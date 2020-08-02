@@ -1,7 +1,7 @@
 import React from "react";
 import i18n from "../../i18n";
 
-import styles from "./navbar.module.css";
+import styles from "../Styles/navbar.module.css";
 
 import eus from "../Img/flag/eus.png";
 import fr from "../Img/flag/fr.png";

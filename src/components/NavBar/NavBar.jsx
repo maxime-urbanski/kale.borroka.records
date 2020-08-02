@@ -14,7 +14,7 @@ import {
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
 
-import styles from "./navbar.module.css";
+import styles from "../Styles/navbar.module.css";
 
 const menu = [
     { name: "Actu", link: "/" },

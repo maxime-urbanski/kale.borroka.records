@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
 import YouTube from "react-youtube";
 
-import style from "./details.module.css";
+import style from "../Styles/details.module.css";
 
 import allArticles from "./marchandise/disque";
 import ModalBuy from "./ModalBuy";
