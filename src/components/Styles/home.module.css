@@ -29,7 +29,9 @@
 }
 .titleHow {
   font-size: 2em;
-  margin: 1.3em auto;
+  margin-top: 1.3em;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .toastHome {
   font-size: 1.7em;
