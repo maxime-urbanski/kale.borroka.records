@@ -14,13 +14,13 @@ import { withNamespaces } from "react-i18next";
 import { Link } from "react-router-dom";
 import ModalBuy from "./ModalBuy";
 
-import styles from "./card.module.css";
+import styles from "../Styles/card.module.css";
 
 function CardArticle({ id, image, name, artiste, format, price, t }) {
     return (
         <div className={`${styles.hvrGrow} mt-5`}>
             <Card
-                className={`${styles.cardSize} rounded-top shadow-lg p-3 mb-5`}
+                className={`${styles.cardSize} rounded shadow-lg p-3`}
                 key={id}
             >
                 <CardImg top className={styles.img} src={image} alt={name} />

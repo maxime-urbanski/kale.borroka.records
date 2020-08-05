@@ -4,7 +4,7 @@ import { Container, Row, Col, Toast, ToastBody } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
 
-import styles from "./home.module.css";
+import styles from "../Styles/home.module.css";
 
 import LParticle from "../PageShop/marchandise/Lp";
 import epArticle from "../PageShop/marchandise/EP";
@@ -13,12 +13,12 @@ import cd from "../PageShop/marchandise/CD";
 
 function Dispo({ t }) {
     return (
-        <Container fluid className="mt-2">
+        <Container fluid>
             <Row>
                 <h2 className={`${styles.title} mx-auto`}>{t("dispo")}</h2>
             </Row>
             <Row>
-                <Col xs={4}>
+                <Col xs={12} lg={4}>
                     <Row>
                         <h3 className={`${styles.otherTitle} mx-auto mt-5`}>
                             {" "}
@@ -64,7 +64,7 @@ function Dispo({ t }) {
                         </div>
                     </Row>
                 </Col>
-                <Col xs={4}>
+                <Col xs={12} lg={4}>
                     <Row>
                         <h3 className={`${styles.otherTitle} mx-auto mt-5`}>
                             {" "}
@@ -115,7 +115,7 @@ function Dispo({ t }) {
                         </div>
                     </Row>
                 </Col>
-                <Col xs={4}>
+                <Col xs={12} lg={4}>
                     <Row>
                         {" "}
                         <h3 className={`${styles.otherTitle} mx-auto mt-5`}>

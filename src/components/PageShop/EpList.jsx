@@ -1,9 +1,9 @@
 import React from "react";
-
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
+import { withNamespaces } from "react-i18next";
 
-import styles from "./pageShop.module.css";
+import styles from "../Styles/pageShop.module.css";
 
 import epArticle from "./marchandise/EP";
 import CardArticle from "./CardArticle";
@@ -11,63 +11,64 @@ import PaginationDistro from "../Function/pagination";
 import Footer from "../Footer/Footer";
 
 class EpList extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentPage: "1",
-            cardsPerPage: "9",
-        };
-    }
-    render() {
-        const { currentPage, cardsPerPage } = this.state;
-        const indexLastCards = currentPage * cardsPerPage;
-        const indexFirstCards = indexLastCards - cardsPerPage;
-        const currentCards = epArticle.slice(indexFirstCards, indexLastCards);
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: "1",
+      cardsPerPage: "9",
+    };
+  }
+  render() {
+    const { currentPage, cardsPerPage } = this.state;
+    const indexLastCards = currentPage * cardsPerPage;
+    const indexFirstCards = indexLastCards - cardsPerPage;
+    const currentCards = epArticle.slice(indexFirstCards, indexLastCards);
 
-        const paginate = (pageNum) => this.setState({ currentPage: pageNum });
-        // const pageNext = () => this.setState({ currentCards: currentPage + 1 });
-        // const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
-        const format = "EP";
+    const paginate = (pageNum) => this.setState({ currentPage: pageNum });
+    // const pageNext = () => this.setState({ currentCards: currentPage + 1 });
+    // const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
+    const format = "EP";
+    const { t } = this.props;
 
-        return (
-            <div>
-                <Container>
-                    <Breadcrumb className={styles.breadCrumb} listTag="div">
-                        <BreadcrumbItem tag={Link} to={"/"}>
-                            KALE BORROKA RECORDS
-                        </BreadcrumbItem>
-                        <BreadcrumbItem active tag="span">
-                            EP
-                        </BreadcrumbItem>
-                    </Breadcrumb>
-                    <Col>
-                        <Row>
-                            <h1 className={styles.title}>Tous nos EP</h1>
-                        </Row>
-                        <Row>
-                            {currentCards.map((item) => {
-                                return item.quantity > 0 ? (
-                                    <div className={styles.position}>
-                                        <CardArticle {...item} key={item.id} />
-                                    </div>
-                                ) : (
-                                    ""
-                                );
-                            })}
-                        </Row>
-                        <Row>
-                            <PaginationDistro
-                                cardsPerPage={cardsPerPage}
-                                totalCards={epArticle}
-                                paginate={paginate}
-                                format={format}
-                            />
-                        </Row>
-                    </Col>
-                </Container>
-                <Footer />
-            </div>
-        );
-    }
+    return (
+      <div>
+        <Container>
+          <Breadcrumb className={styles.breadCrumb} listTag="div">
+            <BreadcrumbItem tag={Link} to={"/"}>
+              KALE BORROKA RECORDS
+            </BreadcrumbItem>
+            <BreadcrumbItem active tag="span">
+              EP
+            </BreadcrumbItem>
+          </Breadcrumb>
+          <Col>
+            <Row>
+    <h1 className={styles.title}>{t("ep")}</h1>
+            </Row>
+            <Row>
+              {currentCards.map((item) => {
+                return item.quantity > 0 ? (
+                  <Col xs={12} sm={6} lg={4} className={styles.position}>
+                    <CardArticle {...item} key={item.id} />
+                  </Col>
+                ) : (
+                  ""
+                );
+              })}
+            </Row>
+            <Row>
+              <PaginationDistro
+                cardsPerPage={cardsPerPage}
+                totalCards={epArticle}
+                paginate={paginate}
+                format={format}
+              />
+            </Row>
+          </Col>
+        </Container>
+        <Footer />
+      </div>
+    );
+  }
 }
-export default EpList;
+export default withNamespaces()(EpList);

@@ -35,7 +35,7 @@ class PaginationDistro extends React.Component {
                             <PaginationLink
                                 onClick={() => paginate(num)}
                                 tag={Link}
-                                to={`/${format}:${num}`}
+                                to={`/${format}&page=${num}`}
                             >
                                 {num}
                             </PaginationLink>

@@ -9,5 +9,21 @@
     "libre": "Free price",
     "more": "See more ...",
     "details": "Details",
-    "titre": "Title"
+    "titre": "Title",
+    "propos": "About",
+    "buy": "How Buy",
+    "contact": "Contact Us",
+    "shop" :"Shop",
+    "prod":"Our Productions",
+    "network":" Social Network",
+    "friends": "Our Friends",
+    "home": "Home",
+    "divers" : "Various",
+    "format": "Format",
+    "label": "Label",
+    "fanzines" :"Our Fanzines",
+    "cd": "Our CD",
+    "lp": "Our LP & 10",
+    "ep" : "Our EP"
+
 }

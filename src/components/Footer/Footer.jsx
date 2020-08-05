@@ -1,88 +1,141 @@
 import React from "react";
 import { Col, Row, Container } from "reactstrap";
-import fight from "../Img/fight.png";
-import arrow from "../Img/arrow.png";
-import flag from "../Img/flag.png";
+import { withNamespaces } from "react-i18next";
+
+import styles from "../Styles/footer.module.css";
 
 import "../menu.css";
 
 import fb from "../Img/fb.png";
 import pt from "../Img/pt.png";
+import yt from "../Img/yt.png";
+import ff from "../Img/ff.png";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({t}) {
   return (
     <>
-      <Container fluid={true} className="footer bg-primary">
-        <Row>
-          <Col className="offset-1 pl-5 col-md-3">
-            <Row>
-              <Link to="/how-to-buy" className="text-decoration-none">
-                <h6 className="text-light write  mt-5 mb-3 ">
-                  Comment commander
-                </h6>
-              </Link>
-            </Row>
-            <Row>
-              <Link to="/contact" className="text-decoration-none">
-                <h6 className="text-light  write mt-3 mb-3 ">
-                  Contactez Nous !
-                </h6>
-              </Link>
-            </Row>
-            <Row>
-              <Link to="/crew" className="text-decoration-none">
-                <h6 className="text-light write  mt-3 mb-3 ">
-                  Kale Borroka Records
-                </h6>
-              </Link>
-            </Row>
+      <Container fluid className={`${styles.footer} bg-primary`}>
+        <Col xs={12} lg={4} className={styles.colFooter}>
+          <Row>
+            <h3 className={styles.sectionFooter}>{t("propos")}</h3>
+          </Row>
+          <hr className={styles.hrFooter} />
+          <Row>
+            <Link to="/how-to-buy" className="text-decoration-none">
+              <h6 className={styles.link}>{t("how")}</h6>
+            </Link>
+          </Row>
+          <Row>
+            <Link to="/contact" className="text-decoration-none">
+              <h6 className={styles.link}>{t("contact")}</h6>
+            </Link>
+          </Row>
+          <Row>
+            <Link to="/Divers/IPEH" className="text-decoration-none">
+              <h6 className={styles.link}>IPEH Antifaxista</h6>
+            </Link>
+          </Row>
+          <Row>
+            <Link to="/crew" className="text-decoration-none">
+              <h6 className={styles.link}>Kale Borroka Records</h6>
+            </Link>
+          </Row>
+        </Col>
+
+        <Col xs={12} lg={4} className={styles.colFooter}>
+          <Row>
+            <h3 className={styles.sectionFooter}>{t("shop")}</h3>
+          </Row>
+          <hr className={styles.hrFooter} />
+          <Row>
+            <Link to="/LP" className="text-decoration-none">
+              <h6 className={styles.link}>LP</h6>
+            </Link>
+          </Row>
+          <Row>
+            <Link to="/EP" className="text-decoration-none">
+              <h6 className={styles.link}>EP</h6>
+            </Link>
+          </Row>
+          <Row>
+            <Link to="/CD" className="text-decoration-none">
+              <h6 className={styles.link}>CD</h6>
+            </Link>
+          </Row>
+          <Row>
+            <Link to="/Divers/fanzine" className="text-decoration-none">
+              <h6 className={styles.link}>FANZINE</h6>
+            </Link>
+          </Row>
+          <Row>
+            <Link to="/Production" className="text-decoration-none">
+              <h6 className={styles.link}>{t("prod")}</h6>
+            </Link>
+          </Row>
+        </Col>
+        <Col xs={12} lg={4} className={styles.colFooter}>
+          <Row>
+            <h3 className={styles.sectionFooter}>{t("network")}</h3>
+          </Row>
+          <hr className={styles.hrFooter} />
+          <Row>
+            <a href="https://www.facebook.com/kale.borroka.records/">
+              <img
+                src={fb}
+                alt="facebook icon"
+                className={styles.imageFooter}
+              />
+            </a>
+          </Row>
+          <Row>
+            <a href="https://www.facebook.com/kale.borroka.records/">
+              <img src={yt} alt="Youtube icon" className={styles.imageFooter} />
+            </a>
+          </Row>
+          <Row>
+            <a href="https://www.facebook.com/kale.borroka.records/">
+              <img
+                src={pt}
+                alt="Protonmail icon"
+                className={styles.imageFooter}
+              />
+            </a>
+          </Row>
+        </Col>
+
+        <hr className={styles.hrFooter} />
+
+        <Col xs={12} className={styles.friends}>
+          <Row>
+            <h3 className={styles.sectionFooter}>{t("friends")}</h3>
+          </Row>
+        </Col>
+
+        <Row className="mb-5">
+          <Col xs={12} lg={3}>
+            <a href="https://www.fireandflames.com/">
+              <img
+                src={ff}
+                alt="Fire and Flames Records"
+                className={styles.imageFriend}
+              />
+            </a>
           </Col>
-          <Col className="col-md-7 footer">
-            <div className="footerLogo">
-              <img
-                className="logoFooter mx-auto pl-5 "
-                src={fight}
-                alt="discogs logo"
-              />
-              <img
-                className="logoFooter mx-auto pl-5 "
-                src={flag}
-                alt="discogs logo"
-              />
-              <img
-                className="logoFooter mx-auto pl-5 "
-                src={arrow}
-                alt="ebay logo"
-              />
-            </div>
+          <Col xs={12} lg={3}>
+            <img src={ff} alt="" className={styles.imageFriend} />
           </Col>
-          <Col className="col-md-1 ">
-            <Row>
-              <a href="https://www.facebook.com/kale.borroka.records/">
-                <img
-                  src={fb}
-                  alt="facebook icon"
-                  className="mt-5 pr-2 "
-                  width="30%"
-                />
-              </a>
-            </Row>
-            <Row>
-              <a href="https://www.facebook.com/kale.borroka.records/">
-                <img
-                  src={pt}
-                  alt="Protonmail icon"
-                  className="mt-5 pr-2"
-                  width="34%"
-                />
-              </a>
-            </Row>
+          <Col xs={12} lg={3}>
+            <img src={ff} alt="" className={styles.imageFriend} />
+          </Col>
+          <Col xs={12} lg={3}>
+            <img src={ff} alt="" className={styles.imageFriend} />
           </Col>
         </Row>
       </Container>
-      <Container fluid>
-        <p className="my-auto text-light end">
+
+      <Container fluid className={styles.endFooter}>
+        <p className={styles.end}>
           2020 Kale Borroka Records All right reserved . 100% DIY !
         </p>
       </Container>
@@ -90,4 +143,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default withNamespaces()(Footer);

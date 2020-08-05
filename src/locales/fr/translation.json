@@ -1,5 +1,5 @@
 {
-    "arriver": "Ca vient d'arriver dans le shop",
+    "arriver": "Nouveautés",
     "how": "Comment passer commande ?",
     "choose": "Je choisis mes articles",
     "send": "J'envoie ma liste par mail / via la page contact",
@@ -9,5 +9,21 @@
     "libre": "Prix libre",
     "more": "Voir plus ...",
     "details": "Details",
-    "titre": "Titre"
+    "titre": "Titre",
+    "propos" : "À propos",
+    "contact": "Contactez Nous",
+    "shop":"Le Shop",
+    "prod":"Nos Productions",
+    "network": "Réseaux Sociaux",
+    "friends": "Nos Amis",
+    "home":"Accueil",
+    "divers": "Divers",
+    "format" : "Format",
+    "label" : "Label",
+    "fanzines" : "Nos Fanzines",
+    "cd": "Nos CD",
+    "lp" : "Nos LP & 10 ",
+    "ep": "Nos EP"
+
 }
+    

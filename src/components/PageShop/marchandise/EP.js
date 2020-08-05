@@ -12,9 +12,18 @@ import skin from "../../Img/ep/1751408.jpg";
 import skinw from "../../Img/ep/15432976.jpg";
 import compare from "../../Function/Compare";
 import cruz from "../../Img/ep/15422279.jpg";
+import sempre from "../../Img/ep/14804584.jpg";
 
 const epArticle = [
   {
+    id: 14804584,
+    artiste: "Sempre Peggio",
+    name: "Anni Buttati",
+    image: `${sempre}`,
+    price: "6€",
+    format: "EP",
+    quantity: "2",
+  },{
     id: 15431270,
     artiste: "Knock Out",
     name: "Rock'n'roll Skinhead",

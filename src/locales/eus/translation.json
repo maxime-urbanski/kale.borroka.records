@@ -1,6 +1,6 @@
 {
     "arriver": "Berria dendan",
-    "how": "Nola dabil?",
+    "how": "Nola dabil ?",
     "choose": "Nire artikuluak aukeratzen ditut",
     "send": "Nire zerrenda posta elektroniko bidez / kontaktu bidez bidaltzen dut",
     "enjoy": "Auzo osoa onura ateratzen dut",
@@ -9,5 +9,20 @@
     "libre": "Prezioa doan",
     "more": "Gehiago ikusi ...",
     "details": "Xehetasun",
-    "titre": "Izenburua"
+    "titre": "Izenburua",
+    "propos": "About",
+    "contact" :"Jarri gurekin harremanetan",
+    "shop": "Denda",
+    "prod": "Gure Ekoizpenak",
+    "network": "Sare Sozialak",
+    "friends": "Gure Lagunak",
+    "home": "Hasiera",
+    "divers": "Hainbat",
+    "format": "Formatu",
+    "label" : "Disko etxea",
+    "fanzines":"Gure Fanzineak",
+    "cd": "Gure Diskoak",
+    "lp": "Gure LP & 10",
+    "ep": "Gure EP"
+
 }

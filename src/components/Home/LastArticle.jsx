@@ -3,7 +3,7 @@ import { Row } from "reactstrap";
 import Slider from "react-slick";
 
 import { withNamespaces } from "react-i18next";
-import styles from "./home.module.css";
+import styles from "../Styles/home.module.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,6 +19,15 @@ function LastArticle({ t }) {
         slidesToScroll: 4,
         cssEase: "linear",
         responsive: [
+            {
+                breakpoint: 1150,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true,
+                },
+            },
             {
                 breakpoint: 1024,
                 settings: {
@@ -47,7 +56,7 @@ function LastArticle({ t }) {
             <Slider {...settings}>
                 {lastItem.map((item) => {
                     return (
-                        <div className="mt-2 mb-5">
+                        <div className="mt-2">
                             <CardArticle {...item} />
                         </div>
                     );

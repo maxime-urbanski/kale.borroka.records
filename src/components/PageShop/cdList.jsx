@@ -1,9 +1,9 @@
 import React from "react";
-
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
+import { withNamespaces } from "react-i18next";
 
-import styles from "./pageShop.module.css";
+import styles from "../Styles/pageShop.module.css";
 
 import CardArticle from "./CardArticle";
 import PaginationDistro from "../Function/pagination";
@@ -28,7 +28,7 @@ class cdList extends React.Component {
         // const pageNext = () => this.setState({ currentCards: currentPage + 1 });
         // const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
         const format = "CD";
-
+        const {t} = this.props;
         return (
             <div>
                 <Container>
@@ -41,15 +41,15 @@ class cdList extends React.Component {
                         </BreadcrumbItem>
                     </Breadcrumb>
                     <Col>
-                        <Row>
-                            <h1 className={styles.title}>Tous nos CD</h1>
+                        <Row className={styles.position}>
+                            <h1 className={styles.title}>{t("cd")}</h1>
                         </Row>
-                        <Row>
+                        <Row className={styles.cardPosition}>
                             {currentCards.map((item) => {
                                 return item.quantity > 0 ? (
-                                    <div className={styles.position}>
+                                    <Col xs={12} sm={6} lg={4}>
                                         <CardArticle {...item} key={item.id} />
-                                    </div>
+                                    </Col>
                                 ) : (
                                     ""
                                 );
@@ -71,4 +71,4 @@ class cdList extends React.Component {
     }
 }
 
-export default cdList;
+export default withNamespaces()(cdList);
