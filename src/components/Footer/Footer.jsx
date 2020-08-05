@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "reactstrap";
+import { withNamespaces } from "react-i18next";
 
 import styles from "../Styles/footer.module.css";
 
@@ -8,25 +9,26 @@ import "../menu.css";
 import fb from "../Img/fb.png";
 import pt from "../Img/pt.png";
 import yt from "../Img/yt.png";
+import ff from "../Img/ff.png";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({t}) {
   return (
     <>
       <Container fluid className={`${styles.footer} bg-primary`}>
         <Col xs={12} lg={4} className={styles.colFooter}>
           <Row>
-            <h3 className={styles.sectionFooter}>A Propos</h3>
+            <h3 className={styles.sectionFooter}>{t("propos")}</h3>
           </Row>
           <hr className={styles.hrFooter} />
           <Row>
             <Link to="/how-to-buy" className="text-decoration-none">
-              <h6 className={styles.link}>Comment commander</h6>
+              <h6 className={styles.link}>{t("how")}</h6>
             </Link>
           </Row>
           <Row>
             <Link to="/contact" className="text-decoration-none">
-              <h6 className={styles.link}>Contactez Nous !</h6>
+              <h6 className={styles.link}>{t("contact")}</h6>
             </Link>
           </Row>
           <Row>
@@ -43,7 +45,7 @@ function Footer() {
 
         <Col xs={12} lg={4} className={styles.colFooter}>
           <Row>
-            <h3 className={styles.sectionFooter}>Le shop</h3>
+            <h3 className={styles.sectionFooter}>{t("shop")}</h3>
           </Row>
           <hr className={styles.hrFooter} />
           <Row>
@@ -63,18 +65,18 @@ function Footer() {
           </Row>
           <Row>
             <Link to="/Divers/fanzine" className="text-decoration-none">
-              <h6 className={styles.link}>Fanzine</h6>
+              <h6 className={styles.link}>FANZINE</h6>
             </Link>
           </Row>
           <Row>
             <Link to="/Production" className="text-decoration-none">
-              <h6 className={styles.link}>Nos Productions</h6>
+              <h6 className={styles.link}>{t("prod")}</h6>
             </Link>
           </Row>
         </Col>
         <Col xs={12} lg={4} className={styles.colFooter}>
           <Row>
-            <h3 className={styles.sectionFooter}>Réseaux Sociaux</h3>
+            <h3 className={styles.sectionFooter}>{t("network")}</h3>
           </Row>
           <hr className={styles.hrFooter} />
           <Row>
@@ -88,11 +90,7 @@ function Footer() {
           </Row>
           <Row>
             <a href="https://www.facebook.com/kale.borroka.records/">
-              <img
-                src={yt}
-                alt="Youtube icon"
-                className={styles.imageFooter}
-              />
+              <img src={yt} alt="Youtube icon" className={styles.imageFooter} />
             </a>
           </Row>
           <Row>
@@ -105,7 +103,37 @@ function Footer() {
             </a>
           </Row>
         </Col>
+
+        <hr className={styles.hrFooter} />
+
+        <Col xs={12} className={styles.friends}>
+          <Row>
+            <h3 className={styles.sectionFooter}>{t("friends")}</h3>
+          </Row>
+        </Col>
+
+        <Row className="mb-5">
+          <Col xs={12} lg={3}>
+            <a href="https://www.fireandflames.com/">
+              <img
+                src={ff}
+                alt="Fire and Flames Records"
+                className={styles.imageFriend}
+              />
+            </a>
+          </Col>
+          <Col xs={12} lg={3}>
+            <img src={ff} alt="" className={styles.imageFriend} />
+          </Col>
+          <Col xs={12} lg={3}>
+            <img src={ff} alt="" className={styles.imageFriend} />
+          </Col>
+          <Col xs={12} lg={3}>
+            <img src={ff} alt="" className={styles.imageFriend} />
+          </Col>
+        </Row>
       </Container>
+
       <Container fluid className={styles.endFooter}>
         <p className={styles.end}>
           2020 Kale Borroka Records All right reserved . 100% DIY !
@@ -115,4 +143,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default withNamespaces()(Footer);

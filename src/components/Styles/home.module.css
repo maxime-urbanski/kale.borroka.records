@@ -4,6 +4,12 @@
   margin: 10vw auto 1vw;
   width: 60vw;
 }
+.colBuy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .Parrallax {
   background-image: url("../Img/icon.jpg");
   background-size: 30% !important;
@@ -12,7 +18,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 630px;
+  height: 580px;
 }
 
 .title {
@@ -29,9 +35,7 @@
 }
 .titleHow {
   font-size: 2em;
-  margin-top: 1.3em;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-top: 1.3em;  
 }
 .toastHome {
   font-size: 1.7em;
@@ -77,12 +81,16 @@
     display: none;
 }
 
+.navCollapse {
+  background-color: red;
+}
+
 @media only screen and (min-width: 360px) and (max-width: 600px) {
   .ban {
     background-color: white;
     height: 200px;
     margin-top: 40vw;
-    width: 9import sempre from "../../Img/ep/14804584.jpg";
+    width: 100vw;
   }
   .Parrallax {
     display: none;
@@ -111,9 +119,9 @@
     border-color: #d9534f !important;
   }
   .hrBuy2 {
-    width: 75%;
+    width: 75% !important;
     border-top: solid !important;
-    border-bottom: 5px;
+    border-bottom: 5px !important;
     border-color: #d9534f !important;
   }
 }

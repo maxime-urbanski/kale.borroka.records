@@ -11,65 +11,50 @@ import yt from "../Img/yt.png";
 import pt from "../Img/pt.png";
 
 function TopNav() {
-    // const [clickFr, setClickFr] = useState(false);
-    // const [clickEus, setClickEus] = useState(false);
-    // const [clickEn, setClickEn] = useState(false);
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
+  return (
+    <div className={styles.navTop}>
+      <div className={styles.net}>
+        <a
+          href="https://www.facebook.com/kale.borroka.records/"
+          target="blanck"
+        >
+          <img className={`${styles.flag} ml-4`} src={fb} alt="facebook flag" />
+        </a>
+        <hr className={styles.hr} />
+        <img className={styles.flag} src={yt} alt="euskadi flag" />
+        <hr className={styles.hr} />
+        <img className={styles.flag} src={pt} alt="england flag" />
+      </div>
 
-    // const handleClick = () => {
-    //     setClickFr(true)
-    //         ? setClickEn(false) && setClickEus(false)
-    //         : setClickEus(true)
-    //         ? setClickFr(false) && setClickEn(false)
-    //         : setClickEn(true)
-    //         ? setClickFr(false) && setClickEus(false)
-    //         : "";
-    // };
-
-    return (
-        <div className={styles.navTop}>
-            <a
-                href="https://www.facebook.com/kale.borroka.records/"
-                target="blanck"
-            >
-                <img
-                    className={`${styles.flag} ml-4`}
-                    src={fb}
-                    alt="facebook flag"
-                />
-            </a>
-            <hr className={styles.hr} />
-            <img className={styles.flag} src={yt} alt="euskadi flag" />
-            <hr className={styles.hr} />
-            <img className={styles.flag} src={pt} alt="england flag" />
-
-            <h3 className={`${styles.black} mx-auto`}>Black Lives Matter</h3>
-
-            <img
-                onClick={() => changeLanguage("fr")}
-                className={`${styles.flag} ml-4`}
-                src={fr}
-                alt="french flag"
-            />
-            <hr className={styles.hr} />
-            <img
-                onClick={() => changeLanguage("eus")}
-                className={`${styles.flag} ml-4`}
-                src={eus}
-                alt="euskadi flag"
-            />
-            <hr className={styles.hr} />
-            <img
-                onClick={() => changeLanguage("en")}
-                className={`${styles.flag} ml-4`}
-                src={en}
-                alt="england flag"
-            />
-        </div>
-    );
+      <h3 className={styles.black}>Black Lives Matter</h3>
+      <div className={styles.langage}>
+        <img
+          onClick={() => changeLanguage("fr")}
+          className={styles.flag}
+          src={fr}
+          alt="french flag"
+        />
+        <hr className={styles.hr} />
+        <img
+          onClick={() => changeLanguage("eus")}
+          className={styles.flag}
+          src={eus}
+          alt="euskadi flag"
+        />
+        <hr className={styles.hr} />
+        <img
+          onClick={() => changeLanguage("en")}
+          className={styles.flag}
+          src={en}
+          alt="england flag"
+        />
+      </div>
+    </div>
+  );
 }
 
 export default TopNav;

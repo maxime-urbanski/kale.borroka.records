@@ -56,7 +56,7 @@ function LastArticle({ t }) {
             <Slider {...settings}>
                 {lastItem.map((item) => {
                     return (
-                        <div className="mt-2 mb-5">
+                        <div className="mt-2">
                             <CardArticle {...item} />
                         </div>
                     );

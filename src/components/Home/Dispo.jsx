@@ -13,7 +13,7 @@ import cd from "../PageShop/marchandise/CD";
 
 function Dispo({ t }) {
     return (
-        <Container fluid className="mt-2">
+        <Container fluid>
             <Row>
                 <h2 className={`${styles.title} mx-auto`}>{t("dispo")}</h2>
             </Row>

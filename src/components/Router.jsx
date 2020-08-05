@@ -36,9 +36,9 @@ function Router() {
         <Route path="/CD:page" component={cdList} />
         <Route path="/LP:page" component={LP} />
         <Route path="/EP:page" component={EpList} />
-        <Route path="/LP/:id" component={VinyleDetails} />
-        <Route path="/EP/:id" component={VinyleDetails} />
-        <Route path="/CD/:id" component={VinyleDetails} />
+        <Route exact path="/LP/:id" component={VinyleDetails} />
+        <Route exact path="/EP/:id" component={VinyleDetails} />
+        <Route exact path="/CD/:id" component={VinyleDetails} />
         <Route path="/Divers/fanzine" component={fanzineList} />
         <Route path="/Production" component={ProductionList} />
         <Route exact path="/" component={Home} />

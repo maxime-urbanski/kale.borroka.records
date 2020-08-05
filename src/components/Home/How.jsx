@@ -16,7 +16,7 @@ function How({ t }) {
         <h2 className={`${styles.title} mt-5 mb-5 mx-auto`}>{t("how")}</h2>
       </Row>
       <Row className="mb-5">
-        <Col className={styles.colBuy} xs={12} sm={6} lg={4}>
+        <Col className={styles.colBuy} xs={12} lg={4}>
           <Row>
             <img src={search} alt="ok" className="mx-auto" />
           </Row>
@@ -25,7 +25,7 @@ function How({ t }) {
           </Row>
         </Col>
 
-        <Col className={styles.colBuy} xs={12} sm={6} lg={4}>
+        <Col className={styles.colBuy} xs={12} lg={4}>
           <Row>
             <img src={send} alt="ok" className="mx-auto" />
           </Row>
@@ -35,7 +35,7 @@ function How({ t }) {
             </h3>
           </Row>
         </Col>
-        <Col className={styles.colBuy} xs={12} sm={6} lg={4}>
+        <Col className={styles.colBuy} xs={12} lg={4}>
           <Row>
             <img src={disque} alt="ok" className="mx-auto" />
           </Row>

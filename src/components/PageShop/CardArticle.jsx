@@ -20,7 +20,7 @@ function CardArticle({ id, image, name, artiste, format, price, t }) {
     return (
         <div className={`${styles.hvrGrow} mt-5`}>
             <Card
-                className={`${styles.cardSize} rounded shadow-lg p-3 mb-5`}
+                className={`${styles.cardSize} rounded shadow-lg p-3`}
                 key={id}
             >
                 <CardImg top className={styles.img} src={image} alt={name} />

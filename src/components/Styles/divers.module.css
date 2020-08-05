@@ -1,0 +1,27 @@
+.breadCrumb {
+  background-color: transparent;
+  border: none;
+  font-size: 1.4em;
+}
+
+.positionImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8em;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 600px) {
+  .positionImg {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 4em;
+  }
+  .breadCrumb {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+  }
+}
