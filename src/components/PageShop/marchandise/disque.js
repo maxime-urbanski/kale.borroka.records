@@ -62,8 +62,17 @@ import unter from "../../Img/lp/15136996.jpg";
 import bad from "../../Img/lp/1725109.jpg";
 import helem from "../../Img/lp/15554418.jpg";
 import sempre from "../../Img/ep/14804584.jpg";
+import snob from "../../Img/lp/15567588.jpg";
 
 const disque = {
+  "15567588": {
+    artiste: "Snob City Boys",
+    name: "This Sound's For Us",
+    image: `${snob}`,
+    price: "13€",
+    format: "LP",
+    quantity: "3",
+  },
   "4804584": {
     artiste: "Sempre Peggio",
     name: "Anni Buttati",

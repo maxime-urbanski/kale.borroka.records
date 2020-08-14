@@ -1,7 +1,49 @@
+.badge,
+.badgeLabel {
+  display: flex;
+  height: 50px;
+  margin-top: 0.8em;
+  margin-bottom: 1em;
+  width: 150px;
+}
+.badge {
+  background-color: #4bbf73;
+  border-radius: 1%;
+}
+.badgeLabel {
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  margin: 5em 1em;
+}
 .breadCrumb {
   background-color: transparent;
   border: none;
   font-size: 1.4em;
+}
+
+.hr {
+  width: 50%;
+  border-color: #d9534f;
+  margin-bottom: 5em;
+}
+.label {
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  color: white;
+  font-size: 1em;
+  font-weight: 900;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+.nameTube {
+  font-size: 2em;
+  margin: 2em;
+  flex-direction: row;
 }
 .title {
   font-size: 4em;
@@ -17,31 +59,8 @@
   align-items: center;
 }
 
-.hr {
-  width: 50%;
-  border-color: #d9534f;
-  margin-bottom: 5em;
-}
-
 .year {
   margin: 20px 0;
-}
-.badge {
-  background-color: #4bbf73;
-  border-radius: 1%;
-}
-.badge,
-.badgeLabel {
-  display: flex;
-  height: 50px;
-  margin-top: 0.8em;
-  margin-bottom: 1em;
-  width: 150px;
-}
-.badgeLabel {
-  background-color: #1a1a1a;
-  border-radius: 5px;
-  margin: 5em 1em;
 }
 
 .price {
@@ -53,31 +72,10 @@
   margin-left: auto;
 }
 
-.label {
-  display: flex;
-  justify-content: space-between;
-}
-
-.name {
-  color: white;
-  font-size: 1em;
-  font-weight: 900;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .video {
   display: flex;
   margin: 2em;
   margin-right: 5em;
-}
-
-.nameTube {
-  font-size: 2em;
-  margin: 2em;
-  flex-direction: row;
 }
 
 @media only screen and (min-width: 360px) and (max-width: 600px) {

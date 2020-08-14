@@ -5,7 +5,7 @@ import zero from "../../Img/ep/14201735.jpg";
 import skinw from "../../Img/ep/15432976.jpg";
 import cruz from "../../Img/ep/15422279.jpg";
 import sempre from "../../Img/ep/14804584.jpg";
-import cartouche from "../../Img/cd/6209348.jpg";
+
 import union from "../../Img/cd/union.jpg";
 import bad from "../../Img/lp/1725109.jpg";
 import hoods from "../../Img/lp/15161685.jpg";
@@ -13,8 +13,18 @@ import killas from "../../Img/lp/15113806.jpg";
 import frekuenza from "../../Img/lp/15535118.jpg";
 import unter from "../../Img/lp/15136996.jpg";
 import helem from "../../Img/lp/15554418.jpg";
+import snob from "../../Img/lp/15567588.jpg";
 
 const lastItem = [
+  {
+    id: 15567588,
+    artiste: "Snob City Boys",
+    name: "This Sound's For Us",
+    image: `${snob}`,
+    price: "13€",
+    format: "LP",
+    quantity: "3",
+  },
   {
     id: 15554418,
     artiste: "Helem",
@@ -32,15 +42,6 @@ const lastItem = [
     price: "8€",
     format: "CD",
     quantity: "45",
-  },
-  {
-    id: 1725109,
-    artiste: "Moscow Death Brigade",
-    name: "Bad Accent Anthems",
-    image: `${bad}`,
-    price: "14€",
-    format: "LP",
-    quantity: "3",
   },
   {
     id: 15113806,
@@ -149,15 +150,6 @@ const lastItem = [
     price: "6€",
     format: "EP",
     quantity: "2",
-  },
-  {
-    id: 6209348,
-    artiste: "Cartouche",
-    name: "Bread & Roses",
-    image: `${cartouche}`,
-    price: "8€",
-    format: "CD",
-    quantity: "3",
   },
 ];
 

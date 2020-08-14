@@ -12,10 +12,10 @@ import search from "../Img/search.png";
 function How({ t }) {
   return (
     <>
-      <Row>
-        <h2 className={`${styles.title} mt-5 mb-5 mx-auto`}>{t("how")}</h2>
+      <Row className={styles.colBuy}>
+        <h2 className={styles.title}>{t("how")}</h2>
       </Row>
-      <Row className="mb-5">
+      <Row className="mx-auto">
         <Col className={styles.colBuy} xs={12} lg={4}>
           <Row>
             <img src={search} alt="ok" className="mx-auto" />

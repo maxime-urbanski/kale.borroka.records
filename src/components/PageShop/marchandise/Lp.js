@@ -30,8 +30,18 @@ import frekuenza from "../../Img/lp/15535118.jpg";
 import unter from "../../Img/lp/15136996.jpg";
 import bad from "../../Img/lp/1725109.jpg";
 import helem from "../../Img/lp/15554418.jpg";
+import snob from "../../Img/lp/15567588.jpg";
 
 const LParticle = [
+  {
+    id: 15567588,
+    artiste: "Snob City Boys",
+    name: "This Sound's For Us",
+    image: `${snob}`,
+    price: "13€",
+    format: "LP",
+    quantity: "3",
+  },
   {
     id: 15554418,
     artiste: "Helem",
@@ -298,7 +308,7 @@ const LParticle = [
     artiste: "Stumbling Pins",
     name: " Common Angst ",
     image: `${stumbling}`,
-    price: "Libre",
+    price: "10€",
     format: "LP",
     quantity: "1",
   },
