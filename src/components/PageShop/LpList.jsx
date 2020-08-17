@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
@@ -19,6 +18,14 @@ class LpList extends React.Component {
       cardsPerPage: "9",
     };
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(10, 0);
+  }
+
   render() {
     const { currentPage, cardsPerPage } = this.state;
     const indexLastCards = currentPage * cardsPerPage;
@@ -42,15 +49,14 @@ class LpList extends React.Component {
               LP &amp; 10"
             </BreadcrumbItem>
           </Breadcrumb>
-
           <Col>
             <Row className={styles.position}>
-    <h1 className={styles.title}>{t("lp")}</h1>
+              <h1 className={styles.title}>{t("lp")}</h1>
               <Row className={styles.cardPosition}>
                 {currentCards.map((item) => {
                   return item.quantity > 0 ? (
                     <Col xs={12} sm={6} lg={4} className={styles.position}>
-                      <CardArticle {...item} />
+                      <CardArticle {...item} key={item.id} />
                     </Col>
                   ) : (
                     ""

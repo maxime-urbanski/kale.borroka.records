@@ -39,7 +39,6 @@ class VinyleDetails extends React.Component {
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
-        console.log(data);
         this.setState({
           lp: data,
         });
@@ -61,8 +60,8 @@ class VinyleDetails extends React.Component {
     } = this.state.lp;
 
     const opts = {
-      height: "175",
-      width: "350",
+      height: "200",
+      width: "400",
       playerVars: {
         autoplay: 0,
       },
@@ -145,10 +144,9 @@ class VinyleDetails extends React.Component {
                 );
               })}
           </Row>
-          <Row className={style.postionTable}>
+          <Row className={style.label}>
             <Col xs={12} lg={10}>
               <Table
-                hover
                 responsive
                 className="table table-striped table-dark "
                 width="300px"
@@ -174,22 +172,20 @@ class VinyleDetails extends React.Component {
             </Col>
           </Row>
           <hr className={style.hr} />
-          <Row>
+          <Row className={style.label}>
             {videos &&
               videos
                 .map((item) => {
                   const uriId = item.uri.split("=")[1];
                   return (
                     <div className={style.video}>
-                      <Row>
-                        <Col lg={2} className={style.video}>
-                          <YouTube
-                            videoId={uriId}
-                            opts={opts}
-                            onReady={this._onReady}
-                          />
-                        </Col>
-                      </Row>
+                      <Col lg={2} className={style.video}>
+                        <YouTube
+                          videoId={uriId}
+                          opts={opts}
+                          onReady={this._onReady}
+                        />
+                      </Col>
                     </div>
                   );
                 })

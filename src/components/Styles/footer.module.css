@@ -20,11 +20,12 @@
   justify-content: center;
 }
 .footer {
-  display: flex;
-  height: auto !important;
   align-content: center;
-  justify-content: center;
+  background-color: #1a1a1a;
+  display: flex;
   flex-wrap: wrap;
+  height: auto !important;
+  justify-content: center;
   z-index: 0;
 }
 .hrFooter {
@@ -42,6 +43,10 @@
 }
 .imageFriend {
   width: 75%;
+  margin-top: 1.5em;
+}
+.imageFriend:hover {
+  transform: scale(1.2);
 }
 .link {
   color: white;
@@ -57,7 +62,7 @@
 .sectionFooter {
   color: #d9534f;
   font-size: 1.5em;
-  margin: 1.5em auto;
+  margin: 1.5em auto 0.5em auto;
   text-align: center;
 }
 

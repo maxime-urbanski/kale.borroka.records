@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row, Container } from "reactstrap";
 import { withNamespaces } from "react-i18next";
 
@@ -12,10 +12,13 @@ import yt from "../Img/yt.png";
 import ff from "../Img/ff.png";
 import { Link } from "react-router-dom";
 
-function Footer({t}) {
+function Footer({ t }) {
+  useEffect(() => {
+    window.scrollTo(800, 0);
+  }, []);
   return (
     <>
-      <Container fluid className={`${styles.footer} bg-primary`}>
+      <Container fluid className={styles.footer}>
         <Col xs={12} lg={4} className={styles.colFooter}>
           <Row>
             <h3 className={styles.sectionFooter}>{t("propos")}</h3>
@@ -104,14 +107,12 @@ function Footer({t}) {
           </Row>
         </Col>
 
-        <hr className={styles.hrFooter} />
-
         <Col xs={12} className={styles.friends}>
           <Row>
             <h3 className={styles.sectionFooter}>{t("friends")}</h3>
           </Row>
         </Col>
-
+        <hr className={styles.hrFooter} />
         <Row className="mb-5">
           <Col xs={12} lg={3}>
             <a href="https://www.fireandflames.com/">

@@ -17,6 +17,13 @@ class fanzineList extends React.Component {
       cardsPerPage: "9",
     };
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(10, 0);
+  }
   render() {
     const { currentPage, cardsPerPage } = this.state;
     const indexLastCards = currentPage * cardsPerPage;
@@ -48,7 +55,7 @@ class fanzineList extends React.Component {
             <Row className={styles.cardPosition}>
               {currentCards.map((item) => {
                 return item.quantity > 0 ? (
-                  <Col xs={12} sm={6}lg={4}>
+                  <Col xs={12} sm={6} lg={4}>
                     <CardArticle {...item} key={item.id} />
                   </Col>
                 ) : (

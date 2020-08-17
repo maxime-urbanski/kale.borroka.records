@@ -23,7 +23,12 @@ function divers() {
         <Row>
           <Col className={styles.positionImg} xs={12} lg={6}>
             <Link to="/Divers/fanzine">
-              <img src={fanzine} alt="fanzine" width="300px" className="mt-5 mb-5"/>
+              <img
+                src={fanzine}
+                alt="fanzine"
+                width="300px"
+                className="mt-5 mb-5"
+              />
             </Link>
           </Col>
           <Col className={styles.positionImg} xs={12} lg={6}>

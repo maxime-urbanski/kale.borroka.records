@@ -18,6 +18,13 @@ class EpList extends React.Component {
       cardsPerPage: "9",
     };
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(10, 0);
+  }
   render() {
     const { currentPage, cardsPerPage } = this.state;
     const indexLastCards = currentPage * cardsPerPage;
@@ -25,8 +32,7 @@ class EpList extends React.Component {
     const currentCards = epArticle.slice(indexFirstCards, indexLastCards);
 
     const paginate = (pageNum) => this.setState({ currentPage: pageNum });
-    // const pageNext = () => this.setState({ currentCards: currentPage + 1 });
-    // const pagePrev = () => this.setState({ currentCards: currentPage - 1 });
+
     const format = "EP";
     const { t } = this.props;
 
@@ -42,19 +48,19 @@ class EpList extends React.Component {
             </BreadcrumbItem>
           </Breadcrumb>
           <Col>
-            <Row>
-    <h1 className={styles.title}>{t("ep")}</h1>
-            </Row>
-            <Row>
-              {currentCards.map((item) => {
-                return item.quantity > 0 ? (
-                  <Col xs={12} sm={6} lg={4} className={styles.position}>
-                    <CardArticle {...item} key={item.id} />
-                  </Col>
-                ) : (
-                  ""
-                );
-              })}
+            <Row className={styles.position}>
+              <h1 className={styles.title}>{t("ep")}</h1>
+              <Row className={styles.cardPosition}>
+                {currentCards.map((item) => {
+                  return item.quantity > 0 ? (
+                    <Col xs={12} sm={6} lg={4} className={styles.position}>
+                      <CardArticle {...item} key={item.id} />
+                    </Col>
+                  ) : (
+                    ""
+                  );
+                })}
+              </Row>
             </Row>
             <Row>
               <PaginationDistro
