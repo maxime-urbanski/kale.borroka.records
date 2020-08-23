@@ -23,7 +23,7 @@ class cdList extends React.Component {
   }
 
   componentDidUpdate() {
-    window.scrollTo(10, 0);
+    window.scrollTo(0, 450);
   }
   render() {
     const { currentPage, cardsPerPage } = this.state;

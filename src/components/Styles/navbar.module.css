@@ -30,14 +30,14 @@
   justify-content: space-between;
   position: fixed;
   width: 100vw;
-  z-index: 1;
+  z-index: 7;
 }
 .net,
 .langage {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: row;
-  align-items: start;
+  align-items: flex-start;
 }
 .black {
   justify-content: center;
@@ -57,11 +57,11 @@
 
 @media only screen and (min-width: 360px) and (max-width: 600px) {
   .flag {
-      border-radius: 50%;
-      cursor: pointer;
-      height: 20px;
-      margin: 5px;
-      width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 20px;
+    margin: 5px;
+    width: 20px;
   }
   .black {
     font-size: 1em;

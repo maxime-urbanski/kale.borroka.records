@@ -73,7 +73,7 @@ const disque = {
     format: "LP",
     quantity: "3",
   },
-  "4804584": {
+  "14804584": {
     artiste: "Sempre Peggio",
     name: "Anni Buttati",
     image: `${sempre}`,

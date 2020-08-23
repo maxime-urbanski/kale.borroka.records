@@ -115,7 +115,7 @@ function Footer({ t }) {
         <hr className={styles.hrFooter} />
         <Row className="mb-5">
           <Col xs={12} lg={3}>
-            <a href="https://www.fireandflames.com/">
+            <a href="https://www.fireandflames.com/" target="_blank" rel="noopener noreferrer">
               <img
                 src={ff}
                 alt="Fire and Flames Records"
