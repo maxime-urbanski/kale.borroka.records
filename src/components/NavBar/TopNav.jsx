@@ -25,9 +25,9 @@ function TopNav() {
           <img className={`${styles.flag} ml-4`} src={fb} alt="facebook flag" />
         </a>
         <hr className={styles.hr} />
-        <img className={styles.flag} src={yt} alt="euskadi flag" />
+        <a href="https://www.youtube.com/watch?v=7GfBrvbp8L0&list=PLpM-GGKpwdHrT6RpoqsHT2HVGoPet2sB-"><img className={styles.flag} src={yt} alt="logo youtube" /></a>
         <hr className={styles.hr} />
-        <img className={styles.flag} src={pt} alt="england flag" />
+        <a href="mailto: kale.borroka.records@protonmail.com"><img className={styles.flag} src={pt} alt="protonmail logo" /></a>
       </div>
 
       <h3 className={styles.black}>Black Lives Matter</h3>

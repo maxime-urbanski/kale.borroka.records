@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   NavbarToggler,
@@ -10,11 +10,15 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Input,
+  Button,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
 
 import styles from "../Styles/navbar.module.css";
+import disque from "../PageShop/marchandise/disque";
+import LParticle from "../PageShop/marchandise/Lp";
 
 const menu = [
   { name: "home", link: "/" },
@@ -26,14 +30,15 @@ const shop = [
   { name: "EP", link: "/EP" },
   { name: "CD", link: "/CD" },
 ];
-function MenuNav({t}) {
+function MenuNav({ t }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div className={styles.navigate}>
       <Navbar
-         dark expand="md"
+        dark
+        expand="md"
         className={`${styles.navHeight} fixed-top bg-primary mb-5`}
       >
         <NavbarToggler onClick={toggle} className={styles.navCollapse} />

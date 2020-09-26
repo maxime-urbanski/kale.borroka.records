@@ -14,7 +14,7 @@ function LastArticle({ t }) {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1000,
+    speed: 3500,
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplay: true,
