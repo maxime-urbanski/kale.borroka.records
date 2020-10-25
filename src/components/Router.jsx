@@ -19,6 +19,7 @@ import cdList from "./PageShop/cdList";
 import ProductionList from "./PageShop/ProductionList";
 import { Row } from "reactstrap";
 import TopNav from "./NavBar/TopNav";
+import Work from "./Home/Work.jsx";
 
 function Router() {
   return (
@@ -29,10 +30,11 @@ function Router() {
       <Row>
         <MenuNav />
       </Row>
-      <div>
-        <img className={styles.ban} src={ban} alt="logo kale borroka records" />
+      <div className={styles.ban}>
+        <img src={ban} alt="kale borroka records ban" />
       </div>
       <Switch>
+        <Route path="/Divers/IPEH" component={Work} />
         <Route path="/CD:page" component={cdList} />
         <Route path="/LP:page" component={LP} />
         <Route path="/EP:page" component={EpList} />
@@ -49,7 +51,6 @@ function Router() {
         <Route path="/CD" component={cdList} />
         <Route path="/EP" component={EpList} />
         <Route path="/Divers" component={divers} />
-        <Route path="/Divers/IPEH" component={""} />
       </Switch>
     </BrowserRouter>
   );

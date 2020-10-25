@@ -17,7 +17,7 @@ function LastArticle({ t }) {
     speed: 3500,
     slidesToShow: 4,
     slidesToScroll: 4,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3500,
     cssEase: "linear",
     responsive: [

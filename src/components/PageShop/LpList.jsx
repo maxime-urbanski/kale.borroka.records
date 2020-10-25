@@ -5,8 +5,6 @@ import {
   Col,
   Breadcrumb,
   BreadcrumbItem,
-  Input,
-  Form,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
@@ -17,36 +15,13 @@ import article from "./marchandise/Lp";
 import CardArticle from "./CardArticle";
 import PaginationDistro from "../Function/pagination";
 import Footer from "../Footer/Footer";
-import Collapse from "reactstrap/lib/Collapse";
-import LParticle from "./marchandise/Lp";
-
 class LpList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPage: "1",
-      cardsPerPage: "9",
-      isSearch: "moscow death brigade",
+      cardsPerPage: "9",      
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    //this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleChange(e) {
-    this.setState = { isSearch: e.target.value };
-    const value = e.target.value;
-    {
-      LParticle.filter((i) => {
-        return (
-          <Collapse>
-            <li>{i.artiste.toLowerCase().includes(value)}</li>
-          </Collapse>
-        );
-      }).map((i) => {
-        return <li>{i.artiste}</li>;
-      });
-    }
   }
 
   componentDidMount() {
@@ -86,15 +61,6 @@ class LpList extends React.Component {
                 LP &amp; 10"
               </BreadcrumbItem>
             </Breadcrumb>
-            <Form className={styles.search}>
-              <Input
-                primary
-                value={this.isSearch}
-                onChange={this.handleChange}
-                //onClick={this.handleClick}
-                placeholder="ex: Moscow Death Brigade"
-              />
-            </Form>
           </Row>
           <Col>
             <Row className={styles.position}>

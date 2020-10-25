@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   NavbarToggler,
@@ -10,15 +10,10 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Input,
-  Button,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
-
 import styles from "../Styles/navbar.module.css";
-import disque from "../PageShop/marchandise/disque";
-import LParticle from "../PageShop/marchandise/Lp";
 
 const menu = [
   { name: "home", link: "/" },

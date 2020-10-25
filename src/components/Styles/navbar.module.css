@@ -60,17 +60,8 @@
   transform: scale(1.3);
 }
 
-.searchBar {
-  margin-top: auto;
-  margin-bottom: auto;
-  display: flex;
-  align-items: center !important;
-  justify-content: center;
-}
-.search {
-  border-radius: 20px;
-  width: 20em;
-  
+.autoComplete {
+  width: 30vw;
 }
 
 @media only screen and (min-width: 360px) and (max-width: 600px) {

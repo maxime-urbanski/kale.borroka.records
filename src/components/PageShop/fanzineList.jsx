@@ -2,9 +2,7 @@ import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
-
 import styles from "../Styles/pageShop.module.css";
-
 import CardArticle from "./CardArticle";
 import Footer from "../Footer/Footer";
 import fanzine from "./marchandise/Fanzine";

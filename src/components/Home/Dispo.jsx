@@ -82,6 +82,8 @@ function Dispo({ t }) {
                 })
                 .slice(0, 5)}
 
+              {console.log([...new Set(epArticle)])}
+
               <Link className="text-decoration-none" to="/EP">
                 <Button color="warning" className="mb-5">
                   {" "}

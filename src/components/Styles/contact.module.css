@@ -1,0 +1,12 @@
+.breadCrumb {
+  background-color: transparent;
+  border: none;
+  font-size: 1.4em;
+}
+.formContact {
+  display: flex;
+  justify-content: space-evenly;
+}
+#exempleEmail{
+  border: 5px #d9534f !important;
+}
