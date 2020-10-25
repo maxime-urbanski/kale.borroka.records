@@ -4,8 +4,6 @@ import { withNamespaces } from "react-i18next";
 
 import styles from "../Styles/footer.module.css";
 
-import "../menu.css";
-
 import fb from "../Img/fb.png";
 import pt from "../Img/pt.png";
 import yt from "../Img/yt.png";
@@ -92,12 +90,15 @@ function Footer({ t }) {
             </a>
           </Row>
           <Row>
-            <a href="https://www.facebook.com/kale.borroka.records/">
+            <a
+              href="https://www.youtube.com/playlist?list=PLpM-GGKpwdHrT6RpoqsHT2HVGoPet2sB-"
+              target="blanck"
+            >
               <img src={yt} alt="Youtube icon" className={styles.imageFooter} />
             </a>
           </Row>
           <Row>
-            <a href="https://www.facebook.com/kale.borroka.records/">
+            <a href="mailto: kale.borroka.records@protonmail.com">
               <img
                 src={pt}
                 alt="Protonmail icon"
@@ -115,7 +116,11 @@ function Footer({ t }) {
         <hr className={styles.hrFooter} />
         <Row className="mb-5">
           <Col xs={12} lg={3}>
-            <a href="https://www.fireandflames.com/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.fireandflames.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src={ff}
                 alt="Fire and Flames Records"
