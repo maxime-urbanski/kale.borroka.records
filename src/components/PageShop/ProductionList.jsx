@@ -14,7 +14,7 @@ import production from "./marchandise/production";
 import styles from "../Styles/production.module.css";
 import Footer from "../Footer/Footer";
 
-function ProductionList({t}) {
+function ProductionList({ t }) {
   return (
     <div>
       <Container>
@@ -23,7 +23,7 @@ function ProductionList({t}) {
             KALE BORROKA RECORDS
           </BreadcrumbItem>
           <BreadcrumbItem active tag="span">
-           {t("prod")}
+            {t("prod")}
           </BreadcrumbItem>
         </Breadcrumb>
         <Col>
@@ -48,18 +48,18 @@ function ProductionList({t}) {
                     {production.map((item) => {
                       return (
                         <tr key={item.id}>
-                          <th>{item.numberProd} </th>
+                          <th className={styles.link}>{item.numberProd} </th>
 
                           <td>
                             <Link
                               to={`/${item.format}/${item.id}`}
-                              className={`${styles.link} `}
+                              className={styles.link}
                             >
                               {item.artiste} - {item.name}{" "}
                             </Link>
                           </td>
-                          <td>{item.format}</td>
-                          <td>{item.labels} </td>
+                          <td className={styles.link}>{item.format}</td>
+                          <td className={styles.link}>{item.labels} </td>
                         </tr>
                       );
                     })}

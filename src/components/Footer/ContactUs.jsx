@@ -14,7 +14,6 @@ import {
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import styles from "../Styles/contact.module.css";
-
 const encode = (data) => {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -109,7 +108,7 @@ class ContactUs extends React.Component {
                     value={this.state.message}
                   />
                 </FormGroup>
-                <Button type="submit" className="mb-5">
+                <Button type="submit" className={styles.submit}>
                   Go !
                 </Button>
               </Form>

@@ -90,7 +90,10 @@ function Footer({ t }) {
             </a>
           </Row>
           <Row>
-            <a href="https://www.youtube.com/watch?v=7GfBrvbp8L0&amp;ist=PLpM-GGKpwdHrT6RpoqsHT2HVGoPet2sB-" target="blanck">
+            <a
+              href="https://www.youtube.com/playlist?list=PLpM-GGKpwdHrT6RpoqsHT2HVGoPet2sB-"
+              target="blanck"
+            >
               <img src={yt} alt="Youtube icon" className={styles.imageFooter} />
             </a>
           </Row>
@@ -113,7 +116,11 @@ function Footer({ t }) {
         <hr className={styles.hrFooter} />
         <Row className="mb-5">
           <Col xs={12} lg={3}>
-            <a href="https://www.fireandflames.com/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.fireandflames.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src={ff}
                 alt="Fire and Flames Records"
