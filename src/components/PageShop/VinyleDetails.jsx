@@ -192,7 +192,6 @@ class VinyleDetails extends React.Component {
                 .slice(1, 3)}
           </Row>
         </Container>
-
         <Footer />
       </div>
     );

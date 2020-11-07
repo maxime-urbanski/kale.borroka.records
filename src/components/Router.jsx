@@ -17,6 +17,7 @@ import ContactUs from "./Footer/ContactUs";
 import Crew from "./Footer/Crew";
 import ban from "./Img/ban.png";
 import styles from "./Styles/home.module.css";
+import ArticleDetail from "./PageShop/ArticleDetail";
 
 function Router() {
   return (
@@ -32,9 +33,7 @@ function Router() {
       </div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/LP/:id" component={VinyleDetails} />
-        <Route exact path="/EP/:id" component={VinyleDetails} />
-        <Route exact path="/CD/:id" component={VinyleDetails} />
+        <Route exact path="/:format/:id" component={ArticleDetail} />
         <Route path="/Divers/fanzine" component={fanzinePage} />
         <Route path="/Divers/IPEH" component={Work} />
         <Route path="/CD" component={cdPage} />

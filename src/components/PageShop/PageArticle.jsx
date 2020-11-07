@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import styles from "../Styles/pageShop.module.css";
 import CardArticle from "./CardArticle";
-import PaginationDistro from "../Function/pagination";
-import { withNamespaces } from "react-i18next";
 
-const pageArticle = ({ articleList, format, t }) => {
-  const [currentPage, setCurrentPage] = useState("1");
-  const [cardsPerPage, setCardsPerPage] = useState("9");
-  const indexLastCards = currentPage * cardsPerPage;
-  const indexFirstCards = indexLastCards - cardsPerPage;
-  const currentCards = articleList.slice(indexFirstCards, indexLastCards);
-  const paginate = (pageNum) => setCurrentPage(pageNum);
-  const pageNext = () => setCurrentPage(currentPage + 1);
-  const pagePrev = () => setCurrentPage(currentPage - 1);
-
-  useEffect(() => {
-    window.scrollTo(0, 450);
-  });
+const pageArticle = ({ articleList, format }) => {
   return (
     <>
       <Container>
@@ -34,9 +20,9 @@ const pageArticle = ({ articleList, format, t }) => {
         </Row>
         <Col>
           <Row className={styles.position}>
-            <h1 className={styles.title}>{t(`${format}`)}</h1>
+            <h1 className={styles.title}>{format}</h1>
             <Row className={styles.cardPosition}>
-              {currentCards.map((item) => {
+              {articleList.map((item) => {
                 return item.quantity > 0 ? (
                   <Col xs={12} sm={6} lg={4} className={styles.position}>
                     <CardArticle {...item} key={item.id} />
@@ -47,21 +33,10 @@ const pageArticle = ({ articleList, format, t }) => {
               })}
             </Row>
           </Row>
-          <Row>
-            <PaginationDistro
-              cardsPerPage={cardsPerPage}
-              totalCards={articleList}
-              paginate={paginate}
-              pageNext={pageNext}
-              pagePrev={pagePrev}
-              currentPage={currentPage}
-              format={format}
-            />
-          </Row>
         </Col>
       </Container>
     </>
   );
 };
 
-export default withNamespaces()(pageArticle);
+export default pageArticle;
