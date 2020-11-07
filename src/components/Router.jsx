@@ -1,25 +1,22 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Row } from "reactstrap";
 import MenuNav from "./NavBar/NavBar";
-
-import ban from "./Img/ban.png";
-import styles from "./Styles/home.module.css";
+import TopNav from "./NavBar/TopNav";
 import Home from "./Home/home";
-import LP from "./PageShop/LpList";
-import EpList from "./PageShop/EpList";
-
-import divers from "./PageShop/Divers";
+import Work from "./Home/Work.jsx";
+import divers from "./PageShop/Page/Divers";
 import VinyleDetails from "./PageShop/VinyleDetails";
-import fanzineList from "./PageShop/fanzineList";
-
+import fanzinePage from "./PageShop/Page/FanzinePage";
+import ProductionList from "./PageShop/Page/ProductionPage";
+import lpPage from "./PageShop/Page/LpPage";
+import epPage from "./PageShop/Page/EpPage";
+import cdPage from "./PageShop/Page/CdPage";
 import HowBuy from "./Footer/HowBuy";
 import ContactUs from "./Footer/ContactUs";
 import Crew from "./Footer/Crew";
-import cdList from "./PageShop/cdList";
-import ProductionList from "./PageShop/ProductionList";
-import { Row } from "reactstrap";
-import TopNav from "./NavBar/TopNav";
-import Work from "./Home/Work.jsx";
+import ban from "./Img/ban.png";
+import styles from "./Styles/home.module.css";
 
 function Router() {
   return (
@@ -34,23 +31,20 @@ function Router() {
         <img src={ban} alt="kale borroka records ban" />
       </div>
       <Switch>
-        <Route path="/Divers/IPEH" component={Work} />
-        <Route path="/CD:page" component={cdList} />
-        <Route path="/LP:page" component={LP} />
-        <Route path="/EP:page" component={EpList} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/LP/:id" component={VinyleDetails} />
         <Route exact path="/EP/:id" component={VinyleDetails} />
         <Route exact path="/CD/:id" component={VinyleDetails} />
-        <Route path="/Divers/fanzine" component={fanzineList} />
+        <Route path="/Divers/fanzine" component={fanzinePage} />
+        <Route path="/Divers/IPEH" component={Work} />
+        <Route path="/CD" component={cdPage} />
+        <Route path="/Divers" component={divers} />
+        <Route path="/EP" component={epPage} />
+        <Route path="/LP" component={lpPage} />
         <Route path="/Production" component={ProductionList} />
-        <Route exact path="/" component={Home} />
         <Route exact path="/crew" component={Crew} />
         <Route exact path="/contact" component={ContactUs} />
         <Route exact path="/how-to-buy" component={HowBuy} />
-        <Route path="/LP" component={LP} />
-        <Route path="/CD" component={cdList} />
-        <Route path="/EP" component={EpList} />
-        <Route path="/Divers" component={divers} />
       </Switch>
     </BrowserRouter>
   );

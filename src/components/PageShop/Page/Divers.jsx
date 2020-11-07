@@ -2,11 +2,11 @@ import React from "react";
 import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import styles from "../Styles/divers.module.css";
+import styles from "../../Styles/divers.module.css";
 
-import fanzine from "../Img/fanzine_4.png";
-import ipeh from "../Img/ipeh.jpg";
-import Footer from "../Footer/Footer";
+import fanzine from "../../Img/fanzine_4.png";
+import ipeh from "../../Img/ipeh.jpg";
+import Footer from "../../Footer/Footer";
 
 function divers() {
   return (

@@ -6,10 +6,10 @@ import { withNamespaces } from "react-i18next";
 
 import styles from "../Styles/dispo.module.css";
 
-import LParticle from "../PageShop/marchandise/Lp";
-import epArticle from "../PageShop/marchandise/EP";
+import LParticle from "../PageShop/Marchandise/Lp";
+import epArticle from "../PageShop/Marchandise/EP";
 
-import cd from "../PageShop/marchandise/CD";
+import cd from "../PageShop/Marchandise/CD";
 import Button from "reactstrap/lib/Button";
 
 function Dispo({ t }) {

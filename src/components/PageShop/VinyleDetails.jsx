@@ -14,7 +14,7 @@ import YouTube from "react-youtube";
 
 import style from "../Styles/details.module.css";
 
-import allArticles from "./marchandise/disque";
+import allArticles from "./Marchandise/disque";
 import ModalBuy from "./ModalBuy";
 import Footer from "../Footer/Footer";
 

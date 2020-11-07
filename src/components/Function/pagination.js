@@ -1,50 +1,22 @@
 import React from "react";
-import article from "../PageShop/marchandise/Lp";
-import epArticle from "../PageShop/marchandise/EP";
-import { Link } from "react-router-dom";
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
-class PaginationDistro extends React.Component {
-    render() {
-        const { cardsPerPage, format, paginate } = this.props;
-
-        const pageNumbers = [];
-        if (format === "LP") {
-            for (
-                let i = 1;
-                i < Math.ceil(article.length / cardsPerPage + 1);
-                i++
-            ) {
-                pageNumbers.push(i);
-            }
-        } else {
-            for (
-                let j = 1;
-                j < Math.ceil(epArticle.length / cardsPerPage + 1);
-                j++
-            ) {
-                pageNumbers.push(j);
-            }
-        }
-
-        return (
-            <div className="mx-auto mt-3 mb-3">
-                <Pagination size="lg" aria-label="Page navigation example">
-                    {pageNumbers.map((num) => (
-                        <PaginationItem>
-                            <PaginationLink
-                                onClick={() => paginate(num)}
-                                tag={Link}
-                                to={`/${format}&page=${num}`}
-                            >
-                                {num}
-                            </PaginationLink>
-                        </PaginationItem>
-                    ))}
-                </Pagination>
-            </div>
-        );
-    }
-}
+const PaginationDistro = ({ cardsPerPage, totalCards, paginate }) => {
+  const pageNumbers = [];
+  for (let i = 1; i < Math.ceil(totalCards.length / cardsPerPage + 1); i++) {
+    pageNumbers.push(i);
+  }
+  return (
+    <div className="mx-auto mt-3 mb-3">
+      <Pagination size="lg" aria-label="Page navigation example">
+        {pageNumbers.map((num) => (
+          <PaginationItem>
+            <PaginationLink onClick={() => paginate(num)}>{num}</PaginationLink>
+          </PaginationItem>
+        ))}
+      </Pagination>
+    </div>
+  );
+};
 
 export default PaginationDistro;

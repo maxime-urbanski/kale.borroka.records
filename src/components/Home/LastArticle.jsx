@@ -7,7 +7,7 @@ import styles from "../Styles/home.module.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import lastItem from "../PageShop/marchandise/lastItems";
+import lastItem from "../PageShop/Marchandise/lastItems";
 import CardArticle from "../PageShop/CardArticle";
 
 function LastArticle({ t }) {

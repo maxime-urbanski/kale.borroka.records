@@ -21,9 +21,9 @@
     "format" : "Format",
     "label" : "Label",
     "fanzines" : "Nos Fanzines",
-    "cd": "Nos CD",
-    "lp" : "Nos LP & 10 ",
-    "ep": "Nos EP",
+    "CD": "Nos CD",
+    "LP" : "Nos LP & 10 ",
+    "EP": "Nos EP",
     "debut": "Pour passer commande, il suffit d'envoyer un mail à kale.borroka.records@protonmail.com ou en passant par",
     "construction" : " En construction"
 

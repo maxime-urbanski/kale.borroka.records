@@ -9,10 +9,9 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
-
-import production from "./marchandise/production";
-import styles from "../Styles/production.module.css";
-import Footer from "../Footer/Footer";
+import production from "../Marchandise/production";
+import styles from "../../Styles/production.module.css";
+import Footer from "../../Footer/Footer";
 
 function ProductionList({ t }) {
   return (
