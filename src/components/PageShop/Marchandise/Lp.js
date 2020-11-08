@@ -265,7 +265,7 @@ const LParticle = [
     image: `${russe}`,
     price: "12€",
     format: "LP",
-    quantity: "1",
+    quantity: "0",
   },
   {
     id: 3018198,

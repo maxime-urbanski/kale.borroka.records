@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "reactstrap";
-import styles from "../Styles/work.module.css";
-import logo from "../Img/icon.jpg";
+import styles from "../../../Styles/work.module.css";
+import logo from "../../../Img/icon.jpg";
 import { withNamespaces } from "react-i18next";
 
 function Work({ t, i18n }) {

@@ -26,7 +26,8 @@
   flex-wrap: wrap;
   height: auto !important;
   justify-content: center;
-  overflow: hidden;;
+  overflow: hidden;
+  z-index: 0 !important;
 }
 .hrFooter {
   border-bottom: 5px;

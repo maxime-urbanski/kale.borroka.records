@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
 import { Col, Row, Container } from "reactstrap";
 import { withNamespaces } from "react-i18next";
-
 import styles from "../Styles/footer.module.css";
-
 import fb from "../Img/fb.png";
 import pt from "../Img/pt.png";
 import yt from "../Img/yt.png";
 import ff from "../Img/ff.png";
 import { Link } from "react-router-dom";
-
 function Footer({ t }) {
   useEffect(() => {
     window.scrollTo(800, 0);

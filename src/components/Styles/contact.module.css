@@ -1,3 +1,11 @@
+.blocLeft {
+  align-items: center !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: larger;
+  font-style: oblique;
+}
 .breadCrumb {
   background-color: transparent;
   border: none;
@@ -7,6 +15,32 @@
   display: flex;
   justify-content: space-evenly;
 }
-#exempleEmail{
-  border: 5px #d9534f !important;
+.img {
+  width: 50px;
+}
+.label {
+  font-size: 3em;
+  font-weight: 700;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+}
+.link2 {
+  text-decoration: none !important;
+}
+.logo {
+  border-radius: 20px;
+  margin: 5em 3em 3em;
+  width: 50px;
+}
+.network {
+  display: flex;
+  justify-content: space-around;
+}
+.hr {
+  border-color: #d9534f;
+  margin: 5em;
+  width: 75%;
 }

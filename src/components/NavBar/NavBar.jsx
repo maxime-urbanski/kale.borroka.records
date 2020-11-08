@@ -17,13 +17,14 @@ import styles from "../Styles/navbar.module.css";
 
 const menu = [
   { name: "home", link: "/" },
-  { name: "prod", link: "/Production" },
-  { name: "divers", link: "/Divers" },
+  { name: "prod", link: "/production" },
+  { name: "IPEH", link: "/ipeh" },
 ];
 const shop = [
-  { name: "LP", link: "/LP" },
-  { name: "EP", link: "/EP" },
-  { name: "CD", link: "/CD" },
+  { name: "LP", link: "/lp", id: 11 },
+  { name: "EP", link: "/ep", id: 12 },
+  { name: "CD", link: "/cd", id: 13 },
+  { name: "Fanzine", link: "/fanzine" },
 ];
 function MenuNav({ t }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,10 +40,10 @@ function MenuNav({ t }) {
         <NavbarToggler onClick={toggle} className={styles.navCollapse} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            {menu.map((item) => {
+            {menu.map((item, index) => {
               return (
                 <>
-                  <NavItem className="nav-justified hvr-grow" key={item.name}>
+                  <NavItem className="nav-justified hvr-grow" key={index.id}>
                     <NavLink
                       tag={Link}
                       to={item.link}
@@ -58,12 +59,12 @@ function MenuNav({ t }) {
               <DropdownToggle className={styles.linkNav} nav caret>
                 {t("shop")}
               </DropdownToggle>
-              <DropdownMenu left>
-                {shop.map((i) => {
+              <DropdownMenu>
+                {shop.map((item, index) => {
                   return (
-                    <DropdownItem>
-                      <Link to={i.link}>
-                        <h6 className="hvr-grow">{i.name}</h6>
+                    <DropdownItem key={index.id}>
+                      <Link to={item.link}>
+                        <h6 className="hvr-grow">{item.name}</h6>
                       </Link>
                     </DropdownItem>
                   );

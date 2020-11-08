@@ -1,15 +1,21 @@
 .ban {
   background-color: white;
-  height: 300px;
-  margin: 10vw auto 1vw;
-  width: 60vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 0;
 }
+
 .colBuy {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-bottom: 3em;
+}
+
+.img {
+  width: 800px;
 }
 .rowTitle {
   display: flex;
@@ -45,7 +51,6 @@
   margin-top: 1.3em;
 }
 
-
 .hvrGrow {
   display: inline-block;
   vertical-align: middle;
@@ -76,13 +81,17 @@
 .navCollapse {
   background-color: red;
 }
+.sizeContainer {
+  overflow: hidden;
+}
 
 @media only screen and (min-width: 360px) and (max-width: 600px) {
   .ban {
     background-color: white;
-    height: 200px;
-    margin-top: 40vw;
-    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 0;
   }
   .Parrallax {
     display: none;
@@ -115,5 +124,25 @@
     border-top: solid !important;
     border-bottom: 5px !important;
     border-color: #d9534f !important;
+  }
+  .img {
+    width: 400px;
+  }
+  .sizeContainer {
+    overflow: hidden;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 740px) {
+  .ban {
+    background-color: white;
+    margin-top: 40vw;
+    margin-bottom: 0;
+  }
+  .img {
+    width: 500px;
+  }
+  .sizeContainer {
+    overflow: hidden;
   }
 }

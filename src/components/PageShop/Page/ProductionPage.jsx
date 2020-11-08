@@ -9,11 +9,11 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
-import production from "../Marchandise/production";
+import production from "../Marchandise/Production";
 import styles from "../../Styles/production.module.css";
 import Footer from "../../Footer/Footer";
 
-function ProductionList({ t }) {
+const ProductionPage = ({ t }) =>{
   return (
     <div>
       <Container>
@@ -44,11 +44,10 @@ function ProductionList({ t }) {
                     </tr>
                   </thead>
                   <tbody>
-                    {production.map((item) => {
+                    {production.map((item, index) => {
                       return (
-                        <tr key={item.id}>
+                        <tr key={index}>
                           <th className={styles.link}>{item.numberProd} </th>
-
                           <td>
                             <Link
                               to={`/${item.format}/${item.id}`}
@@ -69,10 +68,8 @@ function ProductionList({ t }) {
           </Row>
         </Col>
       </Container>
-
       <Footer />
     </div>
   );
 }
-
-export default withNamespaces()(ProductionList);
+export default withNamespaces()(ProductionPage);

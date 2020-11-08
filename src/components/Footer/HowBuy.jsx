@@ -2,12 +2,9 @@ import React, { useEffect } from "react";
 import { Container, Row, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
-
 import Footer from "./Footer";
-import How from "../Home/How";
-
+import How from "../PageShop/Page/Home/How";
 import styles from "../Styles/howbuy.module.css";
-
 function HowBuy({ t }) {
   useEffect(() => {
     window.scrollTo(800, 0);

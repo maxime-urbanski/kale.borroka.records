@@ -1,14 +1,12 @@
 import React from "react";
-import { Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import Slider from "react-slick";
-
 import { withNamespaces } from "react-i18next";
-import styles from "../Styles/home.module.css";
-
+import styles from "../../../Styles/home.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import lastItem from "../PageShop/Marchandise/lastItems";
-import CardArticle from "../PageShop/CardArticle";
+import lastItem from "../../Marchandise/lastItems";
+import CardArticle from "../../CardArticle";
 
 function LastArticle({ t }) {
   const settings = {
@@ -54,13 +52,12 @@ function LastArticle({ t }) {
       <Row>
         <h2 className={`${styles.title} mx-auto`}>{t("arriver")}</h2>
       </Row>
-
       <Slider {...settings}>
-        {lastItem.map((item) => {
+        {lastItem.map((item, index) => {
           return (
-            <div className="mt-2">
+            <Col key={index}>
               <CardArticle {...item} />
-            </div>
+            </Col>
           );
         })}
       </Slider>

@@ -1,13 +1,12 @@
 import React from "react";
-
 import {
+  Button,
   Card,
-  CardImg,
   CardBody,
+  CardImg,
+  CardSubtitle,
   CardText,
   CardTitle,
-  Button,
-  Row,
 } from "reactstrap";
 
 import { withNamespaces } from "react-i18next";
@@ -20,29 +19,29 @@ function CardArticle({ id, image, name, artiste, format, price, t }) {
   return (
     <div className={`${styles.hvrGrow} mt-5`}>
       <Card className={`${styles.cardSize} rounded shadow-lg p-3`} key={id}>
-        <CardImg top className={styles.img} src={image} alt={name} />
+        <CardTitle tag="h4">{artiste}</CardTitle>
+        <CardSubtitle className={styles.text2}>{name}</CardSubtitle>
         <CardBody>
-          <CardTitle>
-            <h4 className={styles.title}>{artiste}</h4> -
-            <p className={styles.titleBis}>{name}</p>
-          </CardTitle>
-          <CardText>
-            -
-            <Row>
-              <p className={styles.infoCard}>{format}</p>
-              <p className={styles.infoCard}>{price}</p>
-            </Row>
+          <CardImg className={styles.img} src={image} alt={name} />
+          <CardText className={styles.text}>
+            {format} {t(`${price}`)}
           </CardText>
           {format === "fanzine" ? (
             <ModalBuy image={image} price={price} />
           ) : (
-            <Button
-              className={styles.bouton}
-              tag={Link}
-              to={`/${format}/${id}`}
+            <Link
+              to={{
+                pathname: `/${format}/${id}`,
+                state: {
+                  image: image,
+                  name: name,
+                  artiste: artiste,
+                  price: price,
+                },
+              }}
             >
-              {t("details")}
-            </Button>
+              <Button className={styles.bouton}>{t("details")}</Button>
+            </Link>
           )}
         </CardBody>
       </Card>

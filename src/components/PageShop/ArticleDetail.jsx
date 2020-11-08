@@ -11,34 +11,31 @@ import {
 import { Link, useParams } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
 import YouTube from "react-youtube";
-import allArticles from "./Marchandise/disque";
 import ModalBuy from "./ModalBuy";
 import Footer from "../Footer/Footer";
 import style from "../Styles/details.module.css";
-const ArticleDetail = ({
-  artists_sort,
-  title,
-  styles,
-  tracklist,
-  year,
-  notes,
-  labels,
-  videos,
-  t,
-}) => {
+
+const ArticleDetail = (props) => {
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  let { format, id } = useParams();
-
+  const { format, id } = useParams();
+  const { image, name, artiste, price } = props.location.state;
+  const { t } = props;
   const url = `https://api.discogs.com/releases/${id}`;
+  const opts = {
+    height: "200",
+    width: "400",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
   useEffect(() => {
     const getInfo = async () => {
-      console.log("je suis la");
       try {
         const data = await Axios.get(url);
         const result = data.data;
         console.log("result =>", result);
-        setArticle([result]);
+        setArticle(result);
       } catch (err) {
         setIsLoading(true);
       } finally {
@@ -47,25 +44,25 @@ const ArticleDetail = ({
     };
     getInfo();
   }, []);
+  const { styles, tracklist, year, notes, labels, videos } = article;
   return (
     <div>
-      {console.log("artise ", article && article.artists_sort)}
       <Container>
         <Breadcrumb className={style.breadCrumb} listTag="div">
           <BreadcrumbItem tag={Link} to={"/"}>
             KALE BORROKA RECORDS
           </BreadcrumbItem>
-          <BreadcrumbItem tag={Link} to={`/${allArticles[id]?.format}`}>
-            {allArticles[id]?.format}
+          <BreadcrumbItem tag={Link} to={`/${format}`}>
+            {format}
           </BreadcrumbItem>
           <BreadcrumbItem active tag="span">
-            {article.artists_sort - title}
+            {artiste} - {name}
           </BreadcrumbItem>
         </Breadcrumb>
         <Row>
           <Col>
             <h2 className={style.title}>
-              {artists_sort} - {title}
+              {artiste} - {name}
             </h2>
           </Col>
         </Row>
@@ -73,34 +70,34 @@ const ArticleDetail = ({
         <Row className={style.postionTop}>
           <Col className={style.top} xs={12} lg={6}>
             <Row>
-              <h3>
-                {styles && styles[0]} {styles && styles[1]}{" "}
-                {styles && styles[2] ? styles && styles[2] : ""}
-              </h3>
+              <h5>{styles && styles.join(" ")}</h5>
             </Row>
             <Row>
               <h4 className={style.year}>{year}</h4>
             </Row>
             <Row>
               <div className={style.badge}>
-                <p className={style.price}>Prix</p>
+                <p className={style.price}>
+                  {`${t("prix")}`}
+                  {`${t(price)}`}
+                </p>
               </div>
             </Row>
             <Row>
               <ModalBuy
-                image={allArticles[id]?.image}
-                price={allArticles[id]?.price}
+                image={image}
+                price={`${t("prix")}: ${t(`${price}`)}`}
                 id={id}
-                fullname={`${artists_sort} - ${title}`}
+                fullname={`${artiste} - ${name}`}
               />
             </Row>
             <Row className="mt-5 justify-content-center">
-              <p>{notes}</p>
+              <h6>{notes}</h6>
             </Row>
           </Col>
           <Col className={style.top} xs={12} sm={6} lg={6}>
             <img
-              src={allArticles[id]?.image}
+              src={image}
               alt={id}
               width="350px"
               className="mb-3 float-right"
@@ -109,9 +106,9 @@ const ArticleDetail = ({
         </Row>
         <Row className={style.label}>
           {labels &&
-            labels.map((item) => {
+            labels.map((item, index) => {
               return (
-                <Col xs={12} lg={3} className={style.badgeLabel}>
+                <Col xs={12} lg={3} className={style.badgeLabel} key={index}>
                   <p className={style.name}>{item.name}</p>
                 </Col>
               );
@@ -132,9 +129,9 @@ const ArticleDetail = ({
               </thead>
               <tbody>
                 {tracklist &&
-                  tracklist.map((item) => {
+                  tracklist.map((item, index) => {
                     return (
-                      <tr key={id}>
+                      <tr key={index}>
                         <th>{item.position} </th>
                         <td>{item.title} </td>
                       </tr>
@@ -148,21 +145,17 @@ const ArticleDetail = ({
         <Row className={style.label}>
           {videos &&
             videos
-              .map((item) => {
+              .map((item, index) => {
                 const uriId = item.uri.split("=")[1];
                 return (
-                  <div className={style.video}>
+                  <div className={style.video} key={index}>
                     <Col lg={2} className={style.video}>
-                      <YouTube
-                        videoId={uriId}
-                        opts={opts}
-                        onReady={this._onReady}
-                      />
+                      <YouTube videoId={uriId} opts={opts} />
                     </Col>
                   </div>
                 );
               })
-              .slice(1, 3)}
+              .slice(0, 3)}
         </Row>
       </Container>
       <Footer />
