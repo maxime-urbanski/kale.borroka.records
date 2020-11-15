@@ -259,15 +259,6 @@ const LParticle = [
     quantity: "1",
   },
   {
-    id: 11579597,
-    artiste: "210",
-    name: "Пыль В Глаза ",
-    image: `${russe}`,
-    price: "12€",
-    format: "LP",
-    quantity: "0",
-  },
-  {
     id: 3018198,
     artiste: "Jeunesse Apatride",
     name: " Black Block 'N' Roll / La Victoire Sommeille ",

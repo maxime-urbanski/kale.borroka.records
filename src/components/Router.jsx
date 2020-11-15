@@ -5,7 +5,6 @@ import MenuNav from "./NavBar/NavBar";
 import TopNav from "./NavBar/TopNav";
 import Home from "./PageShop/Page/Home/Home";
 import Work from "./PageShop/Page/Home/Work";
-import divers from "./PageShop/Page/Divers";
 import fanzinePage from "./PageShop/Page/FanzinePage";
 import lpPage from "./PageShop/Page/LpPage";
 import epPage from "./PageShop/Page/EpPage";
@@ -16,6 +15,7 @@ import ban from "./Img/ban.png";
 import styles from "./Styles/home.module.css";
 import ArticleDetail from "./PageShop/ArticleDetail";
 import ProductionPage from "./PageShop/Page/ProductionPage";
+import SearchBar from "./NavBar/SearchBar";
 
 function Router() {
   return (

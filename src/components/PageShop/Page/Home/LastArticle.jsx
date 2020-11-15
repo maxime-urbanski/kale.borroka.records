@@ -12,11 +12,11 @@ function LastArticle({ t }) {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 3500,
+    speed: 5000,
     slidesToShow: 4,
     slidesToScroll: 4,
-    autoplay: false,
-    autoplaySpeed: 3500,
+    autoplay: true,
+    autoplaySpeed: 5000,
     cssEase: "linear",
     responsive: [
       {

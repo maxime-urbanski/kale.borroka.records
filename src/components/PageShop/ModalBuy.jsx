@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
+import styles from "../Styles/modal.module.css";
 
 const ModalBuy = (props) => {
   const { image, price, id, fullname, t } = props;
@@ -25,19 +26,19 @@ const ModalBuy = (props) => {
         <ModalBody>
           <Col>
             <Row>
-              <Col className="col-md-4 ">
-                <img src={image} alt={id} width="150px" />
-                <h4 className="badge badge-success text-wrap test pt-auto pb-auto bagdePrice mt-4 ml-2">
+              <Col className={styles.blocLeft}>
+                <img src={image} alt={id} width="200px" />
+                <h5 className="badge badge-success text-wrap test pt-auto pb-auto bagdePrice mt-4 ml-2">
                   {price === "Libre"
                     ? `${t("libre")} : ${t("prix")} ${price} `
                     : ""}
-                </h4>
+                </h5>
               </Col>
               <Col className="col-md-8">
                 <Row>
                   <h1 className="text-center">{t("how")}</h1>
                 </Row>
-                <Row>
+                <Row textAlign="center">
                   Pour passer commande, il suffit d'envoyer un mail à
                   kale.borroka.records@protonmail.com, ou via{" "}
                   <Link to="/contact">Contact</Link>, en indiquant les articles

@@ -1,15 +1,12 @@
-function compare (a, b) {   
-    const artisteA = a.artiste.toUpperCase();
-    const artisteB = b.artiste.toUpperCase();
-
-    let comparison = 0;
-    if (artisteA > artisteB) {
-        comparison = 1;
-    } else if (artisteB > artisteA) {
-        comparison = -1;
-    }
-    return comparison
+function compare(a, b) {
+  const artisteA = a.artiste.toUpperCase();
+  const artisteB = b.artiste.toUpperCase();
+  if (artisteA > artisteB) {
+    return 1;
+  } else if (artisteB > artisteA) {
+    return -1;
+  }
+  return compare;
 }
 
 export default compare;
-

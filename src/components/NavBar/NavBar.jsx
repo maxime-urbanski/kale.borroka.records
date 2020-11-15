@@ -14,16 +14,16 @@ import {
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
 import styles from "../Styles/navbar.module.css";
+import SearchBar from "./SearchBar";
 
 const menu = [
   { name: "home", link: "/" },
   { name: "prod", link: "/production" },
-  { name: "IPEH", link: "/ipeh" },
 ];
 const shop = [
-  { name: "LP", link: "/lp", id: 11 },
-  { name: "EP", link: "/ep", id: 12 },
-  { name: "CD", link: "/cd", id: 13 },
+  { name: "LP", link: "/lp" },
+  { name: "EP", link: "/ep" },
+  { name: "CD", link: "/cd" },
   { name: "Fanzine", link: "/fanzine" },
 ];
 function MenuNav({ t }) {
@@ -43,7 +43,7 @@ function MenuNav({ t }) {
             {menu.map((item, index) => {
               return (
                 <>
-                  <NavItem className="nav-justified hvr-grow" key={index.id}>
+                  <NavItem className="nav-justified hvr-grow" key={index * 20}>
                     <NavLink
                       tag={Link}
                       to={item.link}
@@ -62,7 +62,7 @@ function MenuNav({ t }) {
               <DropdownMenu>
                 {shop.map((item, index) => {
                   return (
-                    <DropdownItem key={index.id}>
+                    <DropdownItem key={index}>
                       <Link to={item.link}>
                         <h6 className="hvr-grow">{item.name}</h6>
                       </Link>
@@ -72,6 +72,11 @@ function MenuNav({ t }) {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
+          <div className={styles.searchContainer}>
+            <div className={styles.searchContainer}>
+              <SearchBar />
+            </div>
+          </div>
         </Collapse>
       </Navbar>
     </div>

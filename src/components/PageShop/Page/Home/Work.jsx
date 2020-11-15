@@ -4,7 +4,7 @@ import styles from "../../../Styles/work.module.css";
 import logo from "../../../Img/icon.jpg";
 import { withNamespaces } from "react-i18next";
 
-function Work({ t, i18n }) {
+function Work({ t }) {
   return (
     <Container>
       <div className={styles.work}>

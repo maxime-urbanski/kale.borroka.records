@@ -50,7 +50,6 @@ class ContactUs extends React.Component {
     })
       .then((res) => {
         const status = res.status;
-        console.log(status);
         this.setState({
           isSubmited: true,
           name: "",
@@ -149,6 +148,7 @@ class ContactUs extends React.Component {
               <a
                 className={styles.link2}
                 href="https://www.facebook.com/kale.borroka.records"
+                target="blanck"
               >
                 <img src={fb} alt="" className={styles.logo} />
                 <h6>{t("fb")}</h6>
@@ -167,6 +167,7 @@ class ContactUs extends React.Component {
               <a
                 className={`${styles.link2} mb-5`}
                 href="https://www.youtube.com/channel/UC0TA_as6DBQWwIqxLaBgc8Q/playlists"
+                target="blanck"
               >
                 <img
                   src={yt}

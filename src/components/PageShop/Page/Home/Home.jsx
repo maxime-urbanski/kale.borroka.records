@@ -15,10 +15,10 @@ function Home() {
         <LastArticle />
         <hr className={styles.hrBuy} />
         <How />
-      </Container>
       <div className={styles.Parrallax}></div>
       <hr className={styles.hrBuy2} />
       <Dispo />
+      </Container>
       <Footer />
     </div>
   );

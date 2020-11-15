@@ -5,6 +5,7 @@
   justify-content: center;
   font-size: larger;
   font-style: oblique;
+  margin-bottom: 3.5em;
 }
 .breadCrumb {
   background-color: transparent;
@@ -43,4 +44,12 @@
   border-color: #d9534f;
   margin: 5em;
   width: 75%;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 600px) {
+  .breadCrumb {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+  }
 }

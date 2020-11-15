@@ -34,7 +34,6 @@ const ArticleDetail = (props) => {
       try {
         const data = await Axios.get(url);
         const result = data.data;
-        console.log("result =>", result);
         setArticle(result);
       } catch (err) {
         setIsLoading(true);
@@ -43,7 +42,7 @@ const ArticleDetail = (props) => {
       }
     };
     getInfo();
-  }, []);
+  },[]);
   const { styles, tracklist, year, notes, labels, videos } = article;
   return (
     <div>
