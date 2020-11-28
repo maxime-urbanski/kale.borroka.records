@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import PaginationDistro from "../Function/pagination";
 import { withNamespaces } from "react-i18next";
+import Dispo from "./Page/Home/Dispo";
 
 const pageArticle = ({ articleList, format, t }) => {
   const [currentPage, setCurrentPage] = useState(1);
