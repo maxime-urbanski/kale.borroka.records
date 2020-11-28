@@ -6,13 +6,15 @@ import { withNamespaces } from "react-i18next";
 
 function Work({ t }) {
   return (
-    <Container>
-      <div className={styles.work}>
-        <img src={logo} alt="" className={styles.logo} />
-        <hr className={styles.hr} />
-        <h2>{t("construction")}</h2>
-      </div>
-    </Container>
+    <>
+      <Container>
+        <div className={styles.work}>
+          <img src={logo} alt="" className={styles.logo} />
+          <hr className={styles.hr} />
+          <h2>{t("construction")}</h2>
+        </div>
+      </Container>
+    </>
   );
 }
 

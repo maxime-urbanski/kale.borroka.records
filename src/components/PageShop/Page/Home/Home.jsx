@@ -11,15 +11,12 @@ function Home() {
     window.scrollTo(0, 0);
   });
   return (
-    <div>
-      <>
-        <LastArticle />
-        <hr className={styles.hrBuy} />
-        <How />
-        <div className={styles.Parrallax}></div>
-        <hr className={styles.hrBuy2} />
-        <Dispo />
-      </>
+    <div style={{ overflow: "hidden" }}>
+      <LastArticle />
+      <div className={styles.Parrallax}></div>
+      <Dispo />
+      <hr className={styles.hrBuy}/>
+      <How />
     </div>
   );
 }

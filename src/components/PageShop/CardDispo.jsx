@@ -15,24 +15,24 @@ const CardsDipo = ({ articleList, format, t }) => {
   }
   multiNumber = [...new Set(multiNumber)].slice(0, 5);
   return (
-    <Col xs={12} lg={4}>
+    <>
       <Row className={styles.position}>
         <h3 className={styles.otherTitle}>{format}</h3>
       </Row>
       <Row className={styles.position}>
-        <div className={styles.test}>
+        <div className={styles.columnDirection}>
           {multiNumber.map((item) => {
             const article = articleList[item];
-            return <OneCard articleList={article} format={format} />
+            return <OneCard articleList={article} format={format} />;
           })}
-          <Link className="text-decoration-none" to={`/${format}`}>
+          <Link className={styles.link} to={`/${format}`}>
             <Button color="warning" className="mb-5">
               {t("more")}
             </Button>
           </Link>
         </div>
       </Row>
-    </Col>
+    </>
   );
 };
 export default CardsDipo;

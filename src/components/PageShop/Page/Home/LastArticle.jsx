@@ -1,66 +1,44 @@
 import React from "react";
 import { Col, Row } from "reactstrap";
-import Slider from "react-slick";
 import { withNamespaces } from "react-i18next";
 import styles from "../../../Styles/home.module.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import lastItem from "../../Marchandise/lastItems";
 import CardArticle from "../../CardArticle";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function LastArticle({ t }) {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 5000,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    cssEase: "linear",
-    responsive: [
-      {
-        breakpoint: 1150,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-        },
-      },
-    ],
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 4, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
   };
   return (
     <>
       <Row>
         <h2 className={`${styles.title} mx-auto`}>{t("arriver")}</h2>
       </Row>
-      <Slider {...settings}>
+      <Carousel responsive={responsive} infinite={true}>
         {lastItem.map((item, index) => {
           return (
-            <Col xs={12}key={index}>
+            <Col xs={12} key={index}>
               <CardArticle {...item} />
             </Col>
           );
         })}
-      </Slider>
+      </Carousel>
     </>
   );
 }
