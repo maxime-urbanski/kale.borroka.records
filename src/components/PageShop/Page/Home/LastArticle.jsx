@@ -55,7 +55,7 @@ function LastArticle({ t }) {
       <Slider {...settings}>
         {lastItem.map((item, index) => {
           return (
-            <Col key={index}>
+            <Col xs={12}key={index}>
               <CardArticle {...item} />
             </Col>
           );

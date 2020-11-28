@@ -41,10 +41,10 @@
 .cardBody {
   border:solid 1px #1a1a1a8e;
   border-radius: 5px;
-  box-shadow: 10px 10px 10px#1a1a1a42;
+  box-shadow: 10px 10px 10px#1a1a1aa4  ;
   margin: 1em 1em 4em 1em;
   padding-left: 10px;
-  width: 330px;
+  width: 400px;
   height: 150px;
 }
 
@@ -57,4 +57,16 @@
 
 .test{
   flex-direction: column;
+}
+
+@media screen and (min-width: 360px) and (max-width: 420px) {
+  .cardBody {
+    border:solid 1px #1a1a1a8e;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px#1a1a1a73;
+    margin: 1em 1em 4em 1em;
+    padding-left: 10px;
+    width: 340px;
+    height: 150px;
+  }
 }

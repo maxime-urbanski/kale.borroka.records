@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import { Container, Row, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
-import Footer from "./Footer";
 import How from "../PageShop/Page/Home/How";
 import styles from "../Styles/howbuy.module.css";
 function HowBuy({ t }) {
   useEffect(() => {
-    window.scrollTo(800, 0);
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div>
@@ -37,14 +36,13 @@ function HowBuy({ t }) {
             <br /> Les commandes sont traitées rapidement, et envoyer avec
             Chronopost (où transporteur de ton choix), avec la possibilité de
             remise en main propre. <br />
-            Pour le paiement, nous acceptons Paypals et les virements bancaires.
+            Pour le paiement, nous acceptons pour le moments que Paypal.
           </p>
         </Row>
         <Row>
           <p className={styles.team}>L'équipe de Kale Borrorka Records</p>
         </Row>
       </Container>
-      <Footer />
     </div>
   );
 }

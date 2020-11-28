@@ -15,20 +15,16 @@ import ban from "./Img/ban.png";
 import styles from "./Styles/home.module.css";
 import ArticleDetail from "./PageShop/ArticleDetail";
 import ProductionPage from "./PageShop/Page/ProductionPage";
-import SearchBar from "./NavBar/SearchBar";
+import Footer from "./Footer/Footer";
 
 function Router() {
   return (
     <BrowserRouter>
       <Row>
         <TopNav />
-      </Row>
-      <Row>
         <MenuNav />
       </Row>
-      <div className={styles.ban}>
-        <img className={styles.img} src={ban} alt="kale borroka records ban" />
-      </div>
+      <img className={styles.img} src={ban} alt="kale borroka records ban" />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/:format/:id" component={ArticleDetail} />
@@ -42,6 +38,7 @@ function Router() {
         <Route exact path="/contact" component={ContactUs} />
         <Route exact path="/how-to-buy" component={HowBuy} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

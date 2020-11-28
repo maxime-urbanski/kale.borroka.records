@@ -19,6 +19,16 @@ const SearchBar = () => {
   const handleChange = (event) => {
     setArticleSuggestions(event.target.value);
   };
+  const focus = () => setSearch(true);
+  const blur = () => {
+    articleSuggestions.length === 0 || choice === false
+      ? setSearch(false)
+      : setSearch(true);
+  };
+  const handleClick = () => {
+    setChoice(true);
+    setSearch(false);
+  };
 
   return (
     <div className={styles.autoCompleteText}>
@@ -26,23 +36,12 @@ const SearchBar = () => {
         type="text"
         value={articleSuggestions}
         onChange={handleChange}
-        onFocus={() => {
-          setSearch(true);
-        }}
-        onBlur={() => {
-          articleSuggestions.length === 0 || choice === false
-            ? setSearch(false)
-            : setSearch(true);
-        }}
+        onFocus={focus}
+        onBlur={blur}
       />
 
       {search && (
-        <ul
-          onClick={() => {
-            setChoice(true);
-            setSearch(false);
-          }}
-        >
+        <ul onClick={handleClick}>
           <ResultSearch
             array={allArticles}
             articleSuggestions={articleSuggestions}

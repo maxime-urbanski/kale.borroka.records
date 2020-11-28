@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Breadcrumb,
@@ -11,9 +11,11 @@ import { Link } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
 import production from "../Marchandise/Production";
 import styles from "../../Styles/production.module.css";
-import Footer from "../../Footer/Footer";
 
-const ProductionPage = ({ t }) =>{
+const ProductionPage = ({ t }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <Container>
@@ -68,8 +70,7 @@ const ProductionPage = ({ t }) =>{
           </Row>
         </Col>
       </Container>
-      <Footer />
     </div>
   );
-}
+};
 export default withNamespaces()(ProductionPage);

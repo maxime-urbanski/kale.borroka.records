@@ -62,11 +62,11 @@ function MenuNav({ t }) {
               <DropdownMenu>
                 {shop.map((item, index) => {
                   return (
-                    <DropdownItem key={index}>
-                      <Link to={item.link}>
+                    <Link to={item.link}>
+                      <DropdownItem key={index}>
                         <h6 className="hvr-grow">{item.name}</h6>
-                      </Link>
-                    </DropdownItem>
+                      </DropdownItem>
+                    </Link>
                   );
                 })}
               </DropdownMenu>

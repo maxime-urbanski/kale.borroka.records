@@ -13,7 +13,6 @@ import {
 } from "reactstrap";
 import { withNamespaces } from "react-i18next";
 import { Link } from "react-router-dom";
-import Footer from "../Footer/Footer";
 import fb from "../Img/fb.png";
 import pt from "../Img/pt.png";
 import yt from "../Img/yt.png";
@@ -32,10 +31,10 @@ class ContactUs extends React.Component {
       message: "",
       isSubmited: false,
     };
-    this.onChange = this.onChange.bind(this);
+    this.onChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  onChange(e) {
+  handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -102,7 +101,7 @@ class ContactUs extends React.Component {
                     name="email"
                     id={styles.exampleEmail}
                     placeholder="Email..."
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                     value={this.state.email}
                   />
                 </FormGroup>
@@ -110,10 +109,10 @@ class ContactUs extends React.Component {
                   <Label className={styles.label} for="exampleSelect">
                     {t("categorie")}
                   </Label>
-                  <Input type="select" name="select" id="select">
-                    <option>{t("commande")}</option>
-                    <option>{t("groupe")}</option>
-                    <option>{t("autre")}</option>
+                  <Input type="select" name="select" id="select" onChange={this.handleChange}>
+                    <option value="commande">{t("commande")}</option>
+                    <option value="groupe">{t("groupe")}</option>
+                    <option value="autre">{t("autre")}</option>
                   </Input>
                 </FormGroup>
                 <FormGroup>
@@ -125,7 +124,7 @@ class ContactUs extends React.Component {
                     bsSize="lg"
                     name="message"
                     id="exampleText"
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                     value={this.state.message}
                   />
                 </FormGroup>
@@ -179,7 +178,6 @@ class ContactUs extends React.Component {
             </Col>
           </Row>
         </Container>
-        <Footer />
       </>
     );
   }

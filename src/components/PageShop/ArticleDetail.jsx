@@ -12,7 +12,6 @@ import { Link, useParams } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
 import YouTube from "react-youtube";
 import ModalBuy from "./ModalBuy";
-import Footer from "../Footer/Footer";
 import style from "../Styles/details.module.css";
 
 const ArticleDetail = (props) => {
@@ -30,6 +29,7 @@ const ArticleDetail = (props) => {
     },
   };
   useEffect(() => {
+    window.scrollTo(0, 300);
     const getInfo = async () => {
       try {
         const data = await Axios.get(url);
@@ -42,7 +42,7 @@ const ArticleDetail = (props) => {
       }
     };
     getInfo();
-  },[]);
+  }, []);
   const { styles, tracklist, year, notes, labels, videos } = article;
   return (
     <div>
@@ -157,7 +157,6 @@ const ArticleDetail = (props) => {
               .slice(0, 3)}
         </Row>
       </Container>
-      <Footer />
     </div>
   );
 };

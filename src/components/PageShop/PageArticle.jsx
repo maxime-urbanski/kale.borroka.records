@@ -17,7 +17,7 @@ const pageArticle = ({ articleList, format, t }) => {
   const paginate = (pageNum) => setCurrentPage(pageNum);
 
   useEffect(() => {
-    window.scrollTo(0, 450);
+    window.scrollTo(0, 300);
   });
   return (
     <>

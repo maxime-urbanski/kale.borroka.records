@@ -1,6 +1,5 @@
 import React from "react";
 import fanzine from "../Marchandise/Fanzine";
-import Footer from "../../Footer/Footer";
 import PageArticle from "../PageArticle";
 
 const fanzinePage = () => {
@@ -8,7 +7,6 @@ const fanzinePage = () => {
   return (
     <div>
       <PageArticle articleList={fanzine} format={format} />
-      <Footer />
     </div>
   );
 };

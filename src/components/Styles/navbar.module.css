@@ -58,6 +58,7 @@
 
 .navigate {
   display: flex;
+  width: 100vw;
 }
 .navTop {
   align-items: center;
@@ -123,7 +124,7 @@
     height: 60px;
     justify-content: space-between;
     position: fixed !important;
-    width: 103%;
+    width: auto;
   }
   .navHeight {
     display: flex;
@@ -131,6 +132,9 @@
     height: auto;
     font-style: italic;
     margin-top: 60px;
+  }
+  .searchContainer {
+    display: none;
   }
 }
 
@@ -166,9 +170,9 @@
   .searchContainer {
     background-color: white;
     position: absolute;
-    width: 23rem;
+    width: 21rem;
     top: 20%;
-    left:53%;
+    left:47%;
   }
   .autoCompleteText {
     width: 100%;
@@ -189,13 +193,13 @@
     margin-top: 1em;
   }
 }
-@media only screen and (min-width: 1201px) and (max-width: 1380px) {
+@media only screen and (min-width: 1201px) and (max-width: 1480px) {
   .searchContainer {
     background-color: white;
     position: absolute;
     width: 24rem;
     top: 20%;
-    left:53%;
+    left:50%;
   }
   .autoCompleteText {
     width: 100%;

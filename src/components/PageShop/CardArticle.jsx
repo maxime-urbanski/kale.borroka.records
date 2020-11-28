@@ -18,8 +18,8 @@ import styles from "../Styles/card.module.css";
 function CardArticle({ id, image, name, artiste, format, price, t }) {
   return (
     <div className={`${styles.hvrGrow} mt-5`}>
-      <Card className={`${styles.cardSize} rounded shadow-lg p-3`} key={id}>
-        <CardTitle tag="h4">{artiste}</CardTitle>
+      <Card className={styles.cardSize} key={id}>
+        <CardTitle className="mt-4" tag="h4">{artiste}</CardTitle>
         <CardSubtitle className={styles.text2}>{name}</CardSubtitle>
         <CardBody>
           <CardImg className={styles.img} src={image} alt={name} />

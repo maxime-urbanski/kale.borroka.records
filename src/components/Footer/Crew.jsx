@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "reactstrap";
 import "./crew.css";
-import Footer from "./Footer";
 
 function Crew() {
     return (
@@ -36,7 +35,6 @@ function Crew() {
                     </p>
                 </div>
             </Container>
-            <Footer />
         </>
     );
 }

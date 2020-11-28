@@ -34,10 +34,7 @@ function Footer({ t }) {
     },
   ];
   const network = [];
-  useEffect(() => {
-    window.scrollTo(0, 450);
-  }, []);
-  return (
+    return (
     <>
       <Container fluid className={styles.footer}>
         <Col xs={12} lg={4} className={styles.colFooter}>
@@ -88,7 +85,7 @@ function Footer({ t }) {
             </Link>
           </Row>
           <Row>
-            <Link to="/Divers/fanzine" className="text-decoration-none">
+            <Link to="/fanzine" className="text-decoration-none">
               <h6 className={styles.link}>FANZINE</h6>
             </Link>
           </Row>

@@ -6,7 +6,6 @@ import styles from "../../Styles/divers.module.css";
 
 import fanzine from "../../Img/fanzine_4.png";
 import ipeh from "../../Img/ipeh.jpg";
-import Footer from "../../Footer/Footer";
 
 function divers() {
   return (
@@ -38,7 +37,6 @@ function divers() {
           </Col>
         </Row>
       </Container>
-      <Footer />
     </>
   );
 }

@@ -1,25 +1,25 @@
 import React from "react";
-import { Container } from "reactstrap";
 import styles from "../../../Styles/home.module.css";
-import Footer from "../../../Footer/Footer";
 import How from "./How";
 import Dispo from "./Dispo";
 
 import LastArticle from "./LastArticle";
-import { HandIndex } from "react-bootstrap-icons";
+import { useEffect } from "react";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <div>
-      <Container fluid className={styles.sizeContainer}>
+      <>
         <LastArticle />
         <hr className={styles.hrBuy} />
         <How />
-      <div className={styles.Parrallax}></div>
-      <hr className={styles.hrBuy2} />
-      <Dispo />
-      </Container>
-      <Footer />
+        <div className={styles.Parrallax}></div>
+        <hr className={styles.hrBuy2} />
+        <Dispo />
+      </>
     </div>
   );
 }
