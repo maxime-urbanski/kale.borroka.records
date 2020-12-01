@@ -21,6 +21,14 @@ const ArticleDetail = (props) => {
   const { image, name, artiste, price } = props.location.state;
   const { t } = props;
   const url = `https://api.discogs.com/releases/${id}`;
+  const widhtScreen = screen.width;
+  const opts2 = {
+    height: "150",
+    width: "300",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
   const opts = {
     height: "200",
     width: "400",
@@ -45,7 +53,7 @@ const ArticleDetail = (props) => {
   }, []);
   const { styles, tracklist, year, notes, labels, videos } = article;
   return (
-    <div>
+    <div style={{ overflow: "hidden" }}>
       <Container>
         <Breadcrumb className={style.breadCrumb} listTag="div">
           <BreadcrumbItem tag={Link} to={"/"}>
@@ -67,14 +75,22 @@ const ArticleDetail = (props) => {
         </Row>
         <hr className={style.hr} />
         <Row className={style.postionTop}>
+          <Col className={`${style.top} mb-4`} xs={12} sm={12} lg={6}>
+            <img
+              id={style.image}
+              src={image}
+              alt={id}
+              className="mb-3 float-right"
+            />
+          </Col>
           <Col className={style.top} xs={12} lg={6}>
-            <Row>
+            <Row className="mb-1">
               <h5>{styles && styles.join(" ")}</h5>
             </Row>
-            <Row>
+            <Row className="mb-1">
               <h4 className={style.year}>{year}</h4>
             </Row>
-            <Row>
+            <Row className="mb-1">
               <div className={style.badge}>
                 <p className={style.price}>
                   {`${t("prix")}`}
@@ -94,27 +110,19 @@ const ArticleDetail = (props) => {
               <h6>{notes}</h6>
             </Row>
           </Col>
-          <Col className={style.top} xs={12} sm={6} lg={6}>
-            <img
-              src={image}
-              alt={id}
-              width="350px"
-              className="mb-3 float-right"
-            />
-          </Col>
         </Row>
         <Row className={style.label}>
           {labels &&
             labels.map((item, index) => {
               return (
-                <Col xs={12} lg={3} className={style.badgeLabel} key={index}>
-                  <p className={style.name}>{item.name}</p>
+                <Col xs={4} lg={3} className={style.badgeLabel} key={index}>
+                  {item.name}
                 </Col>
               );
             })}
         </Row>
         <Row className={style.label}>
-          <Col xs={12} lg={10}>
+          <Col xs={12} lg={7}>
             <Table
               responsive
               className="table table-striped table-dark "
@@ -148,8 +156,11 @@ const ArticleDetail = (props) => {
                 const uriId = item.uri.split("=")[1];
                 return (
                   <div className={style.video} key={index}>
-                    <Col lg={2} className={style.video}>
-                      <YouTube videoId={uriId} opts={opts} />
+                    <Col xs={10} lg={4} className={style.video}>
+                      <YouTube
+                        videoId={uriId}
+                        opts={widhtScreen < 600 ? opts2 : opts}
+                      />
                     </Col>
                   </div>
                 );
