@@ -40,6 +40,10 @@ class ContactUs extends React.Component {
     });
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     fetch("/", {
@@ -109,7 +113,12 @@ class ContactUs extends React.Component {
                   <Label className={styles.label} for="exampleSelect">
                     {t("categorie")}
                   </Label>
-                  <Input type="select" name="select" id="select" onChange={this.handleChange}>
+                  <Input
+                    type="select"
+                    name="select"
+                    id="select"
+                    onChange={this.handleChange}
+                  >
                     <option value="commande">{t("commande")}</option>
                     <option value="groupe">{t("groupe")}</option>
                     <option value="autre">{t("autre")}</option>

@@ -31,11 +31,19 @@ function LastArticle({ t }) {
     },
   };
   return (
-    <>
+    <div styles={{ zIndex: "0" }}>
       <Row>
         <h2 className={`${styles.title} mx-auto`}>{t("arriver")}</h2>
       </Row>
-      <Carousel responsive={responsive} infinite={true} transitionDuration={5000}>
+      <Carousel
+        responsive={responsive}
+        infinite={true}
+        transitionDuration={5000}
+        arrows={false}
+        autoPlay={true}
+        autoPlaySpeed={3000}
+        customTransition="all 2"
+      >
         {lastItem.map((item, index) => {
           return (
             <Col xs={12} key={index}>
@@ -44,7 +52,7 @@ function LastArticle({ t }) {
           );
         })}
       </Carousel>
-    </>
+    </div>
   );
 }
 

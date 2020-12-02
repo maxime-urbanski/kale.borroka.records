@@ -94,15 +94,14 @@ const ArticleDetail = (props) => {
               <div className={style.badge}>
                 <p className={style.price}>
                   {price === "Libre"
-                    ? `${t("libre")} : ${t("prix")} ${price} `
-                    : ""}
+                    ? `${t("Libre")}` : `${t("prix")} ${price} `
+                    }
                 </p>
               </div>
             </Row>
             <Row>
               <ModalBuy
                 image={image}
-                price={`${t("prix")}: ${t(`${price}`)}`}
                 id={id}
                 fullname={`${artiste} - ${name}`}
               />

@@ -3,9 +3,15 @@ import { Col, Row, Container } from "reactstrap";
 import { withNamespaces } from "react-i18next";
 import styles from "../Styles/footer.module.css";
 import { Link } from "react-router-dom";
-import { friend, socialNetwork } from "../Function/link";
+import {
+  aboutSection,
+  friend,
+  sectionShop,
+  socialNetwork,
+} from "../Function/link";
+import SectionLinkFooter from "./SectionLinkFooter";
+
 function Footer({ t }) {
-  const network = [];
   return (
     <>
       <Container fluid className={styles.footer}>
@@ -14,58 +20,14 @@ function Footer({ t }) {
             <h3 className={styles.sectionFooter}>{t("propos")}</h3>
           </Row>
           <hr className={styles.hrFooter} />
-          <Row>
-            <Link to="/how-to-buy" className="text-decoration-none">
-              <h6 className={styles.link}>{t("how")}</h6>
-            </Link>
-          </Row>
-          <Row>
-            <Link to="/contact" className="text-decoration-none">
-              <h6 className={styles.link}>{t("contact")}</h6>
-            </Link>
-          </Row>
-          <Row>
-            <Link to="/ipeh" className="text-decoration-none">
-              <h6 className={styles.link}>IPEH Antifaxista</h6>
-            </Link>
-          </Row>
-          <Row>
-            <Link to="/crew" className="text-decoration-none">
-              <h6 className={styles.link}>Kale Borroka Records</h6>
-            </Link>
-          </Row>
+          <SectionLinkFooter array={aboutSection} t={t}/>
         </Col>
-
         <Col xs={12} lg={4} className={styles.colFooter}>
           <Row>
             <h3 className={styles.sectionFooter}>{t("shop")}</h3>
           </Row>
           <hr className={styles.hrFooter} />
-          <Row>
-            <Link to="/LP" className="text-decoration-none">
-              <h6 className={styles.link}>LP</h6>
-            </Link>
-          </Row>
-          <Row>
-            <Link to="/EP" className="text-decoration-none">
-              <h6 className={styles.link}>EP</h6>
-            </Link>
-          </Row>
-          <Row>
-            <Link to="/CD" className="text-decoration-none">
-              <h6 className={styles.link}>CD</h6>
-            </Link>
-          </Row>
-          <Row>
-            <Link to="/fanzine" className="text-decoration-none">
-              <h6 className={styles.link}>FANZINE</h6>
-            </Link>
-          </Row>
-          <Row>
-            <Link to="/Production" className="text-decoration-none">
-              <h6 className={styles.link}>{t("prod")}</h6>
-            </Link>
-          </Row>
+          <SectionLinkFooter array={sectionShop} t={t}/>
         </Col>
         <Col xs={12} lg={4} className={styles.colFooter}>
           <Row>
@@ -73,15 +35,17 @@ function Footer({ t }) {
           </Row>
           <hr className={styles.hrFooter} />
           {socialNetwork.map((link, index) => {
-            <Row key={index}>
-              <a href={link.link}>
-                <img
-                  src={link.logo}
-                  alt="facebook icon"
-                  className={styles.imageFooter}
-                />
-              </a>
-            </Row>;
+            return (
+              <Row key={index}>
+                <Link to={link.link}>
+                  <img
+                    src={link.logo}
+                    alt="facebook icon"
+                    className={styles.imageFooter}
+                  />
+                </Link>
+              </Row>
+            );
           })}
         </Col>
         <Col xs={12} lg={12} className={styles.friends}>
@@ -99,7 +63,7 @@ function Footer({ t }) {
                     src={item.name}
                     alt={item.alt}
                     className={
-                      item.name === "ff"
+                      item.alt.includes("Fire and Flames Records")
                         ? `${styles.imageFriend}`
                         : `${styles.imageFriend2}`
                     }
