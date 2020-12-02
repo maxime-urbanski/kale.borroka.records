@@ -1,0 +1,57 @@
+.breadCrumb {
+  background-color: transparent;
+  border: none;
+  font-size: 1.4em;
+}
+
+.explain {
+  font-size: 1.4em;
+  margin-top: 30px;
+  text-align: justify;
+  margin-top: 3em;
+}
+
+.hrBuy {
+  width: 75%;
+  border-top: solid !important;
+  border-bottom: 5px;
+  border-color: #d9534f !important;
+}
+
+.position {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 3em;
+  font-style: italic;
+  margin: 1.5em 0;
+  font-weight: bold;
+}
+
+.team {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 1.3em;
+  margin-bottom: 5em;
+  margin-top: 2em;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 600px) {
+  .breadCrumb {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+  }
+  .explain {
+    font-size: 1.2em;
+    margin: 1.5em 1em;
+    text-align: justify;
+  }
+    .team {
+    font-style: italic;
+    font-size: 1em;
+    margin-left: 10px;
+  }
+}
