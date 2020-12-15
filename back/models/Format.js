@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const SequelizeConnexion = require("../SequelizeConnexion");
 
-const Format = new SequelizeConnexion.define("Format",{
+const Format = SequelizeConnexion.define("Format",{
   id: {
     type: Sequelize.UUID,
     allowNull: false,

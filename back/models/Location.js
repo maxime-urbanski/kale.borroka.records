@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const SequelizeConnexion = require("../SequelizeConnexion");
 
-const Location = new SequelizeConnexion.define("Location",{
+const Location = SequelizeConnexion.define("Location", {
   id: {
     type: Sequelize.UUID,
     allowNull: false,
