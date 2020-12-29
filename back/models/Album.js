@@ -16,6 +16,10 @@ const Album = SequelizeConnexion.define("Album", {
     type: Sequelize.STRING,
     allowNull: true,
   },
-});
+  folder: {
+    type: Sequelize.STRING,
+    allowNull: true,
+  },
+}, { timestamps: false });
 
 module.exports = Album;

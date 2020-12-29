@@ -1,17 +1,17 @@
 const Sequelize = require("sequelize");
 const SequelizeConnexion = require("../SequelizeConnexion");
 
-const Style = SequelizeConnexion.define("Style", {
+const Quantity = SequelizeConnexion.define("Album", {
   id: {
     type: Sequelize.UUID,
     allowNull: false,
     primaryKey: true,
     defaultValue: Sequelize.UUIDV4,
   },
-  name: {
-    type: Sequelize.STRING(255),
+  quantity: {
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
 }, { timestamps: false });
 
-module.exports = Style;
+module.exports = Quantity;

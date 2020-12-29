@@ -12,7 +12,7 @@ const Price =  SequelizeConnexion.define("Price",{
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-});
+}, { timestamps: false });
 
 
 module.exports = Price;

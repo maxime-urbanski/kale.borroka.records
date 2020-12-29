@@ -7,9 +7,31 @@ const Location = require("./models/Location");
 const Price = require("./models/Price");
 const Song = require("./models/Song");
 const Style = require("./models/Style");
+const Tracklist = require("./models/Tracklist");
 
 Artist.belongsTo(Location);
 Location.hasMany(Artist);
 
 Artist.hasMany(Album);
 Album.belongsTo(Artist);
+
+Artist.belongsToMany(Song, { through: "WRITE" }, { onDelete: "CASCADE" });
+Song.belongsToMany(Artist, { through: "WRITE" }, { onDelete: "CASCADE" });
+
+Album.belongsToMany(Label, { through: "PRODUCT" }, { onDelete: "CASCADE" });
+Label.belongsToMany(Album, { through: "PRODUCT" }, { onDelete: "CASCADE" });
+
+Album.belongsTo(Style);
+Style.hasMany(Album);
+
+Album.belongsToMany(Format, { through: "SUPPORT" }, { onDelete: "CASCADE" });
+Format.belongsToMany(Album, { through: "SUPPORT" }, { onDelete: "CASCADE" });
+
+Tracklist.hasOne(Album);
+Album.belongsTo(Tracklist);
+
+Article.belongsTo(Album);
+Album.hasMany(Article);
+
+Article.belongsTo(Price);
+Price.hasMany(Article);

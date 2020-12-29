@@ -8,10 +8,14 @@ const Location = SequelizeConnexion.define("Location", {
     primaryKey: true,
     defaultValue: Sequelize.UUIDV4,
   },
-  name: {
+  city: {
+    type: Sequelize.STRING(255),
+    allowNull: true,
+  },
+  town: {
     type: Sequelize.STRING(255),
     allowNull: false,
   },
-});
+}, { timestamps: false });
 
 module.exports = Location;

@@ -1,0 +1,24 @@
+## GET ALL FORMAT
+GET http://localhost:5050/api/format HTTP/1.1
+
+### GET ONE FORMAT
+GET http://localhost:5050/api/format/1c0be236-5379-4e11-b0c7-fb164ae64e9d HTTP/1.1
+
+### POST FORMAT
+POST http://localhost:5050/api/format HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "LIVRE"
+}
+
+### PUT FORMAT
+PUT http://localhost:5050/api/format/2b1831b3-eaee-4e37-8ad5-f907d246badb HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Hardcore"
+}
+
+### DELETE FORMAT
+DELETE  http://localhost:5050/api/format/2b1831b3-eaee-4e37-8ad5-f907d246badb HTTP/1.1

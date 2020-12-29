@@ -1,40 +1,45 @@
 const express = require("express");
-const RouterArtists = express.Router();
+const router = express.Router();
+const Album = require("../models/Album");
 const Artist = require("../models/Artist");
-const Location = require("../models/Location");
+const Style = require("../models/Style");
 
-RouterArtists.get("/", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const result = await Artist.findAll({ include: Location });
+    const result = await Album.findAll({ include: [Artist, Style] });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-RouterArtists.get("/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await Artist.findByPk(id);
+    const result = await Album.findByPk(id);
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-RouterArtists.post("/", async (req, res) => {
-  const { name, country, town } = req.body;
+router.post("/", async (req, res) => {
+  const { name, note, folder, artist, style } = req.body;
   try {
-    const result = await Artist.create(
+    const result = await Album.create(
       {
         name,
-        Location: {
-          country,
-          town,
+        note,
+        folder,
+        Artist: {
+          name: artist,
+        },
+        Style: {
+          name: style,
         },
       },
       {
-        include: Location,
+        include: [Artist, Style],
       }
     );
     console.log(req.body);
@@ -44,11 +49,11 @@ RouterArtists.post("/", async (req, res) => {
   }
 });
 
-RouterArtists.put("/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const { name, country, town } = req.body;
   try {
-    await Artist.update(
+    await Album.update(
       {
         name,
         Location: {
@@ -66,14 +71,14 @@ RouterArtists.put("/:id", async (req, res) => {
   }
 });
 
-RouterArtists.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await Artist.destroy({ where: { id } });
+    const result = await Album.destroy({ where: { id } });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-module.exports = RouterArtists;
+module.exports = router;

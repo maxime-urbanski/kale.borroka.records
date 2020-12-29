@@ -9,13 +9,13 @@ const Song = SequelizeConnexion.define("Song", {
     defaultValue: Sequelize.UUIDV4,
   },
   name: {
-    type: Sequelize.STRING(255),
+    type: Sequelize.STRING(100),
     allowNull: false,
   },
-  duration: {
-    type: Sequelize.TIME,
+  onYoutube: {
+    type: Sequelize.STRING(255),
     allowNull: true,
   },
-});
+}, { timestamps: false });
 
 module.exports = Song;

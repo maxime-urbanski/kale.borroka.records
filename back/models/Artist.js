@@ -12,6 +12,6 @@ const Artist = SequelizeConnexion.define("Artist", {
     type: Sequelize.STRING(255),
     allowNull: false,
   },
-});
+}, { timestamps: false });
 
 module.exports = Artist;

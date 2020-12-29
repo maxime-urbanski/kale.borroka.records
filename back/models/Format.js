@@ -12,6 +12,6 @@ const Format = SequelizeConnexion.define("Format",{
     type: Sequelize.STRING(255),
     allowNull: false,
   },
-});
+}, { timestamps: false });
 
 module.exports = Format;

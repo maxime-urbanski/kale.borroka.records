@@ -9,15 +9,15 @@ POST http://localhost:5050/api/location HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Biélorussie"
+    "name": "Donostia"
 }
 
 ### PUT LOCATION
-PUT http://localhost:5050/api/location/61679903-31d0-4dd7-9f8a-aaa8506b1d54 HTTP/1.1
+PUT http://localhost:5050/api/location/141a0ffd-53db-4319-adb9-2679c9ec97d9 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Bielorussie"
+    "name": "Euskal Herria"
 }
 
 ### DELETE ARTILOCATIONST
