@@ -1,6 +1,8 @@
 const Album = require("./models/Album");
 const Article = require("./models/Article");
 const Artist = require("./models/Artist");
+const City = require("./models/City");
+const Country = require("./models/Country");
 const Format = require("./models/Format");
 const Label = require("./models/Label");
 const Location = require("./models/Location");
@@ -9,8 +11,11 @@ const Song = require("./models/Song");
 const Style = require("./models/Style");
 const Tracklist = require("./models/Tracklist");
 
-Artist.belongsTo(Location, { onUpdate: "RESTRICT" });
-Location.hasMany(Artist, { onUpdate: "RESTRICT" });
+Artist.belongsTo(City);
+City.hasOne(Artist);
+
+Artist.belongsTo(Country);
+Country.hasOne(Artist);
 
 Artist.hasMany(Album);
 Album.belongsTo(Artist);

@@ -10,8 +10,7 @@ Content-Type: application/json
 
 {
   "name": "Krav Boca",
-  "city": "Toulouse",
-  "country": "France"
+  "LocationId": "7649dd81-a5f8-4aa9-a6b8-68715d7509ba"
 }
     
 
