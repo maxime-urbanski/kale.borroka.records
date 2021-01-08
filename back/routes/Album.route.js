@@ -2,11 +2,22 @@ const express = require("express");
 const router = express.Router();
 const Album = require("../models/Album");
 const Artist = require("../models/Artist");
+const Song = require("../models/Song");
 const Style = require("../models/Style");
+const Tracklist = require("../models/Tracklist");
 
 router.get("/", async (req, res) => {
   try {
-    const result = await Album.findAll({ include: [Artist, Style] });
+    const result = await Album.findAll({
+      attributes: ["id", "name", "note", "folder"],
+      include: [
+        {
+          model: Artist,
+          attributes: ["name"],
+        },
+        { model: Style, attributes: ["name"] },
+      ],
+    });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
@@ -37,6 +48,9 @@ router.post("/", async (req, res) => {
         Style: {
           name: style,
         },
+        Tracklist: {
+          Song,
+        },
       },
       {
         include: [Artist, Style],
@@ -51,18 +65,17 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name, country, town } = req.body;
+  const { name, country, city } = req.body;
   try {
     await Album.update(
       {
         name,
         Location: {
-          town,
+          city,
           country,
         },
       },
-      { where: { id } },
-      { include: Location }
+      { where: { id } }
     );
     res.status(200).json(`Artist ${id} is modified`);
     console.log(req.body);

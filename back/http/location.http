@@ -21,4 +21,4 @@ Content-Type: application/json
 }
 
 ### DELETE ARTILOCATIONST
-DELETE  http://localhost:5050/api/location/b353bd82-31a1-4649-b7fb-e76f6d2165ae HTTP/1.1
+DELETE  http://localhost:5050/api/location/e266ae49-c24a-497c-99bc-2d156471f2be HTTP/1.1

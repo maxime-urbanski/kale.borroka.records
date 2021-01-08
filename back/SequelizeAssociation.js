@@ -9,8 +9,8 @@ const Song = require("./models/Song");
 const Style = require("./models/Style");
 const Tracklist = require("./models/Tracklist");
 
-Artist.belongsTo(Location);
-Location.hasMany(Artist);
+Artist.belongsTo(Location, { onUpdate: "RESTRICT" });
+Location.hasMany(Artist, { onUpdate: "RESTRICT" });
 
 Artist.hasMany(Album);
 Album.belongsTo(Artist);
@@ -24,11 +24,14 @@ Label.belongsToMany(Album, { through: "PRODUCT" }, { onDelete: "CASCADE" });
 Album.belongsTo(Style);
 Style.hasMany(Album);
 
-Album.belongsToMany(Format, { through: "SUPPORT" }, { onDelete: "CASCADE" });
-Format.belongsToMany(Album, { through: "SUPPORT" }, { onDelete: "CASCADE" });
-
-Tracklist.hasOne(Album);
 Album.belongsTo(Tracklist);
+Tracklist.hasOne(Album);
+
+Song.belongsToMany(Tracklist, { through: "compose" }, { onDelete: "CASCADE" });
+Tracklist.belongsToMany(Song, { through: "compose" }, { onDelete: "CASCADE" });
+
+Article.belongsTo(Format);
+Format.hasMany(Album);
 
 Article.belongsTo(Album);
 Album.hasMany(Article);

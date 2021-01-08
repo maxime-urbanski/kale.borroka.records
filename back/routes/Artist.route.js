@@ -2,10 +2,14 @@ const express = require("express");
 const RouterArtists = express.Router();
 const Artist = require("../models/Artist");
 const Location = require("../models/Location");
+const Song = require("../models/Song");
 
 RouterArtists.get("/", async (req, res) => {
   try {
-    const result = await Artist.findAll({ include: Location });
+    const result = await Artist.findAll({
+      attributes: ["id", "name"],
+      include: [{ model: Location, attributes: ["city", "country"] }],
+    });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
@@ -23,14 +27,14 @@ RouterArtists.get("/:id", async (req, res) => {
 });
 
 RouterArtists.post("/", async (req, res) => {
-  const { name, country, town } = req.body;
+  const { name, country, city } = req.body;
   try {
     const result = await Artist.create(
       {
         name,
         Location: {
+          city,
           country,
-          town,
         },
       },
       {
@@ -46,18 +50,18 @@ RouterArtists.post("/", async (req, res) => {
 
 RouterArtists.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name, country, town } = req.body;
+  const { name, country, city } = req.body;
   try {
     await Artist.update(
       {
         name,
         Location: {
-          town,
+          city,
           country,
         },
       },
-      { where: { id } },
-      { include: Location }
+
+      { where: { id } }
     );
     res.status(200).json(`Artist ${id} is modified`);
     console.log(req.body);

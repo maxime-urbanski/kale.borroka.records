@@ -1,5 +1,4 @@
 const express = require("express");
-const Artist = require("../models/Artist");
 const router = express.Router();
 const Song = require("../models/Song");
 
@@ -24,9 +23,9 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { name, onYoutube, ArtistId } = req.body;
+  const { name, video } = req.body;
   try {
-    const result = await Song.create({ name, onYoutube, ArtistId });
+    const result = await Song.create({ name, video });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
@@ -35,12 +34,12 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name, onYoutube } = req.body;
+  const { name, video } = req.body;
   try {
     await Song.update(
       {
         name,
-        onYoutube,
+        video,
       },
       { where: { id } }
     );

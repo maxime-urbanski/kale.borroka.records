@@ -1,17 +1,27 @@
 const Sequelize = require("sequelize");
 const SequelizeConnexion = require("../SequelizeConnexion");
 
-const Artist = SequelizeConnexion.define("Artist", {
-  id: {
-    type: Sequelize.UUID,
-    allowNull: false,
-    primaryKey: true,
-    defaultValue: Sequelize.UUIDV4,
+const Artist = SequelizeConnexion.define(
+  "Artist",
+  {
+    id: {
+      type: Sequelize.UUID,
+      allowNull: false,
+      primaryKey: true,
+      defaultValue: Sequelize.UUIDV4,
+    },
+    name: {
+      type: Sequelize.STRING(255),
+      allowNull: false,
+      unique: true,
+      validate: {
+        notNull: {
+          msg: "Artist's name are required !",
+        },
+      },
+    },
   },
-  name: {
-    type: Sequelize.STRING(255),
-    allowNull: false,
-  },
-}, { timestamps: false });
+  { timestamps: false }
+);
 
 module.exports = Artist;

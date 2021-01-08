@@ -35,9 +35,7 @@ const ModalBuy = (props) => {
                 </Row>
                 <Row textAlign="center">
                   {t("texte1")}
-                  <Link to="/contact">Contact</Link>,{t("texte2")}
-                  {t("Libre")}, {t("texte3")}
-                  {t("texte4")}
+                  <Link to="/contact">Contact</Link>,{t("texte2")}{t("Libre")},{t("texte3")}{t("texte4")}
                 </Row>
               </Col>
             </Row>

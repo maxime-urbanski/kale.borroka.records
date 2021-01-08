@@ -9,11 +9,11 @@ POST http://localhost:5050/api/album HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "St", 
-    "note": "Second album for Harbour Rebles",
-    "folder": "Toulouse",
-    "artist": "Harbour Rebels",
-    "style": "Street Punk"
+    "name": "City Hackers", 
+    "note": "Second album for Harbour Rebels",
+    "folder": "http://ok.com",
+    "artist": "Krav Boca",
+    "style": "Rap Punk"
 }
     
 
