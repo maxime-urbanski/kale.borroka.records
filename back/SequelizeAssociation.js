@@ -5,17 +5,16 @@ const City = require("./models/City");
 const Country = require("./models/Country");
 const Format = require("./models/Format");
 const Label = require("./models/Label");
-const Location = require("./models/Location");
+const Quantity = require("./models/Quantity");
 const Price = require("./models/Price");
 const Song = require("./models/Song");
 const Style = require("./models/Style");
-const Tracklist = require("./models/Tracklist");
 
 Artist.belongsTo(City);
-City.hasOne(Artist);
+City.hasMany(Artist);
 
 Artist.belongsTo(Country);
-Country.hasOne(Artist);
+Country.hasMany(Artist);
 
 Artist.hasMany(Album);
 Album.belongsTo(Artist);
@@ -29,11 +28,8 @@ Label.belongsToMany(Album, { through: "PRODUCT" }, { onDelete: "CASCADE" });
 Album.belongsTo(Style);
 Style.hasMany(Album);
 
-Album.belongsTo(Tracklist);
-Tracklist.hasOne(Album);
-
-Song.belongsToMany(Tracklist, { through: "compose" }, { onDelete: "CASCADE" });
-Tracklist.belongsToMany(Song, { through: "compose" }, { onDelete: "CASCADE" });
+Song.belongsToMany(Album, { through: "compose" }, { onDelete: "CASCADE" });
+Album.belongsToMany(Song, { through: "compose" }, { onDelete: "CASCADE" });
 
 Article.belongsTo(Format);
 Format.hasMany(Album);
@@ -43,3 +39,9 @@ Album.hasMany(Article);
 
 Article.belongsTo(Price);
 Price.hasMany(Article);
+
+Article.belongsTo(Format);
+Format.hasMany(Article);
+
+Article.belongsTo(Quantity);
+Quantity.hasMany(Article);

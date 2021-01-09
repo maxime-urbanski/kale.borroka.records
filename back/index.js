@@ -16,7 +16,9 @@ app.use("/api", Router);
 sequelize
   .sync({ alter: true })
   .then(() => sequelize.authenticate())
-  .then(() => console.log("Connection has been established successfully"))
+  .then(() =>
+    console.log("Database connection has been established successfully")
+  )
   .then(
     app.listen(port, () => {
       console.log(`Server is listening on ${port}`);

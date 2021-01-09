@@ -9,16 +9,16 @@ POST http://localhost:5050/api/label HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "United We Stand records",
+    "name": "Dure Réalité",
     "friend": true
 }
 
 ### PUT ARTIST
-PUT http://localhost:5050/api/label/bdf250c6-6e04-4b3e-b883-9be195005091 HTTP/1.1
+PUT http://localhost:5050/api/label/b13dfb0c-c99b-4bc6-a960-c398159c9570 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Messed Up"
+    "name": "Fire & Flames Records"
 }
 
 ### DELETE ARTIST

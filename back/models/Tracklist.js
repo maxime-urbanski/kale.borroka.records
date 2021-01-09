@@ -4,11 +4,10 @@ const SequelizeConnexion = require("../SequelizeConnexion");
 const Tracklist = SequelizeConnexion.define(
   "Tracklist",
   {
-    id: {
-      type: Sequelize.UUID,
+    track: {
+      type: Sequelize.INTEGER,
       allowNull: false,
       primaryKey: true,
-      defaultValue: Sequelize.UUIDV4,
     },
   },
   { timestamps: false }

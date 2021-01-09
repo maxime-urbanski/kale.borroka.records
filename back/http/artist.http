@@ -10,18 +10,18 @@ Content-Type: application/json
 
 {
   "name": "Krav Boca",
-  "LocationId": "7649dd81-a5f8-4aa9-a6b8-68715d7509ba"
+  "CityId": "7ccc38cc-f348-433b-a2b9-0d4f51f666e5",
+  "CountryId": "cf272243-9e43-47c6-a846-4609b2d83790"
+
 }
     
 
 ### PUT ARTIST
-PUT http://localhost:5050/api/artist/9982046e-ac93-4393-81fc-c188d12220f4 HTTP/1.1
+PUT http://localhost:5050/api/artist/ff3c5e9a-b156-4e49-af54-a4a90e4ec4f8 HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Krav Boca",
-  "city": "LouseTou",
-  "coutry": "France"
+  "name": "Brixton Cats"  
 }
 
 ### DELETE ARTIST

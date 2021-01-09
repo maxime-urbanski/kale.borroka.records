@@ -9,7 +9,7 @@ POST http://localhost:5050/api/style HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Rocksteady"
+    "name": "Rap Punk"
 }
 
 ### PUT Style
