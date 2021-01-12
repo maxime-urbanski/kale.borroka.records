@@ -1,0 +1,4 @@
+# ignore app files
+build/
+node_modules/
+.gitignore
