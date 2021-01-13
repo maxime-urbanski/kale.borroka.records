@@ -17,7 +17,7 @@ PUT http://localhost:5050/api/style/2b1831b3-eaee-4e37-8ad5-f907d246badb HTTP/1.
 Content-Type: application/json
 
 {
-    "name": "Hardcore"
+    "name": "Rap Punk"
 }
 
 ### DELETE Style

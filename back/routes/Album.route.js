@@ -35,26 +35,17 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { name, note, folder, artist, style } = req.body;
+  const { name, note, folder, ArtistId, StyleId } = req.body;
   try {
     const result = await Album.create(
       {
         name,
         note,
         folder,
-        Artist: {
-          name: artist,
-        },
-        Style: {
-          name: style,
-        },
-        Tracklist: {
-          Song,
-        },
+        ArtistId,
+        StyleId
+        
       },
-      {
-        include: [Artist, Style],
-      }
     );
     console.log(req.body);
     res.status(200).json(result);

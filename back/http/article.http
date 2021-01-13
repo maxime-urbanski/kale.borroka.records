@@ -1,0 +1,16 @@
+### ALL ARTICLE
+GET http://localhost:5050/api/article HTTP/1.1
+
+###ONE ARTICLE
+GET http://localhost:5050/api/article/ HTTP/1.1
+
+### POST ARTICLE
+POST http://localhost:5050/api/article HTTP/1.1
+Content-Type: application/json 
+
+{
+    "AlbumId": "e091a0a9-92c2-4e51-a8cb-f0869b016599",
+    "FormatId": "091fe230-27ea-4b75-94cd-59ea6910f816",
+    "PriceId": "e1b27fc5-3ff5-4aec-9a16-e7fd6656299e",
+    "QuantityId": "07848a23-3b99-4786-86fa-cb58536b53a8"
+}

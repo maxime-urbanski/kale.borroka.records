@@ -40,8 +40,5 @@ Album.hasMany(Article);
 Article.belongsTo(Price);
 Price.hasMany(Article);
 
-Article.belongsTo(Format);
-Format.hasMany(Article);
-
 Article.belongsTo(Quantity);
 Quantity.hasMany(Article);

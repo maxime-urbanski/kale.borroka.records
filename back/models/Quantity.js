@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const SequelizeConnexion = require("../SequelizeConnexion");
 
-const Quantity = SequelizeConnexion.define("Album", {
+const Quantity = SequelizeConnexion.define("Quantity", {
   id: {
     type: Sequelize.UUID,
     allowNull: false,

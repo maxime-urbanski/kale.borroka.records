@@ -9,19 +9,19 @@ POST http://localhost:5050/api/artist HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Krav Boca",
-  "CityId": "7ccc38cc-f348-433b-a2b9-0d4f51f666e5",
-  "CountryId": "cf272243-9e43-47c6-a846-4609b2d83790"
+  "name": "Brigada Flores Magon",
+  "CityId": "5f9fc91d-e01f-4bef-b47e-01971ffb78c0",
+  "CountryId": "2893e570-64fa-47e4-a89f-d2d993f0803e"
 
 }
     
 
 ### PUT ARTIST
-PUT http://localhost:5050/api/artist/ff3c5e9a-b156-4e49-af54-a4a90e4ec4f8 HTTP/1.1
+PUT http://localhost:5050/api/artist/e9c34d96-d4f3-4019-bd4f-596343cec444 HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Brixton Cats"  
+  "name": "Krav Boca"  
 }
 
 ### DELETE ARTIST

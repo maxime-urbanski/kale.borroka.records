@@ -12,8 +12,8 @@ Content-Type: application/json
     "name": "City Hackers", 
     "note": "Second album for Harbour Rebels",
     "folder": "http://ok.com",
-    "artist": "Krav Boca",
-    "style": "Rap Punk"
+    "ArtistId": "e9c34d96-d4f3-4019-bd4f-596343cec444",
+    "StyleId": "b11e37e8-98cf-4df2-9291-dfa5101788e6"
 }
     
 

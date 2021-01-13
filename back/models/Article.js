@@ -7,11 +7,7 @@ const Article = SequelizeConnexion.define("Article", {
     allowNull: false,
     primaryKey: true,
     defaultValue: Sequelize.UUIDV4,
-  },
-  quantity: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
+  }
 });
 
 module.exports = Article;
