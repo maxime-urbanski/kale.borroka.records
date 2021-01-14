@@ -39,15 +39,14 @@ Router.post("/", async (req, res) => {
 
 Router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name, country, city } = req.body;
+  const { username, password, email, usertype } = req.body;
   try {
-    await Artist.update(
+    await User.update(
       {
-        name,
-        Location: {
-          city,
-          country,
-        },
+        username,
+        password,
+        email,
+        usertype,
       },
 
       { where: { id } }
