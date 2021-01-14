@@ -1,6 +1,6 @@
 require("./SequelizeAssociation");
 const express = require("express");
-const Router = require("./router");
+const Router = require("./routes/router");
 const sequelize = require("./SequelizeConnexion");
 const app = express();
 const port = 5050;
