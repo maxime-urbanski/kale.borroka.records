@@ -9,9 +9,9 @@ POST http://localhost:5050/api/artist HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Brigada Flores Magon",
-  "CityId": "5f9fc91d-e01f-4bef-b47e-01971ffb78c0",
-  "CountryId": "2893e570-64fa-47e4-a89f-d2d993f0803e"
+  "name": "Krav Boca",
+  "CityId": "27444674-ba2f-4d96-9a13-d2309aaad278",
+  "CountryId": "14a9759a-1e25-4c3d-8845-b5fd054aebb1"
 
 }
     

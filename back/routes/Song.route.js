@@ -5,7 +5,6 @@ const Song = require("../models/Song");
 router.get("/", async (req, res) => {
   try {
     const result = await Song.findAll();
-    console.log(result);
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

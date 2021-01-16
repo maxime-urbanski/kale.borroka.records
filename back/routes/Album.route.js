@@ -37,17 +37,13 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   const { name, note, folder, ArtistId, StyleId } = req.body;
   try {
-    const result = await Album.create(
-      {
-        name,
-        note,
-        folder,
-        ArtistId,
-        StyleId
-        
-      },
-    );
-    console.log(req.body);
+    const result = await Album.create({
+      name,
+      note,
+      folder,
+      ArtistId,
+      StyleId,
+    });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
@@ -69,7 +65,6 @@ router.put("/:id", async (req, res) => {
       { where: { id } }
     );
     res.status(200).json(`Artist ${id} is modified`);
-    console.log(req.body);
   } catch (err) {
     res.status(400).json(err);
   }

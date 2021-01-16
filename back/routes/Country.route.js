@@ -25,7 +25,6 @@ Router.post("/", async (req, res) => {
   const { country, tag } = req.body;
   try {
     const result = await Country.create({ country, tag });
-    console.log(result);
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

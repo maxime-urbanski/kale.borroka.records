@@ -11,6 +11,8 @@ const Album = require("./routes/Album.route");
 const City = require("./routes/City.route");
 const Country = require("./routes/Country.route");
 const Quantity = require("./routes/Quantity.route");
+const User = require("./routes/User.route");
+const Auth = require("./routes/Auth.route");
 
 Router.use("/label", Label);
 Router.use("/artist", Artist);
@@ -22,6 +24,8 @@ Router.use("/song", Song);
 Router.use("/album", Album);
 Router.use("/city", City);
 Router.use("/country", Country);
-Router.use('/quantity', Quantity)
+Router.use("/quantity", Quantity);
+Router.use("/user", User);
+Router.use("/auth", Auth);
 
 module.exports = Router;
