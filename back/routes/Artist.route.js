@@ -65,7 +65,6 @@ Router.put("/:id", async (req, res) => {
       { where: { id } }
     );
     res.status(200).json(`Artist ${id} is modified`);
-    console.log(req.body);
   } catch (err) {
     res.status(400).json(err);
   }

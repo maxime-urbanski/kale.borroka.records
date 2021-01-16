@@ -1,10 +1,12 @@
 require("./SequelizeAssociation");
 const express = require("express");
-const Router = require("./routes/router");
+const Router = require("./router");
 const sequelize = require("./SequelizeConnexion");
+const bodyParser = require("body-parser");
 const app = express();
 const port = 5050;
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
