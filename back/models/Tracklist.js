@@ -7,7 +7,7 @@ const Tracklist = SequelizeConnexion.define(
     track: {
       type: Sequelize.INTEGER,
       allowNull: false,
-      primaryKey: true,
+      defaultValue: 1,
     },
   },
   { timestamps: false }

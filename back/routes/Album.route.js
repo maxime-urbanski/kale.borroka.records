@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
           attributes: ["name"],
         },
         { model: Style, attributes: ["name"] },
+        { model: Song, through: Tracklist },
       ],
     });
     res.status(200).json(result);
@@ -35,17 +36,34 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { name, note, folder, ArtistId, StyleId } = req.body;
+  const { name, note, folder, ArtistId, StyleId, songId, track } = req.body;
   try {
-    const result = await Album.create({
+    const album = await Album.create({
       name,
       note,
       folder,
       ArtistId,
       StyleId,
     });
-    res.status(200).json(result);
+
+    await album.addSong([songId], { through: { track } });
+    await res.status(200).json(album);
   } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post("/:id", async (req, res) => {
+  const { id } = req.params;
+  const { songId, track } = req.body;
+  try {
+    const test = [req.body];
+    const addSong = await Album.bulkCreate(test, {
+      where: { id },
+    });
+    await res.status(200).json(addSong);
+  } catch (err) {
+    console.log(req.body);
     res.status(400).json(err);
   }
 });
@@ -66,7 +84,7 @@ router.put("/:id", async (req, res) => {
     );
     res.status(200).json(`Artist ${id} is modified`);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({ message: "here", err });
   }
 });
 

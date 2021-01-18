@@ -9,9 +9,9 @@ POST http://localhost:5050/api/song HTTP/1.1
 Content-Type: application/json
 
 {   
-    "trackNumber": 1,
-    "name": "Souterrain feat Chata Flores",
-    "video": "https://www.youtube.com/watch?v=ZqGRpvdvRUc"
+    "name": "Kravmikaz",
+    "video": "https://www.youtube.com/watch?v=ZqGRpvdvRUc",
+    "ArtistId": "6557fdfd-d857-482c-9106-6eeaf37ffe90"
 }
 
 ### PUT SONG
