@@ -1,7 +1,7 @@
-require("./SequelizeAssociation");
+require("./Sequelize/SequelizeAssociation");
 const express = require("express");
-const Router = require("./router");
-const sequelize = require("./SequelizeConnexion");
+const Router = require("./src/router");
+const sequelize = require("./Sequelize/SequelizeConnexion");
 const bodyParser = require("body-parser");
 const app = express();
 const port = 5050;

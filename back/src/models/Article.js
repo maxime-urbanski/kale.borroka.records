@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const SequelizeConnexion = require("../SequelizeConnexion");
+const SequelizeConnexion = require("../../Sequelize/SequelizeConnexion");
 
 const Article = SequelizeConnexion.define("Article", {
   id: {
@@ -7,7 +7,7 @@ const Article = SequelizeConnexion.define("Article", {
     allowNull: false,
     primaryKey: true,
     defaultValue: Sequelize.UUIDV4,
-  }
+  },
 });
 
 module.exports = Article;

@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
           attributes: ["name"],
         },
         { model: Style, attributes: ["name"] },
-        { model: Song, through: Tracklist },
+        { model: Song, attributes: ["name"] },
       ],
     });
     res.status(200).json(result);
@@ -36,7 +36,7 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { name, note, folder, ArtistId, StyleId, songId, track } = req.body;
+  const { name, note, folder, ArtistId, StyleId, tracklist, track } = req.body;
   try {
     const album = await Album.create({
       name,
@@ -46,8 +46,9 @@ router.post("/", async (req, res) => {
       StyleId,
     });
 
-    await album.addSong([songId], { through: { track } });
-    await res.status(200).json(album);
+    const bulkTrack = await Song.bulkCreate(tracklist);
+    await album.addSong(bulkTrack);
+    res.status(200).json(album);
   } catch (err) {
     res.status(400).json(err);
   }

@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
-const SequelizeConnexion = require("../SequelizeConnexion");
+const SequelizeConnexion = require("../../Sequelize/SequelizeConnexion");
 
-const City = SequelizeConnexion.define(
-  "City",
+const Style = SequelizeConnexion.define(
+  "Style",
   {
     id: {
       type: Sequelize.UUID,
@@ -10,13 +10,12 @@ const City = SequelizeConnexion.define(
       primaryKey: true,
       defaultValue: Sequelize.UUIDV4,
     },
-    city: {
+    name: {
       type: Sequelize.STRING(255),
-      allowNull: true,
-      unique: true,
+      allowNull: false,
     },
   },
   { timestamps: false }
 );
 
-module.exports = City;
+module.exports = Style;

@@ -1,15 +1,15 @@
-const Album = require("./models/Album");
-const Article = require("./models/Article");
-const Artist = require("./models/Artist");
-const City = require("./models/City");
-const Country = require("./models/Country");
-const Format = require("./models/Format");
-const Label = require("./models/Label");
-const Quantity = require("./models/Quantity");
-const Price = require("./models/Price");
-const Song = require("./models/Song");
-const Style = require("./models/Style");
-const Tracklist = require("./models/Tracklist");
+const Album = require("../src/models/Album");
+const Article = require("../src/models/Article");
+const Artist = require("../src/models/Artist");
+const City = require("../src/models/City");
+const Country = require("../src/models/Country");
+const Format = require("../src/models/Format");
+const Label = require("../src/models/Label");
+const Quantity = require("../src/models/Quantity");
+const Price = require("../src/models/Price");
+const Song = require("../src/models/Song");
+const Style = require("../src/models/Style");
+const Tracklist = require("../src/models/Tracklist");
 
 Artist.belongsTo(City);
 City.hasMany(Artist);
@@ -31,6 +31,12 @@ Style.hasMany(Album);
 
 Song.belongsToMany(Album, { through: Tracklist }, { onDelete: "CASCADE" });
 Album.belongsToMany(Song, { through: Tracklist }, { onDelete: "CASCADE" });
+
+Song.hasMany(Tracklist);
+Tracklist.belongsTo(Song);
+
+Album.hasMany(Tracklist);
+Tracklist.belongsTo(Album);
 
 Article.belongsTo(Format);
 Format.hasMany(Album);

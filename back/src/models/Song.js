@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const SequelizeConnexion = require("../SequelizeConnexion");
+const SequelizeConnexion = require("../../Sequelize/SequelizeConnexion");
 
 const Song = SequelizeConnexion.define(
   "Song",
@@ -13,11 +13,6 @@ const Song = SequelizeConnexion.define(
     name: {
       type: Sequelize.STRING(100),
       allowNull: false,
-    },
-    video: {
-      type: Sequelize.STRING(255),
-      allowNull: true,
-      isUrl: true,
     },
   },
   { timestamps: false }

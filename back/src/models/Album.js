@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const SequelizeConnexion = require("../SequelizeConnexion");
+const SequelizeConnexion = require("../../Sequelize/SequelizeConnexion");
 
 const Album = SequelizeConnexion.define(
   "Album",

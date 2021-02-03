@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const SequelizeConnexion = require("../SequelizeConnexion");
+const SequelizeConnexion = require("../../Sequelize/SequelizeConnexion");
 const bcrypt = require("bcrypt");
 const saltRounds = 15;
 
