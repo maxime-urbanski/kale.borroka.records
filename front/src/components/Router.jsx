@@ -26,7 +26,7 @@ function Router() {
       </Row>
       <img className={styles.img} src={ban} alt="kale borroka records ban" />
       <Switch>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={Home} />
         <Route exact path="/:format/:id" component={ArticleDetail} />
         <Route path="/fanzine" component={fanzinePage} />
         <Route path="/ipeh" component={Work} />

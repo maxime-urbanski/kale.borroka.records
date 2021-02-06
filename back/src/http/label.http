@@ -1,0 +1,28 @@
+## GET ALL LABELS
+GET http://localhost:5050/api/label HTTP/1.1
+
+### GET ONE LABEL
+GET http://localhost:5050/api/label/421d451a-aaac-4192-8ec3-27be99009237 HTTP/1.1
+
+### POST LABEL
+POST http://localhost:5050/api/label HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Dure Réalité",
+    "friend": true
+}
+
+### PUT ARTIST
+PUT http://localhost:5050/api/label/b13dfb0c-c99b-4bc6-a960-c398159c9570 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Fire & Flames Records"
+}
+
+### DELETE LABEL
+DELETE  http://localhost:5050/api/label/b353bd82-31a1-4649-b7fb-e76f6d2165ae HTTP/1.1
+
+### DELETE ALL LABEL
+DELETE  http://localhost:5050/api/label HTTP/1.1

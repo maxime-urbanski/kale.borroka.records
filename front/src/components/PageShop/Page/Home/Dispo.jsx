@@ -13,7 +13,7 @@ const Dispo = ({ t }) => {
       <Row className={styles.position}>
         <h2 className={styles.title}>{t("dispo")}</h2>
       </Row>
-      <Row style={{justifyContent: "center"}}>
+      <Row style={{ justifyContent: "center" }}>
         <Col xs={12} md={6} lg={6} xl={4}>
           <CardDispo articleList={LParticle} format="LP" t={t} />
         </Col>

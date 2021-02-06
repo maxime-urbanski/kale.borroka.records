@@ -1,21 +1,21 @@
 .work {
-    align-items: center !important;
-    display: flex;
-    height: auto;
-    justify-content: center;
-    margin: 100px 0 200px;
-    width: auto;
-  }
-  .logo {
-    width: 25%;
-    height: auto;  
-    -webkit-animation: spin;
-  }
-  .hr {
-    border-color: #d9534f;
-    margin: 0;
-    margin-top: auto;
-    margin-bottom: auto;
-    transform: rotate(90deg);
-    width: 100px;
-  }
+  align-items: center !important;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin: 100px 0 200px;
+  width: auto;
+}
+.logo {
+  width: 25%;
+  height: auto;
+  -webkit-animation: spin;
+}
+.hr {
+  border-color: #d9534f;
+  margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  transform: rotate(90deg);
+  width: 100px;
+}
