@@ -4,8 +4,8 @@ const Router = express.Router();
 const Article = require("../models/Article");
 const Artist = require("../models/Artist");
 const Price = require("../models/Price");
-const Format = require('../models/Format');
-const Quantity = require('../models/Quantity');
+const Format = require("../models/Format");
+const Quantity = require("../models/Quantity");
 
 Router.get("/", async (req, res) => {
   try {
@@ -14,27 +14,27 @@ Router.get("/", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ['name', 'folder'],
+          attributes: ["name", "folder"],
           include: [
             {
               model: Artist,
               attributes: ["name"],
             },
-          ]
-        }, 
+          ],
+        },
         {
           model: Price,
-          attributes: ['price'],
+          attributes: ["price"],
         },
         {
           model: Format,
-          attributes: ['name']
+          attributes: ["name"],
         },
         {
           model: Quantity,
-          attributes: ['quantity']
-        }
-      ]
+          attributes: ["quantity"],
+        },
+      ],
     });
     res.status(200).json(result);
   } catch (err) {
@@ -54,19 +54,24 @@ Router.get("/:id", async (req, res) => {
 
 Router.get("/:format", async (req, res) => {
   const { format } = req.params;
-  if ( format === await Format.findByPk())
-  try {
-    const result = await Article.findAll();
-    res.status(200).json(result);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+  if (format === (await Format.findByPk()))
+    try {
+      const result = await Article.findAll();
+      res.status(200).json(result);
+    } catch (err) {
+      res.status(400).json(err);
+    }
 });
 
 Router.post("/", async (req, res) => {
   const { AlbumId, PriceId, QuantityId, FormatId } = req.body;
   try {
-    const result = await Article.create({  AlbumId, PriceId, QuantityId, FormatId });
+    const result = await Article.create({
+      AlbumId,
+      PriceId,
+      QuantityId,
+      FormatId,
+    });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
@@ -79,7 +84,10 @@ Router.put("/:id", async (req, res) => {
   try {
     const result = await Article.update(
       {
-        AlbumId, PriceId, QuantityId, FormatId
+        AlbumId,
+        PriceId,
+        QuantityId,
+        FormatId,
       },
       { where: { id } }
     );

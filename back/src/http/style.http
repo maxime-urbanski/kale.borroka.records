@@ -22,3 +22,15 @@ Content-Type: application/json
 
 ### DELETE Style
 DELETE  http://localhost:5050/api/style/2b1831b3-eaee-4e37-8ad5-f907d246badb HTTP/1.1
+
+"tracklist": [
+        {"name":"Intro", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 1},
+        {"name":"Souterrain feat Chata Flores", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track":2 },
+        {"name":"Kravmikaz", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 3},
+        {"name":"Camtar", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 4},
+        {"name":"Crust feat My Own Voice, Matrak Attakk", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 5},
+        {"name":"GasMask feat Speira", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track":6 },
+        {"name":"Poison feat Zafina", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track":7 },
+        {"name":"Carte Postale feat Al Nasser", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 8},
+        {"name":"City Hackers feat Aeon", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 9}
+    ]

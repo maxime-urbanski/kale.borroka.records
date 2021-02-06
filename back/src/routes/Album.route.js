@@ -4,7 +4,7 @@ const Album = require("../models/Album");
 const Artist = require("../models/Artist");
 const Song = require("../models/Song");
 const Style = require("../models/Style");
-const Tracklist = require("../models/Tracklist");
+const Label = require("../models/Label");
 
 router.get("/", async (req, res) => {
   try {
@@ -16,7 +16,16 @@ router.get("/", async (req, res) => {
           attributes: ["name"],
         },
         { model: Style, attributes: ["name"] },
-        { model: Song, attributes: ["name"] },
+        {
+          model: Song,
+          attributes: ["name", "track"],
+          through: { attributes: [], order: ["track", "ASC"] },
+        },
+        { model: Label, attributes: ["name"], through: { attributes: [] } },
+      ],
+      order: [
+        [Song, "track", "ASC"],
+        [Label, "name", "ASC"],
       ],
     });
     res.status(200).json(result);
@@ -36,7 +45,7 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { name, note, folder, ArtistId, StyleId, tracklist, track } = req.body;
+  const { name, note, folder, ArtistId, StyleId, tracklist, labels } = req.body;
   try {
     const album = await Album.create({
       name,
@@ -45,9 +54,10 @@ router.post("/", async (req, res) => {
       ArtistId,
       StyleId,
     });
-
-    const bulkTrack = await Song.bulkCreate(tracklist);
-    await album.addSong(bulkTrack);
+    const songs = await Song.bulkCreate(tracklist);
+    const productBy = await Label.bulkCreate(labels);
+    await album.addSong(songs, album.id);
+    await album.addLabel(productBy);
     res.status(200).json(album);
   } catch (err) {
     res.status(400).json(err);
@@ -93,6 +103,15 @@ router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Album.destroy({ where: { id } });
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.delete("/", async (req, res) => {
+  try {
+    const result = await Album.destroy({ where: {} });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

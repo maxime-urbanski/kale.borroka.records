@@ -23,6 +23,11 @@ const Album = SequelizeConnexion.define(
       allowNull: true,
       isUrl: true,
     },
+    kbrProd: {
+      type: Sequelize.BOOLEAN,
+      allowNull: true,
+      defaultValue: false,
+    },
   },
   { timestamps: false }
 );

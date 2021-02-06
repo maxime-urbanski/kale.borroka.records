@@ -13,7 +13,6 @@ const Country = require("./routes/Country.route");
 const Quantity = require("./routes/Quantity.route");
 const User = require("./routes/User.route");
 const Auth = require("./routes/Auth.route");
-const Tracklist = require("./routes/Tracklist.route");
 
 Router.use("/label", Label);
 Router.use("/artist", Artist);
@@ -28,6 +27,5 @@ Router.use("/country", Country);
 Router.use("/quantity", Quantity);
 Router.use("/user", User);
 Router.use("/auth", Auth);
-Router.use("/tracklist", Tracklist);
 
 module.exports = Router;

@@ -12,23 +12,37 @@ Content-Type: application/json
     "name": "City Hacker", 
     "note": "Second album for Harbour Rebels",
     "folder": "http://ok.com",
-    "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2",
-    "StyleId": "ae7ea4fe-1223-455f-89e4-2080ca505baf",
+    "ArtistId": "d4663380-f149-4a44-a455-24ef1c470916",
+    "StyleId": "96fe7577-ef0a-4eee-9fc4-e4938347f7ad",
     "tracklist": [
-        {"name":"Intro", "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2"},
-        {"name":"Souterrain feat Chata Flores", "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2"},
-        {"name":"Kravmikaz", "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2"},
-        {"name":"Camtar", "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2"},
-        {"name":"Crust feat My Own Voice, Matrak Attakk", "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2"},
-        {"name":"GasMask feat Speira", "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2"},
-        {"name":"Poison feat Zafina", "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2"},
-        {"name":"Carte Postale feat Al Nasser", "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2"},
-        {"name":"City Hackers feat Aeon", "ArtistId": "cc636749-3321-4d61-8fda-de131f33acb2"}
-    ]
+        {"name":"Intro", "track":1 },
+        {"name":"Souterrain feat Chata Flores", "track":2 },
+        {"name":"Kravmikaz", "track":3 },
+        {"name":"Camtar", "track":4 },
+        {"name":"Crust feat My Own Voice, Matrak Attakk", "track": 5},
+        {"name":"GasMask feat Speira", "track":6 },
+        {"name":"Poison feat Zafina","track": 7},
+        {"name":"Carte Postale feat Al Nasser", "track":8 },
+        {"name":"City Hackers feat Aeon", "track":9 }
+    ],
+    "labels": [
+        {"name":"Rumagna Sgroza" },
+        {"name":"Mass Productions" },
+        {"name":"Fire & Flames", "friend": true },
+        {"name":"General Strike" },
+        {"name":"Guerilla Vinyl" },
+        {"name":"Blackout Brigade" },
+        {"name":"Brigada Caoz" },
+        {"name":"Maloka Collective" },
+        {"name":"KeponTeam" },
+        {"name":"Up The Punx" },
+        {"name":"Subversivez ways" },
+        {"name":"Punti Scena Records" }
+    ]    
 }
 
 ### PUT ALBUM
-PUT http://localhost:5050/api/album/c71db1c3-5d7e-4931-9af1-62811ab47160 HTTP/1.1
+PUT http://localhost:5050/api/album/174b7094-bf14-40f0-a7b7-30fc3541e649 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -38,4 +52,4 @@ Content-Type: application/json
 }
 
 ### DELETE ALBUM
-DELETE  http://localhost:5050/api/album/0a2e04e0-ba0d-4bba-b402-9a636fd2374a HTTP/1.1
+DELETE  http://localhost:5050/api/album/ HTTP/1.1

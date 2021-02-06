@@ -94,8 +94,8 @@ const ArticleDetail = (props) => {
               <div className={style.badge}>
                 <p className={style.price}>
                   {price === "Libre"
-                    ? `${t("Libre")}` : `${t("prix")} ${price} `
-                    }
+                    ? `${t("Libre")}`
+                    : `${t("prix")} ${price} `}
                 </p>
               </div>
             </Row>

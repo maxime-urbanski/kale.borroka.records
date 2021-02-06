@@ -9,7 +9,6 @@ const Quantity = require("../src/models/Quantity");
 const Price = require("../src/models/Price");
 const Song = require("../src/models/Song");
 const Style = require("../src/models/Style");
-const Tracklist = require("../src/models/Tracklist");
 
 Artist.belongsTo(City);
 City.hasMany(Artist);
@@ -23,20 +22,34 @@ Album.belongsTo(Artist);
 Artist.hasMany(Song);
 Song.belongsTo(Artist);
 
-Album.belongsToMany(Label, { through: "PRODUCT" }, { onDelete: "CASCADE" });
-Label.belongsToMany(Album, { through: "PRODUCT" }, { onDelete: "CASCADE" });
+Album.belongsToMany(
+  Label,
+  { through: "PRODUCT" },
+  { onDelete: "CASCADE" },
+  { onUpdate: "CASCASDE" }
+);
+Label.belongsToMany(
+  Album,
+  { through: "PRODUCT" },
+  { onDelete: "CASCADE" },
+  { onUpdate: "CASCASDE" }
+);
 
 Album.belongsTo(Style);
 Style.hasMany(Album);
 
-Song.belongsToMany(Album, { through: Tracklist }, { onDelete: "CASCADE" });
-Album.belongsToMany(Song, { through: Tracklist }, { onDelete: "CASCADE" });
-
-Song.hasMany(Tracklist);
-Tracklist.belongsTo(Song);
-
-Album.hasMany(Tracklist);
-Tracklist.belongsTo(Album);
+Song.belongsToMany(
+  Album,
+  { through: "TRACKLIST" },
+  { onDelete: "CASCADE" },
+  { onUpdate: "CASCASDE" }
+);
+Album.belongsToMany(
+  Song,
+  { through: "TRACKLIST" },
+  { onDelete: "CASCADE" },
+  { onUpdate: "CASCASDE" }
+);
 
 Article.belongsTo(Format);
 Format.hasMany(Album);

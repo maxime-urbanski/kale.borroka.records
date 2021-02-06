@@ -10,8 +10,8 @@ Content-Type: application/json
 
 {
   "name": "Krav Boca",
-  "CityId": "703d5fa0-a991-422d-87ac-08c6c3515253",
-  "CountryId": "8e49df12-6d22-4ab9-bf79-64583a60f682"
+  "CityId": "f90b48ce-650f-41ba-b42c-455da26810a4",
+  "CountryId": "64c99819-eb5c-49c3-a704-30d20d52c0e9"
 
 }
     

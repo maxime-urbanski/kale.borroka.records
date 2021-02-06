@@ -15,7 +15,7 @@ function Home() {
       <LastArticle />
       <div className={styles.Parrallax}></div>
       <How />
-      <hr className={styles.hrBuy}/>
+      <hr className={styles.hrBuy} />
       <Dispo />
     </div>
   );

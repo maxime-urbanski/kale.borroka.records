@@ -20,14 +20,14 @@ function Footer({ t }) {
             <h3 className={styles.sectionFooter}>{t("propos")}</h3>
           </Row>
           <hr className={styles.hrFooter} />
-          <SectionLinkFooter array={aboutSection} t={t}/>
+          <SectionLinkFooter array={aboutSection} t={t} />
         </Col>
         <Col xs={12} lg={4} className={styles.colFooter}>
           <Row>
             <h3 className={styles.sectionFooter}>{t("shop")}</h3>
           </Row>
           <hr className={styles.hrFooter} />
-          <SectionLinkFooter array={sectionShop} t={t}/>
+          <SectionLinkFooter array={sectionShop} t={t} />
         </Col>
         <Col xs={12} lg={4} className={styles.colFooter}>
           <Row>

@@ -13,6 +13,7 @@ const Label = SequelizeConnexion.define(
     name: {
       type: Sequelize.STRING(255),
       allowNull: false,
+      unique: true,
     },
     logo: {
       type: Sequelize.STRING(100),
@@ -20,7 +21,8 @@ const Label = SequelizeConnexion.define(
     },
     friend: {
       type: Sequelize.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: false,
     },
   },
   { timestamps: false }
