@@ -1,17 +1,16 @@
 import "./App.css";
-import { Admin, Resource } from "react-admin";
-import jsonServerProvider from "ra-data-json-server";
-import { UserList } from "./components/userList";
-import { PostList } from "./components/postList";
+import { Admin, ListGuesser, Resource } from "react-admin";
 
-const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
+import AlbumIcon from "@material-ui/icons/Album";
+import { Dashboard } from "./components/Dashboard";
+import { dataProvider } from "./dataProvider";
 
 const App = () => {
   return (
     <>
-      <Admin dataProvider={dataProvider}>
-        <Resource name="users" list={UserList} />
-        <Resource name="posts" list={PostList} />
+      <Admin dashboard={Dashboard} dataProvider={dataProvider}>
+        <Resource name="artist" list={ListGuesser} />
+        <Resource name="album" list={ListGuesser} icon={AlbumIcon} />
       </Admin>
     </>
   );

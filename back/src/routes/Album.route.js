@@ -29,6 +29,7 @@ router.get("/", async (req, res) => {
       ],
     });
     res.status(200).json(result);
+    res.set({ "X-Total-Coutnt": "Access-Control-Expose-Headers" });
   } catch (err) {
     res.status(400).json(err);
   }
