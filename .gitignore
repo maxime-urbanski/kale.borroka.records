@@ -6,8 +6,9 @@ node_modules
 .pnp.js
 /.vscode
 yarn.lock
-./back/yarn.lock
 .eslintcache
+.env
+.idea
 # testing
 /coverage
 
