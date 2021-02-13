@@ -1,6 +1,5 @@
 import "./App.css";
 import { Admin, ListGuesser, Resource } from "react-admin";
-
 import AlbumIcon from "@material-ui/icons/Album";
 import { Dashboard } from "./components/Dashboard";
 import { dataProvider } from "./dataProvider";

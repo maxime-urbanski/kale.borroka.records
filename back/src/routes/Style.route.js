@@ -5,6 +5,11 @@ const Style = require("../models/Style");
 RouterStyle.get("/", async (req, res) => {
   try {
     const result = await Style.findAll();
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await Style.count(),
+    });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

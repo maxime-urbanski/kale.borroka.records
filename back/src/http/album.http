@@ -1,21 +1,19 @@
 ## GET ALL ALBUM
 GET http://localhost:5050/api/album HTTP/1.1
-Access-Control-Allow-Origin: *
 
 ### GET ONE ALBUM
 GET http://localhost:5050/api/album/421d451a-aaac-4192-8ec3-27be99009237 HTTP/1.1
 
 ### POST ALBUM
 POST http://localhost:5050/api/album HTTP/1.1
-Access-Control-Allow-Origin: *
 Content-Type: application/json
 
 {
     "name": "City Hacker", 
     "note": "Second album for Harbour Rebels",
     "folder": "http://ok.com",
-    "ArtistId": "47a47914-5eea-4604-8b79-69d704c8c09c",
-    "StyleId": "86efd39b-2aee-448b-8ff2-a48613f85a3c",
+    "ArtistId": "dacbff0b-1ec2-4ab5-8851-ae7d1aea1cf4",
+    "StyleId": "c286d621-474a-4d16-95a0-ab3850a59151",
     "tracklist": [
         {"name":"Intro", "track":1 },
         {"name":"Souterrain feat Chata Flores", "track":2 },
