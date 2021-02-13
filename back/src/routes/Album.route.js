@@ -28,8 +28,12 @@ router.get("/", async (req, res) => {
         [Label, "name", "ASC"],
       ],
     });
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await Album.count(),
+    });
     res.status(200).json(result);
-    res.set({ "X-Total-Coutnt": "Access-Control-Expose-Headers" });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -55,6 +59,7 @@ router.post("/", async (req, res) => {
       ArtistId,
       StyleId,
     });
+    console.log("Count =>", await Album.count());
     const songs = await Song.bulkCreate(tracklist);
     const productBy = await Label.bulkCreate(labels);
     await album.addSong(songs, album.id);

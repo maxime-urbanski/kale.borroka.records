@@ -8,6 +8,7 @@ node_modules
 yarn.lock
 ./back/yarn.lock
 .eslintcache
+.env
 # testing
 /coverage
 

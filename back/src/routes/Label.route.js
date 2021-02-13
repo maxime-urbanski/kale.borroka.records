@@ -5,6 +5,11 @@ const Label = require("../models/Label");
 router.get("/", async (req, res) => {
   try {
     const result = await Label.findAll();
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await Label.count(),
+    });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

@@ -10,6 +10,11 @@ Router.get("/", auth("ADMIN"), async (req, res) => {
         exclude: ["password"],
       },
     });
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await User.count(),
+    });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

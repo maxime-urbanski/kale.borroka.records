@@ -13,9 +13,7 @@ Router.post("/signup", async (req, res) => {
       email,
       usertype,
     });
-
     delete user.dataValues.password;
-
     res.status(200).json(user);
   } catch (err) {
     res.status(400).json(err);
