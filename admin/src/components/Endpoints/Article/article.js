@@ -6,6 +6,7 @@ import {
   List,
   NumberField,
   NumberInput,
+  ReferenceArrayInput,
   SimpleForm,
   TextField,
   TextInput,
@@ -27,7 +28,9 @@ export const ArticleEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="id" />
-      <TextInput source="Album.name" />
+      <ReferenceArrayInput reference="album">
+        <TextInput source="name" />
+      </ReferenceArrayInput>
       <NumberInput source="Price.price" />
       <TextInput source="Format.name" />
       <NumberInput source="Quantity.quantity" />

@@ -47,7 +47,7 @@ router.get("/:id", async (req, res) => {
       include: [
         {
           model: Artist,
-          attributes: ["name"],
+          attributes: ["name", "id"],
         },
         { model: Style, attributes: ["name"] },
         {
@@ -84,25 +84,32 @@ router.post("/", async (req, res) => {
       StyleId,
     });
 
-    const bulkSongs = await Song.bulkCreate(tracklist);
-    await album.addSong(bulkSongs);
+    for (let i = 0; i < tracklist.length; i++) {
+      tracklist[i].ArtistId = ArtistId;
+      console.log(tracklist[i]);
+      const postSong = await Song.create({
+        name: tracklist[i].name,
+        track: tracklist[i].track,
+        ArtistId,
+      });
+      await album.addSong(postSong);
+    }
 
     const checkLabelInDb = [];
     for (let i = 0; i < labels.length; i++) {
       const searchLabel = await Label.findOne({
         where: { name: labels[i].name },
       });
-      if (searchLabel === null) {
-        checkLabelInDb.push(labels[i]);
-        if (checkLabelInDb.length > 0) {
-          const bulkLabels = await Label.bulkCreate(checkLabelInDb);
-          await album.addLabel(bulkLabels);
-        }
-      } else if (searchLabel.isNewRecord === false) {
+      if (searchLabel !== null && searchLabel.isNewRecord === false) {
         await album.addLabel(searchLabel);
+      } else {
+        checkLabelInDb.push(labels[i]);
       }
     }
-
+    if (checkLabelInDb.length > 0) {
+      const bulkLabels = await Label.bulkCreate(checkLabelInDb);
+      await album.addLabel(bulkLabels);
+    }
     res.status(200).json(album);
   } catch (err) {
     res.status(400).json(err);

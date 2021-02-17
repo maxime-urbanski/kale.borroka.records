@@ -19,12 +19,11 @@ import {
 export const AlbumList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
-      <TextField source="Artist.name" />
-      <TextField source="id" />
+      <TextField source="Artist.name" label="Artist" />
       <TextField source="name" />
       <TextField source="note" />
       <TextField source="folder" />
-      <TextField source="Style.name" />
+      <TextField source="Style.name" label="Style" />
       <ArrayField source="Songs">
         <SingleFieldList>
           <ChipField source="name" />

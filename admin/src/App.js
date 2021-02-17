@@ -1,7 +1,7 @@
 import "./App.css";
 import { Admin, EditGuesser, ListGuesser, Resource } from "react-admin";
 import { Dashboard } from "./components/Dashboard/Dashboard";
-import { dataProvider } from "./dataProvider";
+import { dataProvider, test } from "./dataProvider";
 import {
   AlbumCreate,
   AlbumEdit,

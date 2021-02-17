@@ -12,8 +12,8 @@ Content-Type: application/json
     "name": "City Hacker", 
     "note": "Second album for Harbour Rebels",
     "folder": "http://ok.com",
-    "ArtistId": "6973963d-361f-43fa-8da5-699d2de6153d",
-    "StyleId": "5642317b-c028-4d64-b9e2-ed7ef63174d4",
+    "ArtistId": "0bc032a9-0945-4125-9f7c-4e8c61bb4f57",
+    "StyleId": "448ff516-6015-41ac-a257-76d4744c50b5",
     "tracklist": [
         {"name":"Intro", "track": 1 },
         {"name":"Souterrain feat Chata Flores", "track":2 },
@@ -52,4 +52,4 @@ Content-Type: application/json
 }
 
 ### DELETE ALBUM
-DELETE  http://localhost:5050/api/album/b6a2f03d-293d-4807-b998-f2a8152fb6e5 HTTP/1.1
+DELETE  http://localhost:5050/api/album/ HTTP/1.1
