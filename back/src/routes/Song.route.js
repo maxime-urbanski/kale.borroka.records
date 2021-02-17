@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: Artist,
-          attributes: ["name"],
+          attributes: ["name", "id"],
         },
       ],
     });
@@ -62,10 +62,9 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
-  const { id } = req.params;
+router.delete("/", async (req, res) => {
   try {
-    const result = await Song.destroy({ where: { id } });
+    const result = await Song.destroy({ where: {} });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

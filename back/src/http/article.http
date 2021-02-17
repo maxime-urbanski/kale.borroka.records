@@ -9,8 +9,8 @@ POST http://localhost:5050/api/article HTTP/1.1
 Content-Type: application/json 
 
 {
-    "AlbumId": "e091a0a9-92c2-4e51-a8cb-f0869b016599",
-    "FormatId": "091fe230-27ea-4b75-94cd-59ea6910f816",
-    "PriceId": "e1b27fc5-3ff5-4aec-9a16-e7fd6656299e",
-    "QuantityId": "07848a23-3b99-4786-86fa-cb58536b53a8"
+    "AlbumId": "7e6e9142-d4db-4f87-82ae-a605d5876e77",
+    "FormatId": "60618b28-fdd9-4c59-80bc-24b049863754",
+    "PriceId": "4eea4f82-0f08-4667-9781-a0d69286b043",
+    "QuantityId": "c23346f9-10ef-4d0a-9d4f-09b77964427f"
 }

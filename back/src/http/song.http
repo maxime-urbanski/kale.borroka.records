@@ -23,4 +23,4 @@ Content-Type: application/json
 }
 
 ### DELETE SONG
-DELETE  http://localhost:5050/api/song/cda75557-fa35-4adb-8b59-45aec9eb159c HTTP/1.1
+DELETE  http://localhost:5050/api/song HTTP/1.1

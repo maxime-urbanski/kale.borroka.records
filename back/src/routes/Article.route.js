@@ -51,21 +51,11 @@ Router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Article.findByPk(id);
+
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
   }
-});
-
-Router.get("/:format", async (req, res) => {
-  const { format } = req.params;
-  if (format === (await Format.findByPk()))
-    try {
-      const result = await Article.findAll();
-      res.status(200).json(result);
-    } catch (err) {
-      res.status(400).json(err);
-    }
 });
 
 Router.post("/", async (req, res) => {
@@ -106,6 +96,15 @@ Router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Article.destroy({ where: { id } });
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+Router.delete("/", async (req, res) => {
+  try {
+    const result = await Article.destroy({ where: {} });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

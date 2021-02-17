@@ -42,7 +42,31 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await Album.findByPk(id);
+    const result = await Album.findByPk(id, {
+      attributes: ["id", "name", "note", "folder"],
+      include: [
+        {
+          model: Artist,
+          attributes: ["name"],
+        },
+        { model: Style, attributes: ["name"] },
+        {
+          model: Song,
+          attributes: ["name", "track"],
+          through: { attributes: [], order: ["track", "ASC"] },
+        },
+        { model: Label, attributes: ["name"], through: { attributes: [] } },
+      ],
+      order: [
+        [Song, "track", "ASC"],
+        [Label, "name", "ASC"],
+      ],
+    });
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await Album.count(),
+    });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
@@ -59,43 +83,43 @@ router.post("/", async (req, res) => {
       ArtistId,
       StyleId,
     });
-    console.log("Count =>", await Album.count());
-    const songs = await Song.bulkCreate(tracklist);
-    const productBy = await Label.bulkCreate(labels);
-    await album.addSong(songs, album.id);
-    await album.addLabel(productBy);
+
+    const bulkSongs = await Song.bulkCreate(tracklist);
+    await album.addSong(bulkSongs);
+
+    const checkLabelInDb = [];
+    for (let i = 0; i < labels.length; i++) {
+      const searchLabel = await Label.findOne({
+        where: { name: labels[i].name },
+      });
+      if (searchLabel === null) {
+        checkLabelInDb.push(labels[i]);
+        if (checkLabelInDb.length > 0) {
+          const bulkLabels = await Label.bulkCreate(checkLabelInDb);
+          await album.addLabel(bulkLabels);
+        }
+      } else if (searchLabel.isNewRecord === false) {
+        await album.addLabel(searchLabel);
+      }
+    }
+
     res.status(200).json(album);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post("/:id", async (req, res) => {
-  const { id } = req.params;
-  const { songId, track } = req.body;
-  try {
-    const test = [req.body];
-    const addSong = await Album.bulkCreate(test, {
-      where: { id },
-    });
-    await res.status(200).json(addSong);
-  } catch (err) {
-    console.log(req.body);
-    res.status(400).json(err);
-  }
-});
-
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name, country, city } = req.body;
+  const { name, note, folder, ArtistId, StyleId } = req.body;
   try {
     await Album.update(
       {
         name,
-        Location: {
-          city,
-          country,
-        },
+        note,
+        folder,
+        ArtistId,
+        StyleId,
       },
       { where: { id } }
     );

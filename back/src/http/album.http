@@ -2,7 +2,7 @@
 GET http://localhost:5050/api/album HTTP/1.1
 
 ### GET ONE ALBUM
-GET http://localhost:5050/api/album/421d451a-aaac-4192-8ec3-27be99009237 HTTP/1.1
+GET http://localhost:5050/api/album/c56a446c-089e-4ea3-8425-c25d8a4b9eab HTTP/1.1
 
 ### POST ALBUM
 POST http://localhost:5050/api/album HTTP/1.1
@@ -12,10 +12,10 @@ Content-Type: application/json
     "name": "City Hacker", 
     "note": "Second album for Harbour Rebels",
     "folder": "http://ok.com",
-    "ArtistId": "dacbff0b-1ec2-4ab5-8851-ae7d1aea1cf4",
-    "StyleId": "c286d621-474a-4d16-95a0-ab3850a59151",
+    "ArtistId": "6973963d-361f-43fa-8da5-699d2de6153d",
+    "StyleId": "5642317b-c028-4d64-b9e2-ed7ef63174d4",
     "tracklist": [
-        {"name":"Intro", "track":1 },
+        {"name":"Intro", "track": 1 },
         {"name":"Souterrain feat Chata Flores", "track":2 },
         {"name":"Kravmikaz", "track":3 },
         {"name":"Camtar", "track":4 },
@@ -52,4 +52,4 @@ Content-Type: application/json
 }
 
 ### DELETE ALBUM
-DELETE  http://localhost:5050/api/album/ HTTP/1.1
+DELETE  http://localhost:5050/api/album/b6a2f03d-293d-4807-b998-f2a8152fb6e5 HTTP/1.1
