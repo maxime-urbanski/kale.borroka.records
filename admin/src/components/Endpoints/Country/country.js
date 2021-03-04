@@ -1,14 +1,6 @@
-import {
-  Datagrid,
-  Edit as Create,
-  Edit,
-  List,
-  SimpleForm,
-  TextField,
-  TextInput,
-} from "react-admin";
+import { Create, Datagrid, Edit, List, SimpleForm, TextField, TextInput } from "react-admin";
 
-export const CountryList = (props) => (
+export const CountryList = props => (
   <List {...props}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
@@ -18,7 +10,7 @@ export const CountryList = (props) => (
   </List>
 );
 
-export const CountryEdit = (props) => (
+export const CountryEdit = props => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="id" />
@@ -28,7 +20,7 @@ export const CountryEdit = (props) => (
   </Edit>
 );
 
-export const CountryCreate = (props) => (
+export const CountryCreate = props => (
   <Create {...props}>
     <SimpleForm>
       <TextInput source="id" />

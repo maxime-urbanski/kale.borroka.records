@@ -4,6 +4,9 @@ import {
   Datagrid,
   Edit,
   List,
+  ReferenceArrayInput,
+  ReferenceInput,
+  SelectInput,
   SimpleForm,
   TextField,
   TextInput,
@@ -36,8 +39,12 @@ export const ArtistCreate = (props) => (
     <SimpleForm>
       <TextInput source="id" />
       <TextInput source="name" />
-      <TextInput source="City.city" />
-      <TextInput source="Country.country" />
+      <ReferenceArrayInput source="CityId" reference="city">
+        <SelectInput optionText="city" />
+      </ReferenceArrayInput>
+      <ReferenceArrayInput source="CountryId" reference="country">
+        <SelectInput optionText="country" />
+      </ReferenceArrayInput>
     </SimpleForm>
   </Create>
 );
