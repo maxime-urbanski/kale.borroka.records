@@ -9,8 +9,8 @@ POST http://localhost:5050/api/song HTTP/1.1
 Content-Type: application/json
 
 {   
-    "name": "City Hackers",
-    "ArtistId": "a270bc51-6047-41fa-ab97-c2e03b0ef1ff"
+    "name": "I Don't Care",
+    "ArtistId": "82228052-f68d-4592-b174-0e406e646bae"
 }
 
 ### PUT SONG

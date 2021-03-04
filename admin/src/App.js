@@ -1,5 +1,5 @@
 import "./App.css";
-import { Admin, EditGuesser, ListGuesser, Resource } from "react-admin";
+import { Admin, EditGuesser, ListGuesser, Resource, ShowGuesser } from "react-admin";
 import { Dashboard } from "./components/Dashboard/Dashboard";
 import { dataProvider, test } from "./dataProvider";
 import {
@@ -30,11 +30,7 @@ import {
   CityEdit,
   CityList,
 } from "./components/Endpoints/City/citiy";
-import {
-  CountryCreate,
-  CountryEdit,
-  CountryList,
-} from "./components/Endpoints/Country/country";
+
 import {
   FormatCreate,
   FormatEdit,
@@ -56,18 +52,20 @@ import {
   SongEdit,
   SongList,
 } from "./components/Endpoints/Song/song";
-import { StyleList } from "./components/Endpoints/Style/style";
+import { StyleCreate, StyleEdit, StyleList } from "./components/Endpoints/Style/style";
+import { CountryCreate, CountryEdit, CountryList } from "./components/Endpoints/Country/country";
 
 const App = () => {
   return (
     <>
-      <Admin dashboard={Dashboard} dataProvider={dataProvider}>
+      <Admin dashboard={Dashboard} dataProvider={dataProvider} disableTelemetry>
         <Resource
           name="album"
-          list={AlbumList}
+          list={ListGuesser}
           icon={AlbumIcon}
-          edit={AlbumEdit}
+          edit={EditGuesser}
           create={AlbumCreate}
+          show={ShowGuesser}
         />
         <Resource
           name="article"
@@ -93,9 +91,9 @@ const App = () => {
         <Resource
           name="country"
           list={CountryList}
-          icon={FlagIcon}
           edit={CountryEdit}
           create={CountryCreate}
+          icon={FlagIcon}
         />
         <Resource
           name="format"
@@ -129,7 +127,7 @@ const App = () => {
           name="song"
           list={SongList}
           icon={LibraryMusicIcon}
-          edit={SongEdit}
+          edit={EditGuesser}
           create={SongCreate}
         />
         <Resource
@@ -137,13 +135,13 @@ const App = () => {
           list={StyleList}
           icon={StyleIcon}
           edit={EditGuesser}
-          create={""}
+          create={StyleCreate}
         />
         <Resource
           name="user"
           list={ListGuesser}
           icon={AccountCircleIcon}
-          edit={EditGuesser}
+          edit={StyleEdit}
           create={""}
         />
       </Admin>

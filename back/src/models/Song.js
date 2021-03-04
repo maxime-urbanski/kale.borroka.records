@@ -13,11 +13,7 @@ const Song = SequelizeConnexion.define(
     name: {
       type: Sequelize.STRING(100),
       allowNull: false,
-    },
-    track: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-    },
+    }
   },
   { timestamps: false }
 );

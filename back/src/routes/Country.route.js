@@ -19,7 +19,7 @@ Router.get("/", async (req, res) => {
 Router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await Country.findByPk({ where: { id } });
+    const result = await Country.findByPk(id);
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

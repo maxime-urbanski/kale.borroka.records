@@ -9,6 +9,8 @@ const Quantity = require("../src/models/Quantity");
 const Price = require("../src/models/Price");
 const Song = require("../src/models/Song");
 const Style = require("../src/models/Style");
+const Tracklist = require("../src/models/Tracklist");
+const Video = require("../src/models/Video");
 
 Artist.belongsTo(City);
 City.hasMany(Artist);
@@ -40,19 +42,34 @@ Style.hasMany(Album);
 
 Song.belongsToMany(
   Album,
-  { through: "TRACKLIST" },
+  { through: Tracklist },
   { onDelete: "CASCADE" },
   { onUpdate: "CASCASDE" }
 );
 Album.belongsToMany(
   Song,
-  { through: "TRACKLIST" },
+  { through: Tracklist },
   { onDelete: "CASCADE" },
   { onUpdate: "CASCASDE" }
 );
 
+Album.belongsToMany(
+  Video,
+  { through: "CLIP" },
+  { onDelete: "CASCADE" },
+  { onUpdate: "CASCASDE" }
+);
+Video.belongsToMany(
+  Album,
+  { through: "CLIP" },
+  { onDelete: "CASCADE" },
+  { onUpdate: "CASCASDE" }
+);
+
+
+
 Article.belongsTo(Format);
-Format.hasMany(Album);
+Format.hasMany(Article);
 
 Article.belongsTo(Album);
 Album.hasMany(Article);

@@ -28,6 +28,7 @@ const User = SequelizeConnexion.define(
     email: {
       type: Sequelize.STRING(100),
       allowNull: false,
+      unique: true,
       validate: {
         isEmail: true,
       },

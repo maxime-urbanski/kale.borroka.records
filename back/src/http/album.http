@@ -11,19 +11,19 @@ Content-Type: application/json
 {
     "name": "City Hacker", 
     "note": "Second album for Harbour Rebels",
-    "folder": "http://ok.com",
-    "ArtistId": "0bc032a9-0945-4125-9f7c-4e8c61bb4f57",
-    "StyleId": "448ff516-6015-41ac-a257-76d4744c50b5",
+    "folder": "https://www.coreandco.fr/upload/pics/albums2/big/krav-boca-city-hackers-7844.jpg",
+    "ArtistId": "2b58993b-c2c4-44dc-b5ee-d68c51470ef9",
+    "StyleId": "d209231e-9bb0-4c22-89cd-b1999fb518ca",
     "tracklist": [
-        {"name":"Intro", "track": 1 },
-        {"name":"Souterrain feat Chata Flores", "track":2 },
-        {"name":"Kravmikaz", "track":3 },
-        {"name":"Camtar", "track":4 },
-        {"name":"Crust feat My Own Voice, Matrak Attakk", "track": 5},
-        {"name":"GasMask feat Speira", "track":6 },
-        {"name":"Poison feat Zafina","track": 7},
-        {"name":"Carte Postale feat Al Nasser", "track":8 },
-        {"name":"City Hackers feat Aeon", "track":9 }
+        {"name":"Intro"}, 
+        {"name":"Souterrain feat Chata Flores", "youtube_url": "https://www.youtube.com/watch?v=ZqGRpvdvRUc"},
+        {"name":"Kravmikaz", "youtube_url" : "https://www.youtube.com/watch?v=WEY9KDTeQvM"},
+        {"name":"Camtar", "youtube_url": "https://www.youtube.com/watch?v=jFT_vJyOAfQ"},
+        {"name":"Crust feat My Own Voice, Matrak Attakk"},
+        {"name":"GasMask feat Speira", "youtube_url": "https://www.youtube.com/watch?v=vcvfVsCtfmQ"},
+        {"name":"Poison feat Zafina"},
+        {"name":"Carte Postale feat Al Nasser"},
+        {"name":"City Hackers feat Aeon" }
     ],
     "labels": [
         {"name":"Rumagna Sgroza" },
