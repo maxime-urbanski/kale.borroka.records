@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize')
-const SequelizeConnexion = require('../../Sequelize/SequelizeConnexion')
+const Sequelize = require("sequelize");
+const SequelizeConnexion = require("../../Sequelize/SequelizeConnexion");
 
 const Video = SequelizeConnexion.define("Video", {
   id: {
@@ -11,10 +11,11 @@ const Video = SequelizeConnexion.define("Video", {
   youtube_url: {
     type: Sequelize.STRING(150),
     allowNull: true,
+    unique: true,
     validate: {
-      isUrl: true
-    }
-  }
+      isUrl: true,
+    },
+  },
 });
 
-module.exports = Video
+module.exports = Video;

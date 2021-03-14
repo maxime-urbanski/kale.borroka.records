@@ -1,12 +1,14 @@
 import "./App.css";
-import { Admin, EditGuesser, ListGuesser, Resource, ShowGuesser } from "react-admin";
-import { Dashboard } from "./components/Dashboard/Dashboard";
-import { dataProvider, test } from "./dataProvider";
 import {
-  AlbumCreate,
-  AlbumEdit,
-  AlbumList,
-} from "./components/Endpoints/Album/album";
+  Admin,
+  EditGuesser,
+  ListGuesser,
+  Resource,
+  ShowGuesser,
+} from "react-admin";
+import { Dashboard } from "./components/Dashboard/Dashboard";
+import { dataProvider } from "./dataProvider";
+import { AlbumCreate, AlbumList } from "./components/Endpoints/Album/album";
 import { ArtistCreate, ArtistList } from "./components/Endpoints/Artist/artist";
 import AlbumIcon from "@material-ui/icons/Album";
 import MicIcon from "@material-ui/icons/Mic";
@@ -47,13 +49,17 @@ import {
   QuantityEdit,
   QuantityList,
 } from "./components/Endpoints/Quantity/quantity";
+import { SongCreate, SongList } from "./components/Endpoints/Song/song";
 import {
-  SongCreate,
-  SongEdit,
-  SongList,
-} from "./components/Endpoints/Song/song";
-import { StyleCreate, StyleEdit, StyleList } from "./components/Endpoints/Style/style";
-import { CountryCreate, CountryEdit, CountryList } from "./components/Endpoints/Country/country";
+  StyleCreate,
+  StyleEdit,
+  StyleList,
+} from "./components/Endpoints/Style/style";
+import {
+  CountryCreate,
+  CountryEdit,
+  CountryList,
+} from "./components/Endpoints/Country/country";
 
 const App = () => {
   return (
@@ -63,7 +69,7 @@ const App = () => {
           name="album"
           list={AlbumList}
           icon={AlbumIcon}
-          edit={AlbumEdit}
+          edit={EditGuesser}
           create={AlbumCreate}
           show={ShowGuesser}
         />

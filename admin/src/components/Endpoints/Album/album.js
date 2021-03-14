@@ -1,8 +1,7 @@
 import React from "react";
 import {
-  ArrayField,
   ArrayInput,
-  ChipField,
+  ArrayField,
   Create,
   Datagrid,
   Edit,
@@ -13,12 +12,13 @@ import {
   NumberInput,
   SimpleForm,
   SimpleFormIterator,
-  SingleFieldList,
   TextField,
   TextInput,
-  RichTextField,
   ReferenceArrayInput,
   ImageField,
+  SingleFieldList,
+  ChipField
+
 } from "react-admin";
 
 export const FilterData = (props) => (
@@ -33,21 +33,18 @@ export const FilterData = (props) => (
 export const AlbumList = (props) => (
   <List filters={<FilterData />} {...props} title="Tous les albums">
     <Datagrid rowClick="edit">
-      <TextField source="Artist.name" label="Artist" />
+      <TextField source="Artist.name" />
       <TextField source="name" />
-      <RichTextField source="note" />
-      <ImageField source="folder" title="name" />
-      <TextField source="Style.name" label="Style" />
+      <TextField source="note" />
+      <ImageField source="folder" />
+      <TextField source="Style.name" />
       <ArrayField source="Songs">
-        <SingleFieldList>
-          <ChipField source="name" />
-        </SingleFieldList>
+        <SingleFieldList><ChipField source="name" /></SingleFieldList>
       </ArrayField>
       <ArrayField source="Labels">
-        <SingleFieldList>
-          <ChipField source="name" />
-        </SingleFieldList>
+        <SingleFieldList><ChipField source="name" /></SingleFieldList>
       </ArrayField>
+      <TextField source="Videos" />
     </Datagrid>
   </List>
 );
@@ -56,26 +53,23 @@ export const AlbumEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="id" />
-      <ReferenceInput source="Artist.name" reference="artist">
-        <SelectInput optionText="name" />
-      </ReferenceInput>
       <TextInput source="name" />
-      <TextInput multiline source="note" />
+      <TextInput source="note" />
       <TextInput source="folder" />
-      <ReferenceArrayInput source="StyleId" reference="style">
-        <SelectInput optionText="name" />
-      </ReferenceArrayInput>
-      <ArrayInput source="tracklist">
+      <TextInput source="Artist.name" />
+      <TextInput source="Style.name" />
+      <ArrayInput source="Songs">
         <SimpleFormIterator>
           <TextInput source="name" />
-          <NumberInput source="track" />
+          <NumberInput source="Tracklist.position" />
         </SimpleFormIterator>
       </ArrayInput>
-      <ArrayInput source="labels">
+      <ArrayInput source="label">
         <SimpleFormIterator>
           <TextInput source="name" />
         </SimpleFormIterator>
       </ArrayInput>
+      <TextInput source="Videos" />
     </SimpleForm>
   </Edit>
 );

@@ -53,9 +53,21 @@ Album.belongsToMany(
   { onUpdate: "CASCASDE" }
 );
 
+Album.belongsToMany(
+  Video,
+  { through: "CLIP" },
+  { onDelete: "CASCADE" },
+  { onUpdate: "CASCASDE" }
+);
+Video.belongsToMany(
+  Album,
+  { through: "CLIP" },
+  { onDelete: "CASCADE" },
+  { onUpdate: "CASCASDE" }
+);
 
 Article.belongsTo(Format);
-Format.hasMany(Album);
+Format.hasMany(Article);
 
 Article.belongsTo(Album);
 Album.hasMany(Article);
