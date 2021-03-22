@@ -5,7 +5,7 @@ GET http://localhost:5050/api/country HTTP/1.1
 GET http://localhost:5050/api/country/421d451a-aaac-4192-8ec3-27be99009237 HTTP/1.1
 
 ### POST COUNTRY
-POST http://localhost:5050/api/country HTTP/1.1
+POST http://localhost:5050/api/countries HTTP/1.1
 Content-Type: application/json
 
 {  

@@ -1,0 +1,31 @@
+### GET ALL TRACKLISTS
+GET http://localhost:5050/api/tracklists HTTP/1.1
+
+### GET ONE TRACKLIST
+GET http://localhost:5050/api/tracklists/album/ec5d3fd3-835c-4b2c-99f7-894956811747 HTTP/1.1
+
+### POST TRACKLIST
+POST http://localhost:5050/api/tracklists HTTP/1.1
+Content-Type: application/json
+
+{
+  "tracklist": [
+    {"AlbumId": "e1832cbd-093b-47ab-a12f-588cfa6e7e3d", "SongId": "0fd7e2c7-7ac3-456f-b10c-429c48831268"},
+    {"AlbumId": "e1832cbd-093b-47ab-a12f-588cfa6e7e3d", "SongId": "6195f461-7c72-4b4e-ab02-7ef591cff23a"},
+    {"AlbumId": "e1832cbd-093b-47ab-a12f-588cfa6e7e3d", "SongId": "9495d874-c853-47cd-b9bb-ee16baa96d42"}
+  ]
+}
+
+### PUT TRACKLIST FOR ALBUM
+PUT http://localhost:5050/api/tracklists/album/c889e4f0-93a4-417a-9840-c7cf7340bf7c HTTP/1.1
+Content-Type: application/json
+
+{
+  "tracklist": [
+    {
+      "SongId": "881332b3-f30c-4cca-a1b8-e59b37d32c3a",
+      "AlbumId": "c889e4f0-93a4-417a-9840-c7cf7340bf7c"
+    }
+  ]
+}
+

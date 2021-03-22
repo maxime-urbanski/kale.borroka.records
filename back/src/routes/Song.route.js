@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: Artist,
-          attributes: ["name", "id"],
+          attributes: ["name"],
         },
       ],
     });
@@ -36,9 +36,9 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { name, ArtistId } = req.body;
+  const { name, ArtistId, track } = req.body;
   try {
-    const result = await Song.create({ name, ArtistId });
+    const result = await Song.create({ name, ArtistId, track });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
@@ -47,12 +47,12 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name, video } = req.body;
+  const { name, track } = req.body;
   try {
     await Song.update(
       {
         name,
-        video,
+        track,
       },
       { where: { id } }
     );

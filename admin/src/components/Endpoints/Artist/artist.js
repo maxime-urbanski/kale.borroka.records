@@ -28,8 +28,8 @@ export const ArtistEdit = (props) => (
     <SimpleForm>
       <TextInput source="id" />
       <TextInput source="name" />
-      <TextInput source="City.city" />
-      <TextInput source="Country.country" />
+      <TextInput source="Cities.city" />
+      <TextInput source="Countries.country" />
     </SimpleForm>
   </Edit>
 );
@@ -39,10 +39,10 @@ export const ArtistCreate = (props) => (
     <SimpleForm>
       <TextInput source="id" />
       <TextInput source="name" />
-      <ReferenceArrayInput source="CityId" reference="city">
+      <ReferenceArrayInput source="CityId" reference="cities">
         <SelectInput optionText="city" />
       </ReferenceArrayInput>
-      <ReferenceArrayInput source="CountryId" reference="country">
+      <ReferenceArrayInput source="CountryId" reference="countries">
         <SelectInput optionText="country" />
       </ReferenceArrayInput>
     </SimpleForm>

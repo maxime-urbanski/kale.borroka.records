@@ -5,8 +5,10 @@ const Artist = require("../models/Artist");
 const Song = require("../models/Song");
 const Style = require("../models/Style");
 const Label = require("../models/Label");
-const Tracklist = require("../models/Tracklist");
 const Video = require("../models/Video");
+const addTroughTableTracklist = require("./Trough/tracklist");
+const postLabelInThroughTable = require("./Trough/labels");
+const postVideoInThroughTable = require("./Trough/video");
 
 router.get("/", async (req, res) => {
   try {
@@ -20,8 +22,8 @@ router.get("/", async (req, res) => {
         { model: Style, attributes: ["name"] },
         {
           model: Song,
-          attributes: ["name"],
-          through: { attributes: ["position"] },
+          attributes: ["name", "track"],
+          through: { attributes: [] },
         },
         { model: Label, attributes: ["name"], through: { attributes: [] } },
         {
@@ -31,7 +33,7 @@ router.get("/", async (req, res) => {
         },
       ],
       order: [
-        [Song, Tracklist, "position", "ASC"],
+        [Song, "track", "ASC"],
         [Label, "name", "ASC"],
       ],
     });
@@ -78,61 +80,28 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { name, note, folder, ArtistId, StyleId, tracklist, labels } = req.body;
+  const {
+    name,
+    note,
+    folder,
+    ArtistId,
+    StyleId,
+    tracklist,
+    labels,
+    videos,
+  } = req.body;
   try {
-    const album = await Album.create({
+    const postAlbum = await Album.create({
       name,
       note,
       folder,
       ArtistId,
       StyleId,
     });
-
-    const checkVideoInDb = [];
-    for (let i = 0; i < tracklist.length; i++) {
-      const youtubeUrl = tracklist[i].youtube_url;
-      const postSongs = await Song.create({
-        name: tracklist[i].name,
-        ArtistId,
-      });
-      await album.addSong(postSongs, { through: { position: i + 1 } });
-
-      if (youtubeUrl != null || undefined) {
-        const searchYoutubeUrlInDb = await Video.findOne({
-          where: { youtube_url: youtubeUrl },
-        });
-        if (
-          searchYoutubeUrlInDb !== null &&
-          searchYoutubeUrlInDb.isNewRecord === false
-        ) {
-          await album.addVideo(searchYoutubeUrlInDb);
-        } else {
-          checkVideoInDb.push({ youtube_url: youtubeUrl });
-          console.log(checkVideoInDb);
-        }
-      }
-    }
-    if (checkVideoInDb.length > 0) {
-      const bulkVideos = await Video.bulkCreate(checkVideoInDb);
-      await album.addVideo(bulkVideos);
-    }
-
-    const checkLabelInDb = [];
-    for (let i = 0; i < labels.length; i++) {
-      const searchLabel = await Label.findOne({
-        where: { name: labels[i].name },
-      });
-      if (searchLabel !== null && searchLabel.isNewRecord === false) {
-        await album.addLabel(searchLabel);
-      } else {
-        checkLabelInDb.push(labels[i]);
-      }
-    }
-    if (checkLabelInDb.length > 0) {
-      const bulkLabels = await Label.bulkCreate(checkLabelInDb);
-      await album.addLabel(bulkLabels);
-    }
-    res.status(200).json(album);
+    await addTroughTableTracklist(tracklist, Song, postAlbum);
+    await postLabelInThroughTable(labels, Label, postAlbum);
+    await postVideoInThroughTable(videos, Video, postAlbum);
+    res.status(200).json(postAlbum);
   } catch (err) {
     res.status(400).json(err);
   }

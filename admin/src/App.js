@@ -66,85 +66,85 @@ const App = () => {
     <>
       <Admin dashboard={Dashboard} dataProvider={dataProvider} disableTelemetry>
         <Resource
-          name="album"
-          list={AlbumList}
+          name="albums"
+          list={ListGuesser}
           icon={AlbumIcon}
           edit={EditGuesser}
           create={AlbumCreate}
           show={ShowGuesser}
         />
         <Resource
-          name="article"
+          name="articles"
           create={ArticleCreate}
           list={ArticleList}
           edit={ArticleEdit}
           icon={ShoppingBasketIcon}
         />
         <Resource
-          name="artist"
+          name="artists"
           list={ArtistList}
           icon={MicIcon}
           edit={EditGuesser}
           create={ArtistCreate}
         />
         <Resource
-          name="city"
+          name="cities"
           list={CityList}
           icon={LocationCityIcon}
           edit={CityEdit}
           create={CityCreate}
         />
         <Resource
-          name="country"
+          name="countries"
           list={CountryList}
           edit={CountryEdit}
           create={CountryCreate}
           icon={FlagIcon}
         />
         <Resource
-          name="format"
+          name="formats"
           list={FormatList}
           icon={SaveIcon}
           edit={FormatEdit}
           create={FormatCreate}
         />
         <Resource
-          name="label"
+          name="labels"
           list={LabelList}
           icon={LabelIcon}
           edit={LabelList}
           create={LabelCreate}
         />
         <Resource
-          name="Price"
+          name="prices"
           list={PriceList}
           icon={EuroIcon}
           edit={PriceEdit}
           create={PriceCreate}
         />
         <Resource
-          name="Quantity"
+          name="quantities"
           list={QuantityList}
           icon={AddIcon}
           edit={QuantityEdit}
           create={QuantityCreate}
         />
         <Resource
-          name="song"
+          name="songs"
           list={SongList}
           icon={LibraryMusicIcon}
           edit={EditGuesser}
           create={SongCreate}
         />
         <Resource
-          name="style"
+          name="styles"
           list={StyleList}
           icon={StyleIcon}
           edit={EditGuesser}
           create={StyleCreate}
         />
         <Resource
-          name="user"
+          name="users"
           list={ListGuesser}
           icon={AccountCircleIcon}
           edit={StyleEdit}

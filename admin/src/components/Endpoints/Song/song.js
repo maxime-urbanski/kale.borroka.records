@@ -10,7 +10,7 @@ import {
   TextInput,
 } from "react-admin";
 
-export const SongList = props => (
+export const SongList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
@@ -19,7 +19,7 @@ export const SongList = props => (
     </Datagrid>
   </List>
 );
-export const SongEdit = props => (
+export const SongEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="id" />
@@ -29,12 +29,12 @@ export const SongEdit = props => (
   </Edit>
 );
 
-export const SongCreate = props => (
+export const SongCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
       <TextInput source="id" />
       <TextInput source="name" />
-      <ReferenceArrayInput source="ArtistId" reference="artist" allowEmpty>
+      <ReferenceArrayInput source="ArtistId" reference="artists" allowEmpty>
         <SelectInput optionText="name" />
       </ReferenceArrayInput>
     </SimpleForm>
