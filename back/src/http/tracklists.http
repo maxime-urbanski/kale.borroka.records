@@ -2,7 +2,7 @@
 GET http://localhost:5050/api/tracklists HTTP/1.1
 
 ### GET ONE TRACKLIST
-GET http://localhost:5050/api/tracklists/album/ec5d3fd3-835c-4b2c-99f7-894956811747 HTTP/1.1
+GET http://localhost:5050/api/tracklists/album/9f8f69cb-86ec-4c14-b391-311b21ba4fed HTTP/1.1
 
 ### POST TRACKLIST
 POST http://localhost:5050/api/tracklists HTTP/1.1

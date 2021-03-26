@@ -46,7 +46,7 @@ RouterPrice.put("/:id", async (req, res) => {
       },
       { where: { id } }
     );
-    res.status(200).json(`${name} is modified`);
+    res.status(200).json(`${price} is modified`);
   } catch (err) {
     res.status(400).json(err);
   }

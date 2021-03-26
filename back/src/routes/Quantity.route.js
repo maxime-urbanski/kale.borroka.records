@@ -38,15 +38,15 @@ Router.post("/", async (req, res) => {
 
 Router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name } = req.body;
+  const { quantity } = req.body;
   try {
     await Quantity.update(
       {
-        name,
+        quantity,
       },
       { where: { id } }
     );
-    res.status(200).json(`${name} is modified`);
+    res.status(200).json(`${quantity} is modified`);
   } catch (err) {
     res.status(400).json(err);
   }

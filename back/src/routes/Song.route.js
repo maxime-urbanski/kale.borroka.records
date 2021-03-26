@@ -62,6 +62,16 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await Song.destroy({ where: { id } });
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.delete("/", async (req, res) => {
   try {
     const result = await Song.destroy({ where: {} });

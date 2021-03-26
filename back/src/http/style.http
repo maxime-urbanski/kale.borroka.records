@@ -2,7 +2,7 @@
 GET http://localhost:5050/api/styles HTTP/1.1
 
 ### GET ONE Style
-GET http://localhost:5050/api/style/1c0be236-5379-4e11-b0c7-fb164ae64e9d HTTP/1.1
+GET http://localhost:5050/api/styles/ed0fab94-d6d0-4756-bf1a-ba116bdeef54 HTTP/1.1
 
 ### POST Style
 POST http://localhost:5050/api/styles HTTP/1.1
@@ -13,24 +13,13 @@ Content-Type: application/json
 }
 
 ### PUT Style
-PUT http://localhost:5050/api/style/2b1831b3-eaee-4e37-8ad5-f907d246badb HTTP/1.1
+PUT http://localhost:5050/api/styles/ed0fab94-d6d0-4756-bf1a-ba116bdeef54 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Rap Punk"
+    "name": "RAP PUNK"
 }
 
 ### DELETE Style
-DELETE  http://localhost:5050/api/style/2b1831b3-eaee-4e37-8ad5-f907d246badb HTTP/1.1
+DELETE  http://localhost:5050/api/styles/ed0fab94-d6d0-4756-bf1a-ba116bdeef54 HTTP/1.1
 
-"tracklist": [
-        {"name":"Intro", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 1},
-        {"name":"Souterrain feat Chata Flores", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track":2 },
-        {"name":"Kravmikaz", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 3},
-        {"name":"Camtar", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 4},
-        {"name":"Crust feat My Own Voice, Matrak Attakk", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 5},
-        {"name":"GasMask feat Speira", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track":6 },
-        {"name":"Poison feat Zafina", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track":7 },
-        {"name":"Carte Postale feat Al Nasser", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 8},
-        {"name":"City Hackers feat Aeon", "ArtistId": "7099236b-4034-4cb8-a3ae-2a43dfa2487a", "track": 9}
-    ]

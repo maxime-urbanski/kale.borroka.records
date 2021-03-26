@@ -3,10 +3,10 @@ POST http://localhost:5050/api/auth/signup HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "dadou", 
-    "password": "maxiloud.161",
-    "email": "kale-borroka-records@protonmail.com",
-    "usertype": "USER"
+    "username": "TEST", 
+    "password": "maxil",
+    "email": "kale-borrokarecords@protonmil.com",
+    "usertype": "ADMIN"
 }
 
 ### LOGIN USER

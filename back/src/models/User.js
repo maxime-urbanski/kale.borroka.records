@@ -21,8 +21,7 @@ const User = SequelizeConnexion.define(
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        min: 6,
-        max: 12,
+        len: [8, 24],
       },
     },
     email: {
@@ -42,10 +41,10 @@ const User = SequelizeConnexion.define(
   {
     hooks: {
       beforeCreate: (user, option) => {
-        const hash = bcrypt.genSaltSync();
+        const hash = bcrypt.genSaltSync(saltRounds);
         user.password = bcrypt.hashSync(user.password, hash);
       },
-      afterUpdate: (user) => {
+      beforeUpdate: (user, option) => {
         if (user.changed("password", true)) {
           const salt = bcrypt.genSaltSync();
           user.password = bcrypt.hashSync(user.get("password"));

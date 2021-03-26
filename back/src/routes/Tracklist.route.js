@@ -1,5 +1,4 @@
 const express = require("express");
-const Song = require("../models/Song");
 const Router = express.Router();
 const Tracklist = require("../models/Tracklist");
 
@@ -44,7 +43,6 @@ Router.post("/", async (req, res) => {
 
 Router.put("/album/:id", async (req, res) => {
   const { id } = req.params;
-  const { tracklist, AlbumId, SongId } = req.body;
   try {
     const putTracklistAlbum = await Tracklist.update(
       { AlbumId },

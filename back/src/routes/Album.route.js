@@ -9,6 +9,7 @@ const Video = require("../models/Video");
 const addTroughTableTracklist = require("./Trough/tracklist");
 const postLabelInThroughTable = require("./Trough/labels");
 const postVideoInThroughTable = require("./Trough/video");
+const Tracklist = require("../models/Tracklist");
 
 router.get("/", async (req, res) => {
   try {
@@ -119,10 +120,11 @@ router.put("/:id", async (req, res) => {
         ArtistId,
         StyleId,
       },
-      { where: { id } }
+      {
+        where: { id },
+      }
     );
-
-    res.status(200).json(`Artist ${id} is modified`);
+    res.status(200).json(`Album ${name} is modified`);
   } catch (err) {
     res.status(400).json({ message: "here", err });
   }
@@ -140,8 +142,8 @@ router.delete("/:id", async (req, res) => {
 
 router.delete("/", async (req, res) => {
   try {
-    const result = await Album.destroy({ where: {} });
-    res.status(200).json(result);
+    const deleteAllAlbums = await Album.destroy({ where: {} });
+    res.status(200).json(`${deleteAllAlbums} albums are dropped`);
   } catch (err) {
     res.status(400).json(err);
   }

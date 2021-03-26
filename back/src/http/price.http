@@ -1,11 +1,11 @@
 ## GET ALL PRICE
-GET http://localhost:5050/api/price HTTP/1.1
+GET http://localhost:5050/api/prices HTTP/1.1
 
 ### GET ONE PRICE
-GET http://localhost:5050/api/price/1c0be236-5379-4e11-b0c7-fb164ae64e9d HTTP/1.1
+GET http://localhost:5050/api/prices/352cc662-c18b-4f0e-b68a-5add2e9619db HTTP/1.1
 
 ### POST PRICE
-POST http://localhost:5050/api/price HTTP/1.1
+POST http://localhost:5050/api/prices HTTP/1.1
 Content-Type: application/json
 
 {
@@ -13,12 +13,12 @@ Content-Type: application/json
 }
 
 ### PUT PRICE
-PUT http://localhost:5050/api/price/2b1831b3-eaee-4e37-8ad5-f907d246badb HTTP/1.1
+PUT http://localhost:5050/api/prices/352cc662-c18b-4f0e-b68a-5add2e9619db HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Hardcore"
+    "price": 1500
 }
 
 ### DELETE PRICE
-DELETE  http://localhost:5050/api/price/5958ba5f-f400-4a49-a77a-74356de4457e HTTP/1.1
+DELETE  http://localhost:5050/api/prices/352cc662-c18b-4f0e-b68a-5add2e9619db HTTP/1.1

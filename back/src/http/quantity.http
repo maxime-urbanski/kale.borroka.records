@@ -1,10 +1,25 @@
 ### GET ALL QUANTITY
-GET http://localhost:5050/api/quantity HTTP/1.1
+GET http://localhost:5050/api/quantities HTTP/1.1
+
+### GET ONE QUANTITY
+GET http://localhost:5050/api/quantities/1b9ad3ed-7d39-4c92-9905-43264ae5d2f2 HTTP/1.1
 
 ### POST QUANTITY
-POST http://localhost:5050/api/quantity HTTP/1.1
+POST http://localhost:5050/api/quantities HTTP/1.1
 Content-Type: application/json
 
 {
-    "quantity" : 5
+    "quantity" : 3
 }
+
+### PUT QUANTITY
+PUT http://localhost:5050/api/quantities/c00d20df-c637-4c29-b9b0-dc1fcaf0dd5f HTTP/1.1
+Content-Type: application/json
+
+{
+    "quantity": 30
+}
+
+
+### DELETE QUANTITY
+DELETE  http://localhost:5050/api/quantities/c00d20df-c637-4c29-b9b0-dc1fcaf0dd5f HTTP/1.1

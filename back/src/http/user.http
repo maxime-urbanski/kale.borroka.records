@@ -1,15 +1,16 @@
 ### GET ALL USERS
-GET http://localhost:5050/api/user HTTP/1.1
+GET http://localhost:5050/api/users HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLWJvcnJva2EtcmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MTY3OTk4ODksImV4cCI6MTYxNjgxMDY4OX0.1qA1_YFAJFc8htgI6RdzBy8WYF_9fYnUguGMnsTRoCQ
 
-### GET ONE ALBUM
-GET http://localhost:5050/api/user/a6af7018-8c62-4b11-8e7e-7848c263c635 HTTP/1.1
+### GET ONE USER
+GET http://localhost:5050/api/users/30290263-af8f-4660-867c-dd8a0413b361 HTTP/1.1
 ### PUT ALBUM
-PUT http://localhost:5050/api/user/a6af7018-8c62-4b11-8e7e-7848c263c635 HTTP/1.1
+PUT http://localhost:5050/api/users/30290263-af8f-4660-867c-dd8a0413b361 HTTP/1.1
 Content-Type: application/json
 
 {
-   "username": "maxiloud2", 
-    "password": "Oias65654",
+   "username": "Dadou", 
+    "password": "Maxiloud.161",
     "email": "kale-borroka-records@protonmail.com",
     "usertype": "ADMIN"
 }

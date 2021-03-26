@@ -26,10 +26,11 @@ Router.post("/login", async (req, res) => {
     const user = await User.findOne({ where: { username } });
     const goodPassword = user.validPassword(password);
     if (user && goodPassword) {
+      const { email, usertype } = user.dataValues;
       const payload = {
         username,
-        email: user.dataValues.email,
-        usertype: user.dataValues.usertype,
+        email,
+        usertype,
       };
 
       const token = jwt.sign(payload, secret, {
