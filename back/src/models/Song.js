@@ -17,6 +17,7 @@ const Song = SequelizeConnexion.define(
     track: {
       type: Sequelize.INTEGER,
       allowNull: false,
+      defaultValue: 1,
     },
   },
   { timestamps: false }

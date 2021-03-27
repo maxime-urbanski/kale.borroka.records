@@ -1,26 +1,26 @@
 ## GET ALL SONG
-GET http://localhost:5050/api/song HTTP/1.1
+GET http://localhost:5050/api/songs HTTP/1.1
 
 ### GET ONE SONG
-GET http://localhost:5050/api/song/421d451a-aaac-4192-8ec3-27be99009237 HTTP/1.1
+GET http://localhost:5050/api/songs/84cde9c7-b1e6-45b0-9c7a-f81cc7443559 HTTP/1.1
 
 ### POST SONG
-POST http://localhost:5050/api/song HTTP/1.1
+POST http://localhost:5050/api/songs HTTP/1.1
 Content-Type: application/json
 
 {   
-    "name": "City Hackers",
-    "ArtistId": "a270bc51-6047-41fa-ab97-c2e03b0ef1ff"
+    "name": "TEST",
+    "track": 3,
+    "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"
 }
 
 ### PUT SONG
-PUT http://localhost:5050/api/song/bdf250c6-6e04-4b3e-b883-9be195005091 HTTP/1.1
+PUT http://localhost:5050/api/songs/84cde9c7-b1e6-45b0-9c7a-f81cc7443559 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Messed Up",
-    "LocationId" : "ca88e446-226e-4ebf-821f-96d8785986e4"
+    "name": "Messed Up"
 }
 
 ### DELETE SONG
-DELETE  http://localhost:5050/api/song/cda75557-fa35-4adb-8b59-45aec9eb159c HTTP/1.1
+DELETE  http://localhost:5050/api/songs/84cde9c7-b1e6-45b0-9c7a-f81cc7443559 HTTP/1.1

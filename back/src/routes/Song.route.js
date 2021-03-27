@@ -2,6 +2,7 @@ const express = require("express");
 const Artist = require("../models/Artist");
 const router = express.Router();
 const Song = require("../models/Song");
+const auth = require("../middlewares/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -13,6 +14,12 @@ router.get("/", async (req, res) => {
           attributes: ["name"],
         },
       ],
+      limit: 10,
+    });
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await Song.count(),
     });
     res.status(200).json(result);
   } catch (err) {
@@ -30,24 +37,24 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
-  const { name, ArtistId } = req.body;
+router.post("/", auth("ADMIN"), async (req, res) => {
+  const { name, ArtistId, track } = req.body;
   try {
-    const result = await Song.create({ name, ArtistId });
+    const result = await Song.create({ name, ArtistId, track });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
-  const { name, video } = req.body;
+  const { name, track } = req.body;
   try {
     await Song.update(
       {
         name,
-        video,
+        track,
       },
       { where: { id } }
     );
@@ -57,10 +64,19 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Song.destroy({ where: { id } });
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.delete("/", auth("ADMIN"), async (req, res) => {
+  try {
+    const result = await Song.destroy({ where: {} });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);

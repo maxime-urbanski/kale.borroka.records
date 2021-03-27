@@ -5,6 +5,11 @@ const Artist = require("../models/Artist");
 const Song = require("../models/Song");
 const Style = require("../models/Style");
 const Label = require("../models/Label");
+const Video = require("../models/Video");
+const addTroughTableTracklist = require("./Trough/tracklist");
+const postLabelInThroughTable = require("./Trough/labels");
+const postVideoInThroughTable = require("./Trough/video");
+const auth = require("../middlewares/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -19,14 +24,25 @@ router.get("/", async (req, res) => {
         {
           model: Song,
           attributes: ["name", "track"],
-          through: { attributes: [], order: ["track", "ASC"] },
+          through: { attributes: [] },
         },
         { model: Label, attributes: ["name"], through: { attributes: [] } },
+        {
+          model: Video,
+          attributes: ["youtube_url"],
+          through: { attributes: [] },
+        },
       ],
       order: [
         [Song, "track", "ASC"],
         [Label, "name", "ASC"],
       ],
+      limit: 10,
+    });
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await Album.count(),
     });
     res.status(200).json(result);
   } catch (err) {
@@ -37,69 +53,85 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await Album.findByPk(id);
+    const result = await Album.findByPk(id, {
+      attributes: ["id", "name", "note", "folder"],
+      include: [
+        {
+          model: Artist,
+          attributes: ["name", "id"],
+        },
+        { model: Style, attributes: ["name"] },
+        {
+          model: Song,
+          attributes: ["name", "track"],
+          through: { attributes: [], order: ["track", "ASC"] },
+        },
+        { model: Label, attributes: ["name"], through: { attributes: [] } },
+      ],
+      order: [[Label, "name", "ASC"]],
+    });
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await Album.count(),
+    });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post("/", async (req, res) => {
-  const { name, note, folder, ArtistId, StyleId, tracklist, labels } = req.body;
+router.post("/", auth("ADMIN"), async (req, res) => {
+  const {
+    name,
+    note,
+    folder,
+    ArtistId,
+    StyleId,
+    tracklist,
+    labels,
+    videos,
+  } = req.body;
   try {
-    const album = await Album.create({
+    const postAlbum = await Album.create({
       name,
       note,
       folder,
       ArtistId,
       StyleId,
     });
-    const songs = await Song.bulkCreate(tracklist);
-    const productBy = await Label.bulkCreate(labels);
-    await album.addSong(songs, album.id);
-    await album.addLabel(productBy);
-    res.status(200).json(album);
+    await addTroughTableTracklist(tracklist, Song, postAlbum);
+    await postLabelInThroughTable(labels, Label, postAlbum);
+    await postVideoInThroughTable(videos, Video, postAlbum);
+    res.status(200).json(postAlbum);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post("/:id", async (req, res) => {
+router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
-  const { songId, track } = req.body;
-  try {
-    const test = [req.body];
-    const addSong = await Album.bulkCreate(test, {
-      where: { id },
-    });
-    await res.status(200).json(addSong);
-  } catch (err) {
-    console.log(req.body);
-    res.status(400).json(err);
-  }
-});
-
-router.put("/:id", async (req, res) => {
-  const { id } = req.params;
-  const { name, country, city } = req.body;
+  const { name, note, folder, ArtistId, StyleId } = req.body;
   try {
     await Album.update(
       {
         name,
-        Location: {
-          city,
-          country,
-        },
+        note,
+        folder,
+        ArtistId,
+        StyleId,
       },
-      { where: { id } }
+      {
+        where: { id },
+      }
     );
-    res.status(200).json(`Artist ${id} is modified`);
+    res.status(200).json(`Album ${name} is modified`);
   } catch (err) {
     res.status(400).json({ message: "here", err });
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Album.destroy({ where: { id } });
@@ -109,10 +141,10 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.delete("/", async (req, res) => {
+router.delete("/", auth("ADMIN"), async (req, res) => {
   try {
-    const result = await Album.destroy({ where: {} });
-    res.status(200).json(result);
+    const deleteAllAlbums = await Album.destroy({ where: {} });
+    res.status(200).json(`${deleteAllAlbums} albums are dropped`);
   } catch (err) {
     res.status(400).json(err);
   }

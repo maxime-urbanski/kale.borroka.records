@@ -1,17 +1,17 @@
 ## GET ALL ARTISTS
-GET http://localhost:5050/api/artist HTTP/1.1
+GET http://localhost:5050/api/artists HTTP/1.1
 
 ### GET ONE ARTIST
 GET http://localhost:5050/api/artist/421d451a-aaac-4192-8ec3-27be99009237 HTTP/1.1
 
 ### POST ARTIST
-POST http://localhost:5050/api/artist HTTP/1.1
+POST http://localhost:5050/api/artists HTTP/1.1
 Content-Type: application/json
 
 {
   "name": "Krav Boca",
-  "CityId": "f90b48ce-650f-41ba-b42c-455da26810a4",
-  "CountryId": "64c99819-eb5c-49c3-a704-30d20d52c0e9"
+  "CityId": "b6014978-0f99-4a42-a3b2-dd94304666a5",
+  "CountryId": "ab58ad7f-f3d0-4beb-978f-91ae88c483a4"
 
 }
     
