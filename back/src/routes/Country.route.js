@@ -1,10 +1,11 @@
 const express = require("express");
 const Country = require("../models/Country");
 const Router = express.Router();
+const auth = require("../middlewares/auth");
 
 Router.get("/", async (req, res) => {
   try {
-    const result = await Country.findAll();
+    const result = await Country.findAll({ limit: 10 });
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
@@ -26,7 +27,7 @@ Router.get("/:id", async (req, res) => {
   }
 });
 
-Router.post("/", async (req, res) => {
+Router.post("/", auth("ADMIN"), async (req, res) => {
   const { country, tag } = req.body;
   try {
     const result = await Country.create({ country, tag });
@@ -36,7 +37,7 @@ Router.post("/", async (req, res) => {
   }
 });
 
-Router.put("/:id", async (req, res) => {
+Router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   const { country, tag } = req.body;
   try {
@@ -47,7 +48,7 @@ Router.put("/:id", async (req, res) => {
   }
 });
 
-Router.delete("/:id", async (req, res) => {
+Router.delete("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Country.destroy({ where: { id } });

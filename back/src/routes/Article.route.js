@@ -6,6 +6,7 @@ const Artist = require("../models/Artist");
 const Price = require("../models/Price");
 const Format = require("../models/Format");
 const Quantity = require("../models/Quantity");
+const auth = require("../middlewares/auth");
 
 Router.get("/", async (req, res) => {
   try {
@@ -35,6 +36,7 @@ Router.get("/", async (req, res) => {
           attributes: ["quantity"],
         },
       ],
+      limit: 10,
     });
     res.set({
       "Access-Control-Allow-Origin": "*",
@@ -58,7 +60,7 @@ Router.get("/:id", async (req, res) => {
   }
 });
 
-Router.post("/", async (req, res) => {
+Router.post("/", auth("ADMIN"), async (req, res) => {
   const { AlbumId, PriceId, QuantityId, FormatId } = req.body;
   try {
     const result = await Article.create({
@@ -73,7 +75,7 @@ Router.post("/", async (req, res) => {
   }
 });
 
-Router.put("/:id", async (req, res) => {
+Router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   const { AlbumId, PriceId, QuantityId, FormatId } = req.body;
   try {
@@ -92,7 +94,7 @@ Router.put("/:id", async (req, res) => {
   }
 });
 
-Router.delete("/:id", async (req, res) => {
+Router.delete("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Article.destroy({ where: { id } });
@@ -102,7 +104,7 @@ Router.delete("/:id", async (req, res) => {
   }
 });
 
-Router.delete("/", async (req, res) => {
+Router.delete("/", auth("ADMIN"), async (req, res) => {
   try {
     const result = await Article.destroy({ where: {} });
     res.status(200).json(result);

@@ -60,14 +60,28 @@ import {
   CountryEdit,
   CountryList,
 } from "./components/Endpoints/Country/country";
+import authProvider from "./components/authProvider";
+import { createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  palette: {
+    type: "dark", // Switching the dark mode on is a single property value change.
+  },
+});
 
 const App = () => {
   return (
     <>
-      <Admin dashboard={Dashboard} dataProvider={dataProvider} disableTelemetry>
+      <Admin
+        dashboard={Dashboard}
+        dataProvider={dataProvider}
+        disableTelemetry
+        authProvider={authProvider}
+        theme={theme}
+      >
         <Resource
           name="albums"
-          list={ListGuesser}
+          list={AlbumList}
           icon={AlbumIcon}
           edit={EditGuesser}
           create={AlbumCreate}

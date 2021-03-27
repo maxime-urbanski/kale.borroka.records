@@ -9,6 +9,7 @@ Router.get("/", auth("ADMIN"), async (req, res) => {
       attributes: {
         exclude: ["password"],
       },
+      limit: 10,
     });
     res.set({
       "Access-Control-Allow-Origin": "*",
@@ -21,7 +22,7 @@ Router.get("/", auth("ADMIN"), async (req, res) => {
   }
 });
 
-Router.get("/:id", async (req, res) => {
+Router.get("/:id", auth(["ADMIN", "USER"]), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await User.findByPk(id, {
@@ -50,7 +51,7 @@ Router.post("/", async (req, res) => {
   }
 });
 
-Router.put("/:id", async (req, res) => {
+Router.put("/:id", auth(["ADMIN", "USER"]), async (req, res) => {
   const { id } = req.params;
   const { username, password, email, usertype } = req.body;
   try {
@@ -70,7 +71,7 @@ Router.put("/:id", async (req, res) => {
   }
 });
 
-Router.delete("/:id", async (req, res) => {
+Router.delete("/:id", auth(["ADMIN", "USER"]), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Artist.destroy({ where: { id } });

@@ -36,6 +36,7 @@ Router.post("/login", async (req, res) => {
       const token = jwt.sign(payload, secret, {
         expiresIn: "3h",
       });
+
       delete user.dataValues.password;
       res.status(200).json({ user, token });
     }

@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const Label = require("../models/Label");
+const auth = require("../middlewares/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const result = await Label.findAll();
+    const result = await Label.findAll({ limit: 10 });
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
@@ -26,7 +27,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth("ADMIN"), async (req, res) => {
   const { name, friend, logo } = req.body;
   try {
     const result = await Label.create({ name, friend, logo });
@@ -36,7 +37,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   const { name, friend, logo } = req.body;
   try {
@@ -54,7 +55,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Label.destroy({ where: { id } });
@@ -64,7 +65,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.delete("/", async (req, res) => {
+router.delete("/", auth("ADMIN"), async (req, res) => {
   try {
     const result = await Label.destroy({ where: {} });
     res.status(200).json(result);

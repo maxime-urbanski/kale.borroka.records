@@ -3,6 +3,7 @@ const Router = express.Router();
 const Artist = require("../models/Artist");
 const City = require("../models/City");
 const Country = require("../models/Country");
+const auth = require("../middlewares/auth");
 
 Router.get("/", async (req, res) => {
   try {
@@ -18,6 +19,7 @@ Router.get("/", async (req, res) => {
           attributes: ["country", "tag"],
         },
       ],
+      limit: 10,
     });
     res.set({
       "Access-Control-Allow-Origin": "*",
@@ -40,7 +42,7 @@ Router.get("/:id", async (req, res) => {
   }
 });
 
-Router.post("/", async (req, res) => {
+Router.post("/", auth("ADMIN"), async (req, res) => {
   const { name, CityId, CountryId } = req.body;
   try {
     const result = await Artist.create({
@@ -54,7 +56,7 @@ Router.post("/", async (req, res) => {
   }
 });
 
-Router.put("/:id", async (req, res) => {
+Router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   const { name, country, city } = req.body;
   try {
@@ -75,7 +77,7 @@ Router.put("/:id", async (req, res) => {
   }
 });
 
-Router.delete("/:id", async (req, res) => {
+Router.delete("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Artist.destroy({ where: { id } });

@@ -1,10 +1,11 @@
 const express = require("express");
 const Router = express.Router();
 const Tracklist = require("../models/Tracklist");
+const auth = require("../middlewares/auth");
 
 Router.get("/", async (req, res) => {
   try {
-    const getTracklist = await Tracklist.findAll();
+    const getTracklist = await Tracklist.findAll({ limit: 10 });
     res.status(200).json(getTracklist);
   } catch (err) {
     res.status(400).json(err);
@@ -23,7 +24,7 @@ Router.get("/album/:id", async (req, res) => {
   }
 });
 
-Router.post("/", async (req, res) => {
+Router.post("/", auth("ADMIN"), async (req, res) => {
   const { tracklist, AlbumId, SongId } = req.body;
   try {
     if ((tracklist.length = 1)) {
@@ -41,7 +42,7 @@ Router.post("/", async (req, res) => {
   }
 });
 
-Router.put("/album/:id", async (req, res) => {
+Router.put("/album/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   try {
     const putTracklistAlbum = await Tracklist.update(

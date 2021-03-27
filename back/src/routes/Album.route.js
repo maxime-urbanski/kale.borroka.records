@@ -9,7 +9,7 @@ const Video = require("../models/Video");
 const addTroughTableTracklist = require("./Trough/tracklist");
 const postLabelInThroughTable = require("./Trough/labels");
 const postVideoInThroughTable = require("./Trough/video");
-const Tracklist = require("../models/Tracklist");
+const auth = require("../middlewares/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -37,6 +37,7 @@ router.get("/", async (req, res) => {
         [Song, "track", "ASC"],
         [Label, "name", "ASC"],
       ],
+      limit: 10,
     });
     res.set({
       "Access-Control-Allow-Origin": "*",
@@ -80,7 +81,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth("ADMIN"), async (req, res) => {
   const {
     name,
     note,
@@ -108,7 +109,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   const { name, note, folder, ArtistId, StyleId } = req.body;
   try {
@@ -130,7 +131,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Album.destroy({ where: { id } });
@@ -140,7 +141,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.delete("/", async (req, res) => {
+router.delete("/", auth("ADMIN"), async (req, res) => {
   try {
     const deleteAllAlbums = await Album.destroy({ where: {} });
     res.status(200).json(`${deleteAllAlbums} albums are dropped`);

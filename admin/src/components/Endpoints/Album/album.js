@@ -17,8 +17,7 @@ import {
   ReferenceArrayInput,
   ImageField,
   SingleFieldList,
-  ChipField
-
+  ChipField,
 } from "react-admin";
 
 export const FilterData = (props) => (
@@ -33,18 +32,21 @@ export const FilterData = (props) => (
 export const AlbumList = (props) => (
   <List filters={<FilterData />} {...props} title="Tous les albums">
     <Datagrid rowClick="edit">
-      <TextField source="Artist.name" />
+      <TextField source="Artist.name" a />
       <TextField source="name" />
       <TextField source="note" />
       <ImageField source="folder" />
-      <TextField source="Style.name" />
+      <TextField source="Style" />
       <ArrayField source="Songs">
-        <SingleFieldList><ChipField source="name" /></SingleFieldList>
+        <SingleFieldList>
+          <ChipField source="name" />
+        </SingleFieldList>
       </ArrayField>
       <ArrayField source="Labels">
-        <SingleFieldList><ChipField source="name" /></SingleFieldList>
+        <SingleFieldList>
+          <ChipField source="name" />
+        </SingleFieldList>
       </ArrayField>
-      <TextField source="Videos" />
     </Datagrid>
   </List>
 );

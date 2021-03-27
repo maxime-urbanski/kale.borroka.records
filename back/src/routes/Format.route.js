@@ -1,6 +1,7 @@
 const express = require("express");
 const Router = express.Router();
 const Format = require("../models/Format");
+const auth = require("../middlewares/auth");
 
 Router.get("/", async (req, res) => {
   try {
@@ -26,7 +27,7 @@ Router.get("/:id", async (req, res) => {
   }
 });
 
-Router.post("/", async (req, res) => {
+Router.post("/", auth("ADMIN"), async (req, res) => {
   const { name } = req.body;
   try {
     const result = await Format.create({ name });
@@ -36,7 +37,7 @@ Router.post("/", async (req, res) => {
   }
 });
 
-Router.put("/:id", async (req, res) => {
+Router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
   try {
@@ -52,7 +53,7 @@ Router.put("/:id", async (req, res) => {
   }
 });
 
-Router.delete("/:id", async (req, res) => {
+Router.delete("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Format.destroy({ where: { id } });

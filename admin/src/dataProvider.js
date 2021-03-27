@@ -5,8 +5,10 @@ const httpClient = (url, options = {}) => {
   if (!options.headers) {
     options.headers = new Headers({ Accept: "application/json" });
   }
+  const { token } = JSON.parse(localStorage.getItem("token"));
   // add your own headers here
   options.headers.set("X-Total-Count", "100");
+  options.headers.set("Authorization", `Bearer ${token}`);
   return fetchUtils.fetchJson(url, options);
 };
 
