@@ -20,9 +20,13 @@
     "jsx": "preserve"
   },
   "include": [
+    "src/index.d.ts",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/component/NavBar.jsx"
   ],
   "exclude": [
     "node_modules"

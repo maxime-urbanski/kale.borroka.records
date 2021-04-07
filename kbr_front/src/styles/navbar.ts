@@ -1,26 +1,5 @@
 import styled from "styled-components";
 
-export const Title = styled.h1`
-  font-size: 4em;
-  text-align: center;
-`;
-
-export const Button = styled.button`
-  background-color: #d9534f;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  color: white;
-  width: 100px;
-  height: 50px;
-
-  &:hover {
-    background-color: white;
-    border: 1px solid #d9534f;
-    color: #d9534f;
-  }
-`;
-
 export const NavBar = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,7 +14,7 @@ export const NavBarTop = styled.div`
 `;
 
 export const NavBarDown = styled.div`
-  padding: 0px 0 0 15px;
+  padding: 0;
   display: flex;
   background-color: #1a1a1a;
   height: 80px;
@@ -48,9 +27,37 @@ export const NavLink = styled.a`
   text-decoration: none;
   font-size: 1.4em;
   font-weight: bold;
-  padding: 0px;
+  padding: 0px 0px 0px 15px;
 
   &:hover {
     color: #d9534f;
   }
+`;
+
+export const IconNavTop = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 25%;
+`;
+
+export const ImgNavTop = styled.img`
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.3);
+  }
+`;
+
+export const HrNavTop = styled.hr`
+  border-color: #d9534f;
+  margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  transform: rotate(90deg);
+  width: 20px;
 `;
