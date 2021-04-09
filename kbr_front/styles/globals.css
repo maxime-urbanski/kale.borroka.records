@@ -14,3 +14,27 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Punk Attitude";
+  src: url("../public/font/Punk Attitude/CFPunkAttitude-Regular.ttf");
+  font-style: normal;
+  font-weight: auto;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Ye Olde Oak";
+  src: url("../public/font/Ye Olde Oak/YeOldeOak.ttf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Soviet Program";
+  src: url("../public/font/Soviet Program/SovietProgram.ttf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+}

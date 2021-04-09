@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "./theme";
 
 export const NavBar = styled.div`
   display: flex;
@@ -10,10 +11,12 @@ export const NavBar = styled.div`
 export const NavBarTop = styled.div`
   display: flex;
   height: 60px;
+  padding: 0px;
   width: 100%;
 `;
 
 export const NavBarDown = styled.div`
+  justify-content: space-evenly;
   padding: 0;
   display: flex;
   background-color: #1a1a1a;
@@ -34,11 +37,12 @@ export const NavLink = styled.a`
   }
 `;
 
-export const IconNavTop = styled.div`
+export const IconNav = styled.div`
   display: flex;
   align-items: center;
+  justify-content: ${(props) => (props.position ? "end" : "start")};
   height: 100%;
-  width: 25%;
+  width: 15%;
 `;
 
 export const ImgNavTop = styled.img`
@@ -52,12 +56,24 @@ export const ImgNavTop = styled.img`
     transform: scale(1.3);
   }
 `;
+export const Title = styled.h2`
+  font-family: "Soviet Program";
+`;
+
+export const TextNavTop = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+`;
 
 export const HrNavTop = styled.hr`
   border-color: #d9534f;
   margin: 0;
-  margin-top: auto;
-  margin-bottom: auto;
   transform: rotate(90deg);
-  width: 20px;
+  width: 15px;
+
+  &:last-of-type {
+    display: none;
+  }
 `;

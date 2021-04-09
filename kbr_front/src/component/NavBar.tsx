@@ -1,11 +1,13 @@
+import { cpuUsage } from "node:process";
 import {
-  IconNavTop,
+  IconNav,
   ImgNavTop,
   NavBar,
   NavBarTop,
   NavBarDown,
   NavLink,
   HrNavTop,
+  TextNavTop,
 } from "../styles/navbar";
 
 const networks = [
@@ -27,21 +29,44 @@ const networks = [
   },
 ];
 
-interface SocialsProps {
+const flags = [
+  {
+    name: "Français",
+    img: "/img/Flag/fr.svg",
+  },
+  {
+    name: "Euskadi",
+    img: "/img/Flag/eu.svg",
+  },
+  {
+    name: "English",
+    img: "/img/Flag/en.svg",
+  },
+];
+const searchAndCart = [
+  {
+    name: "Search",
+    img: "/img/search.svg",
+  },
+  {
+    name: "Cart",
+    img: "/img/cart.svg",
+  },
+];
+interface IconsProps {
+  index?: number;
   name: string;
   img: string;
-  url: string;
+  url?: string;
 }
 
 const NavigationBar = (): JSX.Element => {
-  const removeLastHr = document.getElementsByTagName("hr");
-
   return (
     <>
       <NavBar>
         <NavBarTop>
-          <IconNavTop>
-            {networks.map(({ name, img, url }: SocialsProps) => {
+          <IconNav>
+            {networks.map(({ name, img, url }: IconsProps) => {
               return (
                 <>
                   <a href={url}>
@@ -51,7 +76,22 @@ const NavigationBar = (): JSX.Element => {
                 </>
               );
             })}
-          </IconNavTop>
+          </IconNav>
+          <TextNavTop>
+            <h2 style={{ fontFamily: "Soviet Program", fontSize: "2.5em" }}>
+              Black Lives Matters
+            </h2>
+          </TextNavTop>
+          <IconNav position>
+            {flags.map(({ name, img }: IconsProps) => {
+              return (
+                <>
+                  <ImgNavTop src={img} alt={name} />
+                  <HrNavTop />
+                </>
+              );
+            })}
+          </IconNav>
         </NavBarTop>
         <NavBarDown>
           <NavLink href="/">Home</NavLink>
@@ -59,6 +99,16 @@ const NavigationBar = (): JSX.Element => {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/">Home</NavLink>
           <NavLink href="/">Home</NavLink>
+          <IconNav postion>
+            {searchAndCart.map(({ name, img }: IconsProps) => {
+              return (
+                <>
+                  <ImgNavTop src={img} alt={name} style={{ fill: "white" }} />
+                  <HrNavTop />
+                </>
+              );
+            })}
+          </IconNav>
         </NavBarDown>
       </NavBar>
     </>

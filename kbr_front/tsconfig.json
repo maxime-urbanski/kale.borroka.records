@@ -3,11 +3,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "target": "es6",
-    "lib": [
-      "dom",
-      "es2017",
-      "es2019"
-    ],
+    "lib": ["dom", "es2017", "es2019"],
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -28,7 +24,5 @@
     "src/**/*.tsx",
     "src/component/NavBar.jsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
