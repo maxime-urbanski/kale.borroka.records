@@ -67,10 +67,11 @@ export const TextNavTop = styled.div<{ start?: boolean }>`
 `
 
 export const HrNavTop = styled.hr`
+  border: 1px solid;
   border-color: #d9534f;
   margin: 0;
   transform: rotate(90deg);
-  width: 15px;
+  width: 17px;
 
   &:last-of-type {
     display: none;

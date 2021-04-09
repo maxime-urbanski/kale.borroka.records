@@ -6,7 +6,7 @@ const Ban = (): JSX.Element => {
     <>
       <BanLogo>
         <Title1>Kale Borroka</Title1>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
           <ImgNavTop src="/img/Flag/antifa.svg" />
           <Title2>Riot Records</Title2>
           <ImgNavTop src="/img/Flag/antifa.svg" />

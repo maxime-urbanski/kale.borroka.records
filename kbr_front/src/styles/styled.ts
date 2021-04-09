@@ -14,6 +14,22 @@ export const Title2 = styled.h2`
   text-align: center;
   margin: 0 10px;
 `
+export const Title3 = styled.h3`
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #d9534f;
+  margin: 20px 0 5px 0;
+`
+export const Title4 = styled.h4`
+  font-size: 1.2em;
+  font-weight: 600;
+  color: white;
+  margin: 20px 0 5px 0;
+
+  &:hover {
+    color: #d9534f;
+  }
+`
 
 export const Button = styled.button`
   background-color: #d9534f;
@@ -30,7 +46,11 @@ export const Button = styled.button`
     color: #d9534f;
   }
 `
-
+export const Row = styled.div`
+  display: flex;
+  width: 100%;
+  height: auto;
+`
 export const HR = styled.hr`
   width: 75%;
   border-top: solid !important;
@@ -43,5 +63,5 @@ export const BanLogo = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 300px;
-  width: 100vw;
+  width: 100wv;
 `
