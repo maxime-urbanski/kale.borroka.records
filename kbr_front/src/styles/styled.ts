@@ -1,8 +1,18 @@
 import styled from 'styled-components'
 
-export const Title = styled.h1`
-  font-size: 4em;
+export const Title1 = styled.h1`
+  font-family: 'Ye Olde Oak';
+  font-size: 6em;
+  font-weight: 100;
   text-align: center;
+  margin: 0;
+`
+export const Title2 = styled.h2`
+  font-family: 'Soviet Program';
+  font-size: 3em;
+  font-weight: 100;
+  text-align: center;
+  margin: 0 10px;
 `
 
 export const Button = styled.button`
@@ -26,4 +36,12 @@ export const HR = styled.hr`
   border-top: solid !important;
   border-bottom: 5px;
   border-color: #d9534f !important;
+`
+
+export const BanLogo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  width: 100vw;
 `

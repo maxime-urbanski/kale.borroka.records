@@ -7,7 +7,7 @@ import {
   NavLink,
   HrNavTop,
   TextNavTop,
-} from '../styles/navbar'
+} from '../../styles/navbar'
 
 const networks = [
   {
@@ -29,7 +29,7 @@ const networks = [
 
 const flags = [
   {
-    name: 'Français',
+    name: 'Francais',
     img: '/img/Flag/fr.svg',
   },
   {
@@ -65,7 +65,7 @@ const NavigationBar = (): JSX.Element => {
     <>
       <NavBar>
         <NavBarTop>
-          <IconNav>
+          <IconNav start>
             {networks.map(({ name, img, url }: IconsProps) => {
               return (
                 <>
@@ -80,7 +80,7 @@ const NavigationBar = (): JSX.Element => {
           <TextNavTop>
             <h2 style={{ fontFamily: 'Soviet Program', fontSize: '2.5em' }}>Black Lives Matters</h2>
           </TextNavTop>
-          <IconNav position>
+          <IconNav>
             {flags.map(({ name, img }: IconsProps) => {
               return (
                 <>
@@ -92,12 +92,14 @@ const NavigationBar = (): JSX.Element => {
           </IconNav>
         </NavBarTop>
         <NavBarDown>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/">Home</NavLink>
-          <IconNav position>
+          <TextNavTop start>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/">Home</NavLink>
+          </TextNavTop>
+          <IconNav>
             {searchAndCart.map(({ name, img }: IconsProps) => {
               return (
                 <>

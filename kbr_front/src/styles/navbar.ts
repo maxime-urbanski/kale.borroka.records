@@ -15,7 +15,7 @@ export const NavBarTop = styled.div`
 `
 
 export const NavBarDown = styled.div`
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0;
   display: flex;
   background-color: #1a1a1a;
@@ -36,10 +36,10 @@ export const NavLink = styled.a`
   }
 `
 
-export const IconNav = styled.div<{ position?: boolean }>`
+export const IconNav = styled.div<{ start?: boolean }>`
   display: flex;
   align-items: center;
-  justify-content: ${(props) => (props.position ? 'end' : 'start')};
+  justify-content: ${(props) => (props.start ? 'flex-start' : 'flex-end')};
   height: 100%;
   width: 15%;
 `
@@ -57,11 +57,11 @@ export const ImgNavTop = styled.img`
 `
 export const Title = styled.h2`
   font-family: 'Soviet Program';
-`;
+`
 
-export const TextNavTop = styled.div`
+export const TextNavTop = styled.div<{ start?: boolean }>`
   display: flex;
-  justify-content: center;
+  justify-content: ${(props) => (props.start ? 'flex-start' : 'center')};
   align-items: center;
   width: 70%;
 `

@@ -1,11 +1,9 @@
-import NavigationBar from '../src/component/NavBar'
-
 const home = (): JSX.Element => {
   return (
-    <>
-      <NavigationBar />
-    </>
-  );
-};
+    <div>
+      <h2>test</h2>
+    </div>
+  )
+}
 
-export default home;
+export default home

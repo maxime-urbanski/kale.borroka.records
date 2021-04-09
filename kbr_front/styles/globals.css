@@ -18,8 +18,8 @@ a {
 @font-face {
   font-family: "Punk Attitude";
   src: url("../public/font/Punk Attitude/CFPunkAttitude-Regular.ttf");
-  font-style: normal;
-  font-weight: auto;
+  font-style: auto;
+  font-weight: normal;
   font-display: auto;
 }
 
@@ -27,8 +27,7 @@ a {
   font-family: "Ye Olde Oak";
   src: url("../public/font/Ye Olde Oak/YeOldeOak.ttf");
   font-style: normal;
-  font-weight: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
