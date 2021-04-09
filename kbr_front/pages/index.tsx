@@ -1,6 +1,6 @@
-import NavigationBar from "../src/component/NavBar";
+import NavigationBar from '../src/component/NavBar'
 
-const home = () => {
+const home = (): JSX.Element => {
   return (
     <>
       <NavigationBar />

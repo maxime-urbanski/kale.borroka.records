@@ -1,19 +1,18 @@
-import styled from "styled-components";
-import theme from "./theme";
+import styled from 'styled-components'
 
 export const NavBar = styled.div`
   display: flex;
   flex-direction: column;
   height: 140px;
   width: 100%;
-`;
+`
 
 export const NavBarTop = styled.div`
   display: flex;
   height: 60px;
   padding: 0px;
   width: 100%;
-`;
+`
 
 export const NavBarDown = styled.div`
   justify-content: space-evenly;
@@ -23,7 +22,7 @@ export const NavBarDown = styled.div`
   height: 80px;
   width: 100%;
   align-items: center;
-`;
+`
 
 export const NavLink = styled.a`
   color: white;
@@ -35,15 +34,15 @@ export const NavLink = styled.a`
   &:hover {
     color: #d9534f;
   }
-`;
+`
 
-export const IconNav = styled.div`
+export const IconNav = styled.div<{ position?: boolean }>`
   display: flex;
   align-items: center;
-  justify-content: ${(props) => (props.position ? "end" : "start")};
+  justify-content: ${(props) => (props.position ? 'end' : 'start')};
   height: 100%;
   width: 15%;
-`;
+`
 
 export const ImgNavTop = styled.img`
   width: 30px;
@@ -55,9 +54,9 @@ export const ImgNavTop = styled.img`
   &:hover {
     transform: scale(1.3);
   }
-`;
+`
 export const Title = styled.h2`
-  font-family: "Soviet Program";
+  font-family: 'Soviet Program';
 `;
 
 export const TextNavTop = styled.div`
@@ -65,7 +64,7 @@ export const TextNavTop = styled.div`
   justify-content: center;
   align-items: center;
   width: 70%;
-`;
+`
 
 export const HrNavTop = styled.hr`
   border-color: #d9534f;
@@ -76,4 +75,4 @@ export const HrNavTop = styled.hr`
   &:last-of-type {
     display: none;
   }
-`;
+`

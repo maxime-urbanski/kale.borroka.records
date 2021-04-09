@@ -1,7 +1,7 @@
-import Head from "next/head";
-import "../styles/globals.css";
+import Head from 'next/head'
+import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }): JSX.Element => {
   return (
     <>
       <Head>
@@ -15,13 +15,12 @@ function MyApp({ Component, pageProps }) {
           content="Kale Borroka Records, Label &amp; distro from Baiona, Euskal Herria. Shop Music."
         />
         <title>
-          Kale Borroka Records | Antifascit distro &amp; label from Baiona,
-          Euskal Herria !
+          Kale Borroka Records | Antifascit distro &amp; label from Baiona,Euskal Herria !
         </title>
       </Head>
       <Component {...pageProps} />
     </>
-  );
+  )
 }
 
 export default MyApp;
