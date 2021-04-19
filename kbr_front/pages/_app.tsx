@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import '../styles/globals.css'
-import Layout from '../src/component/Layout/Layout'
+import Layout from '../src/components/Layout/Layout'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const MyApp = ({ Component, pageProps }): JSX.Element => {
