@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { GetServerSideProps } from 'next'
 import { Container } from '../../src/styles/styled'
 import axios from 'axios'
-import CardArticle from "../../src/components/Article/CardArticle";
+import CardArticle from '../../src/components/Article/CardArticle'
 
 type Props = {
   data: string[]

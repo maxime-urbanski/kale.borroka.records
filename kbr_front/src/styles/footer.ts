@@ -1,32 +1,32 @@
 import styled from 'styled-components'
 
 export const Foot = styled.footer`
+  background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
-  background-color: #1a1a1a;
-  padding: 0;
-  width: 100%;
   height: 400px;
   overflow: hidden;
+  padding: 0;
+  width: 100%;
 `
 
 export const ColFooter = styled.div<{ full?: boolean }>`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: ${(props) => (props.full ? '100%' : '33.33%')};
   height: auto;
+  justify-content: center;
+  width: ${(props) => (props.full ? '100%' : '33.33%')};
 `
 
 export const FooterDown = styled.div`
-  display: flex;
-  color: white;
-  justify-content: center;
   align-items: center;
   background-color: #000;
-  width: 100%;
+  color: white;
+  display: flex;
   height: 40px;
+  justify-content: center;
+  width: 100%;
 `
 export const Copyright = styled.p`
   font-size: 1.5em;

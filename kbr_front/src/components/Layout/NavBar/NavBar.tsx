@@ -1,4 +1,15 @@
-import { IconNav, NavBar, NavBarTop, NavBarDown, NavLink, TextNavTop } from '../../../styles/navbar'
+import {
+  DropDown,
+  DropDownBtn,
+  DropDownContent,
+  DropDownLink,
+  IconNav,
+  NavBar,
+  NavBarTop,
+  NavBarDown,
+  NavLink,
+  TextNavTop,
+} from '../../../styles/navbar'
 import NavIcon from './NavIcon'
 import { flags, networks, searchAndCart } from '../../Fixture/fixture'
 
@@ -20,10 +31,17 @@ const NavigationBar = (): JSX.Element => {
         <NavBarDown>
           <TextNavTop start={true}>
             <NavLink href="/">Home</NavLink>
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/">Home</NavLink>
+            <NavLink href="/">Production</NavLink>
+            <DropDown>
+              <DropDownBtn>Le Shop</DropDownBtn>
+              <DropDownContent>
+                <DropDownLink>lp</DropDownLink>
+                <DropDownLink>ep</DropDownLink>
+                <DropDownLink>cd</DropDownLink>
+                <DropDownLink>tape</DropDownLink>
+                <DropDownLink>fanzine</DropDownLink>
+              </DropDownContent>
+            </DropDown>
           </TextNavTop>
           <IconNav>
             <NavIcon array={searchAndCart} />

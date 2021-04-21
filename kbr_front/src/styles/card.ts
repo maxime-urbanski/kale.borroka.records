@@ -7,13 +7,11 @@ export const Card = styled.article`
   display: flex;
   flex-direction: column;
   height: 500px;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
   border-radius: 5px 5px 1px 1px;
   margin: 3em;
-  -webkit-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.7);
-  box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
 `
 
 export const CardTop = styled.div`
