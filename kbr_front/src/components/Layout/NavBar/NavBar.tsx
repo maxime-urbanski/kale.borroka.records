@@ -18,7 +18,7 @@ const NavigationBar = (): JSX.Element => {
           </IconNav>
         </NavBarTop>
         <NavBarDown>
-          <TextNavTop start>
+          <TextNavTop start={true}>
             <NavLink href="/">Home</NavLink>
             <NavLink href="/">Home</NavLink>
             <NavLink href="/">Home</NavLink>

@@ -38,7 +38,7 @@ const Footer = (): JSX.Element => {
             {networks.map(({ name, img, url }: IconsProps, index: number) => {
               return (
                 <a href={url} target="_blank" key={index} rel="noreferrer">
-                  <Image src={img} alt={name} width={60} height={60} />
+                  <Image src={img} alt={name} width={'50px'} height={'50px'} />
                 </a>
               )
             })}

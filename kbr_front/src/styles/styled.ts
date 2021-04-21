@@ -34,7 +34,7 @@ export const Title4 = styled.h4`
 export const Button = styled.button`
   background-color: #d9534f;
   border: none;
-  border-radius: 5px;
+  border-radius: 2px;
   font-weight: bold;
   color: white;
   width: 100px;
@@ -64,4 +64,12 @@ export const BanLogo = styled.div`
   justify-content: center;
   height: 300px;
   width: 100wv;
+`
+
+export const Container = styled.div<{ fluid?: boolean }>`
+  width: ${({ fluid }) => (fluid ? '70%' : '100%')};
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid red;
 `

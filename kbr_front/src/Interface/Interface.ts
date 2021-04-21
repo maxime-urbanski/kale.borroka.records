@@ -15,3 +15,12 @@ export interface Link {
   name: string
   link: string
 }
+
+export interface CardStyledProps {
+  bg?: string
+  text?: string
+  border?: string
+  position?: string
+  width?: string
+  height?: string
+}
