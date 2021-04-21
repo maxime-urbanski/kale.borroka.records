@@ -8,12 +8,17 @@ import {
   CardSubtitle,
   CardTitle,
   CardTop,
+  Ribbon,
+  Overlay,
 } from '../../styles/card'
 
 const CardArticle = (): JSX.Element => {
   return (
     <>
       <Card>
+        <Overlay>
+          <Ribbon>KBR#01</Ribbon>
+        </Overlay>
         <CardTop>
           <CardImg src="/img/1725109.jpg" alt="cover" />
         </CardTop>

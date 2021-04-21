@@ -31,21 +31,12 @@ export const Title4 = styled.h4`
   }
 `
 
-export const Button = styled.button`
-  background-color: #d9534f;
-  border: none;
-  border-radius: 2px;
-  color: white;
-  font-weight: bold;
-  height: 50px;
-  width: 100px;
-
-  &:hover {
-    background-color: white;
-    border: 1px solid #d9534f;
-    color: #d9534f;
-  }
+export const Icon = styled.img`
+  height: 30px;
+  margin: 10px;
+  width: 30px;
 `
+
 export const Row = styled.div`
   display: flex;
   height: auto;
@@ -63,6 +54,7 @@ export const BanLogo = styled.div`
   flex-direction: column;
   height: 300px;
   justify-content: center;
+  padding: 300px 0 200px;
   width: 100wv;
 `
 

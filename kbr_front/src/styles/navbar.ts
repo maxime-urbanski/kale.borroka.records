@@ -30,9 +30,11 @@ export const NavBarDown = styled.div`
 
 export const NavLink = styled.a`
   color: white;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 0px 0px 0px 15px;
+  font-family: Gobold;
+  font-size: 25px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  padding: 0px 15px 0px 15px;
   text-decoration: none;
 
   &:hover {
@@ -60,7 +62,9 @@ export const ImgNavTop = styled.img`
   }
 `
 export const Title = styled.h2`
-  font-family: 'Soviet Program';
+  font-family: 'Gobold';
+  font-size: 40px;
+  font-weight: 700;
 `
 
 export const TextNavTop = styled.div<{ start?: boolean }>`
@@ -94,11 +98,13 @@ export const DropDownBtn = styled.a`
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
+  font-family: Gobold;
+  font-size: 25px;
+  font-weight: 100;
   height: 100%;
+  letter-spacing: 2px;
   margin-left: 15px;
-  padding-bottom: 28.5px;
+  padding-bottom: 23px;
   width: 100%;
 
   &:hover {
@@ -110,7 +116,7 @@ export const DropDownContent = styled.div`
   background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   display: none;
-  margin-top: 28px;
+  margin-top: 23px;
   min-width: 160px;
   position: absolute;
   z-index: 1;

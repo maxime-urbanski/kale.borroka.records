@@ -37,3 +37,9 @@ a {
   font-weight: normal;
   font-display: auto;
 }
+
+@font-face {
+  font-family: "Gobold";
+  src: url("../public/font/Gobold/Gobold.otf");
+  font-style: normal;
+}

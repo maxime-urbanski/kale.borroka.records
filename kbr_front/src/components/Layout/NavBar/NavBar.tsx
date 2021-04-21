@@ -1,17 +1,15 @@
 import {
-  DropDown,
-  DropDownBtn,
-  DropDownContent,
-  DropDownLink,
   IconNav,
   NavBar,
   NavBarTop,
   NavBarDown,
   NavLink,
   TextNavTop,
+  Title,
 } from '../../../styles/navbar'
 import NavIcon from './NavIcon'
 import { flags, networks, searchAndCart } from '../../Fixture/fixture'
+import Dropdown from './Dropdown'
 
 const NavigationBar = (): JSX.Element => {
   return (
@@ -22,7 +20,7 @@ const NavigationBar = (): JSX.Element => {
             <NavIcon array={networks} />
           </IconNav>
           <TextNavTop>
-            <h2 style={{ fontFamily: 'Soviet Program', fontSize: '2.5em' }}>Black Lives Matters</h2>
+            <Title>Black Lives Matters</Title>
           </TextNavTop>
           <IconNav>
             <NavIcon array={flags} />
@@ -32,16 +30,7 @@ const NavigationBar = (): JSX.Element => {
           <TextNavTop start={true}>
             <NavLink href="/">Home</NavLink>
             <NavLink href="/">Production</NavLink>
-            <DropDown>
-              <DropDownBtn>Le Shop</DropDownBtn>
-              <DropDownContent>
-                <DropDownLink>lp</DropDownLink>
-                <DropDownLink>ep</DropDownLink>
-                <DropDownLink>cd</DropDownLink>
-                <DropDownLink>tape</DropDownLink>
-                <DropDownLink>fanzine</DropDownLink>
-              </DropDownContent>
-            </DropDown>
+            <Dropdown />
           </TextNavTop>
           <IconNav>
             <NavIcon array={searchAndCart} />

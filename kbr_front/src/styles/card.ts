@@ -96,3 +96,27 @@ export const CardPrice = styled.span`
   left: 195px;
   color: #f0ad4e;
 `
+export const Overlay = styled.div`
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+`
+
+export const Ribbon = styled.div`
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  color: white;
+  padding: 4px 5px 6px 25px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  background-color: #d9534f;
+  left: calc(100% - 35px);
+  top: 21px;
+  transform: translate(-50%, -50%) rotate(45deg);
+`
