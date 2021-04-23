@@ -1,9 +1,7 @@
+import LittleCard from '../src/components/Article/LittleCard'
+
 const home = (): JSX.Element => {
-  return (
-    <div>
-      <h2>test</h2>
-    </div>
-  )
+  return <LittleCard />
 }
 
 export default home

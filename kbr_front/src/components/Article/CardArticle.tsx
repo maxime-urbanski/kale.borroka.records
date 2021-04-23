@@ -14,7 +14,7 @@ import {
 
 const CardArticle = (): JSX.Element => {
   return (
-    <div style={{ justifyItems: 'center'}}>
+    <div style={{ justifyItems: 'center' }}>
       <Card>
         <Overlay>
           <Ribbon>KBR#01</Ribbon>
@@ -25,10 +25,10 @@ const CardArticle = (): JSX.Element => {
         <CardBody>
           <CardTitle>moscow death brigade</CardTitle>
           <CardSubtitle>bad accents anthems</CardSubtitle>
-          <CardIcon src={'/img/vinyl.svg'} position={'45px'} />
+          <CardIcon src={'/img/vinyl.svg'} left={45} />
           <CardPrice>13€</CardPrice>
           <CardButton bg={'white'}>Details</CardButton>
-          <CardButton position={'185px'} text={'white'} border={'none'}>
+          <CardButton left={185} color={'white'} border={'none'}>
             Panier
           </CardButton>
         </CardBody>

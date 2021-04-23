@@ -18,12 +18,16 @@ export interface Link {
 
 export interface CardStyledProps {
   bg?: string
-  text?: string
+  color?: string
   border?: string
   position?: string
-  width?: string
-  height?: string
+  width?: number | string
+  height?: number | string
   column?: number
+  flexDir?: string
+  fontSize?: number
+  left?: number
+  bottom?: string
 }
 
 export interface FooterProps {

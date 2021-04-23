@@ -1,43 +1,55 @@
 import styled from 'styled-components'
 import { CardStyledProps } from '../Interface/Interface'
 
-export const Card = styled.article`
+export const Card = styled.article.attrs(({ flexDir, width, height }: CardStyledProps) => ({
+  flexDir: flexDir || 'column',
+  width: width || 300,
+  height: height || 500,
+}))`
   position: relative;
-  width: 300px;
+  width: ${({ width }) => `${width}px`};
   display: flex;
-  flex-direction: column;
-  height: 500px;
+  flex-direction: ${({ flexDir }) => flexDir};
+  height: ${({ height }) => `${height}px`};
   border-radius: 5px 5px 1px 1px;
   -webkit-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
 `
 
-export const CardTop = styled.div`
+export const CardTop = styled.div.attrs(({ height, width }: CardStyledProps) => ({
+  height: height || 300,
+  width: width || 300,
+}))`
   margin: 0;
   padding: 0;
-  height: 300px;
-  width: 100%;
+  height: ${({ height }) => `${height}px`};
+  width: ${({ width }) => `${width}px`};
   border-bottom: 1px solid #cdc6c6;
 `
 export const CardImg = styled.img.attrs(({ width, height }: CardStyledProps) => ({
-  width: width || '300px',
-  height: height || '300px',
+  width: width || 300,
+  height: height || 300,
 }))`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+  width: ${({ width }) => `${width}px`};
+  height: ${({ height }) => `${height}px`};
   border-radius: 5px 5px 0 0;
 `
 
-export const CardBody = styled.div`
-  width: 100%;
-  height: 200px;
+export const CardBody = styled.div.attrs(({ height, width }: CardStyledProps) => ({
+  height: height || 200,
+  width: width || 300,
+}))`
+  width: ${({ width }) => `${width}px`};
+  height: ${({ height }) => `${height}px`};
   background-color: #f7f6f6;
 `
-export const CardTitle = styled.h4`
+export const CardTitle = styled.h4.attrs(({ fontSize }: CardStyledProps) => ({
+  fontSize: fontSize || 18,
+}))`
   position: relative;
   margin: 10px auto;
-  font-size: 18px;
+  font-size:  ${({ fontSize }) => `${fontSize}px`};
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
@@ -45,26 +57,28 @@ export const CardTitle = styled.h4`
   &:hover {
   color: #d9534f;
 `
-export const CardSubtitle = styled.h5`
+export const CardSubtitle = styled.h5.attrs(({ fontSize }: CardStyledProps) => ({
+  fontSize: fontSize || 14,
+}))`
   position: relative;
   margin: 10px auto;
-  font-size: 14px;
+  font-size: ${({ fontSize }) => `${fontSize}px`};
   color: #999;
   text-transform: uppercase;
   text-align: center;
 `
-export const CardButton = styled.div.attrs(({ bg, border, text, position }: CardStyledProps) => ({
+export const CardButton = styled.div.attrs(({ bg, border, color, left }: CardStyledProps) => ({
   bg: bg || '#b14542',
   border: border || '2px solid #d9534f',
-  text: text || '#b14542',
-  position: position || '30px',
+  color: color || '#b14542',
+  left: left || 30,
 }))`
   position: absolute;
   width: 80px;
   height: 35px;
   border-radius: 3px;
   background-color: ${({ bg }) => bg};
-  color: ${({ text }) => text};
+  color: ${({ color }) => color};
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
@@ -72,27 +86,31 @@ export const CardButton = styled.div.attrs(({ bg, border, text, position }: Card
   justify-content: center;
   align-items: center;
   bottom: 15px;
-  left: ${({ position }) => position};
+  left: ${({ left }) => `${left}px`};
   cursor: pointer;
   border: ${({ border }) => border};
 `
-export const CardIcon = styled.img.attrs(({ width, height, position }: CardStyledProps) => ({
-  width: width || '50px',
-  height: height || '50px',
-  position: position || '10px',
+export const CardIcon = styled.img.attrs(({ width, height, left }: CardStyledProps) => ({
+  width: width || 50,
+  height: height || 50,
+  left: left || 10,
 }))`
   position: absolute;
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
-  left: ${({ position }) => position};
+  width: ${({ width }) => `${width}px`};
+  height: ${({ height }) => `${height}px`};
+  left: ${({ left }) => `${left}px`};
   bottom: 65px;
 `
-export const CardPrice = styled.span`
+export const CardPrice = styled.span.attrs(({ fontSize, bottom, left }: CardStyledProps) => ({
+  fontSize: fontSize || 40,
+  bottom: bottom || 65,
+  left: left || 195,
+}))`
   position: absolute;
-  font-size: 40px;
+  font-size: ${({ fontSize }) => `${fontSize}px`};
   font-weight: 600;
-  bottom: 65px;
-  left: 195px;
+  bottom: ${({ bottom }) => `${bottom}px`};
+  left: ${({ left }) => `${left}px`};
   color: ${({ theme }) => theme.yellow};
 `
 export const Overlay = styled.div`
@@ -118,4 +136,5 @@ export const Ribbon = styled.div`
   left: calc(100% - 35px);
   top: 21px;
   transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 1;
 `
