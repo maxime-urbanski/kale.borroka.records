@@ -27,13 +27,14 @@ export const CardTop = styled.div.attrs(({ height, width }: CardStyledProps) => 
   width: ${({ width }) => `${width}px`};
   border-bottom: 1px solid #cdc6c6;
 `
-export const CardImg = styled.img.attrs(({ width, height }: CardStyledProps) => ({
+export const CardImg = styled.img.attrs(({ width, height, borderRadius }: CardStyledProps) => ({
   width: width || 300,
   height: height || 300,
+  borderRadius: borderRadius || '5px 5px 0 0',
 }))`
   width: ${({ width }) => `${width}px`};
   height: ${({ height }) => `${height}px`};
-  border-radius: 5px 5px 0 0;
+  border-radius: ${({ borderRadius }) => borderRadius};
 `
 
 export const CardBody = styled.div.attrs(({ height, width }: CardStyledProps) => ({

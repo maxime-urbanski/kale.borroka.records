@@ -1,4 +1,9 @@
 import styled from 'styled-components'
+import {
+  ButtonProps,
+  ColumnArticleProps,
+  ContainerProps,
+} from '../Interface/Interface'
 
 export const Title1 = styled.h1`
   font-family: 'Ye Olde Oak';
@@ -51,17 +56,69 @@ export const BanLogo = styled.div`
   width: 100wv;
 `
 
-export const Container = styled.div<{ fluid?: boolean }>`
+export const Container = styled.div.attrs(
+  ({
+    column,
+    row,
+    rowGap,
+    columnGap,
+    position,
+    autoFlow,
+    rowSize,
+    columnSize,
+  }: ContainerProps) => ({
+    autoFlow: autoFlow || 'row',
+    column: column || 3,
+    columnGap: columnGap || 20,
+    columnSize: columnSize || '1fr',
+    position: position || 'center',
+    row: row || 1,
+    rowGap: rowGap || 50,
+    rowSize: rowSize || 'auto',
+  })
+)<{ fluid?: boolean }>`
   max-width: ${({ fluid }) => (fluid ? '1200px' : '100%')};
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 30px;
+  grid-template-columns: repeat(${({ column }) => column}, ${({ columnSize }) => columnSize});
+  grid-template-rows: repeat(${({ row }) => row}, ${({ rowSize }) => rowSize});
+  grid-column-gap: ${({ columnGap }) => `${columnGap}px`};
+  grid-row-gap: ${({ rowGap }) => `${rowGap}px`};
+  justify-items: ${({ position }) => position};
+  grid-auto-flow: ${({ autoFlow }) => autoFlow};
 
   & > div {
     display: grid;
   }
 `
+export const ColumnArticle = styled.div.attrs(({ area }: ColumnArticleProps) => ({
+  area: area || [1, 1, 7, 2],
+}))`
+  grid-area: ${({ area }) => `${area[0]} / ${area[1]} / ${area[2]} / ${area[3]}`};
+`
 
+export const Button = styled.div.attrs(
+  ({ bg, border, color, width, height, fontSize, borderRadius }: ButtonProps) => ({
+    bg: bg || '#b14542',
+    border: border || '2px solid #d9534f',
+    color: color || '#b14542',
+    width: width || 80,
+    height: height || 35,
+    fontSize: fontSize || 15,
+    borderRadius: borderRadius || 3,
+  })
+)`
+  width: ${({ width }) => `${width}px`};
+  height: ${({ height }) => `${height}px`};
+  border-radius: ${({ borderRadius }) => `${borderRadius}px`};
+  background-color: ${({ bg }) => bg};
+  color: ${({ color }) => color};
+  font-size: ${({ fontSize }) => `${fontSize}px`};
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`
