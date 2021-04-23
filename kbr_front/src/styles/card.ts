@@ -8,7 +8,6 @@ export const Card = styled.article`
   flex-direction: column;
   height: 500px;
   border-radius: 5px 5px 1px 1px;
-  margin: 3em;
   -webkit-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
@@ -94,7 +93,7 @@ export const CardPrice = styled.span`
   font-weight: 600;
   bottom: 65px;
   left: 195px;
-  color: #f0ad4e;
+  color: ${({ theme }) => theme.yellow};
 `
 export const Overlay = styled.div`
   overflow: hidden;
@@ -115,7 +114,7 @@ export const Ribbon = styled.div`
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 500;
-  background-color: #d9534f;
+  background-color: ${({ theme }) => theme.red};
   left: calc(100% - 35px);
   top: 21px;
   transform: translate(-50%, -50%) rotate(45deg);

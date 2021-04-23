@@ -37,15 +37,8 @@ export const Icon = styled.img`
   width: 30px;
 `
 
-export const Row = styled.div`
-  display: flex;
-  height: auto;
-  width: 100%;
-`
 export const HR = styled.hr`
-  border-bottom: 5px;
-  border-color: #d9534f !important;
-  border-top: solid !important;
+  border: 5px solid red;
   width: 75%;
 `
 
@@ -59,9 +52,16 @@ export const BanLogo = styled.div`
 `
 
 export const Container = styled.div<{ fluid?: boolean }>`
-  border: 5px solid red;
-  display: flex;
+  max-width: ${({ fluid }) => (fluid ? '1200px' : '100%')};
   margin-left: auto;
   margin-right: auto;
-  width: ${({ fluid }) => (fluid ? '70%' : '100%')};
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+
+  & > div {
+    display: grid;
+  }
 `
+

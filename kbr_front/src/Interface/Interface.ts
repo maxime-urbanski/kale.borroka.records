@@ -23,4 +23,11 @@ export interface CardStyledProps {
   position?: string
   width?: string
   height?: string
+  column?: number
+}
+
+export interface FooterProps {
+  start?: number
+  end?: number
+  row?: number
 }

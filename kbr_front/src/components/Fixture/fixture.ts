@@ -1,4 +1,4 @@
-export const propos = [
+export const about = [
   {
     name: 'Comment passer commande ?',
     link: '/comment-passer-commande',
@@ -19,19 +19,23 @@ export const propos = [
 
 export const shop = [
   {
-    name: 'Nos LP',
+    name: 'LP',
     link: '/LP',
   },
   {
-    name: 'Nos EP',
+    name: 'EP',
     link: '/EP',
   },
   {
-    name: 'Nos CD',
+    name: 'CD',
     link: '/CD',
   },
   {
-    name: 'Nos Production',
+    name: 'FANZINE',
+    link: '/fanzine',
+  },
+  {
+    name: 'PRODUCTION',
     link: '/production',
   },
 ]

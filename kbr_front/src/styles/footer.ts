@@ -1,37 +1,68 @@
 import styled from 'styled-components'
+import { FooterProps } from '../Interface/Interface'
 
 export const Foot = styled.footer`
-  background-color: #1a1a1a;
-  display: flex;
-  flex-direction: column;
-  height: 400px;
+  background-color: ${({ theme }) => theme.black};
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 80px auto 80px 200px auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  height: auto;
   overflow: hidden;
   padding: 0;
+  margin: 50px 0 0;
   width: 100%;
 `
 
-export const ColFooter = styled.div<{ full?: boolean }>`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  justify-content: center;
-  width: ${(props) => (props.full ? '100%' : '33.33%')};
+export const FooterLink = styled.div.attrs(({ start, end, row }: FooterProps) => ({
+  start: start || 1,
+  end: end || 3,
+  row: row || 1,
+}))`
+  display: grid;
+  justify-items: center;
+  grid-column: ${({ start }) => start} / ${({ end }) => end};
+  grid-row-start: ${({ row }) => row};
 `
 
 export const FooterDown = styled.div`
-  align-items: center;
   background-color: #000;
-  color: white;
-  display: flex;
-  height: 40px;
-  justify-content: center;
-  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-row-start: 5;
+  grid-column: 1 / 7;
 `
-export const Copyright = styled.p`
-  font-size: 1.5em;
-`
+
 export const HR = styled.hr`
-  border: 2px solid #808080;
+  border-top: 1px solid #808080;
   width: 50%;
+  background-color: #808080;
+  border-radius: 20px;
+`
+
+export const FooterTitle = styled.div.attrs(({ start, end }: FooterProps) => ({
+  start: start || 1,
+  end: end || 3,
+}))`
+  grid-column: ${({ start }) => start} / ${({ end }) => end};
+  justify-items: center;
+  display: grid;
+`
+
+export const FooterIcon = styled.img`
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 5px;
+
+  &:hover {
+    transform: scale(1.3);
+  }
+`
+
+export const Copyright = styled.p`
+  color: white;
+  font-family: Gobold;
+  font-size: 18px;
 `

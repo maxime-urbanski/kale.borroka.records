@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import { GetServerSideProps } from 'next'
-import { Container } from '../../src/styles/styled'
 import axios from 'axios'
 import CardArticle from '../../src/components/Article/CardArticle'
+import { Container } from '../../src/styles/styled'
 
 type Props = {
   data: string[]
@@ -11,13 +11,16 @@ type Props = {
 const Catalog = ({ data }: Props): JSX.Element => {
   const router = useRouter()
   const { support } = router.query
-  console.log(data)
+  console.log(data, support)
   return (
-    <>
-      <Container fluid>
-        <CardArticle />
-      </Container>
-    </>
+    <Container fluid>
+      <CardArticle />
+      <CardArticle />
+      <CardArticle />
+      <CardArticle />
+      <CardArticle />
+      <CardArticle />
+    </Container>
   )
 }
 export const getServerSideProps: GetServerSideProps = async () => {

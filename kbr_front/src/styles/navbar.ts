@@ -20,7 +20,7 @@ export const NavBarTop = styled.div`
 
 export const NavBarDown = styled.div`
   align-items: center;
-  background-color: #1a1a1a;
+  background-color: ${({ theme }) => theme.black};
   display: flex;
   height: 80px;
   justify-content: space-between;
@@ -56,6 +56,7 @@ export const ImgNavTop = styled.img`
   height: 30px;
   margin: 10px;
   width: 30px;
+  font-weight: bold;
 
   &:hover {
     transform: scale(1.3);
@@ -76,7 +77,7 @@ export const TextNavTop = styled.div<{ start?: boolean }>`
 
 export const HrNavTop = styled.hr`
   border: 1px solid;
-  border-color: #d9534f;
+  border-color: ${({ theme }) => theme.red};
   margin: 0;
   transform: rotate(90deg);
   width: 17px;
@@ -108,7 +109,7 @@ export const DropDownBtn = styled.a`
   width: 100%;
 
   &:hover {
-    color: #d9534f;
+    color: ${({ theme }) => theme.red};
   }
 `
 
@@ -130,6 +131,6 @@ export const DropDownLink = styled.a`
   text-transform: uppercase;
 
   &:hover {
-    background-color: #f1f1f1;
+    background-color: ${({ theme }) => theme.grey};
   }
 `

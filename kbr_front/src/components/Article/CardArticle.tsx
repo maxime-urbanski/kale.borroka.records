@@ -14,7 +14,7 @@ import {
 
 const CardArticle = (): JSX.Element => {
   return (
-    <>
+    <div style={{ justifyItems: 'center'}}>
       <Card>
         <Overlay>
           <Ribbon>KBR#01</Ribbon>
@@ -33,7 +33,7 @@ const CardArticle = (): JSX.Element => {
           </CardButton>
         </CardBody>
       </Card>
-    </>
+    </div>
   )
 }
 

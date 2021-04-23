@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import '../styles/globals.css'
 import Layout from '../src/components/Layout/Layout'
+import { ThemeProvider } from 'styled-components'
+import { theme } from '../src/styles/theme'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const MyApp = ({ Component, pageProps }): JSX.Element => {
@@ -24,9 +26,11 @@ const MyApp = ({ Component, pageProps }): JSX.Element => {
         </title>
       </Head>
       <>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
       </>
     </>
   )

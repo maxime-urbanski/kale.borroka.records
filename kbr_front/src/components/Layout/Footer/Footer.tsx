@@ -1,59 +1,32 @@
-import { IconsProps, Link } from '../../../Interface/Interface'
-import { ColFooter, Copyright, Foot, FooterDown, HR } from '../../../styles/footer'
-import { Title3, Row, Title4 } from '../../../styles/styled'
-import { networks, propos, shop } from '../../Fixture/fixture'
-import Image from 'next/image'
+import { Foot, FooterLink, FooterIcon, FooterDown, Copyright } from '../../../styles/footer'
+import { networks, about, shop } from '../../Fixture/fixture'
+import LinkFooter from './LinkFooter'
+import Title from './FooterTitle'
 
 const Footer = (): JSX.Element => {
   const year = new Date().getFullYear()
   return (
     <>
       <Foot>
-        <Row>
-          <ColFooter>
-            <Title3>À PROPOS</Title3>
-            <HR />
-            {propos.map(({ name, link }: Link, index: number) => {
-              return (
-                <a href={link} key={index}>
-                  <Title4>{name}</Title4>
-                </a>
-              )
-            })}
-          </ColFooter>
-          <ColFooter>
-            <Title3>LE SHOP</Title3>
-            <HR />
-            {shop.map(({ name, link }: Link, index: number) => {
-              return (
-                <a href={link} key={index}>
-                  <Title4>{name}</Title4>
-                </a>
-              )
-            })}
-          </ColFooter>
-          <ColFooter>
-            <Title3>RÉSEAUX SOCIAUX</Title3>
-            <HR />
-            {networks.map(({ name, img, url }: IconsProps, index: number) => {
-              return (
-                <a href={url} target="_blank" key={index} rel="noreferrer">
-                  <Image src={img} alt={name} width={'50px'} height={'50px'} />
-                </a>
-              )
-            })}
-          </ColFooter>
-        </Row>
-        <Row>
-          <ColFooter full>
-            <Title3>NOS AMIS</Title3>
-            <HR />
-          </ColFooter>
-        </Row>
+        <Title start={1} end={3} title={'A Propos'} />
+        <Title start={3} end={5} title={'Le Shop'} />
+        <Title start={5} end={7} title={'Reseau Sociaux'} />
+        <LinkFooter array={about} start={1} end={3} row={2} />
+        <LinkFooter row={2} start={3} end={5} array={shop} />
+        <FooterLink start={5} end={7} row={2}>
+          {networks.map(({ name, img, url }, index) => {
+            return (
+              <a href={url} key={index}>
+                <FooterIcon src={img} alt={name} />
+              </a>
+            )
+          })}
+        </FooterLink>
+        <Title row={3} start={1} end={7} title={'Friend'} />
+        <FooterDown>
+          <Copyright>{year} Kale Borroka Records All right reserved . 100% DIY !</Copyright>
+        </FooterDown>
       </Foot>
-      <FooterDown>
-        <Copyright>{year} Kale Borroka Records All right reserved . 100% DIY !</Copyright>
-      </FooterDown>
     </>
   )
 }
