@@ -9,22 +9,22 @@ const test = [
   <LittleCard key={4} />,
 ]
 
-const Available = ({ array, title }: AvailableProps): JSX.Element => {
-  console.log(array[0])
+const Available = ({ area, title }: AvailableProps): JSX.Element => {
+  console.log(area[0])
   return (
     <>
-      <ColumnArticle area={[array[0], array[1], array[0], array[1]]}>
+      <ColumnArticle area={[area[0], area[1], area[0], area[1]]}>
         <Title3>{title}</Title3>
       </ColumnArticle>
       {test.map((component, index) => {
         const row = index + 2
         return (
-          <ColumnArticle area={[row, array[1], row, array[3]]} key={index}>
+          <ColumnArticle area={[row, area[1], row, area[3]]} key={index}>
             {component}
           </ColumnArticle>
         )
       })}
-      <ColumnArticle area={[array[2], array[1], array[2], array[3]]}>
+      <ColumnArticle area={[area[2], area[1], area[2], area[3]]}>
         <Button
           bg={'#f0ad4e'}
           color={'white'}

@@ -16,6 +16,10 @@ export interface Link {
   link: string
 }
 
+export interface NavProps {
+  array?: IconsProps[]
+}
+
 export interface CardStyledProps {
   bg?: string
   color?: string
@@ -46,7 +50,7 @@ export interface ColumnArticleProps {
 }
 
 export interface AvailableProps {
-  array: number[]
+  area: number[]
   title: string
 }
 

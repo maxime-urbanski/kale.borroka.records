@@ -1,9 +1,5 @@
 import styled from 'styled-components'
-import {
-  ButtonProps,
-  ColumnArticleProps,
-  ContainerProps,
-} from '../Interface/Interface'
+import { ButtonProps, ColumnArticleProps, ContainerProps } from '../Interface/Interface'
 
 export const Title1 = styled.h1`
   font-family: 'Ye Olde Oak';

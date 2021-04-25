@@ -1,12 +1,11 @@
 import React from 'react'
 import { HrNavTop, ImgNavTop } from '../../../styles/navbar'
-import { IconsProps } from '../../../Interface/Interface'
+import {IconsProps, NavProps} from '../../../Interface/Interface'
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const NavIcon = ({ array }): JSX.Element => {
+const NavIcon = ({ array }: NavProps): JSX.Element => {
   return (
     <>
-      {array.map(({ name, img, url }: IconsProps, index: number) => {
+      {array.map(({ name, img, url }, index: number) => {
         return (
           <>
             <a href={url} key={index}>
