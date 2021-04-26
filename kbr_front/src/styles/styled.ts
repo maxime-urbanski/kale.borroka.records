@@ -1,5 +1,11 @@
 import styled from 'styled-components'
-import { ButtonProps, ColumnArticleProps, ContainerProps } from '../Interface/Interface'
+import {
+  BreadCrumbProps,
+  ButtonProps,
+  ColumnArticleProps,
+  ContainerProps,
+  GridProps,
+} from '../Interface/Interface'
 
 export const Title1 = styled.h1`
   font-family: 'Ye Olde Oak';
@@ -53,22 +59,12 @@ export const BanLogo = styled.div`
 `
 
 export const Container = styled.div.attrs(
-  ({
-    column,
-    row,
-    rowGap,
-    columnGap,
-    position,
-    autoFlow,
-    rowSize,
-    columnSize,
-  }: ContainerProps) => ({
+  ({ column, row, rowGap, columnGap, autoFlow, rowSize, columnSize }: ContainerProps) => ({
     autoFlow: autoFlow || 'row',
     column: column || 3,
     columnGap: columnGap || 20,
     columnSize: columnSize || '1fr',
-    position: position || 'center',
-    row: row || 1,
+    row: row || 'auto-fill',
     rowGap: rowGap || 50,
     rowSize: rowSize || 'auto',
   })
@@ -79,9 +75,8 @@ export const Container = styled.div.attrs(
   display: grid;
   grid-template-columns: repeat(${({ column }) => column}, ${({ columnSize }) => columnSize});
   grid-template-rows: repeat(${({ row }) => row}, ${({ rowSize }) => rowSize});
-  grid-column-gap: ${({ columnGap }) => `${columnGap}px`};
-  grid-row-gap: ${({ rowGap }) => `${rowGap}px`};
-  justify-items: ${({ position }) => position};
+  column-gap: ${({ columnGap }) => `${columnGap}px`};
+  row-gap: ${({ rowGap }) => `${rowGap}px`};
   grid-auto-flow: ${({ autoFlow }) => autoFlow};
 
   & > div {
@@ -117,4 +112,43 @@ export const Button = styled.div.attrs(
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`
+
+export const BreadCrumb = styled.ul`
+  list-style: none;
+
+  & > li {
+    display: inline-block;
+    &:before {
+      padding: 0 15px;
+      content: '>';
+    }
+  }
+`
+
+export const BreadCrumbItem = styled.li.attrs(({ fontSize }: BreadCrumbProps) => ({
+  fontSize: fontSize || 20,
+}))<{ disable?: boolean }>`
+  font-size: ${({ fontSize }) => fontSize}px;
+  font-family: Gobold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: ${({ disable, theme }) => (disable ? '#6c757d' : theme.red)};
+
+  &:first-of-type:before {
+    content: '';
+    padding: 0;
+  }
+`
+export const Row = styled.div.attrs(({ row, position }: GridProps) => ({
+  row: row || 1,
+  position: position || 'start',
+}))`
+  grid-row: span ${({ row }) => row};
+  justify-items: ${({ position }) => position};
+`
+export const Column = styled.div.attrs(({ col }: GridProps) => ({
+  col: col || 3,
+}))`
+  grid-column: span ${({ col }) => col};
 `

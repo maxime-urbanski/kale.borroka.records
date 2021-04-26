@@ -69,3 +69,13 @@ export interface ButtonProps {
   fontSize: number
   borderRadius?: number
 }
+
+export interface GridProps {
+  row?: number
+  col?: number
+  position?: string
+}
+
+export interface BreadCrumbProps {
+  fontSize?: number
+}

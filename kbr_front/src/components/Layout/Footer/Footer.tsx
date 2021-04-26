@@ -1,5 +1,5 @@
 import { Foot, FooterLink, FooterIcon, FooterDown, Copyright } from '../../../styles/footer'
-import { networks, about, shop } from '../../Fixture/fixture'
+import { networks, about, shop } from '../../Data/data'
 import LinkFooter from './LinkFooter'
 import Title from './FooterTitle'
 

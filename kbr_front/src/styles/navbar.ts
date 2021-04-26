@@ -38,7 +38,7 @@ export const NavLink = styled.a`
   text-decoration: none;
 
   &:hover {
-    color: #d9534f;
+    color: ${({ theme }) => theme.red};
   }
 `
 

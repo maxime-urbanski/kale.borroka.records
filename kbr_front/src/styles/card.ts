@@ -133,7 +133,7 @@ export const Ribbon = styled.div`
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 500;
-  background-color: ${({ theme }) => theme.red};
+  background-color: #763538;
   left: calc(100% - 35px);
   top: 21px;
   transform: translate(-50%, -50%) rotate(45deg);

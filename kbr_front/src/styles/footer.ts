@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FooterProps } from '../Interface/Interface'
+import { FooterProps } from '../components/Interface/Interface'
 
 export const Foot = styled.footer`
   background-color: ${({ theme }) => theme.black};

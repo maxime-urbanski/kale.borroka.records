@@ -8,7 +8,7 @@ import {
   Title,
 } from '../../../styles/navbar'
 import NavIcon from './NavIcon'
-import { flags, networks, searchAndCart } from '../../Fixture/fixture'
+import { flags, networks, searchAndCart } from '../../Data/data'
 import Dropdown from './Dropdown'
 
 const NavigationBar = (): JSX.Element => {
