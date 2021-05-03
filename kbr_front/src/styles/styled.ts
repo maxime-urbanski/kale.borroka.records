@@ -58,42 +58,17 @@ export const BanLogo = styled.div`
   width: 100wv;
 `
 
-export const Container = styled.div.attrs(
-  ({ column, row, rowGap, columnGap, autoFlow, rowSize, columnSize }: ContainerProps) => ({
-    autoFlow: autoFlow || 'row',
-    column: column || 3,
-    columnGap: columnGap || 20,
-    columnSize: columnSize || '1fr',
-    row: row || 'auto-fill',
-    rowGap: rowGap || 50,
-    rowSize: rowSize || 'auto',
-  })
-)<{ fluid?: boolean }>`
+export const Container = styled.div<{ fluid?: boolean }>`
   max-width: ${({ fluid }) => (fluid ? '1200px' : '100%')};
   margin-left: auto;
   margin-right: auto;
-  display: grid;
-  grid-template-columns: repeat(${({ column }) => column}, ${({ columnSize }) => columnSize});
-  grid-template-rows: repeat(${({ row }) => row}, ${({ rowSize }) => rowSize});
-  column-gap: ${({ columnGap }) => `${columnGap}px`};
-  row-gap: ${({ rowGap }) => `${rowGap}px`};
-  grid-auto-flow: ${({ autoFlow }) => autoFlow};
-
-  & > div {
-    display: grid;
-  }
-`
-export const ColumnArticle = styled.div.attrs(({ area }: ColumnArticleProps) => ({
-  area: area || [1, 1, 7, 2],
-}))`
-  grid-area: ${({ area }) => `${area[0]} / ${area[1]} / ${area[2]} / ${area[3]}`};
 `
 
 export const Button = styled.div.attrs(
   ({ bg, border, color, width, height, fontSize, borderRadius }: ButtonProps) => ({
     bg: bg || '#b14542',
     border: border || '2px solid #d9534f',
-    color: color || '#b14542',
+    color: color || 'white',
     width: width || 80,
     height: height || 35,
     fontSize: fontSize || 15,
@@ -140,13 +115,20 @@ export const BreadCrumbItem = styled.li.attrs(({ fontSize }: BreadCrumbProps) =>
     padding: 0;
   }
 `
-export const Row = styled.div.attrs(({ row, position }: GridProps) => ({
-  row: row || 1,
-  position: position || 'start',
+
+export const Row = styled.div.attrs(({ position, autoFlow }: GridProps) => ({
+  position: position || 'center',
+  autoFlow: autoFlow || 'row',
 }))`
-  grid-row: span ${({ row }) => row};
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   justify-items: ${({ position }) => position};
+  column-gap: 20px;
+  row-gap: 50px;
+  margin-bottom: 50px;
+  grid-auto-flow: ${({ autoFlow }) => autoFlow};
 `
+
 export const Column = styled.div.attrs(({ col }: GridProps) => ({
   col: col || 3,
 }))`

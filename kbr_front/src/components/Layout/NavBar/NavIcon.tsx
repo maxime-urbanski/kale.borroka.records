@@ -1,6 +1,6 @@
 import React from 'react'
 import { HrNavTop, ImgNavTop } from '../../../styles/navbar'
-import {IconsProps, NavProps} from '../../../Interface/Interface'
+import { IconsProps, NavProps } from '../../../Interface/Interface'
 
 const NavIcon = ({ array }: NavProps): JSX.Element => {
   return (

@@ -50,7 +50,6 @@ export interface ColumnArticleProps {
 }
 
 export interface AvailableProps {
-  area: number[]
   title: string
 }
 
@@ -74,6 +73,7 @@ export interface GridProps {
   row?: number
   col?: number
   position?: string
+  autoFlow?: string
 }
 
 export interface BreadCrumbProps {
