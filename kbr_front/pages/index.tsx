@@ -5,6 +5,9 @@ const home = (): JSX.Element => {
   return (
     <Container>
       <Row>
+        <Column col={12}>YOUHOU</Column>
+      </Row>
+      <Row>
         <Column col={4}>
           <Available title={'LP'} />
         </Column>

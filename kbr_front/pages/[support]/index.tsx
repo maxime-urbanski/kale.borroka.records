@@ -1,7 +1,17 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import CardArticle from '../../src/components/Article/CardArticle'
-import { Container, Column, BreadCrumb, BreadCrumbItem, Row, Title2 } from '../../src/styles/styled'
+import {
+  Button,
+  Container,
+  Column,
+  BreadCrumb,
+  BreadCrumbItem,
+  Row,
+  Title2,
+  PaginationItem,
+  Pagination,
+} from '../../src/styles/styled'
 
 const test = [
   <CardArticle key={1} />,
@@ -43,6 +53,42 @@ const Catalog = (): JSX.Element => {
             </Column>
           )
         })}
+      </Row>
+      <Row>
+        <Column col={12}>
+          <Pagination>
+            <PaginationItem>
+              <Button bg={'white'} color={'#b14542'} width={40} height={40}>
+                1
+              </Button>
+            </PaginationItem>
+            <PaginationItem>
+              <Button bg={'white'} color={'#b14542'} width={40} height={40}>
+                1
+              </Button>
+            </PaginationItem>
+            <PaginationItem>
+              <Button bg={'white'} color={'#b14542'} width={40} height={40}>
+                1
+              </Button>
+            </PaginationItem>
+            <PaginationItem>
+              <Button bg={'white'} color={'#b14542'} width={40} height={40}>
+                1
+              </Button>
+            </PaginationItem>
+            <PaginationItem>
+              <Button bg={'white'} color={'#b14542'} width={40} height={40}>
+                1
+              </Button>
+            </PaginationItem>
+            <PaginationItem>
+              <Button bg={'white'} color={'#b14542'} width={40} height={40}>
+                1
+              </Button>
+            </PaginationItem>
+          </Pagination>
+        </Column>
       </Row>
     </Container>
   )

@@ -11,6 +11,7 @@ export const Card = styled.article.attrs(({ flexDir, width, height }: CardStyled
   display: flex;
   flex-direction: ${({ flexDir }) => flexDir};
   height: ${({ height }) => `${height}px`};
+  margin: 0;
   border-radius: 5px 5px 1px 1px;
   -webkit-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 2px -1px 9px 2px rgba(0, 0, 0, 0.4);

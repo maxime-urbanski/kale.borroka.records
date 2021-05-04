@@ -1,11 +1,5 @@
 import styled from 'styled-components'
-import {
-  BreadCrumbProps,
-  ButtonProps,
-  ColumnArticleProps,
-  ContainerProps,
-  GridProps,
-} from '../Interface/Interface'
+import { BreadCrumbProps, ButtonProps, GridProps } from '../Interface/Interface'
 
 export const Title1 = styled.h1`
   font-family: 'Ye Olde Oak';
@@ -78,6 +72,7 @@ export const Button = styled.div.attrs(
   width: ${({ width }) => `${width}px`};
   height: ${({ height }) => `${height}px`};
   border-radius: ${({ borderRadius }) => `${borderRadius}px`};
+  border: ${({ border }) => border};
   background-color: ${({ bg }) => bg};
   color: ${({ color }) => color};
   font-size: ${({ fontSize }) => `${fontSize}px`};
@@ -125,12 +120,27 @@ export const Row = styled.div.attrs(({ position, autoFlow }: GridProps) => ({
   justify-items: ${({ position }) => position};
   column-gap: 20px;
   row-gap: 50px;
-  margin-bottom: 50px;
   grid-auto-flow: ${({ autoFlow }) => autoFlow};
+  margin-bottom: 50px;
 `
 
 export const Column = styled.div.attrs(({ col }: GridProps) => ({
   col: col || 3,
 }))`
   grid-column: span ${({ col }) => col};
+  margin: 0;
+`
+
+export const Pagination = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  & > li {
+    display: inline-block;
+  }
+`
+export const PaginationItem = styled.li`
+  margin: 20px;
+  padding: 0;
 `
