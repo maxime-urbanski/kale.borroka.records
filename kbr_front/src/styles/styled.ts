@@ -84,33 +84,6 @@ export const Button = styled.div.attrs(
   cursor: pointer;
 `
 
-export const BreadCrumb = styled.ul`
-  list-style: none;
-
-  & > li {
-    display: inline-block;
-    &:before {
-      padding: 0 15px;
-      content: '>';
-    }
-  }
-`
-
-export const BreadCrumbItem = styled.li.attrs(({ fontSize }: BreadCrumbProps) => ({
-  fontSize: fontSize || 20,
-}))<{ disable?: boolean }>`
-  font-size: ${({ fontSize }) => fontSize}px;
-  font-family: Gobold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: ${({ disable, theme }) => (disable ? '#6c757d' : theme.red)};
-
-  &:first-of-type:before {
-    content: '';
-    padding: 0;
-  }
-`
-
 export const Row = styled.div.attrs(({ position, autoFlow }: GridProps) => ({
   position: position || 'center',
   autoFlow: autoFlow || 'row',

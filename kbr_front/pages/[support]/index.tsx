@@ -1,17 +1,17 @@
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import CardArticle from '../../src/components/Article/CardArticle'
 import {
   Button,
   Container,
   Column,
-  BreadCrumb,
-  BreadCrumbItem,
   Row,
   Title2,
   PaginationItem,
   Pagination,
 } from '../../src/styles/styled'
+import Breadcrumb from '../../src/components/Layout/BreadCrumb'
+import axios from 'axios'
+import { GetStaticProps, GetStaticPaths } from 'next'
 
 const test = [
   <CardArticle key={1} />,
@@ -24,20 +24,15 @@ const test = [
   <CardArticle key={9} />,
   <CardArticle key={6} />,
 ]
-const Catalog = (): JSX.Element => {
+const Catalog = ({ album }): JSX.Element => {
   const router = useRouter()
   const { support } = router.query
-
+  console.log(album)
   return (
     <Container fluid>
       <Row position={'start'}>
         <Column col={12}>
-          <BreadCrumb>
-            <BreadCrumbItem>
-              <Link href={'/'}>kale borroka records</Link>
-            </BreadCrumbItem>
-            <BreadCrumbItem disable>{support}</BreadCrumbItem>
-          </BreadCrumb>
+          <Breadcrumb array={[`${support}`]} />
         </Column>
       </Row>
       <Row>
@@ -92,6 +87,30 @@ const Catalog = (): JSX.Element => {
       </Row>
     </Container>
   )
+}
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { support: 'lp' } },
+      { params: { support: 'ep' } },
+      { params: { support: 'cd' } },
+      { params: { support: 'fanzine' } },
+      { params: { support: 'production' } },
+    ],
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const res = await axios.get('http://localhost:5050/api/albums')
+  const album = await res.data
+  console.log(album)
+
+  return {
+    props: {
+      album,
+    },
+  }
 }
 
 export default Catalog

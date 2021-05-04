@@ -78,4 +78,5 @@ export interface GridProps {
 
 export interface BreadCrumbProps {
   fontSize?: number
+  array: string[]
 }
