@@ -14,7 +14,7 @@ export const NavBar = styled.div`
 export const NavBarTop = styled.div`
   display: flex;
   height: 60px;
-  padding: 0px;
+  padding: 0;
   width: 100%;
 `
 
@@ -30,11 +30,11 @@ export const NavBarDown = styled.div`
 
 export const NavLink = styled.a`
   color: white;
-  font-family: Gobold;
+  font-family: Gobold, serif;
   font-size: 25px;
   font-weight: 100;
   letter-spacing: 2px;
-  padding: 0px 15px 0px 15px;
+  padding: 0 15px;
   text-decoration: none;
 
   &:hover {
@@ -51,7 +51,7 @@ export const IconNav = styled.div<{ start?: boolean }>`
 `
 
 export const ImgNavTop = styled.img`
-  border-radius: 50%;
+  border-radius: 50px;
   cursor: pointer;
   height: 30px;
   margin: 10px;
@@ -63,7 +63,7 @@ export const ImgNavTop = styled.img`
   }
 `
 export const Title = styled.h2`
-  font-family: 'Gobold';
+  font-family: 'Gobold', serif;
   font-size: 40px;
   font-weight: 700;
 `
@@ -76,7 +76,7 @@ export const TextNavTop = styled.div<{ start?: boolean }>`
 `
 
 export const HrNavTop = styled.hr`
-  border: 1px solid;
+  border-top: 1px solid;
   border-color: ${({ theme }) => theme.red};
   margin: 0;
   transform: rotate(90deg);
@@ -99,7 +99,7 @@ export const DropDownBtn = styled.a`
   border: none;
   color: white;
   cursor: pointer;
-  font-family: Gobold;
+  font-family: Gobold, serif;
   font-size: 25px;
   font-weight: 100;
   height: 100%;
@@ -115,7 +115,7 @@ export const DropDownBtn = styled.a`
 
 export const DropDownContent = styled.div`
   background-color: white;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   display: none;
   margin-top: 23px;
   min-width: 160px;

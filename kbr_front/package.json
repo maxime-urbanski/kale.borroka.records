@@ -18,7 +18,9 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-raster": "^7.0.7",
+    "react-youtube": "^7.13.1",
     "styled-components": "^5.2.3",
+    "styled-components-carousel": "^0.2.0",
     "ts-node": "^9.1.1"
   },
   "devDependencies": {

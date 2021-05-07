@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FooterProps } from '../components/Interface/Interface'
+import { FooterProps } from '../Interface/Interface'
 
 export const Foot = styled.footer`
   background-color: ${({ theme }) => theme.black};
@@ -63,6 +63,6 @@ export const FooterIcon = styled.img`
 
 export const Copyright = styled.p`
   color: white;
-  font-family: Gobold;
+  font-family: Gobold, serif;
   font-size: 18px;
 `

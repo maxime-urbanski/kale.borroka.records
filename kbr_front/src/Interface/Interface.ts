@@ -34,20 +34,6 @@ export interface CardStyledProps {
   bottom?: string
   borderRadius?: string
 }
-export interface ContainerProps {
-  rowGap?: number
-  columnGap?: number
-  position?: string
-  column?: number
-  autoFlow?: string
-  row?: number
-  columnSize?: string
-  rowSize?: string
-}
-
-export interface ColumnArticleProps {
-  area: number[]
-}
 
 export interface AvailableProps {
   title: string
@@ -71,7 +57,12 @@ export interface ButtonProps {
 
 export interface GridProps {
   row?: number
-  col?: number
+  xs?: number
+  sm?: number
+  md?: number
+  lg?: number
+  xl?: number
+  xxl?: number
   position?: string
   autoFlow?: string
 }
@@ -79,4 +70,18 @@ export interface GridProps {
 export interface BreadCrumbProps {
   fontSize?: number
   array: string[]
+}
+
+export interface PictureProps {
+  width?: number
+  height?: number
+  mR?: number
+  mL?: number
+  mT?: number
+  mB?: number
+  borderRadius: number
+}
+
+export interface ArticleProps {
+  fontSize?: number
 }

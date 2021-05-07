@@ -1,19 +1,48 @@
 import styled from 'styled-components'
-import { BreadCrumbProps, ButtonProps, GridProps } from '../Interface/Interface'
+import { ButtonProps, GridProps } from '../Interface/Interface'
 
 export const Title1 = styled.h1`
-  font-family: 'Ye Olde Oak';
-  font-size: 6em;
+  font-family: 'Ye Olde Oak', serif;
   font-weight: 100;
   margin: 0;
   text-align: center;
+
+  @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
+    font-size: 3em;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.sm}px`}) {
+    font-size: 4em;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
+    font-size: 5em;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.lg}px`}) {
+    font-size: 6em;
+  }
 `
 export const Title2 = styled.h2`
-  font-family: 'Soviet Program';
-  font-size: 3em;
+  font-family: 'Soviet Program', serif;
   font-weight: 100;
   margin: 0 10px;
   text-align: center;
+
+  @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
+    font-size: 1.5em;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.sm}px`}) {
+    font-size: 2em;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
+    font-size: 2.5em;
+  }
+  @media (min-width: ${({ theme }) => `${theme.lg}px`}) {
+    font-size: 3em;
+  }
 `
 export const Title3 = styled.h3`
   color: #d9534f;
@@ -39,7 +68,7 @@ export const Icon = styled.img`
 `
 
 export const HR = styled.hr`
-  border: 5px solid red;
+  border: 5px solid ${({ theme }) => theme.red};
   width: 75%;
 `
 
@@ -49,7 +78,7 @@ export const BanLogo = styled.div`
   height: 300px;
   justify-content: center;
   padding: 300px 0 200px;
-  width: 100wv;
+  width: 100%;
 `
 
 export const Container = styled.div<{ fluid?: boolean }>`
@@ -95,13 +124,43 @@ export const Row = styled.div.attrs(({ position, autoFlow }: GridProps) => ({
   row-gap: 50px;
   grid-auto-flow: ${({ autoFlow }) => autoFlow};
   margin-bottom: 50px;
+
+  @media (min-width: ${({ theme }) => theme.xs}) {
+    grid-auto-flow: column;
+  }
 `
 
-export const Column = styled.div.attrs(({ col }: GridProps) => ({
-  col: col || 3,
+export const Column = styled.div.attrs(({ xs, sm, md, lg, xl, xxl }: GridProps) => ({
+  xs: xs,
+  sm: sm,
+  md: md,
+  lg: lg,
+  xl: xl,
+  xxl: xxl,
 }))`
-  grid-column: span ${({ col }) => col};
   margin: 0;
+
+  @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
+    grid-column: span ${({ xs }) => xs};
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.sm}px`}) {
+    grid-column: span ${({ sm }) => sm};
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
+    grid-column: span ${({ md }) => md};
+  }
+  @media (min-width: ${({ theme }) => `${theme.lg}px`}) {
+    grid-column: span ${({ lg }) => lg};
+  }
+  @media (min-width: ${({ theme }) => `${theme.xl}px`}) {
+    grid-column: span ${({ xl }) => xl};
+  }
+  @media (min-width: ${({ theme }) => `${theme.xxl}px`}) {
+    grid-column: span ${({ xxl }) => xxl};
+  }
+  
 `
 
 export const Pagination = styled.ul`

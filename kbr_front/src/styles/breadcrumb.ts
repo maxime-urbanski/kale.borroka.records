@@ -17,7 +17,7 @@ export const BreadCrumbItem = styled.li.attrs(({ fontSize }: BreadCrumbProps) =>
   fontSize: fontSize || 20,
 }))<{ disable?: boolean }>`
   font-size: ${({ fontSize }) => fontSize}px;
-  font-family: Gobold;
+  font-family: Gobold, serif;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: ${({ disable, theme }) => (disable ? '#6c757d' : theme.red)};
@@ -25,5 +25,20 @@ export const BreadCrumbItem = styled.li.attrs(({ fontSize }: BreadCrumbProps) =>
   &:first-of-type:before {
     content: '';
     padding: 0;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
+    font-size: 16px;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.sm}px`}) {
+    font-size: 18px;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
+    font-size: 20px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.lg}px`}) {
+    font-size: 22px;
   }
 `

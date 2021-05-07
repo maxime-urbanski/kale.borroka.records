@@ -31,26 +31,26 @@ const Catalog = ({ album }): JSX.Element => {
   return (
     <Container fluid>
       <Row position={'start'}>
-        <Column col={12}>
+        <Column xs={12} sm={12} md={6} lg={6} xl={4} xxl={4}>
           <Breadcrumb array={[`${support}`]} />
         </Column>
       </Row>
       <Row>
-        <Column col={12}>
+        <Column xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
           <Title2>{support}</Title2>
         </Column>
       </Row>
       <Row>
         {test.map((component, index) => {
           return (
-            <Column col={4} key={index}>
+            <Column xs={12} sm={12} md={6} lg={6} xl={4} xxl={4} key={index}>
               {component}
             </Column>
           )
         })}
       </Row>
       <Row>
-        <Column col={12}>
+        <Column xs={12}>
           <Pagination>
             <PaginationItem>
               <Button bg={'white'} color={'#b14542'} width={40} height={40}>
