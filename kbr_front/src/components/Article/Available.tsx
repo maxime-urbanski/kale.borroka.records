@@ -13,19 +13,21 @@ const Available = ({ title }: AvailableProps): JSX.Element => {
   return (
     <>
       <Row position={'center'}>
-        <Column col={12}>
+        <Column xs={12} sm={12} md={12} lg={12} xl={12} xxl={0}>
           <Title3>{title}</Title3>
         </Column>
       </Row>
       {test.map((component, index) => {
         return (
           <Row key={index}>
-            <Column col={12}>{component}</Column>
+            <Column xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+              {component}
+            </Column>
           </Row>
         )
       })}
       <Row>
-        <Column col={12}>
+        <Column xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
           <Button>test</Button>
         </Column>
       </Row>

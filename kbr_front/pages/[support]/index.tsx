@@ -50,7 +50,7 @@ const Catalog = ({ album }): JSX.Element => {
         })}
       </Row>
       <Row>
-        <Column xs={12}>
+        <Column xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
           <Pagination>
             <PaginationItem>
               <Button bg={'white'} color={'#b14542'} width={40} height={40}>

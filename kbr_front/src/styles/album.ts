@@ -30,3 +30,9 @@ export const ArticleName = styled.h2.attrs(({ fontSize }: ArticleProps) => ({
   text-transform: uppercase;
   text-decoration: underline ${({ theme }) => theme.red};
 `
+
+export const AlbumInfo = styled.p`
+  font-size: 30px;
+  color: ${({ theme }) => theme.black};
+  font-family: Gobold, serif;
+`
