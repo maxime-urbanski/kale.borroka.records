@@ -28,7 +28,7 @@ export const BreadCrumbItem = styled.li.attrs(({ fontSize }: BreadCrumbProps) =>
   }
 
   @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
-    font-size: 16px;
+    font-size: 10px;
   }
 
   @media (min-width: ${({ theme }) => `${theme.sm}px`}) {

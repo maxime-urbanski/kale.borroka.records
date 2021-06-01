@@ -4,7 +4,7 @@ import { ArticleProps, PictureProps } from '../Interface/Interface'
 export const Picture = styled.img.attrs(
   ({ width, height, mR, mL, mT, mB, borderRadius }: PictureProps) => ({
     width: width || 300,
-    height: height || 300,
+    height: height || width,
     mR: mR || 0,
     mL: mL || 0,
     mT: mT || 0,
@@ -28,11 +28,18 @@ export const ArticleName = styled.h2.attrs(({ fontSize }: ArticleProps) => ({
   margin: 0;
   text-align: center;
   text-transform: uppercase;
-  text-decoration: underline ${({ theme }) => theme.red};
 `
 
 export const AlbumInfo = styled.p`
-  font-size: 30px;
-  color: ${({ theme }) => theme.black};
+  font-size: 15px;
+  color: ${({ theme }) => theme.grey};
   font-family: Gobold, serif;
+`
+
+export const ListOl = styled.ol`
+  list-style-position: inside;
+`
+export const ListLi = styled.li`
+  padding-left: 15px;
+  padding-right: 15px;
 `

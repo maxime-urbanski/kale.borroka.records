@@ -65,6 +65,7 @@ export interface GridProps {
   xxl?: number
   position?: string
   autoFlow?: string
+  mb?: number
 }
 
 export interface BreadCrumbProps {

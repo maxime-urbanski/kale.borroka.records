@@ -47,8 +47,8 @@ export const Title2 = styled.h2`
 export const Title3 = styled.h3`
   color: #d9534f;
   font-size: 1.5em;
+  font-family: Gobold;
   font-weight: 600;
-  margin: 20px 0 5px 0;
 `
 export const Title4 = styled.h4`
   color: white;
@@ -68,7 +68,7 @@ export const Icon = styled.img`
 `
 
 export const HR = styled.hr`
-  border: 5px solid ${({ theme }) => theme.red};
+  border-top: 1px solid ${({ theme }) => theme.red};
   width: 75%;
 `
 
@@ -113,9 +113,10 @@ export const Button = styled.div.attrs(
   cursor: pointer;
 `
 
-export const Row = styled.div.attrs(({ position, autoFlow }: GridProps) => ({
+export const Row = styled.div.attrs(({ position, autoFlow, mb }: GridProps) => ({
   position: position || 'center',
   autoFlow: autoFlow || 'row',
+  mb: mb || 20,
 }))`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -123,7 +124,7 @@ export const Row = styled.div.attrs(({ position, autoFlow }: GridProps) => ({
   column-gap: 20px;
   row-gap: 50px;
   grid-auto-flow: ${({ autoFlow }) => autoFlow};
-  margin-bottom: 50px;
+  margin-bottom: ${({ mb }) => mb}px;
 
   @media (min-width: ${({ theme }) => theme.xs}) {
     grid-auto-flow: column;
@@ -160,7 +161,6 @@ export const Column = styled.div.attrs(({ xs, sm, md, lg, xl, xxl }: GridProps) 
   @media (min-width: ${({ theme }) => `${theme.xxl}px`}) {
     grid-column: span ${({ xxl }) => xxl};
   }
-  
 `
 
 export const Pagination = styled.ul`
