@@ -19,7 +19,7 @@ export const Card = styled.article.attrs(({ flexDir, width, height }: CardStyled
 `
 
 export const CardTop = styled.div.attrs(({ height, width }: CardStyledProps) => ({
-  height: height || 300,
+  height: height || width,
   width: width || 300,
 }))`
   margin: 0;

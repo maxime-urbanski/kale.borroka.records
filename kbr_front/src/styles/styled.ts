@@ -60,18 +60,15 @@ export const Title4 = styled.h4`
     color: #d9534f;
   }
 `
-
 export const Icon = styled.img`
   height: 30px;
   margin: 10px;
   width: 30px;
 `
-
 export const HR = styled.hr`
   border-top: 1px solid ${({ theme }) => theme.red};
   width: 75%;
 `
-
 export const BanLogo = styled.div`
   display: flex;
   flex-direction: column;
@@ -80,13 +77,11 @@ export const BanLogo = styled.div`
   padding: 300px 0 200px;
   width: 100%;
 `
-
 export const Container = styled.div<{ fluid?: boolean }>`
   max-width: ${({ fluid }) => (fluid ? '1200px' : '100%')};
   margin-left: auto;
   margin-right: auto;
 `
-
 export const Button = styled.div.attrs(
   ({ bg, border, color, width, height, fontSize, borderRadius }: ButtonProps) => ({
     bg: bg || '#b14542',
@@ -112,7 +107,6 @@ export const Button = styled.div.attrs(
   align-items: center;
   cursor: pointer;
 `
-
 export const Row = styled.div.attrs(({ position, autoFlow, mb }: GridProps) => ({
   position: position || 'center',
   autoFlow: autoFlow || 'row',
@@ -130,7 +124,6 @@ export const Row = styled.div.attrs(({ position, autoFlow, mb }: GridProps) => (
     grid-auto-flow: column;
   }
 `
-
 export const Column = styled.div.attrs(({ xs, sm, md, lg, xl, xxl }: GridProps) => ({
   xs: xs,
   sm: sm,
@@ -162,7 +155,6 @@ export const Column = styled.div.attrs(({ xs, sm, md, lg, xl, xxl }: GridProps) 
     grid-column: span ${({ xxl }) => xxl};
   }
 `
-
 export const Pagination = styled.ul`
   list-style: none;
   margin: 0;

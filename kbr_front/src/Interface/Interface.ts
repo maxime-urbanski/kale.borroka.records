@@ -31,7 +31,7 @@ export interface CardStyledProps {
   flexDir?: string
   fontSize?: number
   left?: number
-  bottom?: string
+  bottom?: number
   borderRadius?: string
 }
 
@@ -85,4 +85,18 @@ export interface PictureProps {
 
 export interface ArticleProps {
   fontSize?: number
+}
+
+export interface ArticleDetailProps {
+  quantity: number
+  i?: number
+}
+
+export interface TextProps {
+  color?: string
+  fontSize?: number
+}
+
+export interface ContainerFlexProps {
+  flexDirection?: string
 }

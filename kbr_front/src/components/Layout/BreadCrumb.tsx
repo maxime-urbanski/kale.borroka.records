@@ -1,11 +1,11 @@
 import { BreadCrumb, BreadCrumbItem } from '../../styles/breadcrumb'
-import { Column} from "../../styles/styled";
-import Link from 'next/link'
 import { BreadCrumbProps } from '../../Interface/Interface'
+import Link from 'next/link'
+import RowComponent from './RowComponent'
 
 const Breadcrumb = ({ array }: BreadCrumbProps): JSX.Element => {
   return (
-    <Column xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+    <RowComponent position={'start'} mb={100} xs={12} sm={12} md={12} lg={12}xl={12} xxl={12}>
       <BreadCrumb>
         <BreadCrumbItem>
           <Link href={'/'}>kale borroka records</Link>
@@ -31,7 +31,7 @@ const Breadcrumb = ({ array }: BreadCrumbProps): JSX.Element => {
           )
         })}
       </BreadCrumb>
-    </Column>
+    </RowComponent>
   )
 }
 

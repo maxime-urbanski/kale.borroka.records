@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings=0 ."
@@ -14,7 +14,7 @@
     "axios": "^0.21.1",
     "babel-plugin-file-loader": "^2.0.0",
     "express": "^4.17.1",
-    "next": "10.0.9",
+    "next": "^10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-raster": "^7.0.7",

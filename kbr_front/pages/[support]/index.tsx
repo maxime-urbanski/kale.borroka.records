@@ -104,7 +104,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const res = await axios.get('http://localhost:5050/api/albums')
   const album = await res.data
-  console.log(album)
+  console.log(album, params)
 
   return {
     props: {
