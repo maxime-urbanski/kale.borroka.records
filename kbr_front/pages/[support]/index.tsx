@@ -32,7 +32,7 @@ const Catalog = ({ album }): JSX.Element => {
     <Container fluid>
       <Row position={'start'}>
         <Column xs={12} sm={12} md={6} lg={6} xl={4} xxl={4}>
-          <Breadcrumb array={[`${support}`]} />
+          <Breadcrumb links={[`${support}`]} />
         </Column>
       </Row>
       <Row>

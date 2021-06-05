@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-import {ArticleProps, ContainerFlexProps, PictureProps, TextProps} from '../Interface/Interface'
+import { ArticleProps, ContainerFlexProps, PictureProps, TextProps } from '../Interface/Interface'
 
 export const Picture = styled.img.attrs(
-  ({ width, height, mR, mL, mT, mB, borderRadius }: PictureProps) => ({
+  ({ width, mR, mL, mT, mB, borderRadius }: PictureProps) => ({
     width: width || 300,
-    height: height || width,
     mR: mR || 0,
     mL: mL || 0,
     mT: mT || 0,
@@ -13,7 +12,6 @@ export const Picture = styled.img.attrs(
   })
 )`
   width: ${({ width }) => `${width}px`};
-  height: ${({ height }) => `${height}px`};
   margin-left: ${({ mL }) => `${mL}px`};
   margin-right: ${({ mR }) => `${mR}px`};
   margin-top: ${({ mT }) => `${mT}px`};
@@ -37,12 +35,14 @@ export const Text = styled.p.attrs(({ color, fontSize }: TextProps) => ({
   font-size: ${({ fontSize }) => fontSize}px;
   color: ${({ theme, color }) => theme[`${color}`]};
   font-family: Gobold, serif;
-  margin: 5px;
-  text-align: center;
+  text-align: justify;
+  padding: 5px;
+  margin: 0;
 `
 
 export const ListOl = styled.ol`
   list-style-position: inside;
+  margin: 0;
 `
 export const ListLi = styled.li`
   padding-left: 15px;
@@ -53,12 +53,15 @@ export const ListLi = styled.li`
   }
 `
 
-export const ContainerFlex = styled.div.attrs(({ flexDirection }: ContainerFlexProps) => ({
-  flexDirection: flexDirection || 'row',
-}))`
+export const ContainerFlex = styled.div.attrs(
+  ({ flexDirection, alignItems }: ContainerFlexProps) => ({
+    flexDirection: flexDirection || 'row',
+    alignItems: alignItems || 'center',
+  })
+)`
   display: flex;
-  flex-direction: ${({ flexDirection}) => flexDirection};
-  justify-content: center;
+  flex-direction: ${({ flexDirection }) => flexDirection};
+  align-items: ${({ alignItems }) => alignItems};
 `
 
 export const Price = styled.span`
@@ -70,6 +73,5 @@ export const Select = styled.select`
   width: 50px;
   height: 30px;
   font-size: 16px;
-  margin-left: 20px;
-  margin-top: 4px;
+  margin-top: 3px;
 `

@@ -70,12 +70,11 @@ export interface GridProps {
 
 export interface BreadCrumbProps {
   fontSize?: number
-  array: string[]
+  links: string[]
 }
 
 export interface PictureProps {
-  width?: number
-  height?: number
+  width: number
   mR?: number
   mL?: number
   mT?: number
@@ -99,4 +98,5 @@ export interface TextProps {
 
 export interface ContainerFlexProps {
   flexDirection?: string
+  alignItems?: string
 }

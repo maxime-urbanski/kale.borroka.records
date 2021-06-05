@@ -16,12 +16,15 @@ const RowComponent = ({
   lg,
   xl,
   xxl,
-}: RowComponentProps): JSX.Element => (
-  <Row position={position} mb={mb}>
-    <Column xs={xs} sm={sm} md={md} lg={lg} xl={xl} xxl={xxl}>
-      {children}
-    </Column>
-  </Row>
-)
+}: RowComponentProps): JSX.Element => {
+  console.log(mb)
+  return (
+    <Row position={position} mb={mb}>
+      <Column xs={xs} sm={sm} md={md} lg={lg} xl={xl} xxl={xxl}>
+        {children}
+      </Column>
+    </Row>
+  )
+}
 
 export default RowComponent

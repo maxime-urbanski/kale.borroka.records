@@ -23,7 +23,7 @@ const Article = (): JSX.Element => {
   }
   return (
     <Container>
-      <Breadcrumb array={['lp', `${album}`]} />
+      <Breadcrumb links={['lp', `${album}`]} />
       <RowComponent mb={50} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
         <ArticleName fontSize={45}>{album} death brigade - bad bad accents</ArticleName>
       </RowComponent>

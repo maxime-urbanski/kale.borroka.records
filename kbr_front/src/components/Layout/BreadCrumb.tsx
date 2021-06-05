@@ -3,15 +3,15 @@ import { BreadCrumbProps } from '../../Interface/Interface'
 import Link from 'next/link'
 import RowComponent from './RowComponent'
 
-const Breadcrumb = ({ array }: BreadCrumbProps): JSX.Element => {
+const Breadcrumb = ({ links }: BreadCrumbProps): JSX.Element => {
   return (
-    <RowComponent position={'start'} mb={100} xs={12} sm={12} md={12} lg={12}xl={12} xxl={12}>
+    <RowComponent position={'start'} mb={100} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
       <BreadCrumb>
         <BreadCrumbItem>
           <Link href={'/'}>kale borroka records</Link>
         </BreadCrumbItem>
-        {array.map((link, index) => {
-          const lastItem: string = array
+        {links.map((link, index) => {
+          const lastItem: string = links
             .map((link) => link)
             .slice(-1)
             .toString()

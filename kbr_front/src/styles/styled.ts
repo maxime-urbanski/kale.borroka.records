@@ -49,6 +49,7 @@ export const Title3 = styled.h3`
   font-size: 1.5em;
   font-family: Gobold;
   font-weight: 600;
+  margin: 0;
 `
 export const Title4 = styled.h4`
   color: white;
@@ -68,6 +69,7 @@ export const Icon = styled.img`
 export const HR = styled.hr`
   border-top: 1px solid ${({ theme }) => theme.red};
   width: 75%;
+  margin: 30px auto;
 `
 export const BanLogo = styled.div`
   display: flex;
@@ -118,7 +120,7 @@ export const Row = styled.div.attrs(({ position, autoFlow, mb }: GridProps) => (
   column-gap: 20px;
   row-gap: 50px;
   grid-auto-flow: ${({ autoFlow }) => autoFlow};
-  margin-bottom: ${({ mb }) => mb}px;
+  margin-bottom: ${({ mb }) => (mb === 0 ? mb : `${mb}px`)};
 
   @media (min-width: ${({ theme }) => theme.xs}) {
     grid-auto-flow: column;
