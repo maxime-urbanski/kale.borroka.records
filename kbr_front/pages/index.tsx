@@ -1,13 +1,12 @@
 import { Container, Row, Column, Title2 } from '../src/styles/styled'
 import Available from '../src/components/Article/Available'
-import RowComponent from "../src/components/Layout/RowComponent";
+import RowOneColumn from "../src/components/Layout/RowOneColumn";
+import TitleColumn from "../src/components/DetailArticle/TitleColumn";
 
 const home = (): JSX.Element => {
   return (
     <Container>
-      <RowComponent xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-        <Title2>Toujours Disponible</Title2>
-      </RowComponent>
+      <TitleColumn title={'Toujours disponible'} />
       <Row>
         <Column xs={12} sm={12} md={12} lg={6} xl={4} xxl={4}>
           <Available title={'LP'} />

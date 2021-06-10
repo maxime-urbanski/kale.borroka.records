@@ -1,54 +1,57 @@
-import { ContainerFlex, Text, Select } from '../../styles/album'
-import { Column, Row, HR } from '../../styles/styled'
 import { ArticleDetailProps } from '../../Interface/Interface'
+import { Text, Select } from '../../styles/album'
+import { HR } from '../../styles/styled'
 import TitleColumn from './TitleColumn'
-import RowComponent from '../Layout/RowComponent'
+import RowOneColumn from '../Layout/RowOneColumn'
+import RowTwoColumn from '../Layout/RowTwoColumn'
 
 const note =
   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi, atque blanditiis consectetur cupiditate ex illum inventore laborum magnam minima molestiae officiis pariatur perferendis quasi recusandae sequi sit tempora ullam!'
 
+const TextInfos = (text: string): JSX.Element => <Text>{text}</Text>
+
+const SelectQuantity = (quantityAvailable: number[]): JSX.Element => (
+  <Select>
+    {quantityAvailable.map((quantity) => (
+      <option value={quantity} key={quantity}>
+        {quantity}
+      </option>
+    ))}
+  </Select>
+)
+
 const ArticleDetail = ({ quantity }: ArticleDetailProps): JSX.Element => {
-  const optionHtml: number[] = []
+  const quantityAvailable: number[] = []
   for (let i = 0; i <= quantity; i++) {
-    optionHtml.push(i)
+    quantityAvailable.push(i)
   }
+  const price = '13€'
+  const style = 'Rap Punk Electro'
   return (
     <>
-      <TitleColumn title={'infos'} mb={20} />
-      <Row position={'start'} mb={1}>
-        <Column xs={6} sm={6} md={6} lg={6} xl={6} xxl={6}>
-          <Text>Style:</Text>
-        </Column>
-        <Column xs={6} sm={6} md={6} lg={6} xl={6} xxl={6}>
-          <Text>Rap Punk Electro</Text>
-        </Column>
-      </Row>
-      <Row position={'start'} mb={5}>
-        <Column xs={6} sm={6} md={6} lg={6} xl={6} xxl={6}>
-          <Text>Prix:</Text>
-        </Column>
-        <Column xs={6} sm={6} md={6} lg={6} xl={6} xxl={6}>
-          <Text>13€</Text>
-        </Column>
-      </Row>
-      <Row position={'start'} mb={5}>
-        <Column xs={6} sm={6} md={6} lg={6} xl={6} xxl={6}>
-          <Text>Quantity:</Text>
-        </Column>
-        <Column xs={6} sm={6} md={6} lg={6} xl={6} xxl={6}>
-          <Select>
-            {optionHtml.map((quantity) => (
-              <option value={quantity} key={quantity}>
-                {quantity}
-              </option>
-            ))}
-          </Select>
-        </Column>
-      </Row>
+      <TitleColumn title={'infos'} mb={50} />
+      <RowTwoColumn
+        position={'start'}
+        firstColumn={TextInfos('Style:')}
+        secondColumn={TextInfos(style)}
+      />
+      <RowTwoColumn
+        position={'start'}
+        firstColumn={TextInfos('Prix:')}
+        secondColumn={TextInfos(price)}
+      />
+      <RowTwoColumn
+        firstColumn={TextInfos('Quantité:')}
+        secondColumn={SelectQuantity(quantityAvailable)}
+        position={'start'}
+      />
       <HR />
-      <RowComponent xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+      <RowOneColumn position={'center'} xs={12} sm={12} md={12} lg={10} xl={10} xxl={10}>
         <Text fontSize={16}>{note}</Text>
-      </RowComponent>
+      </RowOneColumn>
+      <RowOneColumn>
+        <img src={'/img/cart.svg'} alt="cart" width={50} />
+      </RowOneColumn>
     </>
   )
 }

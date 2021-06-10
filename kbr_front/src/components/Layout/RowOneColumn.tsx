@@ -6,7 +6,7 @@ interface RowComponentProps extends GridProps {
   children: ReactNode
 }
 
-const RowComponent = ({
+const RowOneColumn = ({
   children,
   position = 'center',
   mb,
@@ -27,4 +27,4 @@ const RowComponent = ({
   )
 }
 
-export default RowComponent
+export default RowOneColumn

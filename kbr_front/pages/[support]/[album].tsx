@@ -1,19 +1,24 @@
-import { Row, Column, Container } from '../../src/styles/styled'
-import { ArticleName, Picture } from '../../src/styles/album'
-import Breadcrumb from '../../src/components/Layout/BreadCrumb'
-import { useRouter } from 'next/router'
-import Tracklist from '../../src/components/DetailArticle/Tracklist'
-import ArticleDetail from '../../src/components/DetailArticle/ArticleDetail'
-import RowComponent from '../../src/components/Layout/RowComponent'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { Container, HR } from '../../src/styles/styled'
+import { ArticleName, Picture } from '../../src/styles/album'
+import ArticleDetail from '../../src/components/DetailArticle/ArticleDetail'
+import Tracklist from '../../src/components/DetailArticle/Tracklist'
+import Breadcrumb from '../../src/components/Layout/BreadCrumb'
+import RowOneColumn from '../../src/components/Layout/RowOneColumn'
+import RowTwoColumn from '../../src/components/Layout/RowTwoColumn'
 
 const article = {
   id: '0123456789',
   quantity: 1,
   price: 1000,
 }
+
+const Img = <Picture src={'/img/1725109.jpg'} alt={'ok'} width={450} borderRadius={5} />
+const details = <ArticleDetail quantity={article.quantity} />
+
 const Article = (): JSX.Element => {
-  const [chooseQuantity, setChooseQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(0)
   const router = useRouter()
   const { album } = router.query
 
@@ -24,20 +29,12 @@ const Article = (): JSX.Element => {
   return (
     <Container>
       <Breadcrumb links={['lp', `${album}`]} />
-      <RowComponent mb={50} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-        <ArticleName fontSize={45}>{album} death brigade - bad bad accents</ArticleName>
-      </RowComponent>
-      <Row>
-        <Column xs={12} sm={12} md={12} lg={4} xl={4} xxl={4}>
-          <Picture src={'/img/1725109.jpg'} alt={'ok'} width={450} borderRadius={5} />
-        </Column>
-        <Column xs={12} sm={12} md={12} lg={3} xl={3} xxl={3}>
-          <ArticleDetail quantity={article.quantity} />
-        </Column>
-        <Column xs={12} sm={12} md={12} lg={5} xl={5} xxl={5}>
-          <Tracklist />
-        </Column>
-      </Row>
+      <RowOneColumn mb={80} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+        <ArticleName fontSize={45}>{album} death brigade - bad accent anthems</ArticleName>
+      </RowOneColumn>
+      <RowTwoColumn firstColumn={Img} secondColumn={details} />
+      <HR />
+      <Tracklist />
     </Container>
   )
 }
