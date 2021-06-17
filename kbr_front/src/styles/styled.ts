@@ -68,7 +68,7 @@ export const Icon = styled.img`
 `
 export const HR = styled.hr`
   border-top: 1px solid ${({ theme }) => theme.red};
-  width: 75%;
+  width: 50%;
   margin: 30px auto;
 `
 export const BanLogo = styled.div`
@@ -99,7 +99,7 @@ export const Button = styled.div.attrs(
   height: ${({ height }) => `${height}px`};
   border-radius: ${({ borderRadius }) => `${borderRadius}px`};
   border: ${({ border }) => border};
-  background-color: ${({ bg }) => bg};
+  background-color: ${({ theme, bg }) => theme[bg]};
   color: ${({ color }) => color};
   font-size: ${({ fontSize }) => `${fontSize}px`};
   font-weight: 500;

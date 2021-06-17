@@ -32,7 +32,17 @@ const Article = (): JSX.Element => {
       <RowOneColumn mb={80} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
         <ArticleName fontSize={45}>{album} death brigade - bad accent anthems</ArticleName>
       </RowOneColumn>
-      <RowTwoColumn firstColumn={Img} secondColumn={details} />
+      <RowTwoColumn
+        firstColumn={Img}
+        secondColumn={details}
+        xs={12}
+        sm={12}
+        md={12}
+        lg={6}
+        xl={5}
+        xxl={4}
+        mb={50}
+      />
       <HR />
       <Tracklist />
     </Container>

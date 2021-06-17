@@ -6,13 +6,26 @@ interface RowTwoColumnProps extends GridProps {
   secondColumn: JSX.Element
 }
 
-const RowTwoColumn = ({ firstColumn, secondColumn, position, mb }: RowTwoColumnProps): JSX.Element => {
+const RowTwoColumn = ({
+  firstColumn,
+  secondColumn,
+  position,
+  mb,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  xxl,
+}: RowTwoColumnProps): JSX.Element => {
+  const test: number = 12 - xl
+  console.log('test', test)
   return (
     <Row position={position} mb={mb}>
-      <Column xs={6} sm={6} md={6} lg={6} xl={6} xxl={6}>
+      <Column xs={xs} sm={sm} md={md} lg={lg} xl={xl} xxl={xxl}>
         {firstColumn}
       </Column>
-      <Column xs={6} sm={6} md={6} lg={6} xl={6} xxl={6}>
+      <Column xs={xs} sm={sm} md={md} lg={12 - lg} xl={12 - xl} xxl={test}>
         {secondColumn}
       </Column>
     </Row>

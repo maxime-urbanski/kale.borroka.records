@@ -79,7 +79,7 @@ export const CardButton = styled.div.attrs(({ bg, border, color, left }: CardSty
   width: 80px;
   height: 35px;
   border-radius: 3px;
-  background-color: ${({ bg }) => bg};
+  background-color: ${({ theme, bg }) => theme[bg]};
   color: ${({ color }) => color};
   font-size: 15px;
   font-weight: 500;

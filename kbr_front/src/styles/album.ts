@@ -11,12 +11,27 @@ export const Picture = styled.img.attrs(
     borderRadius: borderRadius || 0,
   })
 )`
-  width: ${({ width }) => `${width}px`};
   margin-left: ${({ mL }) => `${mL}px`};
   margin-right: ${({ mR }) => `${mR}px`};
   margin-top: ${({ mT }) => `${mT}px`};
   margin-bottom: ${({ mB }) => `${mB}px`};
   border-radius: ${({ borderRadius }) => `${borderRadius}px`};
+
+  @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
+    width: 250px;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.sm}px`}) {
+    width: 350px;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
+    width: 400px;
+    padding: 10px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.xl}px`}) {
+    width: ${({ width }) => `${width}px`};
+  }
 `
 export const ArticleName = styled.h2.attrs(({ fontSize }: ArticleProps) => ({
   fontSize: fontSize || 20,
@@ -26,6 +41,21 @@ export const ArticleName = styled.h2.attrs(({ fontSize }: ArticleProps) => ({
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+
+  @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
+    font-size: 22px;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.sm}px`}) {
+    font-size: 26px;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
+    font-size: 30px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.lg}px`}) {
+    font-size: ${({ fontSize }) => fontSize}px;
+  }
 `
 
 export const Text = styled.p.attrs(({ color, fontSize }: TextProps) => ({
@@ -36,7 +66,8 @@ export const Text = styled.p.attrs(({ color, fontSize }: TextProps) => ({
   color: ${({ theme, color }) => theme[`${color}`]};
   font-family: Gobold, serif;
   text-align: justify;
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   margin: 0;
 `
 
@@ -51,22 +82,6 @@ export const ListLi = styled.li`
   & > p {
     display: inline-block;
   }
-`
-
-export const ContainerFlex = styled.div.attrs(
-  ({ flexDirection, alignItems }: ContainerFlexProps) => ({
-    flexDirection: flexDirection || 'row',
-    alignItems: alignItems || 'center',
-  })
-)`
-  display: flex;
-  flex-direction: ${({ flexDirection }) => flexDirection};
-  align-items: ${({ alignItems }) => alignItems};
-`
-
-export const Price = styled.span`
-  font-size: 15px;
-  color: ${({ theme }) => theme.yellow};
 `
 
 export const Select = styled.select`
