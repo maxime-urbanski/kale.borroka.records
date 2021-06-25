@@ -1,14 +1,13 @@
-import { Title4 } from '../../../styles/styled'
-import { FooterLink } from '../../../styles/footer'
-import { FooterProps, Link } from '../../../Interface/Interface'
+import { Title4, ContainerFlex } from '../../../styles/styled'
+import { Link } from '../../../Interface/Interface'
 
-interface LinkFoot extends FooterProps {
+interface LinkFooterProps {
   array?: Link[]
 }
 
-const LinkFooter = ({ array, start, end, row }: LinkFoot): JSX.Element => {
+const LinkFooter = ({ array }: LinkFooterProps): JSX.Element => {
   return (
-    <FooterLink start={start} end={end} row={row}>
+    <ContainerFlex flexDirection={'column'}>
       {array.map(({ name, link }, index) => {
         return (
           <a href={link} key={index}>
@@ -16,7 +15,7 @@ const LinkFooter = ({ array, start, end, row }: LinkFoot): JSX.Element => {
           </a>
         )
       })}
-    </FooterLink>
+    </ContainerFlex>
   )
 }
 

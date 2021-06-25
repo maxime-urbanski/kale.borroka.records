@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { ButtonProps, GridProps } from '../Interface/Interface'
+import { ButtonProps, ContainerFlexProps, GridProps, HRProps } from '../Interface/Interface'
 
 export const Title1 = styled.h1`
   font-family: 'Ye Olde Oak', serif;
@@ -66,10 +66,13 @@ export const Icon = styled.img`
   margin: 10px;
   width: 30px;
 `
-export const HR = styled.hr`
-  border-top: 1px solid ${({ theme }) => theme.red};
+export const HR = styled.hr.attrs(({ margin, color }: HRProps) => ({
+  margin: margin || 30,
+  color: color || 'red',
+}))`
+  border-top: 1px solid ${({ theme, color }) => theme[color]};
   width: 50%;
-  margin: 30px auto;
+  margin: ${({ margin }) => margin}px auto;
 `
 export const BanLogo = styled.div`
   display: flex;
@@ -169,4 +172,24 @@ export const Pagination = styled.ul`
 export const PaginationItem = styled.li`
   margin: 20px;
   padding: 0;
+`
+
+export const ContainerFlex = styled.div.attrs(
+  ({ flexDirection, justifyContent }: ContainerFlexProps) => ({
+    flexDirection: flexDirection || 'row',
+    justifyContent: justifyContent || 'center',
+  })
+)`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: ${({ flexDirection }) => flexDirection};
+  justify-content: ${({ justifyContent }) => justifyContent};
+`
+export const Input = styled.input`
+  width: 350px;
+  height: 60px;
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px;
 `

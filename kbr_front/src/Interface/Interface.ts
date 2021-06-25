@@ -13,7 +13,8 @@ export interface IconsProps {
 
 export interface Link {
   name: string
-  link: string
+  link?: string
+  url?: string
 }
 
 export interface NavProps {
@@ -99,4 +100,10 @@ export interface TextProps {
 export interface ContainerFlexProps {
   flexDirection?: string
   alignItems?: string
+  justifyContent?: string
+}
+
+export interface HRProps {
+  margin?: number
+  color?: string
 }

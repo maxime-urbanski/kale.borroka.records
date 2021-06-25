@@ -18,14 +18,12 @@ const RowTwoColumn = ({
   xl,
   xxl,
 }: RowTwoColumnProps): JSX.Element => {
-  const test: number = 12 - xl
-  console.log('test', test)
   return (
     <Row position={position} mb={mb}>
       <Column xs={xs} sm={sm} md={md} lg={lg} xl={xl} xxl={xxl}>
         {firstColumn}
       </Column>
-      <Column xs={xs} sm={sm} md={md} lg={12 - lg} xl={12 - xl} xxl={test}>
+      <Column xs={xs} sm={sm} md={md} lg={12 - lg} xl={12 - xl} xxl={12 - xxl}>
         {secondColumn}
       </Column>
     </Row>

@@ -42,6 +42,11 @@ export const shop = [
 
 export const networks = [
   {
+    name: 'Discogs',
+    img: '/img/Social/discogs.svg',
+    url: 'https://www.facebook.com/kale.borroka.records/',
+  },
+  {
     name: 'Facebook',
     img: '/img/Social/fb.svg',
     url: 'https://www.facebook.com/kale.borroka.records/',

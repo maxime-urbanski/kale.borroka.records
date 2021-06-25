@@ -63,7 +63,7 @@ export const Text = styled.p.attrs(({ color, fontSize }: TextProps) => ({
   fontSize: fontSize || 20,
 }))`
   font-size: ${({ fontSize }) => fontSize}px;
-  color: ${({ theme, color }) => theme[`${color}`]};
+  color: ${({ theme, color }) => theme[color]};
   font-family: Gobold, serif;
   text-align: justify;
   padding-left: 5px;
