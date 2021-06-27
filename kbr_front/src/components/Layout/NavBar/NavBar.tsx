@@ -10,6 +10,7 @@ import {
 import NavIcon from './NavIcon'
 import { flags, networks, searchAndCart } from '../../Data/data'
 import Dropdown from './Dropdown'
+import ResponsiveNavBar from "./ResponsiveNavBar";
 
 const NavigationBar = (): JSX.Element => {
   return (
@@ -35,6 +36,7 @@ const NavigationBar = (): JSX.Element => {
           <NavIcon array={searchAndCart} />
         </IconNav>
       </NavBarDown>
+      <ResponsiveNavBar />
     </NavBar>
   )
 }

@@ -175,13 +175,14 @@ export const PaginationItem = styled.li`
 `
 
 export const ContainerFlex = styled.div.attrs(
-  ({ flexDirection, justifyContent }: ContainerFlexProps) => ({
+  ({ flexDirection, justifyContent, alignItems }: ContainerFlexProps) => ({
+    alignItems: alignItems || 'center',
     flexDirection: flexDirection || 'row',
     justifyContent: justifyContent || 'center',
   })
 )`
   display: flex;
-  align-items: center;
+  align-items: ${({ alignItems }) => alignItems};
   width: 100%;
   flex-direction: ${({ flexDirection }) => flexDirection};
   justify-content: ${({ justifyContent }) => justifyContent};

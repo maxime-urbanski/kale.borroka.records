@@ -12,10 +12,10 @@ const home = (): JSX.Element => {
           <Available title={'LP'} />
         </Column>
         <Column xs={12} sm={12} md={12} lg={6} xl={4} xxl={4}>
-          <Available title={'LP'} />
+          <Available title={'CD'} />
         </Column>
         <Column xs={12} sm={12} md={12} lg={6} xl={4} xxl={4}>
-          <Available title={'LP'} />
+          <Available title={'EP'} />
         </Column>
       </Row>
     </Container>

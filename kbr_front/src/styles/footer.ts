@@ -29,8 +29,10 @@ export const Copyright = styled.p`
   font-family: Gobold, serif;
   font-size: 18px;
 `
-export const IconFooter = styled.img`
-  width: 45px;
+export const IconFooter = styled.img.attrs(({ width }) => ({
+  width: width || 45,
+}))`
+  width: ${({ width }) => width}px;
   border-radius: 50px;
   margin: 10px auto;
 `

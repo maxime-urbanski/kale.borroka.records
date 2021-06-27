@@ -6,12 +6,10 @@ const FooterNewsletter = (): JSX.Element => {
     <>
       <TitleColumn title={'Newsletter'} />
       <HR margin={10} color={'grey'} />
-      <ContainerFlex flexDirection={'column'} justifyContent={'start'}>
+      <ContainerFlex flexDirection={'column'} justifyContent={'start'} alignItems={'center'}>
         <Title4>Inscrit toi à la newsletter</Title4>
-        <ContainerFlex>
-          <Input type={'text'} placeholder={'kale.borroka.records@protonmail.com'} />
-          <Button>Envoyer</Button>
-        </ContainerFlex>
+        <Input type={'text'} placeholder={'kale.borroka.records@protonmail.com'} />
+        <Button>Envoyer</Button>
       </ContainerFlex>
     </>
   )

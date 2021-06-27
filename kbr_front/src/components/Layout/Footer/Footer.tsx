@@ -6,6 +6,7 @@ import TitleColumn from '../../DetailArticle/TitleColumn'
 import FooterIcon from './FooterIcon'
 import FooterNewsletter from './FooterNewsletter'
 import RowTwoColumn from '../RowTwoColumn'
+import FooterSendAndPayment from "./FooterSendAndPayment";
 
 const linkComponents = [
   { link: <LinkFooter array={about} key={1} />, title: <TitleColumn title={'A propos'} key={2} /> },
@@ -17,6 +18,7 @@ const linkComponents = [
 ]
 
 const newsletter = <FooterNewsletter />
+const payment = <FooterSendAndPayment />
 
 const Footer = (): JSX.Element => {
   const year = new Date().getFullYear()
@@ -31,7 +33,6 @@ const Footer = (): JSX.Element => {
           </Column>
         ))}
       </Row>
-      <HR margin={50} color={'grey'} />
       <RowTwoColumn
         xs={12}
         sm={12}
@@ -40,7 +41,7 @@ const Footer = (): JSX.Element => {
         xl={6}
         xxl={6}
         firstColumn={newsletter}
-        secondColumn={newsletter}
+        secondColumn={payment}
         position={'center'}
       />
       <FooterDown>

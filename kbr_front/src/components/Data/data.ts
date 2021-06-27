@@ -121,3 +121,18 @@ export const infos = [
   'NOTE: 4,5/5',
   'RELEASE DATE: 21/09/2021',
 ]
+
+export const paymentAndSent = [
+  {
+    name: 'Chronopost',
+    img: '/img/divers/chronopost.png',
+  },
+  {
+    name: 'Mondial Relay',
+    img: '/img/divers/mr.svg',
+  },
+  {
+    name: 'paypal',
+    img: '/img/divers/paypal.svg',
+  },
+]
