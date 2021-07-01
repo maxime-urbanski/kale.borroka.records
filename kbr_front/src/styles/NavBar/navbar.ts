@@ -24,13 +24,9 @@ export const NavBarDown = styled.div`
   display: flex;
   flex-shrink: 0;
   height: 80px;
-  justify-content: end;
+  justify-content: space-between;
   padding: 0;
   width: 100%;
-
-  @media (min-width: ${({ theme }) => theme.lg}px) {
-    justify-content: space-between;
-  }
 `
 
 export const NavLink = styled.a`
@@ -62,6 +58,11 @@ export const IconNav = styled.div<{ start?: boolean }>`
   height: 100%;
   justify-content: ${(props) => (props.start ? 'flex-start' : 'flex-end')};
   width: 15%;
+  
+  @media (max-width: 991px) {
+    display: none;
+    width: 0;
+  }
 `
 
 export const ImgNavTop = styled.img`
@@ -75,11 +76,16 @@ export const ImgNavTop = styled.img`
   &:hover {
     transform: scale(1.3);
   }
+  
 `
 export const Title = styled.h2`
   font-family: 'Gobold', serif;
   font-size: 40px;
   font-weight: 700;
+
+  @media (max-width: 991px) {
+    font-size: 30px;
+  }
 `
 
 export const TextNavTop = styled.div<{ start?: boolean }>`
@@ -90,6 +96,7 @@ export const TextNavTop = styled.div<{ start?: boolean }>`
 
   @media (max-width: 991px) {
     flex-direction: column;
+    width: 100%;
   }
 `
 
@@ -101,6 +108,10 @@ export const HrNavTop = styled.hr`
   width: 17px;
 
   &:last-of-type {
+    display: none;
+  }
+
+  @media (max-width: 991px) {
     display: none;
   }
 `
@@ -125,6 +136,9 @@ export const MenuItems = styled.div`
   z-index: 1;
   margin-left: auto;
   margin-right: auto;
+  &:before {
+    transition: margin-bottom 2s;
+  }
 `
 
 export const MenuDesktop = styled.div`

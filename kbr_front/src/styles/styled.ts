@@ -62,9 +62,12 @@ export const Title4 = styled.h4`
   }
 `
 export const Icon = styled.img`
-  height: 30px;
   margin: 10px;
   width: 30px;
+
+  @media (max-width: 991px) {
+    margin: 0px;
+  }
 `
 export const HR = styled.hr.attrs(({ margin, color }: HRProps) => ({
   margin: margin || 30,
@@ -193,4 +196,8 @@ export const Input = styled.input`
   font-size: 20px;
   padding: 10px;
   margin: 20px;
+
+  @media (max-width: 991px) {
+    width: 280px;
+  }
 `

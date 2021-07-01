@@ -27,7 +27,18 @@ export const FooterTitle = styled.div.attrs(({ start, end }: FooterProps) => ({
 export const Copyright = styled.p`
   color: white;
   font-family: Gobold, serif;
-  font-size: 18px;
+  
+  
+  @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
+    font-size: 12px;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
+    font-size: 15px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.lg}px`}) {
+    font-size: 18px;
+  }
 `
 export const IconFooter = styled.img.attrs(({ width }) => ({
   width: width || 45,
@@ -35,4 +46,6 @@ export const IconFooter = styled.img.attrs(({ width }) => ({
   width: ${({ width }) => width}px;
   border-radius: 50px;
   margin: 10px auto;
+  
+  
 `

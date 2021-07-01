@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { BurgerIcon, NavBarDown, MenuItems, MenuMobile } from '../../../styles/NavBar/navbar'
 import NavBarItems from './NavBarItems'
 
