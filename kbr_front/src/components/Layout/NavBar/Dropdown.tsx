@@ -1,4 +1,9 @@
-import { DropDown, DropDownBtn, DropDownContent, DropDownLink } from '../../../styles/navbar'
+import {
+  DropDown,
+  DropDownBtn,
+  DropDownContent,
+  DropDownLink,
+} from '../../../styles/NavBar/dropdown'
 
 const Dropdown = (): JSX.Element => {
   return (

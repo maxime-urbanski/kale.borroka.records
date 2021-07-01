@@ -22,10 +22,15 @@ export const NavBarDown = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.black};
   display: flex;
+  flex-shrink: 0;
   height: 80px;
-  justify-content: space-between;
+  justify-content: end;
   padding: 0;
   width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.lg}px) {
+    justify-content: space-between;
+  }
 `
 
 export const NavLink = styled.a`
@@ -39,6 +44,15 @@ export const NavLink = styled.a`
 
   &:hover {
     color: ${({ theme }) => theme.red};
+  }
+
+  @media (max-width: 991px) {
+    color: ${({ theme }) => theme.black};
+    margin: 10px;
+
+    &:hover {
+      color: ${({ theme }) => theme.red};
+    }
   }
 `
 
@@ -73,6 +87,10 @@ export const TextNavTop = styled.div<{ start?: boolean }>`
   display: flex;
   justify-content: ${(props) => (props.start ? 'flex-start' : 'center')};
   width: 70%;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
 `
 
 export const HrNavTop = styled.hr`
@@ -86,51 +104,39 @@ export const HrNavTop = styled.hr`
     display: none;
   }
 `
-export const DropDown = styled.div`
-  display: inline-block;
-  margin-top: 1px;
-  position: relative;
 
-  &:hover > div {
-    display: block;
-  }
-`
-export const DropDownBtn = styled.a`
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-family: Gobold, serif;
-  font-size: 25px;
-  font-weight: 100;
-  height: 100%;
-  letter-spacing: 2px;
-  margin-left: 15px;
-  padding-bottom: 23px;
-  width: 100%;
-
-  &:hover {
-    color: ${({ theme }) => theme.red};
-  }
-`
-
-export const DropDownContent = styled.div`
-  background-color: white;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+export const MenuMobile = styled.div`
   display: none;
-  margin-top: 23px;
-  min-width: 160px;
-  position: absolute;
-  z-index: 1;
-`
-export const DropDownLink = styled.a`
-  display: block;
-  color: black;
-  cursor: pointer;
-  font-size: 20px;
-  padding: 12px 16px;
-  text-transform: uppercase;
 
-  &:hover {
-    background-color: ${({ theme }) => theme.grey};
+  @media (max-width: 991px) {
+    display: flex;
+    flex-direction: column;
   }
+`
+export const MenuItems = styled.div`
+  display: flex;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 6px 11px 3px #676767;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+`
+
+export const MenuDesktop = styled.div`
+  display: none;
+
+  @media (min-width: 992px) {
+    display: flex;
+  }
+`
+
+export const BurgerIcon = styled.button`
+  background-color: transparent;
+  border: none;
+  margin: 20px;
 `

@@ -1,5 +1,5 @@
 import React from 'react'
-import { HrNavTop, ImgNavTop } from '../../../styles/navbar'
+import { HrNavTop, ImgNavTop } from '../../../styles/NavBar/navbar'
 import { NavProps } from '../../../Interface/Interface'
 
 const NavIcon = ({ array }: NavProps): JSX.Element => {
