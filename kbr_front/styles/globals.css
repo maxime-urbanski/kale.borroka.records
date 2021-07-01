@@ -1,0 +1,45 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Gobold, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Punk Attitude";
+  src: url("../public/font/Punk Attitude/CFPunkAttitude-Regular.ttf");
+  font-style: auto;
+  font-weight: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Ye Olde Oak";
+  src: url("../public/font/Ye Olde Oak/YeOldeOak.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Soviet Program";
+  src: url("../public/font/Soviet Program/SovietProgram.ttf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Gobold";
+  src: url("../public/font/Gobold/Gobold.otf");
+  font-style: normal;
+}
