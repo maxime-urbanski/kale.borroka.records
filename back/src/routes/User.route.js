@@ -3,7 +3,7 @@ const Router = express.Router();
 const User = require("../models/User");
 const auth = require("../middlewares/auth");
 
-Router.get("/", auth("ADMIN"), async (req, res) => {
+Router.get("/",  async (req, res) => {
   try {
     const result = await User.findAll({
       attributes: {

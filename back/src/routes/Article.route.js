@@ -6,6 +6,7 @@ const Artist = require("../models/Artist");
 const Price = require("../models/Price");
 const Format = require("../models/Format");
 const Quantity = require("../models/Quantity");
+const Song = require("../models/Song");
 const auth = require("../middlewares/auth");
 
 Router.get("/", async (req, res) => {
@@ -15,11 +16,66 @@ Router.get("/", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ["name", "folder"],
+          attributes: ["name", "folder", "note","kbrProd"],
           include: [
             {
               model: Artist,
               attributes: ["name"],
+            },
+          ]
+        },
+        {
+          model: Price,
+          attributes: ["price"],
+        },
+        {
+          model: Format,
+          attributes: ["name"],
+        },
+        {
+          model: Quantity,
+          attributes: ["quantity"],
+        },
+      ],
+      limit: 10,
+    });
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await Article.count(),
+    });
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+Router.get("/:support", async (req, res) => {
+  const { support } = req.params;
+  try {
+    const findSupportId = await Format.findOne({where: {
+      name: support
+      }
+    });
+
+    const result = await Article.findAll({where: {
+        FormatId : findSupportId.id
+      },
+      attributes: ["id"],
+      include: [
+        {
+          model: Album,
+          attributes: ["name", "folder", "note","kbrProd"],
+          include: [
+            {
+              model: Artist,
+              attributes: ["name"],
+            },
+            {
+              model: Song,
+              attributes: ["name", 'track'],
+              through: { attributes: [] },
+
             },
           ],
         },
@@ -36,7 +92,13 @@ Router.get("/", async (req, res) => {
           attributes: ["quantity"],
         },
       ],
+      order: [
+        [Album, Artist, "name", "ASC"],
+        [Album, "name", "ASC"],
+        [Album, Song, "track", "ASC"],
+      ],
       limit: 10,
+
     });
     res.set({
       "Access-Control-Allow-Origin": "*",

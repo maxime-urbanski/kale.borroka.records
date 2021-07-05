@@ -51,13 +51,10 @@ export const CardTitle = styled.h4.attrs(({ fontSize }: CardStyledProps) => ({
 }))`
   position: relative;
   margin: 10px auto;
-  font-size:  ${({ fontSize }) => `${fontSize}px`};
-  font-weight: bold;
+  font-size: ${({ fontSize }) => `${fontSize}px`};
+  font-weight: 500;
   text-transform: uppercase;
   text-align: center;
-  
-  &:hover {
-  color: #d9534f;
 `
 export const CardSubtitle = styled.h5.attrs(({ fontSize }: CardStyledProps) => ({
   fontSize: fontSize || 14,
@@ -65,6 +62,7 @@ export const CardSubtitle = styled.h5.attrs(({ fontSize }: CardStyledProps) => (
   position: relative;
   margin: 10px auto;
   font-size: ${({ fontSize }) => `${fontSize}px`};
+  font-weight: lighter;
   color: #999;
   text-transform: uppercase;
   text-align: center;
@@ -93,7 +91,7 @@ export const CardButton = styled.div.attrs(({ bg, border, color, left }: CardSty
   border: ${({ border }) => border};
 `
 export const CardIcon = styled.img.attrs(({ width, height, left }: CardStyledProps) => ({
-  width: width || 50,
+  width: width || 45,
   height: height || 50,
   left: left || 10,
 }))`

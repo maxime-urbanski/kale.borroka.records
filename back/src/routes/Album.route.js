@@ -14,7 +14,7 @@ const auth = require("../middlewares/auth");
 router.get("/", async (req, res) => {
   try {
     const result = await Album.findAll({
-      attributes: ["id", "name", "note", "folder"],
+      attributes: ["id", "name", "note", "folder", "kbrProd"],
       include: [
         {
           model: Artist,
@@ -91,6 +91,7 @@ router.post("/", auth("ADMIN"), async (req, res) => {
     tracklist,
     labels,
     videos,
+    kbrProd
   } = req.body;
   try {
     const postAlbum = await Album.create({
@@ -99,6 +100,7 @@ router.post("/", auth("ADMIN"), async (req, res) => {
       folder,
       ArtistId,
       StyleId,
+      kbrProd
     });
     await addTroughTableTracklist(tracklist, Song, postAlbum);
     await postLabelInThroughTable(labels, Label, postAlbum);
@@ -120,6 +122,7 @@ router.put("/:id", auth("ADMIN"), async (req, res) => {
         folder,
         ArtistId,
         StyleId,
+        kbrProd
       },
       {
         where: { id },

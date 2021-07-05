@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+import { AlbumProps } from '../../Interface/Interface'
 import {
   Card,
   CardBody,
@@ -12,21 +14,37 @@ import {
   Overlay,
 } from '../../styles/card'
 
-const CardArticle = (): JSX.Element => {
+const CardArticle = ({ Album, Price, Format }: AlbumProps): JSX.Element => {
+  const { name, folder, kbrProd, Artist } = Album
+  const [img, setImg] = useState('/img/vinyl.svg')
+  const price = Price.price / 100 + '€'
+
+  useEffect(() => {
+    const { name } = Format
+    if (name === 'CD') {
+      setImg('/img/cd.svg')
+    }
+    if (name === 'TAPE') {
+      setImg('/img/tape.svg')
+    }
+  }, [Format])
+
   return (
     <div style={{ justifyItems: 'center' }}>
       <Card>
-        <Overlay>
-          <Ribbon>KBR#01</Ribbon>
-        </Overlay>
+        {kbrProd && (
+          <Overlay>
+            <Ribbon>KBR#01</Ribbon>
+          </Overlay>
+        )}
         <CardTop>
-          <CardImg src="/img/1725109.jpg" alt="cover" />
+          <CardImg src={folder} alt={name} />
         </CardTop>
         <CardBody>
-          <CardTitle>moscow death brigade</CardTitle>
-          <CardSubtitle>bad accents anthems</CardSubtitle>
-          <CardIcon src={'/img/vinyl.svg'} left={45} />
-          <CardPrice>13€</CardPrice>
+          <CardTitle>{Artist.name}</CardTitle>
+          <CardSubtitle fontSize={18}>{name}</CardSubtitle>
+          <CardIcon src={img} left={45} />
+          <CardPrice>{price}</CardPrice>
           <CardButton bg={'white'}>Details</CardButton>
           <CardButton left={185} color={'white'} border={'none'}>
             Panier
