@@ -54,7 +54,7 @@ router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Album.findByPk(id, {
-      attributes: ["id", "name", "note", "folder"],
+      attributes: ["id", "name", "note", "folder", "kbrProd"],
       include: [
         {
           model: Artist,
@@ -113,7 +113,7 @@ router.post("/", auth("ADMIN"), async (req, res) => {
 
 router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
-  const { name, note, folder, ArtistId, StyleId } = req.body;
+  const { name, note, folder, ArtistId, StyleId, kbrProd } = req.body;
   try {
     await Album.update(
       {
@@ -122,7 +122,7 @@ router.put("/:id", auth("ADMIN"), async (req, res) => {
         folder,
         ArtistId,
         StyleId,
-        kbrProd
+        kbrProd,
       },
       {
         where: { id },

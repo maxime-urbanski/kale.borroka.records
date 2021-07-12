@@ -1,7 +1,4 @@
-import { decode } from 'jsonwebtoken'
-
 const authProvider = {
-
   login: async ({ username, password }) => {
     const request = new Request("http://localhost:5050/api/auth/login", {
       method: "POST",
@@ -12,13 +9,10 @@ const authProvider = {
       const response = await fetch(request);
       const auth = await response.json();
       const token = auth.token;
-      const decodeToken = decode(token);
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.statusText);
       }
-      if (decodeToken.usertype === "ADMIN") {
-        localStorage.setItem("auth", JSON.stringify(auth));
-      }
+      localStorage.setItem("auth", JSON.stringify(token));
     } catch (e) {
       throw new Error("Network error");
     }

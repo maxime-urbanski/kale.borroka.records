@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { AlbumProps } from '../../Interface/Interface'
 import {
   Card,
@@ -14,10 +15,11 @@ import {
   Overlay,
 } from '../../styles/card'
 
-const CardArticle = ({ Album, Price, Format }: AlbumProps): JSX.Element => {
+const CardArticle = ({ Album, Price, Format, id }: AlbumProps): JSX.Element => {
   const { name, folder, kbrProd, Artist } = Album
   const [img, setImg] = useState('/img/vinyl.svg')
   const price = Price.price / 100 + '€'
+  const support = Format.name.toLowerCase()
 
   useEffect(() => {
     const { name } = Format
@@ -45,7 +47,9 @@ const CardArticle = ({ Album, Price, Format }: AlbumProps): JSX.Element => {
           <CardSubtitle fontSize={18}>{name}</CardSubtitle>
           <CardIcon src={img} left={45} />
           <CardPrice>{price}</CardPrice>
-          <CardButton bg={'white'}>Details</CardButton>
+          <Link href={`/${support}/${id}`}>
+            <CardButton bg={'white'}>Details</CardButton>
+          </Link>
           <CardButton left={185} color={'white'} border={'none'}>
             Panier
           </CardButton>

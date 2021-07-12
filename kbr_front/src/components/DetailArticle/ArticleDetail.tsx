@@ -59,7 +59,7 @@ const ArticleDetail = ({ quantity }: ArticleDetailProps): JSX.Element => {
   ]
   return (
     <>
-      <TitleColumn title={'Information'} mb={40} />
+      <TitleColumn title={'Information'} mb={40} position={'start'}/>
       {rowInfos.map(({ info, value }, index) => (
         <RowTwoColumn
           position={'start'}

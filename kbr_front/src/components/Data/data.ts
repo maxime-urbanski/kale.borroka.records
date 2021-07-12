@@ -1,3 +1,6 @@
+import axios from 'axios'
+import {getAllSupports, getArticlesProps, GetDataProps} from "../../Interface/interfaceData";
+
 export const about = [
   {
     name: 'Comment passer commande ?',
@@ -136,3 +139,9 @@ export const paymentAndSent = [
     img: '/img/divers/paypal.svg',
   },
 ]
+
+export const getData = async (slug: string): Promise<GetDataProps[]> => {
+  const url = `${process.env.NEXT_PUBLIC_BACK_URL}/${slug}`
+  const req = await axios.get(url)
+  return await req.data
+}

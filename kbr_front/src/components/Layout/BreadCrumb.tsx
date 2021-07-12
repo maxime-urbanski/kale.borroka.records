@@ -24,7 +24,7 @@ const Breadcrumb = ({ links }: BreadCrumbProps): JSX.Element => {
                 </BreadCrumbItem>
               ) : (
                 <BreadCrumbItem key={index}>
-                  <Link href={`/${link}`}>{link}</Link>
+                  <Link href={`/${link.toLowerCase()}`}>{link}</Link>
                 </BreadCrumbItem>
               )}
             </>

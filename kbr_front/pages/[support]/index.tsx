@@ -2,18 +2,18 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 import { Container, Column, Row, Title2 } from '../../src/styles/styled'
 import { AlbumProps } from '../../src/Interface/Interface'
-import axios from 'axios'
 import CardArticle from '../../src/components/Article/CardArticle'
 import Breadcrumb from '../../src/components/Layout/BreadCrumb'
+import { getData } from '../../src/components/Data/data'
 
-interface album {
-  album: AlbumProps[]
+interface albums {
+  albums: AlbumProps[]
 }
 
-const Catalog = ({ album }: album): JSX.Element => {
+const Catalog = ({ albums }: albums): JSX.Element => {
   const router = useRouter()
   const { support } = router.query
-
+  console.log(albums)
   return (
     <Container fluid>
       <Breadcrumb links={[`${support}`]} />
@@ -23,7 +23,7 @@ const Catalog = ({ album }: album): JSX.Element => {
         </Column>
       </Row>
       <Row>
-        {album.map((component, index) => {
+        {albums.map((component, index) => {
           return (
             <Column xs={12} sm={12} md={6} lg={6} xl={4} xxl={4} key={index}>
               <CardArticle {...component} />
@@ -72,22 +72,20 @@ const Catalog = ({ album }: album): JSX.Element => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await axios.get('http://localhost:5050/api/formats')
-  const support = await res.data
+  const supports = await getData('formats')
   return {
-    paths: support.map(({ name }) => ({ params: { support: name } })),
+    paths: supports.map(({ name }) => ({ params: { support: name.toLowerCase() } })),
     fallback: false,
   }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { support } = params
-  const res = await axios.get(`http://localhost:5050/api/articles/${support}`)
-  const album = await res.data
-
+  const getArticlesBySupports = `articles/${support}`
+  const albums = await getData(getArticlesBySupports)
   return {
     props: {
-      album,
+      albums,
     },
   }
 }

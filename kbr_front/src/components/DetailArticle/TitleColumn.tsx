@@ -1,6 +1,6 @@
 import { Title3 } from '../../styles/styled'
 import RowOneColumn from '../Layout/RowOneColumn'
-import {GridProps} from "../../Interface/Interface";
+import { GridProps } from '../../Interface/Interface'
 
 interface TitleColumnProps extends GridProps {
   title: string

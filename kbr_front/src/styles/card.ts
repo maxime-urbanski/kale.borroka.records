@@ -102,8 +102,8 @@ export const CardIcon = styled.img.attrs(({ width, height, left }: CardStyledPro
   bottom: 65px;
 `
 export const CardPrice = styled.span.attrs(({ fontSize, bottom, left }: CardStyledProps) => ({
-  fontSize: fontSize || 40,
-  bottom: bottom || 65,
+  fontSize: fontSize || 25,
+  bottom: bottom || 73,
   left: left || 195,
 }))`
   position: absolute;

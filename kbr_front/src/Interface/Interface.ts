@@ -109,6 +109,7 @@ export interface HRProps {
 }
 
 export interface AlbumProps {
+  id: string
   Album: {
     name: string
     folder: string

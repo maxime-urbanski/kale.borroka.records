@@ -4,8 +4,11 @@ const Router = express.Router();
 const Article = require("../models/Article");
 const Artist = require("../models/Artist");
 const Price = require("../models/Price");
+const Label = require("../models/Label");
 const Format = require("../models/Format");
 const Quantity = require("../models/Quantity");
+const City = require('../models/City');
+const Country = require('../models/Country');
 const Song = require("../models/Song");
 const auth = require("../middlewares/auth");
 
@@ -16,7 +19,7 @@ Router.get("/", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ["name", "folder", "note","kbrProd"],
+          attributes: ["name","folder","kbrProd"],
           include: [
             {
               model: Artist,
@@ -32,10 +35,10 @@ Router.get("/", async (req, res) => {
           model: Format,
           attributes: ["name"],
         },
-        {
-          model: Quantity,
-          attributes: ["quantity"],
-        },
+      ],
+      order: [
+        [Album, Artist, "name", "ASC"],
+        [Album, "name", "ASC"],
       ],
       limit: 10,
     });
@@ -65,17 +68,82 @@ Router.get("/:support", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ["name", "folder", "note","kbrProd"],
+          attributes: ["name","folder","kbrProd"],
           include: [
             {
               model: Artist,
               attributes: ["name"],
             },
+          ],
+        },
+        {
+          model: Price,
+          attributes: ["price"],
+        },
+        {
+          model: Format,
+          attributes: ["name"],
+        },
+      ],
+      order: [
+        [Album, Artist, "name", "ASC"],
+        [Album, "name", "ASC"],
+      ],
+      limit: 10,
+    });
+    res.set({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "X-Total-Count",
+      "X-Total-Count": await Article.count(),
+    });
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+Router.get("/:support/:id", async (req, res) => {
+  const { support, id } = req.params;
+  try {
+    const findSupportId = await Format.findOne({where: {
+        name: support
+      }
+    });
+
+    const result = await Article.findOne({where: {
+        FormatId : findSupportId.id,
+        id
+      },
+      attributes: ["id"],
+      include: [
+        {
+          model: Album,
+          attributes: ["name", "folder", "note", "kbrProd"],
+          include: [
+            {
+              model: Artist,
+              attributes: ["name"],
+              include: [
+                {
+                  model: City,
+                  attributes: ["city"],
+                },
+                {
+                  model: Country,
+                  attributes: ["country", "tag"],
+                },
+              ]
+            },
+
             {
               model: Song,
               attributes: ["name", 'track'],
               through: { attributes: [] },
-
+            },
+            {
+              model: Label,
+              attributes: ["name"],
+              through: { attributes: [] },
             },
           ],
         },
@@ -98,24 +166,12 @@ Router.get("/:support", async (req, res) => {
         [Album, Song, "track", "ASC"],
       ],
       limit: 10,
-
     });
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
       "X-Total-Count": await Article.count(),
     });
-    res.status(200).json(result);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-Router.get("/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    const result = await Article.findByPk(id);
-
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
