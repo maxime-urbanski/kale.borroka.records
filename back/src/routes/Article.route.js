@@ -118,7 +118,7 @@ Router.get("/:support/:id", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ["name", "folder", "note", "kbrProd"],
+          attributes: ["name", "folder", "note", "kbrProd", "releaseDate"],
           include: [
             {
               model: Artist,

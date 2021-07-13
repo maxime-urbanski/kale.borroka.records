@@ -5,8 +5,6 @@ import {dataProvider} from "./components/auth/dataProvider";
 import {resources} from "./components/data";
 
 const App = () => {
-
-
   return (
     <>
       <Admin dataProvider={dataProvider} authProvider={authProvider}>

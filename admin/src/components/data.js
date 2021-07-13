@@ -21,6 +21,7 @@ import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import StyleIcon from "@material-ui/icons/Style";
 import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 import PeopleIcon from "@material-ui/icons/People";
+import { ListGuesser } from 'react-admin'
 
 export const resources = [
   {

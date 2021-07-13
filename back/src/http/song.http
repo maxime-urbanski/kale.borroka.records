@@ -24,3 +24,4 @@ Content-Type: application/json
 
 ### DELETE SONG
 DELETE  http://localhost:5050/api/songs/84cde9c7-b1e6-45b0-9c7a-f81cc7443559 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MjYxNzc2NzksImV4cCI6MTYyNjE4ODQ3OX0.aphQPWlbdORF9Tv1fzOaT4DYaa6GKqk-dvZj6BkGWns

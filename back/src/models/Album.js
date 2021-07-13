@@ -28,6 +28,10 @@ const Album = SequelizeConnexion.define(
       allowNull: true,
       defaultValue: false,
     },
+    releaseDate: {
+      type: Sequelize.DATEONLY,
+      allowNull: true,
+    }
   },
   { timestamps: false }
 );

@@ -3,7 +3,11 @@ import {
   ArrayInput,
   ArrayField,
   Create,
+  DateField,
   Datagrid,
+  DateInput,
+  BooleanInput,
+  BooleanField,
   Edit,
   Filter,
   ReferenceInput,
@@ -18,7 +22,6 @@ import {
   ImageField,
   SingleFieldList,
   ChipField,
-  BooleanField,
 } from "react-admin";
 
 export const FilterData = (props) => (
@@ -37,6 +40,8 @@ export const AlbumList = (props) => (
       <TextField label={'Nom de l\'album'} source="name" />
       <TextField source="note" />
       <ImageField label={'Pochette'} source="folder" />
+      <BooleanField label={'KBR PROD'} source="kbrProd" />
+      <DateField source="releaseDate" />
       <TextField label={'Style'} source="Style.name" />
       <ArrayField label={'Tracklist'} source="Songs">
         <SingleFieldList>
@@ -48,7 +53,6 @@ export const AlbumList = (props) => (
           <ChipField source="name" />
         </SingleFieldList>
       </ArrayField>
-      <BooleanField label={'KBR PROD'} source="kbrProd" />
     </Datagrid>
   </List>
 );
@@ -62,7 +66,8 @@ export const AlbumEdit = (props) => (
       <TextInput label={'Pochette'} source="folder" />
       <TextInput label={'Nom de l\'artiste'} source="Artist.name" />
       <TextInput label={'Style'} source="Style.name" />
-      <BooleanField source="kbrProd" />
+      <BooleanInput source="kbrProd" />
+      <DateInput source="releaseDate" />
       <ArrayInput label={'tracklist'} source="Songs">
         <SimpleFormIterator>
           <TextInput label={'Titre de la chanson'} source="name" />
@@ -88,10 +93,11 @@ export const AlbumCreate = (props) => (
       <TextInput source="name" />
       <TextInput source="folder" />
       <TextInput source="note" />
+      <BooleanInput source="kbrProd" />
+      <DateInput source="releaseDate" />
       <ReferenceArrayInput source="StyleId" reference="styles">
         <SelectInput optionText="name" />
       </ReferenceArrayInput>
-      <BooleanField source="kbrProd" />
       <ArrayInput source="tracklist">
         <SimpleFormIterator>
           <TextInput source="name" />

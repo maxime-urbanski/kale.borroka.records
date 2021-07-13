@@ -14,7 +14,7 @@ const auth = require("../middlewares/auth");
 router.get("/", async (req, res) => {
   try {
     const result = await Album.findAll({
-      attributes: ["id", "name", "note", "folder", "kbrProd"],
+      attributes: ["id", "name", "note", "folder", "kbrProd","releaseDate"],
       include: [
         {
           model: Artist,
@@ -54,7 +54,7 @@ router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Album.findByPk(id, {
-      attributes: ["id", "name", "note", "folder", "kbrProd"],
+      attributes: ["id", "name", "note", "folder", "kbrProd", "releaseDate"],
       include: [
         {
           model: Artist,
@@ -91,7 +91,8 @@ router.post("/", auth("ADMIN"), async (req, res) => {
     tracklist,
     labels,
     videos,
-    kbrProd
+    kbrProd,
+    releaseDate
   } = req.body;
   try {
     const postAlbum = await Album.create({
@@ -100,7 +101,8 @@ router.post("/", auth("ADMIN"), async (req, res) => {
       folder,
       ArtistId,
       StyleId,
-      kbrProd
+      kbrProd,
+      releaseDate
     });
     await addTroughTableTracklist(tracklist, Song, postAlbum);
     await postLabelInThroughTable(labels, Label, postAlbum);
@@ -113,7 +115,7 @@ router.post("/", auth("ADMIN"), async (req, res) => {
 
 router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
-  const { name, note, folder, ArtistId, StyleId, kbrProd } = req.body;
+  const { name, note, folder, ArtistId, StyleId, kbrProd, releaseDate } = req.body;
   try {
     await Album.update(
       {
@@ -123,6 +125,7 @@ router.put("/:id", auth("ADMIN"), async (req, res) => {
         ArtistId,
         StyleId,
         kbrProd,
+        releaseDate,
       },
       {
         where: { id },
