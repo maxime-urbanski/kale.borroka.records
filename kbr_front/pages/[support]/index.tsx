@@ -1,19 +1,15 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
+import { getData } from '../../src/components/Data/data'
+import { albums } from '../../src/Interface/interfaceData'
 import { Container, Column, Row, Title2 } from '../../src/styles/styled'
-import { AlbumProps } from '../../src/Interface/Interface'
 import CardArticle from '../../src/components/Article/CardArticle'
 import Breadcrumb from '../../src/components/Layout/BreadCrumb'
-import { getData } from '../../src/components/Data/data'
-
-interface albums {
-  albums: AlbumProps[]
-}
 
 const Catalog = ({ albums }: albums): JSX.Element => {
   const router = useRouter()
   const { support } = router.query
-  console.log(albums)
+
   return (
     <Container fluid>
       <Breadcrumb links={[`${support}`]} />

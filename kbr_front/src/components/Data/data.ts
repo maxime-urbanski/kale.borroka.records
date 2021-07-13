@@ -1,5 +1,5 @@
+import {AlbumProps, getAllSupports, GetDataProps} from '../../Interface/interfaceData'
 import axios from 'axios'
-import {getAllSupports, getArticlesProps, GetDataProps} from "../../Interface/interfaceData";
 
 export const about = [
   {
@@ -140,7 +140,7 @@ export const paymentAndSent = [
   },
 ]
 
-export const getData = async (slug: string): Promise<GetDataProps[]> => {
+export const getData = async (slug: string): Promise<[]> => {
   const url = `${process.env.NEXT_PUBLIC_BACK_URL}/${slug}`
   const req = await axios.get(url)
   return await req.data

@@ -108,16 +108,4 @@ export interface HRProps {
   color?: string
 }
 
-export interface AlbumProps {
-  id: string
-  Album: {
-    name: string
-    folder: string
-    kbrProd: boolean
-    Artist: {
-      name: string
-    }
-  }
-  Price: { price: number }
-  Format: { name: string }
-}
+

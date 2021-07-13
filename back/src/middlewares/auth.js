@@ -6,13 +6,15 @@ module.exports = (role) => (req, res, next) => {
   const multiRole = Array.isArray(role);
 
   if (!token) {
+    console.log('YOUHOIU')
     res.sendStatus(403)
     next();
   }
   if (token) {
     jwt.verify(token, secret, (err, payload) => {
       if (err) {
-        res.sendStatus(403);
+      console.log('DEUXIEME YOUHOIU', err)
+        res.status(403).json(err);
         next();
       }
       if (role === payload.usertype) {

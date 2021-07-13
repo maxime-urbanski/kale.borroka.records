@@ -1,15 +1,33 @@
+export interface AlbumProps {
+  id: string
+  Album: {
+    name: string
+    folder: string
+    kbrProd: boolean
+    Artist: {
+      name: string
+    }
+  }
+  Price: { price: number }
+  Format: { name: string }
+}
+
+export interface albums {
+  albums: AlbumProps[]
+}
+
 export interface getArticlesProps {
   id: string
-  Format: {
+  name: string
+}
+
+export interface getAllSupports {
+  supports: {
     name: string
   }
 }
 
-export interface getAllSupports {
-  name: string
-}
-
 export interface GetDataProps {
-  articles?: getArticlesProps | getArticlesProps[]
-  supports?: getAllSupports | getAllSupports[]
+  name: string
+  albums: albums
 }

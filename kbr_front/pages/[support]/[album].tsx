@@ -1,16 +1,14 @@
-import axios from 'axios'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { Container, HR } from '../../src/styles/styled'
 import { ArticleName, Picture } from '../../src/styles/album'
+import { AlbumProps } from '../../src/Interface/interfaceData'
 import ArticleDetail from '../../src/components/DetailArticle/ArticleDetail'
 import Tracklist from '../../src/components/DetailArticle/Tracklist'
 import Breadcrumb from '../../src/components/Layout/BreadCrumb'
 import RowOneColumn from '../../src/components/Layout/RowOneColumn'
 import RowTwoColumn from '../../src/components/Layout/RowTwoColumn'
-import {getData} from "../../src/components/Data/data";
-import {getArticlesProps} from "../../src/Interface/interfaceData";
+import { getData } from '../../src/components/Data/data'
 
 const article = {
   id: '0123456789',
@@ -18,12 +16,16 @@ const article = {
   price: 1000,
 }
 
+interface DiscProps {
+  disc: AlbumProps
+}
+
 const Img = (img: string, name: string): JSX.Element => (
   <Picture src={img} alt={name} width={450} borderRadius={5} />
 )
 const details = <ArticleDetail quantity={article.quantity} />
 
-const Article = ({ disc }): JSX.Element => {
+const Article = ({ disc }: DiscProps): JSX.Element => {
   const { Album, Price, Format, Quantity } = disc
   const { Artist, name, folder } = Album
   const title = `${Artist.name} - ${name}`
@@ -49,7 +51,6 @@ const Article = ({ disc }): JSX.Element => {
         lg={6}
         xl={5}
         xxl={4}
-        xxl={4}
         mb={50}
       />
       <HR />
@@ -60,7 +61,6 @@ const Article = ({ disc }): JSX.Element => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const articles = await getData('articles')
-  console.log(articles)
   return {
     paths: articles.map(({ Format, id }) => ({
       params: { support: Format.name.toLowerCase(), album: id },
