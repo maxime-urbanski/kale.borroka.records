@@ -1,40 +1,30 @@
-import { ArticleDetailProps } from '../../Interface/Interface'
-import { Text, Select } from '../../styles/album'
+import { useState } from 'react'
 import { Button } from '../../styles/styled'
 import RowOneColumn from '../Layout/RowOneColumn'
 import RowTwoColumn from '../Layout/RowTwoColumn'
 import TitleColumn from './TitleColumn'
-
-const note =
-  'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi, atque blanditiis consectetur cupiditate ex illum inventore laborum magnam minima molestiae officiis pariatur perferendis quasi recusandae sequi sit tempora ullam!'
-
-const TextInfos = (text: string | Element): JSX.Element => <Text>{text}</Text>
-
-const SelectQuantity = (quantityAvailable: number[]): JSX.Element => (
-  <Select>
-    {quantityAvailable.map((quantity) => (
-      <option value={quantity} key={quantity}>
-        {quantity}
-      </option>
-    ))}
-  </Select>
-)
+import { AlbumProps } from '../../Interface/interfaceData'
+import TextInfos from './TestInfos'
+import SelectQuantity from './SelectQuantity'
 
 interface rowInfosProps {
   info: string
   value: JSX.Element
 }
 
-const price = '13€'
-const style = 'Rap Punk Electro'
-const date = '20/04/2020'
-const from = 'moscow russia'
 
-const ArticleDetail = ({ quantity }: ArticleDetailProps): JSX.Element => {
+const ArticleDetail = ({ Album, Quantity, Price, setQuantity }: AlbumProps): JSX.Element => {
+  const [chooseQuantity, setChooseQuantity] = useState(0)
+  const handleChange = (event): void => setChooseQuantity(event.target.value)
+  const handleClick = (): void => setQuantity(chooseQuantity)
+  const from = `${Album.Artist.City.city} - ${Album.Artist.Country.country}`
+  const date = Album.releaseDate
+  const price = `${Price.price / 100}€`
   const quantityAvailable: number[] = []
-  for (let i = 0; i <= quantity; i++) {
+  for (let i = 0; i <= Quantity.quantity; i++) {
     quantityAvailable.push(i)
   }
+
   const rowInfos: rowInfosProps[] = [
     {
       info: 'From:',
@@ -46,7 +36,7 @@ const ArticleDetail = ({ quantity }: ArticleDetailProps): JSX.Element => {
     },
     {
       info: 'Style:',
-      value: TextInfos(style),
+      value: TextInfos(Album.Style.name),
     },
     {
       info: 'Prix:',
@@ -54,12 +44,13 @@ const ArticleDetail = ({ quantity }: ArticleDetailProps): JSX.Element => {
     },
     {
       info: 'Quantité:',
-      value: SelectQuantity(quantityAvailable),
+      value: SelectQuantity(quantityAvailable, handleChange),
     },
   ]
+
   return (
     <>
-      <TitleColumn title={'Information'} mb={40} position={'start'}/>
+      <TitleColumn title={'Information'} mb={40} position={'center'} />
       {rowInfos.map(({ info, value }, index) => (
         <RowTwoColumn
           position={'start'}
@@ -75,11 +66,8 @@ const ArticleDetail = ({ quantity }: ArticleDetailProps): JSX.Element => {
           key={index}
         />
       ))}
-      <RowOneColumn position={'center'} xs={12} sm={12} md={12} lg={10} xl={10} xxl={10}>
-        <Text fontSize={16}>{note}</Text>
-      </RowOneColumn>
       <RowOneColumn xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-        <Button border={'none'} bg={'yellow'}>
+        <Button border={'none'} bg={'yellow'} onClick={handleClick}>
           Panier
         </Button>
       </RowOneColumn>

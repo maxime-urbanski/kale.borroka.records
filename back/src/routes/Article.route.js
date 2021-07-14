@@ -10,6 +10,7 @@ const Quantity = require("../models/Quantity");
 const City = require('../models/City');
 const Country = require('../models/Country');
 const Song = require("../models/Song");
+const Style = require("../models/Style");
 const auth = require("../middlewares/auth");
 
 Router.get("/", async (req, res) => {
@@ -134,7 +135,6 @@ Router.get("/:support/:id", async (req, res) => {
                 },
               ]
             },
-
             {
               model: Song,
               attributes: ["name", 'track'],
@@ -144,6 +144,10 @@ Router.get("/:support/:id", async (req, res) => {
               model: Label,
               attributes: ["name"],
               through: { attributes: [] },
+            },
+            {
+              model: Style,
+              attributes: ["name"],
             },
           ],
         },

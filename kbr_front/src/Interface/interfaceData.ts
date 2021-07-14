@@ -4,12 +4,27 @@ export interface AlbumProps {
     name: string
     folder: string
     kbrProd: boolean
+    releaseDate: string
+    note: string
     Artist: {
+      name: string
+      City: { city: string }
+      Country: { country: string }
+    }
+    Labels: {
+      name: string
+    }
+    Songs: {
+      name: string
+      track: number
+    }
+    Style: {
       name: string
     }
   }
   Price: { price: number }
   Format: { name: string }
+  Quantity: { quantity: number }
 }
 
 export interface albums {
@@ -29,5 +44,5 @@ export interface getAllSupports {
 
 export interface GetDataProps {
   name: string
-  albums: albums
+  albums: AlbumProps[]
 }

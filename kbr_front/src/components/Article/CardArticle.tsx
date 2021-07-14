@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { AlbumProps } from '../../Interface/Interface'
+import { AlbumProps } from '../../Interface/interfaceData'
 import {
   Card,
   CardBody,

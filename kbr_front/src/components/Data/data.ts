@@ -1,4 +1,3 @@
-import {AlbumProps, getAllSupports, GetDataProps} from '../../Interface/interfaceData'
 import axios from 'axios'
 
 export const about = [
@@ -90,39 +89,6 @@ export const searchAndCart = [
     name: 'Cart',
     img: '/img/cart.svg',
   },
-]
-
-export const tracklist = [
-  { name: 'Intro', track: 1, ArtistId: 'd1cab072-2e64-46b0-9318-ffdbef497736' },
-  {
-    name: 'Souterrain feat Chata Flores',
-    track: 2,
-    ArtistId: 'd1cab072-2e64-46b0-9318-ffdbef497736',
-  },
-  { name: 'Kravmikaz', track: 3, ArtistId: 'd1cab072-2e64-46b0-9318-ffdbef497736' },
-  { name: 'Camtar', track: 4, ArtistId: 'd1cab072-2e64-46b0-9318-ffdbef497736' },
-  {
-    name: 'Crust feat My Own Voice, Matrak Attakk',
-    track: 5,
-    ArtistId: 'd1cab072-2e64-46b0-9318-ffdbef497736',
-  },
-  { name: 'GasMask feat Speira', track: 6, ArtistId: 'd1cab072-2e64-46b0-9318-ffdbef497736' },
-  { name: 'Poison feat Zafina', track: 7, ArtistId: 'd1cab072-2e64-46b0-9318-ffdbef497736' },
-  {
-    name: 'Carte Postale feat Al Nasser',
-    track: 8,
-    ArtistId: 'd1cab072-2e64-46b0-9318-ffdbef497736',
-  },
-  { name: 'City Hackers feat Aeon', track: 9, ArtistId: 'd1cab072-2e64-46b0-9318-ffdbef497736' },
-]
-
-export const infos = [
-  'ArticleId: 012354657686960°098',
-  'City: MOSCOW, Country: RUSSIA',
-  'SUPPORT: LP',
-  'STYLE: RAP PUNK ELECTRO',
-  'NOTE: 4,5/5',
-  'RELEASE DATE: 21/09/2021',
 ]
 
 export const paymentAndSent = [

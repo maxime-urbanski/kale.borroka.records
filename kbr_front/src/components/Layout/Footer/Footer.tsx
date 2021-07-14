@@ -17,6 +17,9 @@ const linkComponents = [
   },
 ]
 
+const newsletter: JSX.Element = <FooterNewsletter />
+const paymentAndSend: JSX.Element = <FooterSendAndPayment />
+
 const Footer = (): JSX.Element => {
   const year = new Date().getFullYear()
   return (
@@ -37,8 +40,8 @@ const Footer = (): JSX.Element => {
         lg={6}
         xl={6}
         xxl={6}
-        firstColumn={FooterNewsletter}
-        secondColumn={FooterSendAndPayment}
+        firstColumn={newsletter}
+        secondColumn={paymentAndSend}
         position={'center'}
       />
       <FooterDown>
