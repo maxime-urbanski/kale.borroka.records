@@ -47,7 +47,7 @@ export const Title2 = styled.h2`
 export const Title3 = styled.h3`
   color: #d9534f;
   font-size: 1.5em;
-  font-family: Gobold;
+  font-family: Gobold, sans-serif;
   font-weight: 600;
   margin: 0;
 `
@@ -66,7 +66,7 @@ export const Icon = styled.img`
   width: 30px;
 
   @media (max-width: 991px) {
-    margin: 0px;
+    margin: 0;
   }
 `
 export const HR = styled.hr.attrs(({ margin, color }: HRProps) => ({
@@ -80,9 +80,9 @@ export const HR = styled.hr.attrs(({ margin, color }: HRProps) => ({
 export const BanLogo = styled.div`
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 80px;
   justify-content: center;
-  padding: 300px 0 200px;
+  padding: 275px 0 150px;
   width: 100%;
 `
 export const Container = styled.div<{ fluid?: boolean }>`

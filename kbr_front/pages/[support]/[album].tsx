@@ -1,10 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { getData } from '../../src/components/Data/data'
 import { HR } from '../../src/styles/styled'
 import { ArticleName } from '../../src/styles/album'
 import { AlbumProps } from '../../src/Interface/interfaceData'
-import ArticleDetail from '../../src/components/DetailArticle/ArticleDetail'
 import Tracklist from '../../src/components/DetailArticle/Tracklist'
 import Breadcrumb from '../../src/components/Layout/BreadCrumb'
 import RowOneColumn from '../../src/components/Layout/RowOneColumn'
@@ -21,10 +20,6 @@ const Article = ({ disc }: DiscProps): JSX.Element => {
   const { Artist, name, folder } = Album
   const title = `${Artist.name} - ${name}`
   const [quantity, setQuantity] = useState(0)
-
-  useEffect(() => {
-    console.log('quantity ===>', quantity)
-  }, [quantity])
 
   return (
     <>
@@ -61,8 +56,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { support, album } = params
-  const getDiscInformation = `articles/${support}/${album}`
-  const disc = await getData(getDiscInformation)
+  const getDiscInformationUrl = `articles/${support}/${album}`
+  const disc = await getData(getDiscInformationUrl)
 
   return {
     props: {

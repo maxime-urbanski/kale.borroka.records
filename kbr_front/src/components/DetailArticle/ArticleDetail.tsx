@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Button } from '../../styles/styled'
+import { Button, HR } from '../../styles/styled'
+import { Text } from '../../styles/album'
 import RowOneColumn from '../Layout/RowOneColumn'
 import RowTwoColumn from '../Layout/RowTwoColumn'
 import TitleColumn from './TitleColumn'
@@ -12,18 +13,17 @@ interface rowInfosProps {
   value: JSX.Element
 }
 
-
 const ArticleDetail = ({ Album, Quantity, Price, setQuantity }: AlbumProps): JSX.Element => {
-  const [chooseQuantity, setChooseQuantity] = useState(0)
-  const handleChange = (event): void => setChooseQuantity(event.target.value)
-  const handleClick = (): void => setQuantity(chooseQuantity)
-  const from = `${Album.Artist.City.city} - ${Album.Artist.Country.country}`
-  const date = Album.releaseDate
-  const price = `${Price.price / 100}€`
   const quantityAvailable: number[] = []
   for (let i = 0; i <= Quantity.quantity; i++) {
     quantityAvailable.push(i)
   }
+  const [chooseQuantity, setChooseQuantity] = useState(0)
+  const from = `${Album.Artist.City.city} - ${Album.Artist.Country.country}`
+  const date = Album.releaseDate
+  const price = `${Price.price / 100}€`
+  const handleChange = (event): void => setChooseQuantity(event.target.value)
+  const handleClick = (): void => setQuantity(chooseQuantity)
 
   const rowInfos: rowInfosProps[] = [
     {
@@ -62,10 +62,14 @@ const ArticleDetail = ({ Album, Quantity, Price, setQuantity }: AlbumProps): JSX
           lg={6}
           xl={6}
           xxl={6}
-          mb={10}
+          mb={15}
           key={index}
         />
       ))}
+      <HR />
+      <RowOneColumn xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+        <Text>{Album.note}</Text>
+      </RowOneColumn>
       <RowOneColumn xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
         <Button border={'none'} bg={'yellow'} onClick={handleClick}>
           Panier

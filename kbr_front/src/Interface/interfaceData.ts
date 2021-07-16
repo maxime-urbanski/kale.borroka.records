@@ -1,3 +1,5 @@
+import React from 'react'
+
 export interface AlbumProps {
   id: string
   Album: {
@@ -25,6 +27,7 @@ export interface AlbumProps {
   Price: { price: number }
   Format: { name: string }
   Quantity: { quantity: number }
+  setQuantity: React.Dispatch<number>
 }
 
 export interface albums {

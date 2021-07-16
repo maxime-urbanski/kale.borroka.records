@@ -12,6 +12,7 @@ const Country = require('../models/Country');
 const Song = require("../models/Song");
 const Style = require("../models/Style");
 const auth = require("../middlewares/auth");
+const { articleAttributes } = require('./attributes/attributes')
 
 Router.get("/", async (req, res) => {
   try {
@@ -20,7 +21,7 @@ Router.get("/", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ["name","folder","kbrProd"],
+          attributes: ["name","folder","kbrProd", "kbrNum"],
           include: [
             {
               model: Artist,
@@ -62,35 +63,10 @@ Router.get("/:support", async (req, res) => {
       }
     });
 
-    const result = await Article.findAll({where: {
+    const result = await Article.findAll({ ...articleAttributes,
+      where: {
         FormatId : findSupportId.id
-      },
-      attributes: ["id"],
-      include: [
-        {
-          model: Album,
-          attributes: ["name","folder","kbrProd"],
-          include: [
-            {
-              model: Artist,
-              attributes: ["name"],
-            },
-          ],
-        },
-        {
-          model: Price,
-          attributes: ["price"],
-        },
-        {
-          model: Format,
-          attributes: ["name"],
-        },
-      ],
-      order: [
-        [Album, Artist, "name", "ASC"],
-        [Album, "name", "ASC"],
-      ],
-      limit: 10,
+      }
     });
     res.set({
       "Access-Control-Allow-Origin": "*",

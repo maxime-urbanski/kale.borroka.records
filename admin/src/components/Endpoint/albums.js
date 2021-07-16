@@ -21,8 +21,8 @@ import {
   ReferenceArrayInput,
   ImageField,
   SingleFieldList,
-  ChipField,
-} from "react-admin";
+  ChipField, NumberField,
+} from 'react-admin'
 
 export const FilterData = (props) => (
   <Filter {...props}>
@@ -41,6 +41,7 @@ export const AlbumList = (props) => (
       <TextField source="note" />
       <ImageField label={'Pochette'} source="folder" />
       <BooleanField label={'KBR PROD'} source="kbrProd" />
+      <NumberField source="kbrNum" />
       <DateField source="releaseDate" />
       <TextField label={'Style'} source="Style.name" />
       <ArrayField label={'Tracklist'} source="Songs">
@@ -67,6 +68,7 @@ export const AlbumEdit = (props) => (
       <TextInput label={'Nom de l\'artiste'} source="Artist.name" />
       <TextInput label={'Style'} source="Style.name" />
       <BooleanInput source="kbrProd" />
+      <NumberInput label={'Numero de production'} source="kbrNum" />
       <DateInput source="releaseDate" />
       <ArrayInput label={'tracklist'} source="Songs">
         <SimpleFormIterator>
@@ -94,6 +96,7 @@ export const AlbumCreate = (props) => (
       <TextInput source="folder" />
       <TextInput source="note" />
       <BooleanInput source="kbrProd" />
+      <NumberInput label={'Numero de production'} source="kbrNum" />
       <DateInput source="releaseDate" />
       <ReferenceArrayInput source="StyleId" reference="styles">
         <SelectInput optionText="name" />

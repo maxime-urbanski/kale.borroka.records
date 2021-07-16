@@ -5,7 +5,7 @@ const NavBarItems = (): JSX.Element => (
   <>
     <TextNavTop start={true}>
       <NavLink href="/">Home</NavLink>
-      <NavLink href="/">Production</NavLink>
+      <NavLink href="/production">Production</NavLink>
       <Dropdown />
     </TextNavTop>
   </>

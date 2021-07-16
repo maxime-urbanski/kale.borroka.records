@@ -1,4 +1,5 @@
 import { Select } from '../../styles/album'
+import React from 'react'
 
 const SelectQuantity = (quantityAvailable: number[], valueQuantity): JSX.Element => (
   <Select onChange={valueQuantity}>

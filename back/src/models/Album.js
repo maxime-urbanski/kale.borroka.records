@@ -15,7 +15,7 @@ const Album = SequelizeConnexion.define(
       allowNull: false,
     },
     note: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: true,
     },
     folder: {
@@ -30,6 +30,10 @@ const Album = SequelizeConnexion.define(
     },
     releaseDate: {
       type: Sequelize.DATEONLY,
+      allowNull: true,
+    },
+    kbrNum: {
+      type: Sequelize.INTEGER,
       allowNull: true,
     }
   },
