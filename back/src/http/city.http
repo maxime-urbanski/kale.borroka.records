@@ -7,9 +7,10 @@ GET http://localhost:5050/api/cities/b6014978-0f99-4a42-a3b2-dd94304666a5 HTTP/1
 ### POST CITY
 POST http://localhost:5050/api/cities HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MjY0MzczNTYsImV4cCI6MTYyNjQ0ODE1Nn0.nM6NTP_i91pPNai0otHtZUibjPRLw3fRUR87n9mti8I
 
 {  
-  "city": "Paris"  
+  "city": "Toulouse"  
 }
     
 

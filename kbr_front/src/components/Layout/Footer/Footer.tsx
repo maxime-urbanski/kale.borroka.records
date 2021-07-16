@@ -1,12 +1,12 @@
 import { Foot, FooterDown, Copyright } from '../../../styles/footer'
 import { networks, about, shop } from '../../Data/data'
-import LinkFooter from './LinkFooter'
 import { Column, Row, HR } from '../../../styles/styled'
-import TitleColumn from '../../DetailArticle/TitleColumn'
 import FooterIcon from './FooterIcon'
 import FooterNewsletter from './FooterNewsletter'
+import LinkFooter from './LinkFooter'
+import FooterSendAndPayment from './FooterSendAndPayment'
 import RowTwoColumn from '../RowTwoColumn'
-import FooterSendAndPayment from "./FooterSendAndPayment";
+import TitleColumn from '../../DetailArticle/TitleColumn'
 
 const linkComponents = [
   { link: <LinkFooter array={about} key={1} />, title: <TitleColumn title={'A propos'} key={2} /> },
@@ -17,14 +17,14 @@ const linkComponents = [
   },
 ]
 
-const newsletter = <FooterNewsletter />
-const payment = <FooterSendAndPayment />
+const newsletter: JSX.Element = <FooterNewsletter />
+const paymentAndSend: JSX.Element = <FooterSendAndPayment />
 
 const Footer = (): JSX.Element => {
   const year = new Date().getFullYear()
   return (
     <Foot>
-      <Row mb={5}>
+      <Row mb={100}>
         {linkComponents.map(({ title, link }, index) => (
           <Column xs={12} sm={12} md={12} lg={4} xl={4} xxl={4} key={index}>
             {title}
@@ -41,7 +41,7 @@ const Footer = (): JSX.Element => {
         xl={6}
         xxl={6}
         firstColumn={newsletter}
-        secondColumn={payment}
+        secondColumn={paymentAndSend}
         position={'center'}
       />
       <FooterDown>

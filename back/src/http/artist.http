@@ -7,11 +7,12 @@ GET http://localhost:5050/api/artist/421d451a-aaac-4192-8ec3-27be99009237 HTTP/1
 ### POST ARTIST
 POST http://localhost:5050/api/artists HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MjY0MzczNTYsImV4cCI6MTYyNjQ0ODE1Nn0.nM6NTP_i91pPNai0otHtZUibjPRLw3fRUR87n9mti8I
 
 {
   "name": "Krav Boca",
-  "CityId": "b6014978-0f99-4a42-a3b2-dd94304666a5",
-  "CountryId": "ab58ad7f-f3d0-4beb-978f-91ae88c483a4"
+  "CityId": "3748bff8-f844-4ab3-b090-8130baf6009e",
+  "CountryId": "2c89cd0c-7966-438b-b442-4aca65004f90"
 
 }
     

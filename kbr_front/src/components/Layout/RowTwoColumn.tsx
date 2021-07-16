@@ -1,9 +1,10 @@
 import { Column, Row } from '../../styles/styled'
 import { GridProps } from '../../Interface/Interface'
+import { FC } from 'react'
 
 interface RowTwoColumnProps extends GridProps {
-  firstColumn: JSX.Element
-  secondColumn: JSX.Element
+  firstColumn: JSX.Element | FC
+  secondColumn: JSX.Element | FC
 }
 
 const RowTwoColumn = ({

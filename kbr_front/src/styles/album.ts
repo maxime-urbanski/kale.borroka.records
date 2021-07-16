@@ -16,6 +16,9 @@ export const Picture = styled.img.attrs(
   margin-top: ${({ mT }) => `${mT}px`};
   margin-bottom: ${({ mB }) => `${mB}px`};
   border-radius: ${({ borderRadius }) => `${borderRadius}px`};
+  box-shadow: 1px 4px 8px 6px rgba(26, 26, 26, 0.67);
+  -webkit-box-shadow: 1px 4px 8px 6px rgba(26, 26, 26, 0.67);
+  -moz-box-shadow: 1px 4px 8px 6px rgba(26, 26, 26, 0.2);
 
   @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
     width: 250px;

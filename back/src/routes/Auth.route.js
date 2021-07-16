@@ -38,7 +38,7 @@ Router.post("/login", async (req, res) => {
       });
 
       delete user.dataValues.password;
-      res.status(200).json({ user, token });
+      res.status(200).json({token, user});
     }
   } catch (error) {
     res.status(401).json(error);

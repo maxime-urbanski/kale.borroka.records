@@ -5,7 +5,7 @@ import RowOneColumn from './RowOneColumn'
 
 const Breadcrumb = ({ links }: BreadCrumbProps): JSX.Element => {
   return (
-    <RowOneColumn position={'start'} mb={100} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+    <RowOneColumn position={'start'} mb={50} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
       <BreadCrumb>
         <BreadCrumbItem>
           <Link href={'/'}>kale borroka records</Link>
@@ -23,8 +23,8 @@ const Breadcrumb = ({ links }: BreadCrumbProps): JSX.Element => {
                   {link}
                 </BreadCrumbItem>
               ) : (
-                <BreadCrumbItem key={index}>
-                  <Link href={`/${link}`}>{link}</Link>
+                <BreadCrumbItem key={index * 10}>
+                  <Link href={`/${link.toLowerCase()}`}>{link}</Link>
                 </BreadCrumbItem>
               )}
             </>

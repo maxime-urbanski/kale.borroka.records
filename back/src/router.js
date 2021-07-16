@@ -14,6 +14,7 @@ const Quantity = require("./routes/Quantity.route");
 const User = require("./routes/User.route");
 const Auth = require("./routes/Auth.route");
 const Tracklist = require('./routes/Tracklist.route')
+const Production = require('./routes/Production.route')
 
 Router.use("/artists", Artist);
 Router.use("/labels", Label);
@@ -29,5 +30,6 @@ Router.use("/quantities",Quantity);
 Router.use("/users",User);
 Router.use("/auth", Auth);
 Router.use('/tracklists',Tracklist);
+Router.use('/production', Production )
 
 module.exports = Router;

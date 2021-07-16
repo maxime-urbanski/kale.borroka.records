@@ -7,54 +7,69 @@ GET http://localhost:5050/api/album/c56a446c-089e-4ea3-8425-c25d8a4b9eab HTTP/1.
 ### POST ALBUM
 POST http://localhost:5050/api/albums HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MjY0MzczNTYsImV4cCI6MTYyNjQ0ODE1Nn0.nM6NTP_i91pPNai0otHtZUibjPRLw3fRUR87n9mti8I
 
 {
-    "name": "City Hacker", 
-    "note": "Second album for Harbour Rebels",
-    "folder": "https://www.coreandco.fr/upload/pics/albums2/big/krav-boca-city-hackers-7844.jpg",
-    "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736",
-    "StyleId": "ed0fab94-d6d0-4756-bf1a-ba116bdeef54",
+    "name": "Barrikade",
+    "note": "Top Top TOP", 
+    "folder": "https://www.fireandflames.com/wp-content/uploads/2021/05/kravboca-barrikade-lp.jpg",
+    "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0",
+    "kbrProd": true,
+    "kbrNum": 3,
+    "releaseDate": "2021-02-14",
+    "StyleId": "85fc8d7b-7da1-481f-b406-066bcb0a9726",
     "tracklist": [
-        {"name":"Intro", "track": 1, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"}, 
-        {"name":"Souterrain feat Chata Flores", "track": 2, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Kravmikaz", "track": 3, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Camtar", "track": 4, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Crust feat My Own Voice, Matrak Attakk", "track": 5, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"GasMask feat Speira", "track": 6, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Poison feat Zafina", "track": 7, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Carte Postale feat Al Nasser", "track": 8, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"City Hackers feat Aeon", "track": 9, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736" }
+        {"name":"Intro", "track": 1, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"Vertigo Ft. Sponty", "track": 2, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"Fumigène", "track": 3, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"Brasero", "track": 4, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"Barrikade Ft. Sara", "track": 5, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"Ceinture Ft. Skalpel, HPS", "track": 6, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"Interlude a", "track": 7, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"Synora Ft. A. Atak Tos", "track": 8, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"Tercian", "track": 9, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"K.T.C Ft. Call The Cops", "track": 10, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"Ultra Ft. Brigada Flores Magon", "track": 11, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"L’Etat Assassine", "track": 12, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" },
+        {"name":"O.V.V.T.C", "track": 13, "ArtistId": "4c266df2-9be3-4302-82cd-935b8291b4b0" }
     ],
     "labels": [
+        {"name":"Boca Records" },
+        {"name":"Guerilla Vinyls" },
+        {"name":"Fire And Flames Music", "friend": true },
+        {"name":"MALOKA" },
+        {"name":"Urgence Disk Recordsl" },
         {"name":"Rumagna Sgroza" },
-        {"name":"Mass Productions" },
-        {"name":"Fire & Flames", "friend": true },
-        {"name":"General Strike" },
-        {"name":"Guerilla Vinyl" },
-        {"name":"Blackout Brigade" },
-        {"name":"Brigada Caoz" },
-        {"name":"Maloka Collective" },
-        {"name":"KeponTeam" },
+        {"name":"Rebel Time Records" },
+        {"name":"Machete Records" },
+        {"name":"Deviance" },
         {"name":"Up The Punx" },
-        {"name":"Subversivez ways" },
-        {"name":"Punti Scena Records" }
+        {"name":"Alternative International Movement Roma" },
+        {"name":"Punti Scena Records" },
+        {"name":"Nothing To Harvest Records" },
+        {"name":"Dure Réalité" },
+        {"name":"KeponTeam" },
+        {"name":"Anfibio Records" },
+        {"name":"Subversive Ways" },
+        {"name":"Santa Diabla" }
     ],
     "videos": [
-        {"youtube_url": "https://www.youtube.com/watch?v=jFT_vJyOAfQ"},
-        {"youtube_url": "https://www.youtube.com/watch?v=SImF_Hq5h84"},
-        {"youtube_url": "https://www.youtube.com/watch?v=jeO9KDHNjLA"}
+        {"youtube_url": "https://www.youtube.com/watch?v=RNoFLYQdJSg"},
+        {"youtube_url": "https://www.youtube.com/watch?v=FN1LoyKoP3s"},
+        {"youtube_url": "https://www.youtube.com/watch?v=YgET7zHAn0k"}
     ]
 }
 
 ### PUT ALBUM
-PUT http://localhost:5050/api/album/174b7094-bf14-40f0-a7b7-30fc3541e649 HTTP/1.1
+PUT http://localhost:5050/api/albums/bbd918e0-ce5d-448d-b515-61e0cd70ec3b HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MjY0MzczNTYsImV4cCI6MTYyNjQ0ODE1Nn0.nM6NTP_i91pPNai0otHtZUibjPRLw3fRUR87n9mti8I
 
 {
-    "name": "Messed Up",
-    "country" : "Bielorussie",
-    "town": "Grobno"
+  "kbrNum": 3
 }
 
 ### DELETE ALBUM
 DELETE  http://localhost:5050/api/albums/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MjYxNzc5OTMsImV4cCI6MTYyNjE4ODc5M30.WMOIShw5vIH83bKXUQaH6dr8m8xi0OrXVS1I2KTo1T4
+
