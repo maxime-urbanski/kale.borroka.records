@@ -13,8 +13,12 @@ const Song = require("../models/Song");
 const Style = require("../models/Style");
 const auth = require("../middlewares/auth");
 const { articleAttributes } = require('./attributes/attributes')
+const { getPagination, getPagingData } = require('./pagination/pagination')
 
 Router.get("/", async (req, res) => {
+  const { page, size } = req.query
+  console.log('page ==>',page)
+  const {limit, offset } = getPagination(page, size)
   try {
     const result = await Article.findAll({
       attributes: ["id"],
@@ -42,14 +46,15 @@ Router.get("/", async (req, res) => {
         [Album, Artist, "name", "ASC"],
         [Album, "name", "ASC"],
       ],
-      limit: 10,
+      limit,
+      offset,
     });
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
       "X-Total-Count": await Article.count(),
     });
-    res.status(200).json(result);
+    res.status(200).json(getPagingData(result,page, limit));
   } catch (err) {
     res.status(400).json(err);
   }
