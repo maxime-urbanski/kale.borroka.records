@@ -1,26 +1,25 @@
 const express = require("express");
+const { getPagination, getPagingData } = require('./pagination/pagination')
+const { articleAttributes } = require('../attributes/attributes')
+const auth = require("../middlewares/auth");
 const Album = require("../models/Album");
-const Router = express.Router();
 const Article = require("../models/Article");
 const Artist = require("../models/Artist");
-const Price = require("../models/Price");
-const Label = require("../models/Label");
-const Format = require("../models/Format");
-const Quantity = require("../models/Quantity");
 const City = require('../models/City');
 const Country = require('../models/Country');
+const Format = require("../models/Format");
+const Label = require("../models/Label");
+const Price = require("../models/Price");
+const Quantity = require("../models/Quantity");
 const Song = require("../models/Song");
 const Style = require("../models/Style");
-const auth = require("../middlewares/auth");
-const { articleAttributes } = require('./attributes/attributes')
-const { getPagination, getPagingData } = require('./pagination/pagination')
+const Router = express.Router();
 
 Router.get("/", async (req, res) => {
   const { page, size } = req.query
-  console.log('page ==>',page)
   const {limit, offset } = getPagination(page, size)
   try {
-    const result = await Article.findAll({
+    const result = await Article.findAndCountAll({
       attributes: ["id"],
       include: [
         {
@@ -52,7 +51,7 @@ Router.get("/", async (req, res) => {
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Article.count(),
+      "X-Total-Count": result.count,
     });
     res.status(200).json(getPagingData(result,page, limit));
   } catch (err) {
@@ -62,13 +61,16 @@ Router.get("/", async (req, res) => {
 
 Router.get("/:support", async (req, res) => {
   const { support } = req.params;
+  const { page, size } = req.query
+  const {limit, offset } = getPagination(page, size)
   try {
     const findSupportId = await Format.findOne({where: {
       name: support
       }
     });
-
-    const result = await Article.findAll({ ...articleAttributes,
+    const result = await Article.findAndCountAll({ ...articleAttributes,
+      limit,
+      offset,
       where: {
         FormatId : findSupportId.id
       }
@@ -76,9 +78,9 @@ Router.get("/:support", async (req, res) => {
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Article.count(),
+      "X-Total-Count": result.count,
     });
-    res.status(200).json(result);
+    res.status(200).json(getPagingData(result, page, limit));
   } catch (err) {
     res.status(400).json(err);
   }
@@ -151,11 +153,6 @@ Router.get("/:support/:id", async (req, res) => {
         [Album, Song, "track", "ASC"],
       ],
       limit: 10,
-    });
-    res.set({
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Article.count(),
     });
     res.status(200).json(result);
   } catch (err) {

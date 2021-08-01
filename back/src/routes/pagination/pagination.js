@@ -5,10 +5,11 @@ module.exports = {
     return {limit, offset}
   },
   getPagingData: (data, page, limit) => {
-    const { count: totalItems, rows: articles } = data;
+    console.log(data)
+    const { count: totalItems, rows: items } = data;
     const currentPage = page ? +page : 0;
     const totalPages = Math.ceil(totalItems / limit);
 
-    return { totalItems, articles, totalPages, currentPage };
+    return { totalItems, items, totalPages, currentPage };
   }
 }

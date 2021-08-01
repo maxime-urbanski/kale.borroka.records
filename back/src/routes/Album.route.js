@@ -10,16 +10,15 @@ const addTroughTableTracklist = require("./Trough/tracklist");
 const postLabelInThroughTable = require("./Trough/labels");
 const postVideoInThroughTable = require("./Trough/video");
 const auth = require("../middlewares/auth");
+const { withoutLocation } = require('../attributes/artistAttributes')
+
 
 router.get("/", async (req, res) => {
   try {
     const result = await Album.findAll({
       attributes: ["id", "name", "note", "folder", "kbrProd", "kbrNum","releaseDate"],
       include: [
-        {
-          model: Artist,
-          attributes: ["name"],
-        },
+        withoutLocation,
         { model: Style, attributes: ["name"] },
         {
           model: Song,
@@ -69,11 +68,6 @@ router.get("/:id", async (req, res) => {
         { model: Label, attributes: ["name"], through: { attributes: [] } },
       ],
       order: [[Label, "name", "ASC"]],
-    });
-    res.set({
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Album.count(),
     });
     res.status(200).json(result);
   } catch (err) {

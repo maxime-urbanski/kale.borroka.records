@@ -7,11 +7,11 @@ GET http://localhost:5050/api/articles/tape HTTP/1.1
 ### POST ARTICLE
 POST http://localhost:5050/api/articles HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25taWwuY29tIiwidXNlcnR5cGUiOiJBRE1JTiIsImlhdCI6MTYyNTM4ODY4OCwiZXhwIjoxNjI1Mzk5NDg4fQ.q2o1mlBb2jpsRcwBc_Em5hTRuDLli8kNverGxFyNdLQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2Mjc3MjkxMDAsImV4cCI6MTYyNzczOTkwMH0.6DC0SQ1LhD7QlB-kWs__QbVNGV2chcnhffquFPlH8O0
 
 {
-    "AlbumId": "89d3ff35-1e53-4ede-88eb-0fd2259e95bf",
-    "FormatId": "a09dfa6f-9ad8-4558-8457-4f868450e753",
-    "PriceId": "797deab7-4caf-448a-abb4-043acccd0c91",
-    "QuantityId": "36502a8d-d856-436b-9614-fc6ee166c522"
+    "AlbumId": "bbd918e0-ce5d-448d-b515-61e0cd70ec3b",
+    "FormatId": "ac9410f4-56dc-4842-8020-5a03f48fac8e",
+    "PriceId": "11072c52-60d1-4c8f-b283-a51ce3805256",
+    "QuantityId": "e6c57d38-f24c-49b8-b4f9-aaccd90fc750"
 }

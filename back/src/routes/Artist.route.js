@@ -7,7 +7,7 @@ const auth = require("../middlewares/auth");
 
 Router.get("/", async (req, res) => {
   try {
-    const result = await Artist.findAll({
+    const result = await Artist.findAndCountAll({
       attributes: ["id", "name"],
       include: [
         {
@@ -24,7 +24,7 @@ Router.get("/", async (req, res) => {
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Artist.count(),
+      "X-Total-Count":result.count,
     });
     res.status(200).json(result);
   } catch (err) {

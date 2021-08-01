@@ -1,14 +1,14 @@
-import {AlbumCreate, AlbumEdit, AlbumList} from "./Endpoint/albums";
-import {ArticleCreate, ArticleEdit, ArticleList} from "./Endpoint/article";
-import {ArtistCreate, ArtistEdit, ArtistList} from "./Endpoint/artists";
-import {CityCreate, CityEdit, CityList} from "./Endpoint/cities";
-import {CountryCreate, CountryEdit, CountryList} from "./Endpoint/countries";
-import {FormatCreate, FormatEdit, FormatList} from "./Endpoint/formats";
-import {LabelCreate, LabelEdit, LabelList} from "./Endpoint/labels";
-import {PriceCreate, PriceEdit, PriceList} from "./Endpoint/prices";
-import {QuantityCreate, QuantityEdit, QuantityList} from "./Endpoint/quantities";
-import {SongCreate, SongEdit, SongList} from "./Endpoint/songs";
-import {StyleCreate, StyleEdit, StyleList} from "./Endpoint/styles";
+import {AlbumCreate, AlbumEdit, AlbumList} from "./endpoint/albums";
+import {ArticleCreate, ArticleEdit, ArticleList} from "./endpoint/article";
+import {ArtistCreate, ArtistEdit, ArtistList} from "./endpoint/artists";
+import {CityCreate, CityEdit, CityList} from "./endpoint/cities";
+import {CountryCreate, CountryEdit, CountryList} from "./endpoint/countries";
+import {FormatCreate, FormatEdit, FormatList} from "./endpoint/formats";
+import {LabelCreate, LabelEdit, LabelList} from "./endpoint/labels";
+import {PriceCreate, PriceEdit, PriceList} from "./endpoint/prices";
+import {QuantityCreate, QuantityEdit, QuantityList} from "./endpoint/quantities";
+import {SongCreate, SongEdit, SongList} from "./endpoint/songs";
+import {StyleCreate, StyleEdit, StyleList} from "./endpoint/styles";
 import AlbumIcon from "@material-ui/icons/Album";
 import DescriptionIcon from "@material-ui/icons/Description";
 import MicIcon from "@material-ui/icons/Mic";
@@ -28,7 +28,7 @@ export const resources = [
     name: "albums", list: AlbumList, edit: AlbumEdit, create:AlbumCreate , icon: AlbumIcon,
   },
   {
-    name: "articles", list: ArticleList, edit: ArticleEdit, create:ArticleCreate , icon: DescriptionIcon,
+    name: "articles", list: ListGuesser, edit: ArticleEdit, create:ArticleCreate , icon: DescriptionIcon,
   },
   {
     name: "artists", list: ArtistList, edit: ArtistEdit, create:ArtistCreate , icon: MicIcon,
