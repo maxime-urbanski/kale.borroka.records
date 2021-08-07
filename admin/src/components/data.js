@@ -28,7 +28,7 @@ export const resources = [
     name: "albums", list: AlbumList, edit: AlbumEdit, create:AlbumCreate , icon: AlbumIcon,
   },
   {
-    name: "articles", list: ListGuesser, edit: ArticleEdit, create:ArticleCreate , icon: DescriptionIcon,
+    name: "articles", list: ArticleList, edit: ArticleEdit, create:ArticleCreate , icon: DescriptionIcon,
   },
   {
     name: "artists", list: ArtistList, edit: ArtistEdit, create:ArtistCreate , icon: MicIcon,

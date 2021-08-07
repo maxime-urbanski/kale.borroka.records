@@ -16,8 +16,8 @@ const Style = require("../models/Style");
 const Router = express.Router();
 
 Router.get("/", async (req, res) => {
-  const { page, size } = req.query
-  const {limit, offset } = getPagination(page, size)
+  const { page, perPage } = req.query
+  const {limit, offset } = getPagination(page, perPage)
   try {
     const result = await Article.findAndCountAll({
       attributes: ["id"],

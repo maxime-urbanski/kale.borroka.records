@@ -81,7 +81,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const albums = await getData(getArticlesBySupports)
   return {
     props: {
-      albums,
+      albums: albums.items,
     },
   }
 }
