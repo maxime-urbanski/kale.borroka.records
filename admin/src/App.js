@@ -2,7 +2,8 @@ import * as React from "react";
 import { Admin, Resource } from "react-admin";
 import authProvider from "./components/auth/auth";
 import {resources} from "./components/data";
-import CustomDataProvider from "./components/auth/CustomDataProvider";
+import {CustomDataProvider} from "./components/auth/CustomDataProvider";
+import {dataProvider} from "./components/auth/dataProvider";
 
 const App = () => {
   return (

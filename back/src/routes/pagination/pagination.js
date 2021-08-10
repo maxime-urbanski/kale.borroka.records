@@ -4,10 +4,10 @@ module.exports = {
     const offset = page ? page * limit : 0;
     return {limit, offset}
   },
-  getPagingData: (data, page, limit) => {
+  getPagingData: (data, page, limit, name) => {
     console.log(data)
     const { count: totalItems, rows: items } = data;
-    const currentPage = page ? +page : 0;
+    const currentPage = page ? +page + 1 : 0;
     const totalPages = Math.ceil(totalItems / limit);
 
     return { totalItems, items, totalPages, currentPage };

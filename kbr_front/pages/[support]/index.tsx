@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
+import {GetServerSideProps} from 'next'
 import { useRouter } from 'next/router'
 import { getData } from '../../src/components/Data/data'
 import { albums } from '../../src/Interface/interfaceData'
@@ -67,21 +67,14 @@ const Catalog = ({ albums }: albums): JSX.Element => {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const supports = await getData('formats')
-  return {
-    paths: supports.map(({ name }) => ({ params: { support: name.toLowerCase() } })),
-    fallback: false,
-  }
-}
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { support } = params
   const getArticlesBySupports = `articles/${support}`
   const albums = await getData(getArticlesBySupports)
+  console.log(albums)
   return {
     props: {
-      albums: albums.items,
+      albums,
     },
   }
 }
