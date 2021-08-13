@@ -73,7 +73,10 @@ export const CustomDataProvider =  {
       const postData = await instance.put(url, data)
       console.log("update ==>",await params.data)
       return {
-        data: await postData.data
+        data: {
+          id: await params.data.id,
+          ...params.data
+        }
       }
     } catch (e) {
       throw new Error(e)
