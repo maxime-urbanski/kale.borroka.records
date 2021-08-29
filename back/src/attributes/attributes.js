@@ -11,15 +11,14 @@ module.exports = {
     attributes: ['id'],
     include: [
       {...albumAttributes,
-        include: [withLocation]
+        include: [withLocation],
       },
       priceAttributes,
       formatAttributes,
       quantityAttributes,
     ],
     order: [
-      [Album, Artist, "name", "ASC"],
-      [Album, "name", "ASC"],
+      [Album, "kbrNum", "ASC"],
     ],
   },
 }

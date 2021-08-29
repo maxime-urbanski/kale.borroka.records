@@ -16,7 +16,7 @@ import {
 } from '../../styles/card'
 
 const CardArticle = ({ Album, Price, Format, id }: AlbumProps): JSX.Element => {
-  const { name, folder, kbrProd, Artist } = Album
+  const { name, folder, kbrProd, kbrNum, Artist } = Album
   const [img, setImg] = useState('/img/vinyl.svg')
   const price = Price.price / 100 + '€'
   const support = Format.name.toLowerCase()
@@ -36,7 +36,7 @@ const CardArticle = ({ Album, Price, Format, id }: AlbumProps): JSX.Element => {
       <Card>
         {kbrProd && (
           <Overlay>
-            <Ribbon>KBR#01</Ribbon>
+            <Ribbon>KBR#{kbrNum}</Ribbon>
           </Overlay>
         )}
         <CardTop>

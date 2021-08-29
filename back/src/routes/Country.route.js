@@ -2,16 +2,23 @@ const express = require("express");
 const Country = require("../models/Country");
 const Router = express.Router();
 const auth = require("../middlewares/auth");
+const {getPagination, getPagingData} = require("./pagination/pagination");
 
 Router.get("/", async (req, res) => {
+  const { page, perPage } = req.query;
+  const { limit, offset } = getPagination(page, perPage)
   try {
-    const result = await Country.findAll({ limit: 10 });
+    const result = await Country.findAndCountAll({
+      attributes: ['id', 'country'],
+      limit,
+      offset,
+    });
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Country.count(),
+      "X-Total-Count": await result.count,
     });
-    res.status(200).json(result);
+    res.status(200).json(getPagingData(result,page, limit));
   } catch (err) {
     res.status(400).json(err);
   }

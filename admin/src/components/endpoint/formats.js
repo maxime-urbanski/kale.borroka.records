@@ -6,7 +6,7 @@ import {
   SimpleForm,
   TextField,
   TextInput,
-} from "react-admin";
+} from 'react-admin';
 
 export const FormatList = (props) => (
   <List {...props}>

@@ -1,68 +1,97 @@
-import React from "react";
+import React from 'react';
 import {
   Create,
   Datagrid,
   Edit,
   List,
   NumberField,
-  NumberInput,
-  ReferenceArrayInput,
   ReferenceInput,
   SelectInput,
   SimpleForm,
   TextField,
-  TextInput, useDataProvider, useGetList,
-} from "react-admin";
+  TextInput, useCreateController, useEditContext, useEditController, useQuery,
+} from 'react-admin';
 
-export const ArticleList = (props) => {
-  return (
-    <List {...props} title="Tous les articles disponible">
-      <Datagrid rowClick="edit">
-        <TextField source="items.id" />
-        <TextField source="Album.name" />
-        <NumberField source="Price.price" />
-        <TextField source="Format.name" />
-        <NumberField source="Quantity.quantity" />
-      </Datagrid>
-    </List>
-  );
-}
-
-export const ArticleEdit = (props) => (
-  <Edit {...props} redirect="show">
-    <SimpleForm>
-      <ReferenceArrayInput label="Choix de l'album" source="AlbumId" reference="albums">
-        <SelectInput optionText="name" />
-      </ReferenceArrayInput>
-      <ReferenceInput label="Prix: " source="PriceId" reference="prices">
-        <SelectInput optionText="price" />
-      </ReferenceInput>
-      <ReferenceArrayInput label={'Support: '} source="FormatId" reference="formats">
-        <SelectInput optionText="name" />
-      </ReferenceArrayInput>
-      <ReferenceInput label={'Quantité: '} source="QuantityId" reference="quantities">
-        <SelectInput optionText="quantity" />
-      </ReferenceInput>
-    </SimpleForm>
-  </Edit>
+export const ArticleList = (props) => (
+  <List {...props} title="Tous les articles disponible">
+    <Datagrid rowClick="edit">
+      <TextField source="items.id" />
+      <TextField source="Album.name" />
+      <NumberField source="Price.price" />
+      <TextField source="Format.name" />
+      <NumberField source="Quantity.quantity" />
+    </Datagrid>
+  </List>
 );
+
+export const ArticleEdit = (props) => {
+  console.log(props)
+  return (
+    <Edit {...props} redirect="show">
+      <SimpleForm>
+        <ReferenceInput label="Choix de l'album" source="AlbumId" reference="albums">
+          <SelectInput optionText="name" />
+        </ReferenceInput>
+        <ReferenceInput label="Prix: " source="PriceId" reference="prices">
+          <SelectInput optionText="price" />
+        </ReferenceInput>
+        <ReferenceInput label="Support: " source="FormatId" reference="formats">
+          <SelectInput optionText="name" />
+        </ReferenceInput>
+        <ReferenceInput label="Quantité: " source="QuantityId" reference="quantities">
+          <SelectInput optionText="quantity" />
+        </ReferenceInput>
+      </SimpleForm>
+    </Edit>
+  )
+};
 
 export const ArticleCreate = (props) => (
   <Create {...props} redirect="show">
     <SimpleForm>
       <TextInput source="id" />
-      <ReferenceArrayInput label="Choix de l'album" source="AlbumId" reference="albums">
+      <ReferenceInput label="Choix de l'album" source="AlbumId" reference="albums">
         <SelectInput optionText="name" />
-      </ReferenceArrayInput>
+      </ReferenceInput>
       <ReferenceInput label="Prix: " source="PriceId" reference="prices">
         <SelectInput optionText="price" />
       </ReferenceInput>
-      <ReferenceArrayInput label={'Support: '} source="FormatId" reference="formats">
+      <ReferenceInput label="Support: " source="FormatId" reference="formats">
         <SelectInput optionText="name" />
-      </ReferenceArrayInput>
-      <ReferenceInput label={'Quantité: '} source="QuantityId" reference="quantities">
+      </ReferenceInput>
+      <ReferenceInput label="Quantité: " source="QuantityId" reference="quantities">
         <SelectInput optionText="quantity" />
       </ReferenceInput>
     </SimpleForm>
   </Create>
 );
+
+
+export const CustomArticleEdit = (props) => {
+  console.log(props)
+  const { data, loading, error } = useQuery({ type: 'getOne', resource:'articles', payload: {
+      support: 'lp', id: props.id
+    }})
+  if (loading) return <h1>loading</h1>;
+  if (error) return <h1>{error}</h1>;
+  if (!data) return null;
+
+  return (
+    <Edit {...props} redirect="show">
+      <SimpleForm>
+        <ReferenceInput label="Choix de l'album" source="AlbumId" reference="albums">
+          <SelectInput optionText="name" />
+        </ReferenceInput>
+        <ReferenceInput label="Prix: " source="PriceId" reference="prices">
+          <SelectInput optionText="price" />
+        </ReferenceInput>
+        <ReferenceInput label="Support: " source="FormatId" reference="formats">
+          <SelectInput optionText="name" />
+        </ReferenceInput>
+        <ReferenceInput label="Quantité: " source="QuantityId" reference="quantities">
+          <SelectInput optionText="quantity" />
+        </ReferenceInput>
+      </SimpleForm>
+    </Edit>
+  )
+}

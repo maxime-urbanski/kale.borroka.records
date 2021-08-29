@@ -5,11 +5,10 @@ import {
   Edit,
   SimpleForm,
   TextInput,
-  Create
-} from 'react-admin'
+  Create,
+} from 'react-admin';
 
-
-export const CityList = props => (
+export const CityList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
@@ -18,7 +17,7 @@ export const CityList = props => (
   </List>
 );
 
-export const CityEdit = props => (
+export const CityEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="id" />
@@ -27,7 +26,7 @@ export const CityEdit = props => (
   </Edit>
 );
 
-export const CityCreate = props => (
+export const CityCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
       <TextInput source="id" />

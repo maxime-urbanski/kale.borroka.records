@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   ArrayInput,
   ArrayField,
@@ -22,7 +22,7 @@ import {
   ImageField,
   SingleFieldList,
   ChipField, NumberField,
-} from 'react-admin'
+} from 'react-admin';
 
 export const FilterData = (props) => (
   <Filter {...props}>
@@ -36,20 +36,20 @@ export const FilterData = (props) => (
 export const AlbumList = (props) => (
   <List filters={<FilterData />} {...props} title="Tous les albums">
     <Datagrid rowClick="edit">
-      <TextField label={'Artiste'} source="Artist.name" />
+      <TextField label="Artiste" source="Artist.name" />
       <TextField label={'Nom de l\'album'} source="name" />
       <TextField source="note" />
-      <ImageField label={'Pochette'} source="folder" />
-      <BooleanField label={'KBR PROD'} source="kbrProd" />
+      <ImageField label="Pochette" source="folder" />
+      <BooleanField label="KBR PROD" source="kbrProd" />
       <NumberField source="kbrNum" />
       <DateField source="releaseDate" />
-      <TextField label={'Style'} source="Style.name" />
-      <ArrayField label={'Tracklist'} source="Songs">
+      <TextField label="Style" source="Style.name" />
+      <ArrayField label="Tracklist" source="Songs">
         <SingleFieldList>
           <ChipField source="name" />
         </SingleFieldList>
       </ArrayField>
-      <ArrayField label={'Produit par'} source="Labels">
+      <ArrayField label="Produit par" source="Labels">
         <SingleFieldList>
           <ChipField source="name" />
         </SingleFieldList>
@@ -64,24 +64,24 @@ export const AlbumEdit = (props) => (
       <TextInput source="id" />
       <TextInput label={'Nom de l\'album'} source="name" />
       <TextInput label={'Info sur l\'album'} source="note" />
-      <TextInput label={'Pochette'} source="folder" />
+      <TextInput label="Pochette" source="folder" />
       <TextInput label={'Nom de l\'artiste'} source="Artist.name" />
-      <TextInput label={'Style'} source="Style.name" />
+      <TextInput label="Style" source="Style.name" />
       <BooleanInput source="kbrProd" />
-      <NumberInput label={'Numero de production'} source="kbrNum" />
+      <NumberInput label="Numero de production" source="kbrNum" />
       <DateInput source="releaseDate" />
-      <ArrayInput label={'tracklist'} source="Songs">
+      <ArrayInput label="tracklist" source="Songs">
         <SimpleFormIterator>
-          <TextInput label={'Titre de la chanson'} source="name" />
-          <NumberInput label={'Numéro de piste'} source="Tracklist.position" />
+          <TextInput label="Titre de la chanson" source="name" />
+          <NumberInput label="Numéro de piste" source="Tracklist.position" />
         </SimpleFormIterator>
       </ArrayInput>
-      <ArrayInput label={'Liste des labels'} source="label">
+      <ArrayInput label="Liste des labels" source="label">
         <SimpleFormIterator>
-          <TextInput label={'Produit par'} source="name" />
+          <TextInput label="Produit par" source="name" />
         </SimpleFormIterator>
       </ArrayInput>
-      <TextInput label={'Video Youtube'} source="Videos" />
+      <TextInput label="Video Youtube" source="Videos" />
     </SimpleForm>
   </Edit>
 );
@@ -96,7 +96,7 @@ export const AlbumCreate = (props) => (
       <TextInput source="folder" />
       <TextInput source="note" />
       <BooleanInput source="kbrProd" />
-      <NumberInput label={'Numero de production'} source="kbrNum" />
+      <NumberInput label="Numero de production" source="kbrNum" />
       <DateInput source="releaseDate" />
       <ReferenceArrayInput source="StyleId" reference="styles">
         <SelectInput optionText="name" />

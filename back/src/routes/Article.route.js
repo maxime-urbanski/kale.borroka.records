@@ -59,7 +59,7 @@ Router.get("/", async (req, res) => {
   }
 });
 
-Router.get("/:id", async (req, res) => {
+/*Router.get("/:id", async (req, res) => {
   const {id} = req.params;
   try {
     const findArticle = await Article.findByPk(id,{
@@ -89,17 +89,19 @@ Router.get("/:id", async (req, res) => {
   } catch {
     res.status(401).json('Articles non trouvé')
   }
-});
+});*/
 
 Router.get("/:support", async (req, res) => {
   const { support } = req.params;
-  const { page, size } = req.query
-  const {limit, offset } = getPagination(page, size)
+  const { page, perPage } = req.query
+  const {limit, offset } = getPagination(page, perPage)
+
   try {
+    console.log("je suis pas ARTICLE SUPPORT");
     const findSupportId = await Format.findOne({where: {
       name: support
       }
-    });
+    })
     const result = await Article.findAndCountAll({ ...articleAttributes,
       limit,
       offset,
@@ -112,6 +114,7 @@ Router.get("/:support", async (req, res) => {
       "Access-Control-Expose-Headers": "X-Total-Count",
       "X-Total-Count": result.count,
     });
+    console.log(result);
     res.status(200).json(getPagingData(result, page, limit));
   } catch (err) {
     res.status(400).json(err);
@@ -134,7 +137,7 @@ Router.get("/:support/:id", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ["name", "folder", "note", "kbrProd", "releaseDate"],
+          attributes: ["name", "folder", "note", "kbrProd","kbrNum", "releaseDate"],
           include: [
             {
               model: Artist,

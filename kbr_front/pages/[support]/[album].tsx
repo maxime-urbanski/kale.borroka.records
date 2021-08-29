@@ -20,7 +20,7 @@ const Article = ({ disc }: DiscProps): JSX.Element => {
   const { Artist, name, folder, kbrProd, kbrNum } = Album
   const title = `${Artist.name} - ${name}`
   const [quantity, setQuantity] = useState(0)
-
+  console.log(disc)
   return (
     <>
       <Breadcrumb links={[Format.name, title]} />

@@ -8,7 +8,7 @@ import {
   SimpleForm,
   TextField,
   TextInput,
-} from "react-admin";
+} from 'react-admin';
 
 export const SongList = (props) => (
   <List {...props}>

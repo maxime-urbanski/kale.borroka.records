@@ -5,11 +5,11 @@ import {
   Edit,
   SimpleForm,
   TextInput,
-  Create, SelectInput, ReferenceArrayInput
-} from 'react-admin'
-import React from "react";
+  Create, SelectInput, ReferenceArrayInput,
+} from 'react-admin';
+import React from 'react';
 
-export const ArtistList = props => (
+export const ArtistList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
@@ -20,7 +20,7 @@ export const ArtistList = props => (
   </List>
 );
 
-export const ArtistEdit = props => (
+export const ArtistEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="id" />
@@ -31,15 +31,15 @@ export const ArtistEdit = props => (
   </Edit>
 );
 
-export const ArtistCreate = props => (
+export const ArtistCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
       <TextInput source="id" />
       <TextInput source="name" />
-      <ReferenceArrayInput label={'Ville: '} source="CityId" reference="cities">
+      <ReferenceArrayInput label="Ville: " source="CityId" reference="cities">
         <SelectInput optionText="city" />
       </ReferenceArrayInput>
-      <ReferenceArrayInput label={'Pays: '} source="CountryId" reference="countries">
+      <ReferenceArrayInput label="Pays: " source="CountryId" reference="countries">
         <SelectInput optionText="country" />
       </ReferenceArrayInput>
     </SimpleForm>

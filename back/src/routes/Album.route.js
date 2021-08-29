@@ -11,11 +11,14 @@ const postLabelInThroughTable = require("./Trough/labels");
 const postVideoInThroughTable = require("./Trough/video");
 const auth = require("../middlewares/auth");
 const { withoutLocation } = require('../attributes/artistAttributes')
+const {getPagination, getPagingData} = require("./pagination/pagination");
 
 
 router.get("/", async (req, res) => {
+  const { page, perPage } = req.query;
+  const { limit, offset } = getPagination(page, perPage)
   try {
-    const result = await Album.findAll({
+    const result = await Album.findAndCountAll({
       attributes: ["id", "name", "note", "folder", "kbrProd", "kbrNum","releaseDate"],
       include: [
         withoutLocation,
@@ -36,14 +39,18 @@ router.get("/", async (req, res) => {
         [Song, "track", "ASC"],
         [Label, "name", "ASC"],
       ],
-      limit: 10,
+      limit,
+      offset,
     });
+
+    // TODO resolve findAndCountAll
+    result.count = await Album.count();
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Album.count(),
+      "X-Total-Count": await result.count,
     });
-    res.status(200).json(result);
+    res.status(200).json(getPagingData(result,page, limit));
   } catch (err) {
     res.status(400).json(err);
   }

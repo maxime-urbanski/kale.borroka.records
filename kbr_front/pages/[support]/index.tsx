@@ -1,4 +1,4 @@
-import {GetServerSideProps} from 'next'
+import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
 import { getData } from '../../src/components/Data/data'
 import { albums } from '../../src/Interface/interfaceData'
@@ -6,10 +6,9 @@ import { Container, Column, Row, Title2 } from '../../src/styles/styled'
 import CardArticle from '../../src/components/Article/CardArticle'
 import Breadcrumb from '../../src/components/Layout/BreadCrumb'
 
-const Catalog = ({ albums }: albums): JSX.Element => {
+const Catalog = ({ albums }: albums[]): JSX.Element => {
   const router = useRouter()
   const { support } = router.query
-
   return (
     <Container fluid>
       <Breadcrumb links={[`${support}`]} />
@@ -71,10 +70,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { support } = params
   const getArticlesBySupports = `articles/${support}`
   const albums = await getData(getArticlesBySupports)
-  console.log(albums)
   return {
     props: {
-      albums,
+      albums: albums.items,
     },
   }
 }
