@@ -1,3 +1,4 @@
+import React from "react";
 import {
   List,
   Datagrid,
@@ -6,7 +7,7 @@ import {
   SimpleForm,
   TextInput,
   Create,
-} from 'react-admin';
+} from "react-admin";
 
 export const CityList = (props) => (
   <List {...props}>

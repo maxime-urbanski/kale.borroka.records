@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Create,
   Datagrid,
@@ -6,7 +7,7 @@ import {
   SimpleForm,
   TextField,
   TextInput,
-} from 'react-admin';
+} from "react-admin";
 
 export const StyleList = (props) => (
   <List {...props}>
