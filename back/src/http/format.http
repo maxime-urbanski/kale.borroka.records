@@ -7,9 +7,11 @@ GET http://localhost:5050/api/formats/c2bfb37f-3674-4e68-a4e8-234940e3745d HTTP/
 ### POST FORMAT
 POST http://localhost:5050/api/formats HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MzI2NzAyNjAsImV4cCI6MTYzMjY4MTA2MH0.qWSpCM1vhh49ZmSKXs_fnCAd9wopK3XPjK2_lIG_47g
+
 
 {
-    "name": "ep"
+    "name": "CD"
 }
 
 ### PUT FORMAT

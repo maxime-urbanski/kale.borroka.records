@@ -7,21 +7,21 @@ GET http://localhost:5050/api/countries/ab58ad7f-f3d0-4beb-978f-91ae88c483a4 HTT
 ### POST COUNTRY
 POST http://localhost:5050/api/countries HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MjY0MzczNTYsImV4cCI6MTYyNjQ0ODE1Nn0.nM6NTP_i91pPNai0otHtZUibjPRLw3fRUR87n9mti8I
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MzI2NzAyNjAsImV4cCI6MTYzMjY4MTA2MH0.qWSpCM1vhh49ZmSKXs_fnCAd9wopK3XPjK2_lIG_47g
 
-{  
+{
   "country": "France",
-  "tag": "FR"  
+  "tag": "FR"
 }
-    
+
 
 ### PUT COUNTRY
 PUT http://localhost:5050/api/countries/10637eb9-26f1-4410-9028-d39affda4f05 HTTP/1.1
 Content-Type: application/json
 
-{  
+{
   "country": "GERMANY"
-    
+
 }
 
 ### DELETE CITY

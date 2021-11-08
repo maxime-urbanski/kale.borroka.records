@@ -2,16 +2,19 @@ const express = require("express");
 const RouterPrice = express.Router();
 const Price = require("../models/Price");
 const auth = require("../middlewares/auth");
+const {getPagination, getPagingData} = require("./pagination/pagination");
 
 RouterPrice.get("/", async (req, res) => {
+  const { page, perPage } = req.query;
+  const { limit, offset } = getPagination(page, perPage)
   try {
-    const result = await Price.findAll({ limit: 10 });
+    const result = await Price.findAndCountAll({ limit, offset });
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Price.count(),
+      "X-Total-Count": await result.count,
     });
-    res.status(200).json(result);
+    res.status(200).json(getPagingData(result, page, limit));
   } catch (err) {
     res.status(400).json(err);
   }

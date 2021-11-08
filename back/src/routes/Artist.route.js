@@ -4,10 +4,13 @@ const Artist = require("../models/Artist");
 const City = require("../models/City");
 const Country = require("../models/Country");
 const auth = require("../middlewares/auth");
+const {getPagination, getPagingData} = require("./pagination/pagination");
 
 Router.get("/", async (req, res) => {
+  const { page, perPage } = req.query
+  const {limit, offset } = getPagination(page, perPage)
   try {
-    const result = await Artist.findAll({
+    const result = await Artist.findAndCountAll({
       attributes: ["id", "name"],
       include: [
         {
@@ -19,14 +22,15 @@ Router.get("/", async (req, res) => {
           attributes: ["country", "tag"],
         },
       ],
-      limit: 10,
+      limit,
+      offset,
     });
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Artist.count(),
+      "X-Total-Count":result.count,
     });
-    res.status(200).json(result);
+    res.status(200).json(getPagingData(result, page, limit));
   } catch (err) {
     res.status(400).json(err);
   }

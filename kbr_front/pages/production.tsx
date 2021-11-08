@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import { getData } from '../src/components/Data/data'
 import TitleColumn from '../src/components/DetailArticle/TitleColumn'
 import { useRouter } from 'next/router'
@@ -8,6 +8,7 @@ import CardArticle from '../src/components/Article/CardArticle'
 const Production = ({ ourProduction }): JSX.Element => {
   const router = useRouter()
   const production = router.asPath.replace('/', '')
+  console.log(ourProduction)
 
   return (
     <Container fluid>
@@ -25,11 +26,11 @@ const Production = ({ ourProduction }): JSX.Element => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const ourProduction = await getData('production')
   return {
     props: {
-      ourProduction,
+      ourProduction: ourProduction.items,
     },
   }
 }

@@ -17,10 +17,10 @@ interface DiscProps {
 
 const Article = ({ disc }: DiscProps): JSX.Element => {
   const { Album, Format } = disc
-  const { Artist, name, folder } = Album
+  const { Artist, name, folder, kbrProd, kbrNum } = Album
   const title = `${Artist.name} - ${name}`
   const [quantity, setQuantity] = useState(0)
-
+  console.log(disc)
   return (
     <>
       <Breadcrumb links={[Format.name, title]} />
@@ -28,7 +28,7 @@ const Article = ({ disc }: DiscProps): JSX.Element => {
         <ArticleName fontSize={45}>{title}</ArticleName>
       </RowOneColumn>
       <RowTwoColumn
-        firstColumn={Img(folder, name, Album.kbrProd)}
+        firstColumn={Img(folder, name,kbrProd, kbrNum)}
         secondColumn={details(disc, setQuantity)}
         xs={12}
         sm={12}
@@ -44,21 +44,11 @@ const Article = ({ disc }: DiscProps): JSX.Element => {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const articles = await getData('articles')
-  return {
-    paths: articles.map(({ Format, id }) => ({
-      params: { support: Format.name.toLowerCase(), album: id },
-    })),
-    fallback: false,
-  }
-}
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetStaticProps = async ({ params }) => {
   const { support, album } = params
   const getDiscInformationUrl = `articles/${support}/${album}`
   const disc = await getData(getDiscInformationUrl)
-
+  console.log(disc)
   return {
     props: {
       disc,

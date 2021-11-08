@@ -7,22 +7,22 @@ GET http://localhost:5050/api/artist/421d451a-aaac-4192-8ec3-27be99009237 HTTP/1
 ### POST ARTIST
 POST http://localhost:5050/api/artists HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MjY0MzczNTYsImV4cCI6MTYyNjQ0ODE1Nn0.nM6NTP_i91pPNai0otHtZUibjPRLw3fRUR87n9mti8I
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MzI2NzAyNjAsImV4cCI6MTYzMjY4MTA2MH0.qWSpCM1vhh49ZmSKXs_fnCAd9wopK3XPjK2_lIG_47g
 
 {
   "name": "Krav Boca",
-  "CityId": "3748bff8-f844-4ab3-b090-8130baf6009e",
-  "CountryId": "2c89cd0c-7966-438b-b442-4aca65004f90"
+  "CityId": "9d0c3bfe-bc9f-4297-a016-37ea2c1ee4ac",
+  "CountryId": "d9e02858-15ab-459f-9526-a787aa220909"
 
 }
-    
+
 
 ### PUT ARTIST
 PUT http://localhost:5050/api/artist/e9c34d96-d4f3-4019-bd4f-596343cec444 HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Krav Boca"  
+  "name": "Krav Boca"
 }
 
 ### DELETE ARTIST

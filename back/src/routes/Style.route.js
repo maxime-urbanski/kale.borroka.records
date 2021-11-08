@@ -2,16 +2,19 @@ const express = require("express");
 const RouterStyle = express.Router();
 const Style = require("../models/Style");
 const auth = require("../middlewares/auth");
+const {getPagination, getPagingData} = require("./pagination/pagination");
 
 RouterStyle.get("/", async (req, res) => {
+  const { page, perPage } = req.query;
+  const { limit, offset } = getPagination(page, perPage)
   try {
-    const result = await Style.findAll({ limit: 10 });
+    const result = await Style.findAndCountAll({ limit, offset });
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Style.count(),
+      "X-Total-Count": await result.count,
     });
-    res.status(200).json(result);
+    res.status(200).json(getPagingData(result, page, limit));
   } catch (err) {
     res.status(400).json(err);
   }
