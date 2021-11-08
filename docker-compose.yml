@@ -1,0 +1,67 @@
+version: '3.3'
+services:
+
+  db-kbr:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/data/db:rw
+    environment:
+      MYSQL_ROOT_PASSWORD: kbrdb.0161
+      MYSQL_DATABASE: kale_borroka_records
+      MYSQL_USER: kbrdb
+      MYSQL_PASSWORD: kbrdb.0161
+      MYSQL_RANDOM_ROOT_PASSWORD: ''
+
+  admin-kbr:
+    image: maxiloud/kbr_admin
+    build: ./admin
+    ports:
+      - 3001:3000
+    volumes:
+      - /data:/data
+      - ./admin:/app/admin
+    environment:
+      REACT_APP_BACK_URL: http://localhost:5050/api
+
+  back-kbr:
+    image: maxiloud/kbr_back
+    build: ./back
+    ports:
+      - 5050:5050
+    volumes:
+      - /data:/data
+      - ./back:/app/back:rw
+      - ./back/Sequelize:/app/back/Sequelize:rw
+    environment:
+      DB_HOST: db-kbr
+      DB_USER: kbrdb
+      DB_PASSWORD: kbrdb.0161
+      DB_NAME: kale_borroka_records
+      DB_DIALECT: mysql
+      JWT_SECRET: kale.b0RrOka.Rec0rdS.161
+    depends_on:
+      - db-kbr
+    healthcheck:
+      interval: 45s
+      timeout: 5s
+      retries: 3
+
+  front-kbr:
+    image: maxiloud/kbr_front
+    build: ./kbr_front
+    ports:
+      - 3000:3000
+    depends_on:
+      - back-kbr
+    volumes:
+      - ./kbr_front/src:/app/src:rw
+      - ./kbr_front/public:/app/public:rw
+      - ./kbr_front/pages:/app/pages:rw
+      - /app/front/node_modules
+    environment:
+      NEXT_PUBLIC_BACK_URL: http://back-kbr:5050/api
+
+volumes:
+  db:

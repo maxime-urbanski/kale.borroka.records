@@ -7,31 +7,31 @@ GET http://localhost:5050/api/album/c56a446c-089e-4ea3-8425-c25d8a4b9eab HTTP/1.
 ### POST ALBUM
 POST http://localhost:5050/api/albums HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MzI2NzAyNjAsImV4cCI6MTYzMjY4MTA2MH0.qWSpCM1vhh49ZmSKXs_fnCAd9wopK3XPjK2_lIG_47g
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MzY4OTc1MTgsImV4cCI6MTYzNjkwODMxOH0.tDLdHzJLxo2dG-s1KfQB0NT55TBNgSop0PV8KYyMwU0
 
 {
     "name": "Barrikade",
     "note": "Top Top TOP",
     "folder": "https://www.fireandflames.com/wp-content/uploads/2021/05/kravboca-barrikade-lp.jpg",
-    "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600",
+    "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621",
     "kbrProd": true,
     "kbrNum": 3,
     "releaseDate": "2021-02-14",
-    "StyleId": "6c36bc0b-3697-41ae-ad14-8f16e759a65d",
+    "StyleId": "94c3a3d5-8734-493a-bd26-260e6898551e",
     "tracklist": [
-        {"name":"Intro", "track": 1, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"Vertigo Ft. Sponty", "track": 2, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"Fumigène", "track": 3, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"Brasero", "track": 4, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"Barrikade Ft. Sara", "track": 5, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"Ceinture Ft. Skalpel, HPS", "track": 6, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"Interlude a", "track": 7, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"Synora Ft. A. Atak Tos", "track": 8, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"Tercian", "track": 9, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"K.T.C Ft. Call The Cops", "track": 10, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"Ultra Ft. Brigada Flores Magon", "track": 11, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"L’Etat Assassine", "track": 12, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" },
-        {"name":"O.V.V.T.C", "track": 13, "ArtistId": "d5e63129-9f96-4d52-912a-e8d28c7a4600" }
+        {"name":"Intro", "track": 1, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"Vertigo Ft. Sponty", "track": 2, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"Fumigène", "track": 3, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"Brasero", "track": 4, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"Barrikade Ft. Sara", "track": 5, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"Ceinture Ft. Skalpel, HPS", "track": 6, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"Interlude a", "track": 7, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"Synora Ft. A. Atak Tos", "track": 8, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"Tercian", "track": 9, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"K.T.C Ft. Call The Cops", "track": 10, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"Ultra Ft. Brigada Flores Magon", "track": 11, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"L’Etat Assassine", "track": 12, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" },
+        {"name":"O.V.V.T.C", "track": 13, "ArtistId": "7c3117c1-637d-490b-b43b-441fd67aa621" }
     ],
     "labels": [
         {"name":"Boca Records" },
@@ -72,5 +72,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1he
 
 ### DELETE ALBUM
 DELETE  http://localhost:5050/api/albums/ HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MzAyMjY0MjAsImV4cCI6MTYzMDIzNzIyMH0.2uIOlQgwgQUYrgU4t8I-s8nsUY1P6UUEVhN3Cp0nipo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MzY4OTc1MTgsImV4cCI6MTYzNjkwODMxOH0.tDLdHzJLxo2dG-s1KfQB0NT55TBNgSop0PV8KYyMwU0
 

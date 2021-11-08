@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings=0 ."
@@ -24,7 +24,7 @@
     "ts-node": "^9.1.1"
   },
   "devDependencies": {
-    "@types/node": "^14.14.37",
+    "@types/node": "^16.11.7",
     "@types/react": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
