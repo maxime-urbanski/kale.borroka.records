@@ -59,38 +59,6 @@ Router.get("/", async (req, res) => {
   }
 });
 
-/*Router.get("/:id", async (req, res) => {
-  const {id} = req.params;
-  try {
-    const findArticle = await Article.findByPk(id,{
-      attributes: ["id"],
-      include: [
-        {
-          model: Album,
-          attributes: ["name","folder","kbrProd", "kbrNum"],
-          include: [
-            {
-              model: Artist,
-              attributes: ["name"],
-            },
-          ]
-        },
-        {
-          model: Price,
-          attributes: ["price"],
-        },
-        {
-          model: Format,
-          attributes: ["name"],
-        },
-      ],
-    });
-    res.status(200).json(findArticle)
-  } catch {
-    res.status(401).json('Articles non trouvé')
-  }
-});*/
-
 Router.get("/:support", async (req, res) => {
   const { support } = req.params;
   const { page, perPage } = req.query

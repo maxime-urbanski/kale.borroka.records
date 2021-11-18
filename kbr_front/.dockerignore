@@ -1,0 +1,5 @@
+.env
+.gitignore
+.prettierignore
+next-env.d.ts
+yarn.lock

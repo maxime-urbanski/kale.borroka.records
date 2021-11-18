@@ -107,7 +107,8 @@ export const paymentAndSent = [
 ]
 
 export const getData = async (slug: string, page = 0, perPage = 9): Promise<[]> => {
-  const url = `${process.env.NEXT_PUBLIC_BACK_URL}/${slug}?page=${page}&perPage=${perPage}`
+  console.log("YOUHOU ==>",process.env)
+  const url = `${process.env.NEXT_PUBLIC_BACK_URL}/${slug}`
   const req = await axios.get(url)
   return await req.data
 }

@@ -3,3 +3,5 @@ build/
 node_modules/
 .gitignore
 yarn.lock
+src/http
+package-lock.json

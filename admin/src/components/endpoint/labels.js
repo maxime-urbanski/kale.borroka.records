@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BooleanField,
   BooleanInput,
@@ -8,7 +9,7 @@ import {
   SimpleForm,
   TextField,
   TextInput,
-} from 'react-admin';
+} from "react-admin";
 
 export const LabelList = (props) => (
   <List {...props}>

@@ -1,6 +1,13 @@
+import React from "react";
 import {
-  Create, Datagrid, Edit, List, SimpleForm, TextField, TextInput,
-} from 'react-admin';
+  Create,
+  Datagrid,
+  Edit,
+  List,
+  SimpleForm,
+  TextField,
+  TextInput,
+} from "react-admin";
 
 export const CountryList = (props) => (
   <List {...props}>

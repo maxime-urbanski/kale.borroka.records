@@ -1,4 +1,3 @@
-import { stringify } from 'querystring';
 import axios from 'axios';
 
 const apiUrl = process.env.REACT_APP_BACK_URL;
@@ -15,7 +14,6 @@ const instance = axios.create({
 export const CustomDataProvider = {
   getList: async (resource, params) => {
     const { page, perPage } = params.pagination;
-    const { field, order } = params.sort;
 
     const url = `/${resource}?page=${page - 1}&perPage=${perPage}`;
     try {

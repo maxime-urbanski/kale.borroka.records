@@ -10,7 +10,6 @@ import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import StyleIcon from '@material-ui/icons/Style';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import PeopleIcon from '@material-ui/icons/People';
-import { EditGuesser } from 'react-admin';
 import { StyleCreate, StyleEdit, StyleList } from './endpoint/styles';
 import { SongCreate, SongEdit, SongList } from './endpoint/songs';
 import { QuantityCreate, QuantityEdit, QuantityList } from './endpoint/quantities';

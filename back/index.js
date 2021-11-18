@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res, next) => {
-  res.status(200).send("Kale Borroka Records API");
+  res.status(200).send("Kale Borroka Records API !");
 });
 
 app.use("/api", Router);
@@ -21,7 +21,7 @@ sequelize
   .sync()
   .then(() => sequelize.authenticate())
   .then(() =>
-    console.log("Database connection has been established successfully")
+    console.log("Database connection has been established successfully OK")
   )
   .then(
     app.listen(port, () => {
