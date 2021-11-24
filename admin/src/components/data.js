@@ -19,7 +19,7 @@ import { FormatCreate, FormatEdit, FormatList } from './endpoint/formats';
 import { CountryCreate, CountryEdit, CountryList } from './endpoint/countries';
 import { CityCreate, CityEdit, CityList } from './endpoint/cities';
 import { ArtistCreate, ArtistEdit, ArtistList } from './endpoint/artists';
-import {ArticleCreate, ArticleEdit, ArticleList, CustomArticleEdit} from './endpoint/article';
+import {ArticleCreate, ArticleEdit, ArticleList } from './endpoint/article';
 import { AlbumCreate, AlbumEdit, AlbumList } from './endpoint/albums';
 
 export const resources = [
@@ -27,7 +27,7 @@ export const resources = [
     name: 'albums', list: AlbumList, edit: AlbumEdit, create: AlbumCreate, icon: AlbumIcon,
   },
   {
-    name: 'articles', list: ArticleList, edit: CustomArticleEdit, create: ArticleCreate, icon: DescriptionIcon,
+    name: 'articles', list: ArticleList, edit: ArticleEdit,create: ArticleCreate, icon: DescriptionIcon,
   },
   {
     name: 'artists', list: ArtistList, edit: ArtistEdit, create: ArtistCreate, icon: MicIcon,

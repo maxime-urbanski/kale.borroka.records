@@ -3,7 +3,7 @@ import axios from 'axios';
 const apiUrl = process.env.REACT_APP_BACK_URL;
 const token = localStorage.getItem('auth');
 
-const instance = axios.create({
+export const instance = axios.create({
   baseURL: apiUrl,
   headers: {
     Accept: 'application/json',
@@ -91,7 +91,6 @@ export const CustomDataProvider = {
   },
   deleteMany: async (resource, params) => {
     const url = `/${resource}/${params.ids}`;
-    console.log(params.ids)
     try {
       const response = await instance.delete(url);
       return {
