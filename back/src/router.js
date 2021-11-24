@@ -15,6 +15,7 @@ const User = require("./routes/User.route");
 const Auth = require("./routes/Auth.route");
 const Tracklist = require('./routes/Tracklist.route')
 const Production = require('./routes/Production.route')
+const Catalog = require('./routes/Catalog.route')
 
 Router.use("/artists", Artist);
 Router.use("/labels", Label);
@@ -31,5 +32,6 @@ Router.use("/users",User);
 Router.use("/auth", Auth);
 Router.use('/tracklists',Tracklist);
 Router.use('/production', Production )
+Router.use('/catalog', Catalog )
 
 module.exports = Router;

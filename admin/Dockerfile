@@ -9,12 +9,13 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl \
     && rm yarn-v$YARN_VERSION.tar.gz \
     && apk del .build-deps-yarn
 
-RUN mkdir /admin
-WORKDIR /admin
-COPY ./public ./public
-COPY ["package.json", ".prettierrc", "./"]
+WORKDIR /srv/admin
+
+COPY ["package.json", "./"]
 RUN yarn install
 
 COPY ./src ./src
+COPY ./public ./public
+COPY .prettierrc ./
 
 CMD ["yarn", "start"]

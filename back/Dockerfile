@@ -11,7 +11,7 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl \
     && apk del .build-deps-yarn
 
 WORKDIR /srv/back
-COPY package.json ./
+COPY ["package.json", "./"]
 RUN yarn install
 
 COPY ./Sequelize ./Sequelize
