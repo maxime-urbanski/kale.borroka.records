@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res, next) => {
-  res.status(200).send("Kale Borroka Records API !");
+  res.status(200).send("Kale Borroka Records API");
 });
 
 app.use("/api", Router);

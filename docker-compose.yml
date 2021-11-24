@@ -42,7 +42,7 @@ services:
       - ./back/Sequelize:/srv/back/Sequelize
       - /srv/back/node_modules
     environment:
-      DB_HOST: localhost
+      DB_HOST: db-kbr
       DB_USER: kbrdb
       DB_PASSWORD: kbrdb.0161
       DB_NAME: kale_borroka_records
@@ -65,9 +65,10 @@ services:
     depends_on:
       - back-kbr
     volumes:
-      - ./kbr_front/src:/srv/src:rw
-      - ./kbr_front/public:/srv/public
-      - ./kbr_front/pages:/srv/pages
+      - ./kbr_front:/srv/front
+      - ./kbr_front/src:/srv/front/src
+      - ./kbr_front/public:/srv/front/public
+      - ./kbr_front/pages:/srv/front/pages
       - /srv/front/node_modules
     environment:
       NEXT_PUBLIC_BACK_URL: http://back-kbr:5050/api
