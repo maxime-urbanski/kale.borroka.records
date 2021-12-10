@@ -70,12 +70,26 @@ Router.get('/:support/:id', async (req,res) => {
             {
               model: Artist,
               attributes: ["name"],
+              include: [
+                {
+                  model: City,
+                  attributes: ['city']
+                },
+                {
+                  model: Country,
+                  attributes: ['country']
+                }
+              ]
             },
             {
               model: Song,
               attributes: ["name", "track"],
               through: { attributes: [] },
-            }
+            },
+            {
+              model: Style,
+              attributes: ['name']
+            },
           ]
         },
         {
@@ -86,6 +100,10 @@ Router.get('/:support/:id', async (req,res) => {
           model: Format,
           attributes: ["name"],
         },
+        {
+          model: Quantity,
+          attributes: ['quantity']
+        }
       ],
       order: [
         [Album, Artist, "name", "ASC"],

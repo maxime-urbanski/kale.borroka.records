@@ -9,7 +9,7 @@ Router.get("/", async (req, res) => {
   const { limit, offset } = getPagination(page, perPage)
   try {
     const result = await Format.findAndCountAll({
-        attributes: ['id', 'name'],
+        attributes: ['id', 'name','slug'],
       limit,
       offset
     });
@@ -35,9 +35,9 @@ Router.get("/:id", async (req, res) => {
 });
 
 Router.post("/", auth("ADMIN"), async (req, res) => {
-  const { name } = req.body;
+  const { name, slug } = req.body;
   try {
-    const result = await Format.create({ name });
+    const result = await Format.create({ name,slug });
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json(err);
@@ -46,11 +46,11 @@ Router.post("/", auth("ADMIN"), async (req, res) => {
 
 Router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
-  const { name } = req.body;
+  const { name, slug } = req.body;
   try {
     await Format.update(
       {
-        name,
+        name, slug
       },
       { where: { id } }
     );

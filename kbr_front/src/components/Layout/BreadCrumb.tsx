@@ -23,7 +23,7 @@ const Breadcrumb = ({ links }: BreadCrumbProps): JSX.Element => {
                   {link}
                 </BreadCrumbItem>
               ) : (
-                <BreadCrumbItem key={index * 10}>
+                <BreadCrumbItem key={index}>
                   <Link href={`/${link.toLowerCase()}`}>{link}</Link>
                 </BreadCrumbItem>
               )}

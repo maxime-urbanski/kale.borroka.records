@@ -22,19 +22,19 @@ export const about = [
 export const shop = [
   {
     name: 'LP',
-    link: '/LP',
+    link: '/catalog/LP',
   },
   {
     name: 'EP',
-    link: '/EP',
+    link: '/catalog/EP',
   },
   {
     name: 'CD',
-    link: '/CD',
+    link: '/catalog/CD',
   },
   {
     name: 'FANZINE',
-    link: '/fanzine',
+    link: '/catalog/fanzine',
   },
   {
     name: 'PRODUCTION',
@@ -107,7 +107,6 @@ export const paymentAndSent = [
 ]
 
 export const getData = async (slug: string, page = 0, perPage = 9): Promise<[]> => {
-  console.log("YOUHOU ==>",process.env)
   const url = `${process.env.NEXT_PUBLIC_BACK_URL}/${slug}`
   const req = await axios.get(url)
   return await req.data

@@ -8,7 +8,6 @@ import CardArticle from '../src/components/Article/CardArticle'
 const Production = ({ ourProduction }): JSX.Element => {
   const router = useRouter()
   const production = router.asPath.replace('/', '')
-  console.log(ourProduction)
 
   return (
     <Container fluid>
@@ -30,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const ourProduction = await getData('production')
   return {
     props: {
-      ourProduction: ourProduction.items,
+      ourProduction: ourProduction['items'],
     },
   }
 }
