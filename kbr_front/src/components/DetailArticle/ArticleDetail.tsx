@@ -14,6 +14,8 @@ interface rowInfosProps {
 }
 
 const ArticleDetail = ({ Album, Quantity, Price, setQuantity }: AlbumProps): JSX.Element => {
+
+  console.log(Quantity)
   const quantityAvailable: number[] = []
   for (let i = 0; i <= Quantity.quantity; i++) {
     quantityAvailable.push(i)

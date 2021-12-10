@@ -14,6 +14,13 @@ const Format = SequelizeConnexion.define(
       type: Sequelize.STRING(255),
       allowNull: false,
     },
+    slug: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    icon: {
+      type: Sequelize.STRING
+    }
   },
   { timestamps: false }
 );

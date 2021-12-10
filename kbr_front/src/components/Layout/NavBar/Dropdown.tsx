@@ -8,13 +8,13 @@ import {
 const Dropdown = (): JSX.Element => {
   return (
     <DropDown>
-      <DropDownBtn>Le Shop</DropDownBtn>
+      <DropDownBtn href={'/catalog'}>Le Shop</DropDownBtn>
       <DropDownContent>
-        <DropDownLink>lp</DropDownLink>
-        <DropDownLink>ep</DropDownLink>
-        <DropDownLink>cd</DropDownLink>
-        <DropDownLink>tape</DropDownLink>
-        <DropDownLink>fanzine</DropDownLink>
+        <DropDownLink href={'/catalog/lp'}>lp</DropDownLink>
+        <DropDownLink href={'/catalog/ep'}>ep</DropDownLink>
+        <DropDownLink href={'/catalog/cd'}>cd</DropDownLink>
+        <DropDownLink href={'/catalog/tape'}>tape</DropDownLink>
+        <DropDownLink href={'/catalog/fanzine'}>fanzine</DropDownLink>
       </DropDownContent>
     </DropDown>
   )

@@ -47,7 +47,7 @@ const CardArticle = ({ Album, Price, Format, id }: AlbumProps): JSX.Element => {
           <CardSubtitle fontSize={18}>{name}</CardSubtitle>
           <CardIcon src={img} left={45} />
           <CardPrice>{price}</CardPrice>
-          <Link href={`/${support}/${id}`}>
+          <Link href={`/catalog/${support}/${id}`}>
             <CardButton bg={'white'}>Details</CardButton>
           </Link>
           <CardButton left={185} color={'white'} border={'none'}>

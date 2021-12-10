@@ -6,7 +6,7 @@ export interface AlbumProps {
     name: string
     folder: string
     kbrProd: boolean
-    kbrNum: string
+    kbrNum: number
     releaseDate: string
     note: string
     Artist: {
