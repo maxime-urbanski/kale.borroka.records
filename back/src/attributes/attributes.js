@@ -8,7 +8,7 @@ const Artist = require("../models/Artist");
 
 module.exports = {
   articleAttributes: {
-    attributes: ['id'],
+    attributes: ['id', 'slug'],
     include: [
       {...albumAttributes,
         include: [withLocation],

@@ -14,6 +14,10 @@ const Album = SequelizeConnexion.define(
       type: Sequelize.STRING(255),
       allowNull: false,
     },
+    fullName: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
     note: {
       type: Sequelize.TEXT,
       allowNull: true,

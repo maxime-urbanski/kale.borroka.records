@@ -48,9 +48,9 @@ Router.get("/:support", async (req, res) => {
   }
 });
 
-Router.get('/:support/:id', async (req,res) => {
-  const { support, id } = req.params;
-
+Router.get('/:support/:slug', async (req,res) => {
+  const { support, slug } = req.params;
+  console.log("slug ===>", slug)
   try {
     const findSupportId = await Format.findOne({where: {
         name: support
@@ -59,9 +59,9 @@ Router.get('/:support/:id', async (req,res) => {
 
     const currentArticle = await Article.findOne({where: {
         FormatId: findSupportId.dataValues.id,
-        id,
+        slug,
       },
-      attributes: ["id"],
+      attributes: ["id","slug"],
       include: [
         {
           model: Album,

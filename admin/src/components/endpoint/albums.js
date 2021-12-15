@@ -63,7 +63,7 @@ export const AlbumEdit = (props) => (
     <SimpleForm>
       <TextInput source="id" />
       <TextInput label={'Nom de l\'album'} source="name" />
-      <TextInput label={'Info sur l\'album'} source="note" />
+      <TextInput label={'Info sur l\'album'} source="note" options={{ multiLine: true }}/>
       <TextInput label="Pochette" source="folder" />
       <TextInput label={'Nom de l\'artiste'} source="Artist.name" />
       <TextInput label="Style" source="Style.name" />
