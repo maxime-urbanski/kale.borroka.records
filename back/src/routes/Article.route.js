@@ -1,18 +1,11 @@
 const express = require("express");
 const { getPagination, getPagingData } = require('./pagination/pagination')
-const { articleAttributes } = require('../attributes/attributes')
 const auth = require("../middlewares/auth");
 const Album = require("../models/Album");
 const Article = require("../models/Article");
 const Artist = require("../models/Artist");
-const City = require('../models/City');
-const Country = require('../models/Country');
 const Format = require("../models/Format");
-const Label = require("../models/Label");
 const Price = require("../models/Price");
-const Quantity = require("../models/Quantity");
-const Song = require("../models/Song");
-const Style = require("../models/Style");
 const Router = express.Router();
 
 Router.get("/", async (req, res) => {
@@ -24,7 +17,7 @@ Router.get("/", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ["name","folder","kbrProd", "kbrNum"],
+          attributes: ["name","fullName","folder","kbrProd", "kbrNum"],
           include: [
             {
               model: Artist,
@@ -69,7 +62,7 @@ Router.get("/:id", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ["name","folder","kbrProd", "kbrNum"],
+          attributes: ["name","fullName","folder","kbrProd", "kbrNum"],
           include: [
             {
               model: Artist,
@@ -96,7 +89,6 @@ Router.get("/:id", async (req, res) => {
 Router.post("/", auth("ADMIN"), async (req, res) => {
   const { AlbumId, PriceId, QuantityId, FormatId, slug } = req.body;
   try {
-    console.log("je passe par ici", AlbumId, PriceId, QuantityId, FormatId)
     const result = await Article.create({
       AlbumId,
       PriceId,
@@ -113,17 +105,26 @@ Router.post("/", auth("ADMIN"), async (req, res) => {
 
 Router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
-  const { AlbumId, PriceId, QuantityId, FormatId, slug } = req.body;
+  const { AlbumId, PriceId, QuantityId, FormatId } = req.body;
   try {
+
+    const slug = async (AlbumId) => {
+      const findAlbum = await Album.findByPk(AlbumId);
+      const albumName = findAlbum.dataValues.fullName;
+      return albumName.replaceAll(' ', '_').toLowerCase()
+    }
+
+    console.log("replace whitespace", slug(AlbumId))
+
     const result = await Article.update(
-      {
-        AlbumId,
-        PriceId,
-        QuantityId,
-        FormatId,
-        slug,
-      },
-      { where: { id } }
+        {
+          AlbumId,
+          PriceId,
+          QuantityId,
+          FormatId,
+          slug: slug(AlbumId),
+        },
+        { where: { id } }
     );
     res.status(200).json(result);
   } catch (err) {

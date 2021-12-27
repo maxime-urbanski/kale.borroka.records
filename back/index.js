@@ -18,7 +18,7 @@ app.get("/", (req, res, next) => {
 app.use("/api", Router);
 
 sequelize
-  .sync()
+  .sync({ alter: true })
   .then(() => sequelize.authenticate())
   .then(() =>
     console.log("Database connection has been established successfully OK")

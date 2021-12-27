@@ -10,7 +10,6 @@ const authProvider = {
       const response = await fetch(request);
       const auth = await response.json();
       const { token } = auth;
-      console.log('admin log token',token);
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.statusText);
       }
@@ -25,7 +24,6 @@ const authProvider = {
   },
 
   checkError: ({ status }) => {
-    console.log('je verifie erreur', status);
     if (status === 401 || status === 403) {
       localStorage.removeItem('auth');
       return Promise.reject();
@@ -40,8 +38,7 @@ const authProvider = {
   getIdentity: () => {
     try {
       const { id, user } = JSON.parse(localStorage.getItem('auth'));
-      const username = user;
-      console.log(user.username);
+      const {username} = user;
       return Promise.resolve({ id, username });
     } catch (error) {
       return Promise.reject(error);

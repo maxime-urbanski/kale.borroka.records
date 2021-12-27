@@ -8,6 +8,10 @@ const Article = SequelizeConnexion.define("Article", {
     primaryKey: true,
     defaultValue: Sequelize.UUIDV4,
   },
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
   slug: {
     type: Sequelize.STRING,
     allowNull: false,
