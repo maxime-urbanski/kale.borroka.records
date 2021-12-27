@@ -10,7 +10,7 @@ const authProvider = {
       const response = await fetch(request);
       const auth = await response.json();
       const { token } = auth;
-      console.log(token);
+      console.log('admin log token',token);
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.statusText);
       }

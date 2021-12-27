@@ -14,15 +14,6 @@ const LinkFooter = ({ array }: LinkFooterProps): JSX.Element => {
 
   const [ sectionCatalog, setSectionCatalog ] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async (slug) => {
-      const req = await fetch(`${backUrl}/${slug}`);
-      console.log(await req)
-      return await req
-    }
-    fetchData('catalog')
-  },[])
-
   return (
     <ContainerFlex flexDirection={'column'}>
       {array.map(({ name, link }, index) => {

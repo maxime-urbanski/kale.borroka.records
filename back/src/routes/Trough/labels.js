@@ -11,7 +11,7 @@ const postLabelInThroughTable = async (listLabels, LabelModel, postAlbum) => {
     }
   }
   if (labelsNotInDB.length > 0) {
-    const bulkLabels = await LabelModel.bulkCreate(labelsNotInDB);
+    const bulkLabels = await LabelModel.bulkCreate(labelsNotInDB, { validate: true });
     await postAlbum.addLabel(bulkLabels);
   }
 };

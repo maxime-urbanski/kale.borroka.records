@@ -13,6 +13,8 @@ services:
             MYSQL_USER: kbrdb
             MYSQL_PASSWORD: kbrdb.0161
             MYSQL_RANDOM_ROOT_PASSWORD: ''
+        cap_add:
+            - SYS_NICE
 
     admin-kbr:
         image: maxiloud/kbr_admin

@@ -20,7 +20,7 @@ Router.get("/", async (req, res) => {
   const {limit, offset } = getPagination(page, perPage)
   try {
     const result = await Article.findAndCountAll({
-      attributes: ["id"],
+      attributes: ["id", "slug"],
       include: [
         {
           model: Album,
@@ -48,6 +48,8 @@ Router.get("/", async (req, res) => {
       limit,
       offset,
     });
+
+
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
@@ -92,23 +94,26 @@ Router.get("/:id", async (req, res) => {
 });
 
 Router.post("/", auth("ADMIN"), async (req, res) => {
-  const { AlbumId, PriceId, QuantityId, FormatId } = req.body;
+  const { AlbumId, PriceId, QuantityId, FormatId, slug } = req.body;
   try {
+    console.log("je passe par ici", AlbumId, PriceId, QuantityId, FormatId)
     const result = await Article.create({
       AlbumId,
       PriceId,
       QuantityId,
       FormatId,
+      slug,
     });
     res.status(200).json(result);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
 
 Router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
-  const { AlbumId, PriceId, QuantityId, FormatId } = req.body;
+  const { AlbumId, PriceId, QuantityId, FormatId, slug } = req.body;
   try {
     const result = await Article.update(
       {
@@ -116,6 +121,7 @@ Router.put("/:id", auth("ADMIN"), async (req, res) => {
         PriceId,
         QuantityId,
         FormatId,
+        slug,
       },
       { where: { id } }
     );
