@@ -1,33 +1,28 @@
 const express = require("express");
-const { getPagination, getPagingData } = require('./pagination/pagination')
+const { getPagination, getPagingData } = require('./pagination/pagination');
 const auth = require("../middlewares/auth");
 const Album = require("../models/Album");
 const Article = require("../models/Article");
 const Artist = require("../models/Artist");
 const Format = require("../models/Format");
-const Price = require("../models/Price");
 const Router = express.Router();
 
 Router.get("/", async (req, res) => {
-  const { page, perPage } = req.query
-  const {limit, offset } = getPagination(page, perPage)
+  const { page, perPage } = req.query;
+  const {limit, offset } = getPagination(page, perPage);
   try {
     const result = await Article.findAndCountAll({
-      attributes: ["id", "slug"],
+      attributes: ["id","name", "slug","price","quantity"],
       include: [
         {
           model: Album,
-          attributes: ["name","fullName","folder","kbrProd", "kbrNum"],
           include: [
             {
               model: Artist,
               attributes: ["name"],
             },
-          ]
-        },
-        {
-          model: Price,
-          attributes: ["price"],
+          ],
+          attributes: ["name","fullName","folder","kbrProd", "kbrNum"]
         },
         {
           model: Format,
@@ -58,7 +53,7 @@ Router.get("/:id", async (req, res) => {
   const {id} = req.params;
   try {
     const findArticle = await Article.findByPk(id,{
-      attributes: ["id"],
+      attributes: ["id","name", "slug","price","quantity"],
       include: [
         {
           model: Album,
@@ -69,10 +64,6 @@ Router.get("/:id", async (req, res) => {
               attributes: ["name"],
             },
           ]
-        },
-        {
-          model: Price,
-          attributes: ["price"],
         },
         {
           model: Format,
@@ -87,44 +78,42 @@ Router.get("/:id", async (req, res) => {
 });
 
 Router.post("/", auth("ADMIN"), async (req, res) => {
-  const { AlbumId, PriceId, QuantityId, FormatId, slug } = req.body;
+  const { AlbumId, FormatId, name, price, quantity } = req.body;
+
+  const goodSlugFormat = (text) => {
+    return text.replaceAll(' ', '_').toLowerCase();
+  };
   try {
     const result = await Article.create({
+      name,
+      slug: goodSlugFormat(name),
+      price,
+      quantity,
       AlbumId,
-      PriceId,
-      QuantityId,
       FormatId,
-      slug,
     });
     res.status(200).json(result);
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(400).json(err);
   }
 });
 
 Router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
-  const { AlbumId, PriceId, QuantityId, FormatId } = req.body;
+  const { name, slug, price, quantity, AlbumId, FormatId } = req.body;
+  console.log(FormatId)
   try {
-
-    const slug = async (AlbumId) => {
-      const findAlbum = await Album.findByPk(AlbumId);
-      const albumName = findAlbum.dataValues.fullName;
-      return albumName.replaceAll(' ', '_').toLowerCase()
-    }
-
-    console.log("replace whitespace", slug(AlbumId))
-
     const result = await Article.update(
-        {
-          AlbumId,
-          PriceId,
-          QuantityId,
-          FormatId,
-          slug: slug(AlbumId),
-        },
-        { where: { id } }
+      {
+        name,
+        slug,
+        price,
+        quantity,
+        AlbumId,
+        FormatId
+      },
+      { where: { id } }
     );
     res.status(200).json(result);
   } catch (err) {

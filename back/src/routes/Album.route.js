@@ -10,13 +10,13 @@ const addTroughTableTracklist = require("./Trough/tracklist");
 const postLabelInThroughTable = require("./Trough/labels");
 const postVideoInThroughTable = require("./Trough/video");
 const auth = require("../middlewares/auth");
-const { withoutLocation } = require('../attributes/artistAttributes')
+const { withoutLocation } = require('../attributes/artistAttributes');
 const {getPagination, getPagingData} = require("./pagination/pagination");
 
 
 router.get("/", async (req, res) => {
   const { page, perPage } = req.query;
-  const { limit, offset } = getPagination(page, perPage)
+  const { limit, offset } = getPagination(page, perPage);
   try {
     const result = await Album.findAndCountAll({
       attributes: ["id", "name", "fullName","note", "folder", "kbrProd", "kbrNum","releaseDate"],
@@ -98,8 +98,8 @@ router.post("/", auth("ADMIN"), async (req, res) => {
   } = req.body;
   try {
     const findArtist = await Artist.findByPk(ArtistId);
-    const ArtistName = findArtist.dataValues.name
-    const fullName = `${ArtistName} - ${name}`
+    const ArtistName = findArtist.dataValues.name;
+    const fullName = `${ArtistName} - ${name}`;
 
     const postAlbum = await Album.create({
       name,
@@ -127,10 +127,9 @@ router.put("/:id", auth("ADMIN"), async (req, res) => {
   try {
 
     const findArtist = await Artist.findByPk(ArtistId);
-    const artistName = findArtist.dataValues.name
-    const fullName = `${artistName} - ${name}`
+    const artistName = findArtist.dataValues.name;
+    const fullName = `${artistName} - ${name}`;
 
-    console.log('je passe par le try ===>', findArtist, 'fullName ===>', fullName )
     const putAlbum = await Album.update(
       {
         name,
@@ -149,8 +148,6 @@ router.put("/:id", auth("ADMIN"), async (req, res) => {
     );
     res.status(200).json({putAlbum});
   } catch (err) {
-
-    console.log('je passe par le catch ===>',err )
     res.status(400).json(err);
   }
 });

@@ -15,6 +15,14 @@ const Article = SequelizeConnexion.define("Article", {
   slug: {
     type: Sequelize.STRING,
     allowNull: false,
+  },
+  quantity: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  price: {
+    type: Sequelize.INTEGER,
+    allowNull: false
   }
 });
 

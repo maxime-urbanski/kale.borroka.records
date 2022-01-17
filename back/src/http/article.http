@@ -7,11 +7,12 @@ GET http://localhost:5050/api/articles/tape HTTP/1.1
 ### POST ARTICLE
 POST http://localhost:5050/api/articles HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2Mjc3MjkxMDAsImV4cCI6MTYyNzczOTkwMH0.6DC0SQ1LhD7QlB-kWs__QbVNGV2chcnhffquFPlH8O0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heGlsb3VkIiwiZW1haWwiOiJrYWxlLmJvcnJva2EucmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2NDMyODI5NTMsImV4cCI6MTY0MzM2OTM1M30.ZwjpYuVQB1fUuZYywqKI4Ir97Tc1lyqNWOJ9vm6au0g
 
 {
-    "AlbumId": "bbd918e0-ce5d-448d-b515-61e0cd70ec3b",
-    "FormatId": "ac9410f4-56dc-4842-8020-5a03f48fac8e",
-    "PriceId": "11072c52-60d1-4c8f-b283-a51ce3805256",
-    "QuantityId": "e6c57d38-f24c-49b8-b4f9-aaccd90fc750"
+    "name": "Krav Boca - Barrikade",
+    "quantity": 15,
+    "price": 1000,
+    "AlbumId": "78a186af-7773-4ab4-b85b-a082a1681134",
+    "FormatId": "80092ba3-b6d8-416f-8d78-ad66f5e7186d"
 }

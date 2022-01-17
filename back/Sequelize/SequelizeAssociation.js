@@ -5,8 +5,6 @@ const City = require("../src/models/City");
 const Country = require("../src/models/Country");
 const Format = require("../src/models/Format");
 const Label = require("../src/models/Label");
-const Quantity = require("../src/models/Quantity");
-const Price = require("../src/models/Price");
 const Song = require("../src/models/Song");
 const Style = require("../src/models/Style");
 const Tracklist = require("../src/models/Tracklist");
@@ -73,9 +71,3 @@ Format.hasMany(Article);
 
 Article.belongsTo(Album);
 Album.hasMany(Article);
-
-Article.belongsTo(Price);
-Price.hasMany(Article);
-
-Article.belongsTo(Quantity);
-Quantity.hasMany(Article);
