@@ -1,16 +1,4 @@
-import axios from 'axios';
-
-const apiUrl = process.env.REACT_APP_BACK_URL;
-const token = localStorage.getItem('auth');
-
-
-export const instance = axios.create({
-  baseURL: apiUrl,
-  headers: {
-    Accept: 'application/json',
-    Authorization: token ? `Bearer ${token}` : '',
-  },
-});
+import { instance } from '../fetchData'
 
 export const CustomDataProvider = {
   getList: async (resource, params) => {

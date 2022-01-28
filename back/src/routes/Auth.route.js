@@ -34,7 +34,7 @@ Router.post("/login", async (req, res) => {
       };
 
       const token = jwt.sign(payload, secret, {
-        expiresIn: "3h",
+        expiresIn: "24h",
       });
 
       delete user.dataValues.password;

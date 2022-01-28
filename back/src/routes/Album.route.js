@@ -10,16 +10,16 @@ const addTroughTableTracklist = require("./Trough/tracklist");
 const postLabelInThroughTable = require("./Trough/labels");
 const postVideoInThroughTable = require("./Trough/video");
 const auth = require("../middlewares/auth");
-const { withoutLocation } = require('../attributes/artistAttributes')
+const { withoutLocation } = require('../attributes/artistAttributes');
 const {getPagination, getPagingData} = require("./pagination/pagination");
 
 
 router.get("/", async (req, res) => {
   const { page, perPage } = req.query;
-  const { limit, offset } = getPagination(page, perPage)
+  const { limit, offset } = getPagination(page, perPage);
   try {
     const result = await Album.findAndCountAll({
-      attributes: ["id", "name", "note", "folder", "kbrProd", "kbrNum","releaseDate"],
+      attributes: ["id", "name", "fullName","note", "folder", "kbrProd", "kbrNum","releaseDate"],
       include: [
         withoutLocation,
         { model: Style, attributes: ["name"] },
@@ -60,7 +60,7 @@ router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const result = await Album.findByPk(id, {
-      attributes: ["id", "name", "note", "folder", "kbrProd","kbrNum", "releaseDate"],
+      attributes: ["id", "name", "fullName", "note", "folder", "kbrProd","kbrNum", "releaseDate"],
       include: [
         {
           model: Artist,
@@ -97,8 +97,13 @@ router.post("/", auth("ADMIN"), async (req, res) => {
     releaseDate
   } = req.body;
   try {
+    const findArtist = await Artist.findByPk(ArtistId);
+    const ArtistName = findArtist.dataValues.name;
+    const fullName = `${ArtistName} - ${name}`;
+
     const postAlbum = await Album.create({
       name,
+      fullName,
       note,
       folder,
       ArtistId,
@@ -120,9 +125,15 @@ router.put("/:id", auth("ADMIN"), async (req, res) => {
   const { id } = req.params;
   const { name, note, folder, ArtistId, StyleId, kbrProd, kbrNum, releaseDate } = req.body;
   try {
-    await Album.update(
+
+    const findArtist = await Artist.findByPk(ArtistId);
+    const artistName = findArtist.dataValues.name;
+    const fullName = `${artistName} - ${name}`;
+
+    const putAlbum = await Album.update(
       {
         name,
+        fullName,
         note,
         folder,
         ArtistId,
@@ -135,9 +146,9 @@ router.put("/:id", auth("ADMIN"), async (req, res) => {
         where: { id },
       }
     );
-    res.status(200).json(`Album ${name} is modified`);
+    res.status(200).json({putAlbum});
   } catch (err) {
-    res.status(400).json({ message: "here", err });
+    res.status(400).json(err);
   }
 });
 

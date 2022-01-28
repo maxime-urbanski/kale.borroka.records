@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { instance } from "../fetchData"
 import {
   Create,
   Datagrid,
   Edit,
   List,
+  NumberInput,
   NumberField,
   ReferenceInput,
   SelectInput,
@@ -11,85 +13,66 @@ import {
   TextField,
   TextInput,
 } from 'react-admin';
-import  { useState, useEffect } from 'react'
-import  axios from 'axios'
 
-export const ArticleList = (props) =>{
+export const ArticleList = (props) => {
   return (
     <>
       <List {...props} title="Tous les articles disponible" >
         <Datagrid rowClick="edit">
-          <TextField source="items.id" />
-          <TextField source="items.slug" />
-          <TextField source="Album.name" />
-          <NumberField source="Price.price" />
-          <TextField source="Format.name" />
-          <NumberField source="Quantity.quantity" />
+          <TextField source="id" />
+          <TextField source="name" />
+          <TextField source="slug" />
+          <TextField source="Format.name" label={"Support"}/>
+          <NumberField source="price" />
+          <NumberField source="quantity" />
         </Datagrid>
       </List>
     </>
   )};
 
 export const ArticleEdit = (props) => {
-  const [ slug, setSlug ] = useState()
-  const [ data, setData ] = useState([])
+  const [format, setFormat] = useState([]);
 
   useEffect(() => {
-    const backUrl = process.env.REACT_APP_BACK_URL
-    const url = backUrl + props.location.pathname
-    const fetchDataForSlug = async (slugArticle) => {
-      const req = await axios.get(slugArticle)
-      const res = await req.data
-      const getArtistName = res.Album.Artist.name.toLowerCase()
-      const getAlbumName = res.Album.name.toLowerCase()
-      const albumSlug = `/${getArtistName}-${getAlbumName}`.replace(' ', '-')
-      setSlug(albumSlug)
-    }
-    fetchDataForSlug(url)
-  },[])
+    const fetchFormat = async () => {
+      try {
+        const req = await instance.get('/formats');
+        const res = await req.data.items;
+        setFormat(res)
+      } catch (e) {
+        throw new Error(e)
+      }
+    };
+    fetchFormat()
+  },[]);
 
   return (
-    <Edit {...props} redirect="show">
+    <Edit {...props}>
       <SimpleForm>
-        <ReferenceInput label="Choix de l'album" source="AlbumId" reference="albums">
-          <SelectInput optionText="name" />
-        </ReferenceInput>
-        <ReferenceInput label="Prix: " source="PriceId" reference="prices">
-          <SelectInput optionText="price" />
-        </ReferenceInput>
-        <TextInput source={slug} />
+        <TextInput source="Album.fullName" />
+        <TextInput source="slug" />
+        <NumberInput source="price" />
+        <NumberInput source="quantity" />
         <ReferenceInput label="Support: " source="FormatId" reference="formats">
-          <SelectInput optionText="name" />
-        </ReferenceInput>
-        <ReferenceInput label="Quantité: " source="QuantityId" reference="quantities">
-          <SelectInput optionText="quantity" />
+          <SelectInput optionText="name"  />
         </ReferenceInput>
       </SimpleForm>
     </Edit>
-  )
-};
+  )};
 
-export const ArticleCreate = (props) => {
-  console.log(props)
-  return (
-    <Create {...props} redirect="show">
-      <SimpleForm>
-        <TextInput source="id" />
-        <TextInput source="slug" />
-        <ReferenceInput label="Choix de l'album" source="AlbumId" reference="albums">
-          <SelectInput optionText="name" />
-        </ReferenceInput>
-        <ReferenceInput label="Prix: " source="PriceId" reference="prices">
-          <SelectInput optionText="price" />
-        </ReferenceInput>
-        <ReferenceInput label="Support: " source="FormatId" reference="formats">
-          <SelectInput optionText="name" />
-        </ReferenceInput>
-        <ReferenceInput label="Quantité: " source="QuantityId" reference="quantities">
-          <SelectInput optionText="quantity" />
-        </ReferenceInput>
-      </SimpleForm>
-    </Create>
-  )
-};
+export const ArticleCreate = (props) => (
+  <Create {...props} redirect="show">
+    <SimpleForm>
+      <ReferenceInput label="Choix de l'album" source="AlbumId" reference="albums">
+        <SelectInput optionText="fullName" />
+      </ReferenceInput>
+      <TextInput source="name" label="Nom de l'article"/>
+      <NumberInput source="price" label="Prix de l'article"/>
+      <NumberInput source="quantity" label="Quantité disponible"/>
+      <ReferenceInput label="Support: " source="FormatId" reference="formats">
+        <SelectInput optionText="name" />
+      </ReferenceInput>
+    </SimpleForm>
+  </Create>
+);
 
