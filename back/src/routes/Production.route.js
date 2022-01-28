@@ -6,8 +6,6 @@ const City = require('../models/City');
 const Country = require('../models/Country');
 const Format = require("../models/Format");
 const Label = require("../models/Label");
-const Price = require("../models/Price");
-const Quantity = require("../models/Quantity");
 const Song = require("../models/Song");
 const Style = require("../models/Style");
 const { articleAttributes } = require('../attributes/attributes')
@@ -55,10 +53,6 @@ Router.get('/', async (req, res) => {
           where: {
             kbrProd: true
           },
-        },
-        {
-          model: Price,
-          attributes: ['price']
         },
         {
           model: Format,

@@ -3,8 +3,8 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await Promise.all([
-      queryInterface.dropSchema('Prices'),
-      queryInterface.dropSchema('Quantities'),
+      queryInterface.dropTable('Prices'),
+      queryInterface.dropTable('Quantities'),
     ])
   },
 
