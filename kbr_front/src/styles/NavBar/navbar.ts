@@ -153,4 +153,5 @@ export const BurgerIcon = styled.button`
   background-color: transparent;
   border: none;
   margin: 20px;
+  cursor: pointer;
 `

@@ -5,7 +5,7 @@ const Album = require("../models/Album");
 
 module.exports = {
   articleAttributes: {
-    attributes: ['id', 'slug'],
+    attributes: ["id","name", "slug","price","quantity"],
     include: [
       {...albumAttributes,
         include: [withLocation],

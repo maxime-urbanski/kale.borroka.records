@@ -4,7 +4,6 @@ import { Container, Column, Row, Title2 } from '../../src/styles/styled'
 
 
 const homeCatalog = ({catgalogSection}) => {
-  console.log(catgalogSection)
   return (
     <Container>
       <Row>

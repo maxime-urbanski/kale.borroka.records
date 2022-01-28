@@ -6,6 +6,7 @@ import { Column, Row, Container } from '../src/styles/styled'
 import CardArticle from '../src/components/Article/CardArticle'
 
 const Production = ({ ourProduction }): JSX.Element => {
+  console.log(ourProduction)
   const router = useRouter()
   const production = router.asPath.replace('/', '')
 
