@@ -25,9 +25,10 @@ export interface AlbumProps {
       name: string
     }
   }
-  Price: { price: number }
+  price: number
   Format: { name: string }
-  Quantity: { quantity: number }
+  quantity: number
+  slug: string
   setQuantity: React.Dispatch<number>
 }
 

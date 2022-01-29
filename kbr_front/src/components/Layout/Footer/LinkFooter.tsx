@@ -9,8 +9,6 @@ interface LinkFooterProps {
 
 const LinkFooter = ({ array }: LinkFooterProps): JSX.Element => {
   const backUrl = process.env.NEXT_PUBLIC_BACK_URL
-  const linkSectionCatalog = "youhou";
-  console.log(linkSectionCatalog);
 
   const [ sectionCatalog, setSectionCatalog ] = useState([]);
 

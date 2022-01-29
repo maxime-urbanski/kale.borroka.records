@@ -8,19 +8,18 @@ const Format = require("../models/Format");
 const Label = require("../models/Label");
 const Song = require("../models/Song");
 const Style = require("../models/Style");
-const { articleAttributes } = require('../attributes/attributes')
 const {getPagination, getPagingData} = require("./pagination/pagination");
 
 Router.get('/', async (req, res) => {
   const { page, perPage } = req.query;
-  const { limit, offset } = getPagination(page, perPage)
+  const { limit, offset } = getPagination(page, perPage);
   try {
     const ourProd = await Article.findAndCountAll({
-      attributes: ['id'],
+      attributes: ["id","name", "slug","price","quantity"],
       include: [
         {
           model: Album,
-          attributes: ["name","folder","kbrProd", "kbrNum"],
+          attributes: ["name","folder","kbrProd", "kbrNum","fullName"],
           include: [
             {
               model: Artist,
@@ -44,11 +43,11 @@ Router.get('/', async (req, res) => {
             {
               model: Style,
               attributes: ['name']
-            },{
-              model: Style,
-              attributes: ['name']
             },
-
+            {
+              model: Label,
+              attributes: ['name']
+            }
           ],
           where: {
             kbrProd: true
@@ -60,7 +59,7 @@ Router.get('/', async (req, res) => {
         },
       ],
       order: [
-       [ Album, "kbrNum", "ASC"],
+        [ Album, "kbrNum", "ASC"],
       ]
     })
     res.set({
@@ -74,4 +73,4 @@ Router.get('/', async (req, res) => {
   }
 })
 
-module.exports = Router
+module.exports = Router;

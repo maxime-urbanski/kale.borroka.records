@@ -15,12 +15,11 @@ import {
   Overlay,
 } from '../../styles/card'
 
-const CardArticle = ({ Album, Price, Format, id }: AlbumProps): JSX.Element => {
+const CardArticle = ({ Album, price, Format, id, slug }: AlbumProps): JSX.Element => {
   const { name, folder, kbrProd, kbrNum, Artist } = Album
   const [img, setImg] = useState('/img/vinyl.svg')
-  const price = Price.price / 100 + '€'
   const support = Format.name.toLowerCase()
-
+  const Price = price / 100 + '€'
   useEffect(() => {
     const { name } = Format
     if (name === 'CD') {
@@ -46,8 +45,8 @@ const CardArticle = ({ Album, Price, Format, id }: AlbumProps): JSX.Element => {
           <CardTitle>{Artist.name}</CardTitle>
           <CardSubtitle fontSize={18}>{name}</CardSubtitle>
           <CardIcon src={img} left={45} />
-          <CardPrice>{price}</CardPrice>
-          <Link href={`/catalog/${support}/${id}`}>
+          <CardPrice>{Price}</CardPrice>
+          <Link href={`/catalog/${support}/${slug}`}>
             <CardButton bg={'white'}>Details</CardButton>
           </Link>
           <CardButton left={185} color={'white'} border={'none'}>

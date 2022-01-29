@@ -13,17 +13,15 @@ interface rowInfosProps {
   value: JSX.Element
 }
 
-const ArticleDetail = ({ Album, Quantity, Price, setQuantity }: AlbumProps): JSX.Element => {
-
-  console.log(Quantity)
+const ArticleDetail = ({ Album, quantity, setQuantity, price }: AlbumProps): JSX.Element => {
   const quantityAvailable: number[] = []
-  for (let i = 0; i <= Quantity.quantity; i++) {
+  for (let i = 0; i <= quantity; i++) {
     quantityAvailable.push(i)
   }
   const [chooseQuantity, setChooseQuantity] = useState(0)
   const from = `${Album.Artist.City.city} - ${Album.Artist.Country.country}`
   const date = Album.releaseDate
-  const price = `${Price.price / 100}€`
+  const goodPrice = price / 100 +'€'
   const handleChange = (event): void => setChooseQuantity(event.target.value)
   const handleClick = (): void => setQuantity(chooseQuantity)
 
@@ -42,7 +40,7 @@ const ArticleDetail = ({ Album, Quantity, Price, setQuantity }: AlbumProps): JSX
     },
     {
       info: 'Prix:',
-      value: TextInfos(price),
+      value: TextInfos(goodPrice),
     },
     {
       info: 'Quantité:',

@@ -12,15 +12,15 @@ import Img from '../../../src/components/DetailArticle/Img'
 import details from '../../../src/components/DetailArticle/Detail'
 
 interface DiscProps {
-  disc: AlbumProps
+  disc: { AlbumProps }
 }
 
 const Article = ({ disc }: DiscProps): JSX.Element => {
-  const { Album, Format } = disc
-  const { Artist, name, folder, kbrProd, kbrNum } = Album
-  const title = `${Artist.name} - ${name}`
+  console.log('[disc]', disc)
+  const { Album, name,  kbrProd, kbrNum, Format } = disc
+  const {folder } = Album
+  const title = name
   const [quantity, setQuantity] = useState(0)
-  console.log(disc)
   return (
     <>
       <Breadcrumb links={[Format.name, title]} />

@@ -7,7 +7,6 @@ import CardArticle from '../../../src/components/Article/CardArticle'
 import Breadcrumb from '../../../src/components/Layout/BreadCrumb'
 
 const Support = ({ albums }: any): JSX.Element => {
-  console.log('page catalog')
   const router = useRouter()
   const { support } = router.query
   return (
