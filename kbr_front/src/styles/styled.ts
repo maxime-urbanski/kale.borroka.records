@@ -46,7 +46,7 @@ export const Title2 = styled.h2`
 `
 export const Title3 = styled.h3`
   color: #d9534f;
-  font-size: 1.5em;
+  font-size: 28px;
   font-family: Gobold, sans-serif;
   font-weight: 600;
   margin: 0;
@@ -80,13 +80,12 @@ export const HR = styled.hr.attrs(({ margin, color }: HRProps) => ({
 export const BanLogo = styled.div`
   display: flex;
   flex-direction: column;
-  height: 80px;
   justify-content: center;
-  padding: 275px 0 150px;
+  padding: 50px 0;
   width: 100%;
 `
 export const Container = styled.div<{ fluid?: boolean }>`
-  max-width: ${({ fluid }) => (fluid ? '1200px' : '100%')};
+  max-width: ${({ fluid }) => (fluid ? '1300px' : '100%')};
   margin-left: auto;
   margin-right: auto;
 `

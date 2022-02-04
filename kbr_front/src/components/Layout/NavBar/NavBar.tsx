@@ -12,7 +12,7 @@ const NavigationBar = (): JSX.Element => {
           <NavIcon array={networks} />
         </IconNav>
         <TextNavTop>
-          <Title>Black Lives Matters</Title>
+          <Title style={{margin: "0"}}>Black Lives Matters</Title>
         </TextNavTop>
         <IconNav>
           <NavIcon array={flags} />

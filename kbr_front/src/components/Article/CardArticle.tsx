@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import RibbonCard from '../Article/Ribbon'
 import { AlbumProps } from '../../Interface/interfaceData'
 import {
   Card,
@@ -33,11 +34,7 @@ const CardArticle = ({ Album, price, Format, id, slug }: AlbumProps): JSX.Elemen
   return (
     <div style={{ justifyItems: 'center' }}>
       <Card>
-        {kbrProd && (
-          <Overlay>
-            <Ribbon>KBR#{kbrNum}</Ribbon>
-          </Overlay>
-        )}
+        <RibbonCard kbrNum={kbrNum} kbrProd={kbrProd} />
         <CardTop>
           <CardImg src={folder} alt={name} />
         </CardTop>

@@ -61,7 +61,7 @@ Router.get('/:support/:slug', async (req,res) => {
       include: [
         {
           model: Album,
-          attributes: ["name","folder","kbrProd", "kbrNum"],
+          attributes: ["name","folder","kbrProd", "kbrNum","fullName"],
           include: [
             {
               model: Artist,

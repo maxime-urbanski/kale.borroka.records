@@ -10,6 +10,9 @@ import {
   Ribbon,
   Overlay,
 } from '../../styles/card'
+import RibbonCard from '../Article/Ribbon'
+
+
 const LittleCard = (): JSX.Element => {
   return (
     <Card width={400} height={150} flexDir={'row'}>
@@ -23,9 +26,7 @@ const LittleCard = (): JSX.Element => {
         />
       </CardTop>
       <CardBody height={150} width={250}>
-        <Overlay>
-          <Ribbon>KBR#01</Ribbon>
-        </Overlay>
+        <RibbonCard kbrNum={1} kbrProd={true} />
         <CardTitle fontSize={16}>moscow death brigade</CardTitle>
         <CardSubtitle>bad accents anthems</CardSubtitle>
         <CardPrice left={170} bottom={15} fontSize={30}>

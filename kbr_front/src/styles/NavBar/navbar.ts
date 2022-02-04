@@ -4,17 +4,13 @@ export const NavBar = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: 140px;
-  margin-bottom: 800px;
-  position: fixed;
   width: 100%;
   z-index: 2;
 `
 
 export const NavBarTop = styled.div`
   display: flex;
-  height: 60px;
-  padding: 0;
+  padding: 10px;
   width: 100%;
 `
 
@@ -22,10 +18,8 @@ export const NavBarDown = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.black};
   display: flex;
-  flex-shrink: 0;
-  height: 80px;
   justify-content: space-between;
-  padding: 0;
+  padding: 10px;
   width: 100%;
 `
 

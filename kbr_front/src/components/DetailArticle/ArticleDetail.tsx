@@ -8,12 +8,14 @@ import { AlbumProps } from '../../Interface/interfaceData'
 import TextInfos from './TestInfos'
 import SelectQuantity from './SelectQuantity'
 
+
 interface rowInfosProps {
   info: string
   value: JSX.Element
 }
 
 const ArticleDetail = ({ Album, quantity, setQuantity, price }: AlbumProps): JSX.Element => {
+  console.log(Album)
   const quantityAvailable: number[] = []
   for (let i = 0; i <= quantity; i++) {
     quantityAvailable.push(i)
@@ -49,7 +51,7 @@ const ArticleDetail = ({ Album, quantity, setQuantity, price }: AlbumProps): JSX
   ]
 
   return (
-    <>
+    <div>
       <TitleColumn title={'Information'} mb={40} position={'center'} />
       {rowInfos.map(({ info, value }, index) => (
         <RowTwoColumn
@@ -62,7 +64,7 @@ const ArticleDetail = ({ Album, quantity, setQuantity, price }: AlbumProps): JSX
           lg={6}
           xl={6}
           xxl={6}
-          mb={15}
+          mb={10}
           key={index}
         />
       ))}
@@ -75,7 +77,7 @@ const ArticleDetail = ({ Album, quantity, setQuantity, price }: AlbumProps): JSX
           Panier
         </Button>
       </RowOneColumn>
-    </>
+    </div>
   )
 }
 
