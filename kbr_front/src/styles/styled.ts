@@ -50,6 +50,7 @@ export const Title3 = styled.h3`
   font-family: Gobold, sans-serif;
   font-weight: 600;
   margin: 0;
+  text-align: center;
 `
 export const Title4 = styled.h4`
   color: white;
@@ -132,14 +133,15 @@ export const Row = styled.div.attrs(({ position, autoFlow, mb }: GridProps) => (
   }
 `
 export const Column = styled.div.attrs(({ xs, sm, md, lg, xl, xxl }: GridProps) => ({
-  xs: xs,
-  sm: sm,
-  md: md,
-  lg: lg,
-  xl: xl,
-  xxl: xxl,
+  xs: xs || 12,
+  sm: sm || 12,
+  md: md || 12,
+  lg: lg || 12,
+  xl: xl || 12,
+  xxl: xxl || 12,
 }))`
   margin: 0;
+  width: 100%;
 
   @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
     grid-column: span ${({ xs }) => xs};

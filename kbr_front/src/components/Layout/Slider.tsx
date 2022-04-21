@@ -1,67 +1,65 @@
-import React,{useState, useEffect} from 'react';
-import { ArticleName } from '../../../src/styles/album'
-import { SliderContainer, ChevronAction } from '../../../src/styles/slider'
+import React, { ReactElement, useState } from 'react'
+import {
+  Carousel,
+  CarouselContainer,
+  CarouselItem,
+  ChevronActionNext,
+  ChevronActionPrevious,
+} from '../../styles/slider'
 import Chevron from '../Layout/Svg/chevron'
-import RowOneColumn from '../Layout/RowOneColumn'
-import ArticleDetail from '../DetailArticle/ArticleDetail';
-import Tracklist from '../DetailArticle/Tracklist';
+import ArticleDetail from '../DetailArticle/ArticleDetail'
+import Tracklist from '../DetailArticle/Tracklist'
 
-const Slider = (props) => {
-  const [currentIndex, setCurrentIndex ] = useState(0)
+interface ElementToSlide {
+  title: string
+  component: ReactElement<JSX.Element>
+}
 
-  const data = [
+const Slider = (props): JSX.Element => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const data: ElementToSlide[] = [
     {
-      title: "coucou",
-      component: <ArticleDetail {...props}/>
+      title: 'coucou',
+      component: <ArticleDetail {...props} />,
     },
     {
-      title: "Tracklist",
+      title: 'Tracklist',
       component: <Tracklist {...props} />,
-    }
-  ];
+    },
+  ]
 
-  const next = () => {
+  const next = (): void => {
     setCurrentIndex(currentIndex + 1)
-
-    if (currentIndex  >= data.length -1) {
+    if (currentIndex >= data.length - 1) {
       setCurrentIndex(0)
     }
   }
 
-  const previous = () => {
+  const previous = (): void => {
     setCurrentIndex(currentIndex - 1)
-
-    if (currentIndex <= 0) {
+    if (0 >= currentIndex) {
       setCurrentIndex(data.length - 1)
     }
   }
 
-
-  useEffect(() => {
-  },[currentIndex, data.length])
+  const translateX = `translateX(-${currentIndex * 100}%)`
 
   return (
-    <>
-      <RowOneColumn mb={20} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-        <ArticleName fontSize={35}>{props.Album.fullName}</ArticleName>
-      </RowOneColumn>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-        <ChevronAction onClick={previous} reverse>
-          <Chevron />
-        </ChevronAction>
-        {
-          [data[currentIndex]].map(({component }, index) => (
-            <div key={index}>
-              {component}
-            </div>
-          ))
-        }
-        <ChevronAction onClick={next}>
-          <Chevron/>
-        </ChevronAction>
-      </div>
-    </>
+    <Carousel>
+      <ChevronActionPrevious onClick={previous}>
+        <Chevron />
+      </ChevronActionPrevious>
+      <CarouselContainer style={{ transform: translateX }}>
+        {data.map(({ component }, index) => (
+          <CarouselItem key={index}>{component}</CarouselItem>
+        ))}
+      </CarouselContainer>
+      <ChevronActionNext onClick={next}>
+        <Chevron />
+      </ChevronActionNext>
+    </Carousel>
   )
 }
 
-export default Slider;
+export default Slider

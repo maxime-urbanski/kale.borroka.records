@@ -12,8 +12,6 @@ import {
   CardSubtitle,
   CardTitle,
   CardTop,
-  Ribbon,
-  Overlay,
 } from '../../styles/card'
 
 const CardArticle = ({ Album, price, Format, id, slug }: AlbumProps): JSX.Element => {
@@ -23,7 +21,7 @@ const CardArticle = ({ Album, price, Format, id, slug }: AlbumProps): JSX.Elemen
   const Price = price / 100 + '€'
   useEffect(() => {
     const { name } = Format
-    if (name === 'CD') {
+    if ('CD' === name) {
       setImg('/img/cd.svg')
     }
     if (name === 'TAPE') {

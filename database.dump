@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.26, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Linux (x86_64)
 --
 -- Host: localhost    Database: kale_borroka_records
 -- ------------------------------------------------------
--- Server version	8.0.26
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,11 +32,12 @@ CREATE TABLE `Albums` (
   `kbrNum` int DEFAULT NULL,
   `ArtistId` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `StyleId` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `fullName` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `ArtistId` (`ArtistId`),
   KEY `StyleId` (`StyleId`),
-  CONSTRAINT `Albums_ibfk_1` FOREIGN KEY (`ArtistId`) REFERENCES `Artists` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `Albums_ibfk_2` FOREIGN KEY (`StyleId`) REFERENCES `Styles` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+  CONSTRAINT `Albums_ibfk_61` FOREIGN KEY (`ArtistId`) REFERENCES `Artists` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `Albums_ibfk_62` FOREIGN KEY (`StyleId`) REFERENCES `Styles` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -46,7 +47,7 @@ CREATE TABLE `Albums` (
 
 LOCK TABLES `Albums` WRITE;
 /*!40000 ALTER TABLE `Albums` DISABLE KEYS */;
-INSERT INTO `Albums` VALUES ('092b939a-c929-418e-b251-e9d230d2425b','On a journey','hceqzuchqc','https://img.discogs.com/t7SyqXGA_j10MuWP8XfZ5laJQJw=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-14726493-1613397456-7138.jpeg.jpg',0,'2020-01-20',NULL,'87712ae1-fc91-4f32-9de9-6690bc65e5c2','b63141e5-311d-44b2-b45b-57dbff757a94'),('10d93d56-c56e-4bbc-98a9-7d6452374986','City Hackers','efqzfqz','https://img.discogs.com/ZCXdCUyNTI83MMdyzDBz9JhM7k0=/fit-in/600x585/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15936720-1600525857-2932.jpeg.jpg',0,'2021-10-01',NULL,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37','b63141e5-311d-44b2-b45b-57dbff757a94'),('4f053a55-c3d0-4527-8c92-5a5d3f651a85','ST','fqreq','https://img.discogs.com/HOFcElXd0vRo-dIPpTKVki9PawI=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12539863-1537246823-7755.jpeg.jpg',0,'2018-09-22',NULL,'40515cdd-706e-4345-b53a-1e59c51ec481','b63141e5-311d-44b2-b45b-57dbff757a94'),('78a186af-7773-4ab4-b85b-a082a1681134','Barrikade','zeqfqef','https://img.discogs.com/nZ_HBCpfaGh9hBullke-mrQCZNo=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-18902008-1622110124-9589.jpeg.jpg',1,'2021-02-14',3,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37','b63141e5-311d-44b2-b45b-57dbff757a94'),('aa274c1e-2335-4abc-b45c-579798200ac6','Habgida Hagdola ','cqzecqezf','https://img.discogs.com/5AVMAGMv1Zve6z96egG9npbXMm0=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15554418-1593529523-7466.jpeg.jpg',0,'2020-10-04',NULL,'6fb4b4b9-d98d-4299-9d99-4ffc5c74e7fa','b63141e5-311d-44b2-b45b-57dbff757a94'),('b6099e12-8b0a-4de5-b395-c27969b8dbc1','Frekuenzia','zrfqer','https://img.discogs.com/r3JGC7ndNdoOWDI3gjVO38qsy6Y=/fit-in/225x225/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15535118-1593187069-6362.jpeg.jpg',0,'2020-10-02',NULL,'5e966926-362f-4bb5-984d-c224ce255c11','b63141e5-311d-44b2-b45b-57dbff757a94'),('b8319f4d-dcf3-47e6-9156-5a59f7cd5748','Anni Buttati','ce','https://img.discogs.com/f-UDWp6ivE2mPeuiS6Holix1AFc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-14786671-1581590963-7461.jpeg.jpg',0,'2020-02-15',NULL,'6ef00e3a-9b25-4029-9e71-2e8eb9b9b363','b63141e5-311d-44b2-b45b-57dbff757a94'),('c5d1678c-f093-44fb-b544-8b49a289a9e9','This Sound for us','azdezfqzeqef','https://img.discogs.com/sAVfX6GtZxAaKinXDX0OfTG_vUg=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15567588-1593765254-4644.jpeg.jpg',0,'2020-07-31',NULL,'51f500a2-6cbd-45d3-8a10-c2a388069e58','b63141e5-311d-44b2-b45b-57dbff757a94'),('c6995be2-20d3-4df4-8b82-52171452a4e8','Folklore Ouvrier','qzerfqf','https://img.discogs.com/F9Ra52c6UcKBTHAcbvVlDeFa5YY=/fit-in/600x750/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15582752-1594017476-6554.jpeg.jpg',1,'2020-07-14',1,'5151172e-c599-4fa6-8722-8bc2cddffca5','b63141e5-311d-44b2-b45b-57dbff757a94'),('da40573a-64cc-4361-91bd-bd2cf259c999','Rock\'N\'Roll Skinhead','efqefrgerg','https://img.discogs.com/Fg7VgWnr_1zd6-fnc2HM08nl8_k=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15018551-1585575610-2089.jpeg.jpg',0,'1019-11-22',NULL,'7b753de9-cd34-48e9-9c19-cc1a6deebfa9','b63141e5-311d-44b2-b45b-57dbff757a94'),('eefd815b-d090-47a5-a020-ab51b9840c64','St','dioEHF','https://img.discogs.com/DCLyeHqwTxRC2RT2Ih_sqVnlcyM=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-17484118-1613713242-7399.png.jpg',1,'2021-02-14',2,'b2f6da61-ccc7-44ef-819c-d11f6756791b','b63141e5-311d-44b2-b45b-57dbff757a94');
+INSERT INTO `Albums` VALUES ('092b939a-c929-418e-b251-e9d230d2425b','On a journey','hceqzuchqc','https://img.discogs.com/t7SyqXGA_j10MuWP8XfZ5laJQJw=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-14726493-1613397456-7138.jpeg.jpg',0,'2020-01-20',NULL,'87712ae1-fc91-4f32-9de9-6690bc65e5c2','b63141e5-311d-44b2-b45b-57dbff757a94','Harbour Rebels - On a journey'),('10d93d56-c56e-4bbc-98a9-7d6452374986','City Hackers','efqzfqzcezdE','https://img.discogs.com/ZCXdCUyNTI83MMdyzDBz9JhM7k0=/fit-in/600x585/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15936720-1600525857-2932.jpeg.jpg',0,'2021-10-01',NULL,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37','b63141e5-311d-44b2-b45b-57dbff757a94','Krav Boca - City Hackers'),('4f053a55-c3d0-4527-8c92-5a5d3f651a85','ST','fqreq','https://img.discogs.com/HOFcElXd0vRo-dIPpTKVki9PawI=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12539863-1537246823-7755.jpeg.jpg',0,'2018-09-22',NULL,'40515cdd-706e-4345-b53a-1e59c51ec481','b63141e5-311d-44b2-b45b-57dbff757a94','Kronstadt - ST'),('78a186af-7773-4ab4-b85b-a082a1681134','Barrikade','zeqfqefde','https://img.discogs.com/nZ_HBCpfaGh9hBullke-mrQCZNo=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-18902008-1622110124-9589.jpeg.jpg',1,'2021-02-14',3,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37','b63141e5-311d-44b2-b45b-57dbff757a94','Krav Boca - Barrikade'),('aa274c1e-2335-4abc-b45c-579798200ac6','Habgida Hagdola ','cqzecqezf','https://img.discogs.com/5AVMAGMv1Zve6z96egG9npbXMm0=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15554418-1593529523-7466.jpeg.jpg',0,'2020-10-04',NULL,'6fb4b4b9-d98d-4299-9d99-4ffc5c74e7fa','b63141e5-311d-44b2-b45b-57dbff757a94','Helem - Habgida Hagdola '),('b6099e12-8b0a-4de5-b395-c27969b8dbc1','Frekuenzia','zrfqer','https://img.discogs.com/r3JGC7ndNdoOWDI3gjVO38qsy6Y=/fit-in/225x225/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15535118-1593187069-6362.jpeg.jpg',0,'2020-10-02',NULL,'5e966926-362f-4bb5-984d-c224ce255c11','b63141e5-311d-44b2-b45b-57dbff757a94','Resaka Sonora - Frekuenzia'),('b8319f4d-dcf3-47e6-9156-5a59f7cd5748','Anni Buttati','ce','https://img.discogs.com/f-UDWp6ivE2mPeuiS6Holix1AFc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-14786671-1581590963-7461.jpeg.jpg',0,'2020-02-15',NULL,'6ef00e3a-9b25-4029-9e71-2e8eb9b9b363','b63141e5-311d-44b2-b45b-57dbff757a94','Sempre Peggio - Anni Buttati'),('c5d1678c-f093-44fb-b544-8b49a289a9e9','This Sound for us','azdezfqzeqef','https://img.discogs.com/sAVfX6GtZxAaKinXDX0OfTG_vUg=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15567588-1593765254-4644.jpeg.jpg',0,'2020-07-31',NULL,'51f500a2-6cbd-45d3-8a10-c2a388069e58','b63141e5-311d-44b2-b45b-57dbff757a94','Snob City Boys - This Sound for us'),('c6995be2-20d3-4df4-8b82-52171452a4e8','Folklore Ouvrier','qzerfqf','https://img.discogs.com/F9Ra52c6UcKBTHAcbvVlDeFa5YY=/fit-in/600x750/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15582752-1594017476-6554.jpeg.jpg',1,'2020-07-14',1,'5151172e-c599-4fa6-8722-8bc2cddffca5','b63141e5-311d-44b2-b45b-57dbff757a94','Union Thugs - Folklore Ouvrier'),('da40573a-64cc-4361-91bd-bd2cf259c999','Rock\'N\'Roll Skinhead','efqefrgerg','https://img.discogs.com/Fg7VgWnr_1zd6-fnc2HM08nl8_k=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15018551-1585575610-2089.jpeg.jpg',0,'1019-11-22',NULL,'7b753de9-cd34-48e9-9c19-cc1a6deebfa9','b63141e5-311d-44b2-b45b-57dbff757a94','Knock Out - Rock\'N\'Roll Skinhead'),('eefd815b-d090-47a5-a020-ab51b9840c64','St','dioEHF','https://img.discogs.com/DCLyeHqwTxRC2RT2Ih_sqVnlcyM=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-17484118-1613713242-7399.png.jpg',1,'2021-02-14',2,'b2f6da61-ccc7-44ef-819c-d11f6756791b','b63141e5-311d-44b2-b45b-57dbff757a94','Asbestos - St');
 /*!40000 ALTER TABLE `Albums` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,21 +60,19 @@ DROP TABLE IF EXISTS `Articles`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Articles` (
   `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `FormatId` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `AlbumId` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `PriceId` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `QuantityId` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `quantity` int NOT NULL,
+  `price` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FormatId` (`FormatId`),
   KEY `AlbumId` (`AlbumId`),
-  KEY `PriceId` (`PriceId`),
-  KEY `QuantityId` (`QuantityId`),
   CONSTRAINT `Articles_ibfk_1` FOREIGN KEY (`FormatId`) REFERENCES `Formats` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `Articles_ibfk_2` FOREIGN KEY (`AlbumId`) REFERENCES `Albums` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `Articles_ibfk_3` FOREIGN KEY (`PriceId`) REFERENCES `Prices` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `Articles_ibfk_4` FOREIGN KEY (`QuantityId`) REFERENCES `Quantities` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+  CONSTRAINT `Articles_ibfk_2` FOREIGN KEY (`AlbumId`) REFERENCES `Albums` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -83,7 +82,7 @@ CREATE TABLE `Articles` (
 
 LOCK TABLES `Articles` WRITE;
 /*!40000 ALTER TABLE `Articles` DISABLE KEYS */;
-INSERT INTO `Articles` VALUES ('02ff6561-dc73-4e4f-b05e-fe879415c4a7','2021-10-02 08:01:58','2021-10-02 08:01:58','80092ba3-b6d8-416f-8d78-ad66f5e7186d','092b939a-c929-418e-b251-e9d230d2425b','735a8bbb-6462-4b1a-9ea3-2f5a7f174505','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('1d1ad5b9-9f4d-4695-92e3-7e708554a180','2021-10-02 07:58:41','2021-10-02 07:58:41','99d6669b-418d-4e97-bf4a-d7d576012eb9','c6995be2-20d3-4df4-8b82-52171452a4e8','e517b3c7-4228-4f90-aa5e-b527cd3af541','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('41eb7596-4a84-46c3-877d-5f01ce0007a3','2021-10-02 07:58:06','2021-10-02 07:58:23','80092ba3-b6d8-416f-8d78-ad66f5e7186d','10d93d56-c56e-4bbc-98a9-7d6452374986','01f77f9e-05fa-4fbc-8344-73681e469fdb','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('44c61bc5-50fc-4a25-b092-97802cb8ff77','2021-10-02 08:01:13','2021-10-02 08:01:13',NULL,'b8319f4d-dcf3-47e6-9156-5a59f7cd5748','80ccff6d-a2fc-40ea-9b99-1f4a5200d1f8','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('6f0ee313-d9ac-496d-8d1c-f96b66357f9d','2021-10-02 08:03:07','2021-10-02 08:03:07','80092ba3-b6d8-416f-8d78-ad66f5e7186d','aa274c1e-2335-4abc-b45c-579798200ac6','01f77f9e-05fa-4fbc-8344-73681e469fdb','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('7e6cd826-a7ff-4729-a5fa-7d7936473f48','2021-10-02 07:59:02','2021-10-02 07:59:02','80092ba3-b6d8-416f-8d78-ad66f5e7186d','78a186af-7773-4ab4-b85b-a082a1681134','01f77f9e-05fa-4fbc-8344-73681e469fdb','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('889fd3bf-5928-4b44-b3d6-ea671639f159','2021-10-02 08:01:40','2021-10-02 08:01:40','80092ba3-b6d8-416f-8d78-ad66f5e7186d','c5d1678c-f093-44fb-b544-8b49a289a9e9','735a8bbb-6462-4b1a-9ea3-2f5a7f174505','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('9578c71f-e4a3-4e8f-ad5a-e887f73a70c7','2021-10-02 07:59:26','2021-10-02 07:59:48',NULL,'da40573a-64cc-4361-91bd-bd2cf259c999','28a7c09d-7b02-44ec-96a6-cfc96b3fbe77','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('d0b17034-b76e-4dcb-90d9-0e00da948a44','2021-10-02 08:00:24','2021-10-02 08:00:24','80092ba3-b6d8-416f-8d78-ad66f5e7186d','b6099e12-8b0a-4de5-b395-c27969b8dbc1','735a8bbb-6462-4b1a-9ea3-2f5a7f174505','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('d1f6be67-cea1-4015-b650-a670937b73df','2021-10-02 08:00:00','2021-10-02 08:00:00','80092ba3-b6d8-416f-8d78-ad66f5e7186d','4f053a55-c3d0-4527-8c92-5a5d3f651a85','01f77f9e-05fa-4fbc-8344-73681e469fdb','b4ee7532-6834-4b85-b73f-b26bf6750e75'),('f12d1c62-8005-41d9-b057-177504b60eb3','2021-10-02 07:57:47','2021-10-02 07:57:47',NULL,'eefd815b-d090-47a5-a020-ab51b9840c64','28a7c09d-7b02-44ec-96a6-cfc96b3fbe77','b4ee7532-6834-4b85-b73f-b26bf6750e75');
+INSERT INTO `Articles` VALUES ('ab955526-8024-4ade-935e-c8dfaf4a4451','krav boca - barrikade','krav_boca_-_barrikade','2022-01-27 20:53:37','2022-01-27 21:30:39','80092ba3-b6d8-416f-8d78-ad66f5e7186d','78a186af-7773-4ab4-b85b-a082a1681134',8,1000),('cdf65558-b9f1-4d2a-bfc4-50490b0205c3','asbestos - st','asbestos_-_st','2022-01-27 20:44:04','2022-01-27 21:04:05','e893d18e-fd2f-4f3b-ae8a-10feb54d6360','eefd815b-d090-47a5-a020-ab51b9840c64',10,700),('e96131aa-eaac-4de7-8a94-bc2949be9f61','krav boca - city hackers','krav_boca_-_city_hackers','2022-01-27 20:55:52','2022-01-28 20:55:28','99d6669b-418d-4e97-bf4a-d7d576012eb9','10d93d56-c56e-4bbc-98a9-7d6452374986',2,1000);
 /*!40000 ALTER TABLE `Articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,10 +100,40 @@ CREATE TABLE `Artists` (
   `CountryId` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `name_2` (`name`),
+  UNIQUE KEY `name_3` (`name`),
+  UNIQUE KEY `name_4` (`name`),
+  UNIQUE KEY `name_5` (`name`),
+  UNIQUE KEY `name_6` (`name`),
+  UNIQUE KEY `name_7` (`name`),
+  UNIQUE KEY `name_8` (`name`),
+  UNIQUE KEY `name_9` (`name`),
+  UNIQUE KEY `name_10` (`name`),
+  UNIQUE KEY `name_11` (`name`),
+  UNIQUE KEY `name_12` (`name`),
+  UNIQUE KEY `name_13` (`name`),
+  UNIQUE KEY `name_14` (`name`),
+  UNIQUE KEY `name_15` (`name`),
+  UNIQUE KEY `name_16` (`name`),
+  UNIQUE KEY `name_17` (`name`),
+  UNIQUE KEY `name_18` (`name`),
+  UNIQUE KEY `name_19` (`name`),
+  UNIQUE KEY `name_20` (`name`),
+  UNIQUE KEY `name_21` (`name`),
+  UNIQUE KEY `name_22` (`name`),
+  UNIQUE KEY `name_23` (`name`),
+  UNIQUE KEY `name_24` (`name`),
+  UNIQUE KEY `name_25` (`name`),
+  UNIQUE KEY `name_26` (`name`),
+  UNIQUE KEY `name_27` (`name`),
+  UNIQUE KEY `name_28` (`name`),
+  UNIQUE KEY `name_29` (`name`),
+  UNIQUE KEY `name_30` (`name`),
+  UNIQUE KEY `name_31` (`name`),
   KEY `CityId` (`CityId`),
   KEY `CountryId` (`CountryId`),
-  CONSTRAINT `Artists_ibfk_1` FOREIGN KEY (`CityId`) REFERENCES `Cities` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `Artists_ibfk_2` FOREIGN KEY (`CountryId`) REFERENCES `Countries` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+  CONSTRAINT `Artists_ibfk_61` FOREIGN KEY (`CityId`) REFERENCES `Cities` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `Artists_ibfk_62` FOREIGN KEY (`CountryId`) REFERENCES `Countries` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -129,7 +158,41 @@ CREATE TABLE `Cities` (
   `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `city` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `city` (`city`)
+  UNIQUE KEY `city` (`city`),
+  UNIQUE KEY `city_2` (`city`),
+  UNIQUE KEY `city_3` (`city`),
+  UNIQUE KEY `city_4` (`city`),
+  UNIQUE KEY `city_5` (`city`),
+  UNIQUE KEY `city_6` (`city`),
+  UNIQUE KEY `city_7` (`city`),
+  UNIQUE KEY `city_8` (`city`),
+  UNIQUE KEY `city_9` (`city`),
+  UNIQUE KEY `city_10` (`city`),
+  UNIQUE KEY `city_11` (`city`),
+  UNIQUE KEY `city_12` (`city`),
+  UNIQUE KEY `city_13` (`city`),
+  UNIQUE KEY `city_14` (`city`),
+  UNIQUE KEY `city_15` (`city`),
+  UNIQUE KEY `city_16` (`city`),
+  UNIQUE KEY `city_17` (`city`),
+  UNIQUE KEY `city_18` (`city`),
+  UNIQUE KEY `city_19` (`city`),
+  UNIQUE KEY `city_20` (`city`),
+  UNIQUE KEY `city_21` (`city`),
+  UNIQUE KEY `city_22` (`city`),
+  UNIQUE KEY `city_23` (`city`),
+  UNIQUE KEY `city_24` (`city`),
+  UNIQUE KEY `city_25` (`city`),
+  UNIQUE KEY `city_26` (`city`),
+  UNIQUE KEY `city_27` (`city`),
+  UNIQUE KEY `city_28` (`city`),
+  UNIQUE KEY `city_29` (`city`),
+  UNIQUE KEY `city_30` (`city`),
+  UNIQUE KEY `city_31` (`city`),
+  UNIQUE KEY `city_32` (`city`),
+  UNIQUE KEY `city_33` (`city`),
+  UNIQUE KEY `city_34` (`city`),
+  UNIQUE KEY `city_35` (`city`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -182,7 +245,68 @@ CREATE TABLE `Countries` (
   `tag` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `country` (`country`),
-  UNIQUE KEY `tag` (`tag`)
+  UNIQUE KEY `tag` (`tag`),
+  UNIQUE KEY `country_2` (`country`),
+  UNIQUE KEY `tag_2` (`tag`),
+  UNIQUE KEY `country_3` (`country`),
+  UNIQUE KEY `tag_3` (`tag`),
+  UNIQUE KEY `country_4` (`country`),
+  UNIQUE KEY `tag_4` (`tag`),
+  UNIQUE KEY `country_5` (`country`),
+  UNIQUE KEY `tag_5` (`tag`),
+  UNIQUE KEY `country_6` (`country`),
+  UNIQUE KEY `tag_6` (`tag`),
+  UNIQUE KEY `country_7` (`country`),
+  UNIQUE KEY `tag_7` (`tag`),
+  UNIQUE KEY `country_8` (`country`),
+  UNIQUE KEY `tag_8` (`tag`),
+  UNIQUE KEY `country_9` (`country`),
+  UNIQUE KEY `tag_9` (`tag`),
+  UNIQUE KEY `country_10` (`country`),
+  UNIQUE KEY `tag_10` (`tag`),
+  UNIQUE KEY `country_11` (`country`),
+  UNIQUE KEY `tag_11` (`tag`),
+  UNIQUE KEY `country_12` (`country`),
+  UNIQUE KEY `tag_12` (`tag`),
+  UNIQUE KEY `country_13` (`country`),
+  UNIQUE KEY `tag_13` (`tag`),
+  UNIQUE KEY `country_14` (`country`),
+  UNIQUE KEY `tag_14` (`tag`),
+  UNIQUE KEY `country_15` (`country`),
+  UNIQUE KEY `tag_15` (`tag`),
+  UNIQUE KEY `country_16` (`country`),
+  UNIQUE KEY `tag_16` (`tag`),
+  UNIQUE KEY `country_17` (`country`),
+  UNIQUE KEY `tag_17` (`tag`),
+  UNIQUE KEY `country_18` (`country`),
+  UNIQUE KEY `tag_18` (`tag`),
+  UNIQUE KEY `country_19` (`country`),
+  UNIQUE KEY `tag_19` (`tag`),
+  UNIQUE KEY `country_20` (`country`),
+  UNIQUE KEY `tag_20` (`tag`),
+  UNIQUE KEY `country_21` (`country`),
+  UNIQUE KEY `tag_21` (`tag`),
+  UNIQUE KEY `country_22` (`country`),
+  UNIQUE KEY `tag_22` (`tag`),
+  UNIQUE KEY `country_23` (`country`),
+  UNIQUE KEY `tag_23` (`tag`),
+  UNIQUE KEY `country_24` (`country`),
+  UNIQUE KEY `tag_24` (`tag`),
+  UNIQUE KEY `country_25` (`country`),
+  UNIQUE KEY `tag_25` (`tag`),
+  UNIQUE KEY `country_26` (`country`),
+  UNIQUE KEY `tag_26` (`tag`),
+  UNIQUE KEY `country_27` (`country`),
+  UNIQUE KEY `tag_27` (`tag`),
+  UNIQUE KEY `country_28` (`country`),
+  UNIQUE KEY `tag_28` (`tag`),
+  UNIQUE KEY `country_29` (`country`),
+  UNIQUE KEY `tag_29` (`tag`),
+  UNIQUE KEY `country_30` (`country`),
+  UNIQUE KEY `tag_30` (`tag`),
+  UNIQUE KEY `country_31` (`country`),
+  UNIQUE KEY `tag_31` (`tag`),
+  UNIQUE KEY `country_32` (`country`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -206,6 +330,8 @@ DROP TABLE IF EXISTS `Formats`;
 CREATE TABLE `Formats` (
   `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `icon` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -216,7 +342,7 @@ CREATE TABLE `Formats` (
 
 LOCK TABLES `Formats` WRITE;
 /*!40000 ALTER TABLE `Formats` DISABLE KEYS */;
-INSERT INTO `Formats` VALUES ('364fc08a-858a-44e9-9ce1-0176444789fe','FANZINE'),('65fff452-3027-40be-a4d3-fbaa233ac870','EP'),('80092ba3-b6d8-416f-8d78-ad66f5e7186d','LP'),('99d6669b-418d-4e97-bf4a-d7d576012eb9','CD'),('e893d18e-fd2f-4f3b-ae8a-10feb54d6360','TAPE');
+INSERT INTO `Formats` VALUES ('364fc08a-858a-44e9-9ce1-0176444789fe','FANZINE','fanzine',NULL),('65fff452-3027-40be-a4d3-fbaa233ac870','EP','ep',NULL),('80092ba3-b6d8-416f-8d78-ad66f5e7186d','LP','lp',NULL),('99d6669b-418d-4e97-bf4a-d7d576012eb9','CD','cd',NULL),('e893d18e-fd2f-4f3b-ae8a-10feb54d6360','TAPE','tape',NULL);
 /*!40000 ALTER TABLE `Formats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,7 +359,36 @@ CREATE TABLE `Labels` (
   `logo` varchar(100) DEFAULT NULL,
   `friend` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `name_2` (`name`),
+  UNIQUE KEY `name_3` (`name`),
+  UNIQUE KEY `name_4` (`name`),
+  UNIQUE KEY `name_5` (`name`),
+  UNIQUE KEY `name_6` (`name`),
+  UNIQUE KEY `name_7` (`name`),
+  UNIQUE KEY `name_8` (`name`),
+  UNIQUE KEY `name_9` (`name`),
+  UNIQUE KEY `name_10` (`name`),
+  UNIQUE KEY `name_11` (`name`),
+  UNIQUE KEY `name_12` (`name`),
+  UNIQUE KEY `name_13` (`name`),
+  UNIQUE KEY `name_14` (`name`),
+  UNIQUE KEY `name_15` (`name`),
+  UNIQUE KEY `name_16` (`name`),
+  UNIQUE KEY `name_17` (`name`),
+  UNIQUE KEY `name_18` (`name`),
+  UNIQUE KEY `name_19` (`name`),
+  UNIQUE KEY `name_20` (`name`),
+  UNIQUE KEY `name_21` (`name`),
+  UNIQUE KEY `name_22` (`name`),
+  UNIQUE KEY `name_23` (`name`),
+  UNIQUE KEY `name_24` (`name`),
+  UNIQUE KEY `name_25` (`name`),
+  UNIQUE KEY `name_26` (`name`),
+  UNIQUE KEY `name_27` (`name`),
+  UNIQUE KEY `name_28` (`name`),
+  UNIQUE KEY `name_29` (`name`),
+  UNIQUE KEY `name_30` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -243,32 +398,8 @@ CREATE TABLE `Labels` (
 
 LOCK TABLES `Labels` WRITE;
 /*!40000 ALTER TABLE `Labels` DISABLE KEYS */;
-INSERT INTO `Labels` VALUES ('082b5cb7-168d-4c6d-b021-b263941d96bc','Subversive Ways',NULL,0),('0ab58807-b03b-4e47-896d-efdfe6c0cc4e','Nothing To Harvest Records',NULL,0),('0f9d43b7-5a5e-44e7-a323-0058e063c54d','Radio Punk',NULL,0),('125d434b-cb09-41e9-a860-160c550935b6','Guerilla Vinyl',NULL,0),('1a5715f5-f6f9-447b-abee-7c77ead2ced6','Dure Réalité',NULL,0),('29787fc5-8486-40c2-997e-c3bc450a36ff',' Fire And Flames Music',NULL,0),('2d3df8b9-5063-4a59-8e46-6d97c7ad3653','Senseless Acts Of Ange',NULL,0),('326cfb89-e568-4d00-aea6-8c8e09c12369','Urgence Disk Recordsl',NULL,0),('36073aba-6b2e-49d5-9614-04be0260bbaf','Crom Records',NULL,0),('42b62612-f57b-4c7b-bc41-d8484ed6fd21','General Strike',NULL,0),('4b0d7d38-b1b0-4c0a-a7f7-bc01c532efb6','Lada',NULL,0),('504336a6-68ff-41a7-b57a-04eff1965806','Rudy\'s Back',NULL,0),('5603ffd9-6682-4fa8-8806-ea6e1048d9f9','Rude & Reckless Productions',NULL,0),('60409c84-3480-4cbb-bb61-1161ebab5198','BOITE A MUSIQUE.ca (BAM)',NULL,0),('62734221-ccf4-46cd-abd5-8d95ebedc87d','Up The Punx',NULL,0),('67d15701-83ab-41b0-bb8d-3e91789899a9','Punti Scena Records',NULL,0),('69c6781c-f8db-4d61-b309-8977d421eec3','Dure Réalité ',NULL,0),('715d0500-84c4-454f-8d82-bb8264fa4427','Anfibio Records',NULL,0),('7ca348e5-02ff-47e4-997a-73d72701f245','MALOKA',NULL,0),('8b1a192e-7440-49b7-9b48-3bddf73f5bb8','Une Vie Pour Rien ?',NULL,0),('8c3f8a55-b6b9-48f9-8c98-001946964c88','Alternative International Movement',NULL,0),('8e2a2dbb-4fa8-4a0d-a9f3-ee72bfadd3c8','Mass Productions',NULL,0),('99c3f645-bc2d-40a6-ac3a-657a799b7dd5','La distro elle a mauvaise haleine',NULL,0),('9a6f4a28-c5e7-4dd8-b6aa-1a24087ba54e','Guerilla Vinyls',NULL,0),('9ab4bceb-2517-4300-909d-18071ca0261f','Alternative International Movement Roma',NULL,0),('a2228c8e-31cb-494c-a4e4-9881b7b364b1','Timebomb Records',NULL,0),('a2ead62f-81eb-452e-ae4d-a82fe6ad5660','Rumagna Sgroza',NULL,0),('a550e110-c4ce-4ed1-b964-3e97c7870294','Santa Diabla',NULL,0),('a83a67ca-760d-49e0-9661-c0b69755474f','Fire And Flames Music',NULL,1),('a89190af-f8e4-4791-8992-14dad08e6875','Destructure Records',NULL,0),('acb8b26f-4e6e-44d5-a38f-0c08613e7926','Maloka Collective',NULL,0),('afb1e3e7-b37a-4889-9785-fa07afd4aee3','Deviance',NULL,0),('c225d46d-2479-4df3-ab56-89643e31b9c7','Machete Records',NULL,0),('c6735dbe-1774-43f9-9f48-b58aaaa5561f',' Discos Machete',NULL,0),('cab5c192-e49e-4e52-a4b3-0be2d40aa69e','Urgence Disk Records ',NULL,0),('cd0c91cc-1717-443f-a8ff-43bfc471dd25','Kale Borroka Records',NULL,0),('d0903797-195d-48d3-8820-1378a62ab782','Keponteam ',NULL,0),('d625217f-ab29-4a2d-9339-abd9518ff8f0','Brigada Caoz',NULL,0),('dc549640-7d85-41df-8aa7-f6a571b51900','KeponTeam',NULL,0),('dd31412f-dacc-4ca5-a3e9-660d14e68f07','Boca Records',NULL,0),('e7f3e304-7360-4df1-bbc7-3c91458e9618','Blackout Brigade',NULL,0),('eb91d91d-9d37-44fe-9ea7-4f2e88434035','Rebel Time Records',NULL,0),('ebe903cf-22c8-4040-a3cc-18cbe182b65d','Rockers Records',NULL,0);
+INSERT INTO `Labels` VALUES ('082b5cb7-168d-4c6d-b021-b263941d96bc','Subversive Ways',NULL,0),('0ab58807-b03b-4e47-896d-efdfe6c0cc4e','Nothing To Harvest Records',NULL,0),('0f9d43b7-5a5e-44e7-a323-0058e063c54d','Radio Punk',NULL,0),('125d434b-cb09-41e9-a860-160c550935b6','Guerilla Vinyl',NULL,0),('1a5715f5-f6f9-447b-abee-7c77ead2ced6','Dure Réalité',NULL,0),('29787fc5-8486-40c2-997e-c3bc450a36ff',' Fire And Flames Music',NULL,0),('2d3df8b9-5063-4a59-8e46-6d97c7ad3653','Senseless Acts Of Ange',NULL,0),('326cfb89-e568-4d00-aea6-8c8e09c12369','Urgence Disk Recordsl',NULL,0),('36073aba-6b2e-49d5-9614-04be0260bbaf','Crom Records',NULL,1),('42b62612-f57b-4c7b-bc41-d8484ed6fd21','General Strike',NULL,0),('4b0d7d38-b1b0-4c0a-a7f7-bc01c532efb6','Lada',NULL,0),('504336a6-68ff-41a7-b57a-04eff1965806','Rudy\'s Back',NULL,0),('5603ffd9-6682-4fa8-8806-ea6e1048d9f9','Rude & Reckless Productions',NULL,0),('5a826f44-d279-4d2a-ba63-5c6c35c69a2a','Tete Records',NULL,0),('60409c84-3480-4cbb-bb61-1161ebab5198','BOITE A MUSIQUE.ca (BAM)',NULL,0),('62734221-ccf4-46cd-abd5-8d95ebedc87d','Up The Punx',NULL,0),('67d15701-83ab-41b0-bb8d-3e91789899a9','Punti Scena Records',NULL,0),('69c6781c-f8db-4d61-b309-8977d421eec3','Dure Réalité ',NULL,0),('715d0500-84c4-454f-8d82-bb8264fa4427','Anfibio Records',NULL,0),('7ca348e5-02ff-47e4-997a-73d72701f245','MALOKA',NULL,0),('8b1a192e-7440-49b7-9b48-3bddf73f5bb8','Une Vie Pour Rien ?',NULL,0),('8c3f8a55-b6b9-48f9-8c98-001946964c88','Alternative International Movement',NULL,0),('8e2a2dbb-4fa8-4a0d-a9f3-ee72bfadd3c8','Mass Productions',NULL,0),('99c3f645-bc2d-40a6-ac3a-657a799b7dd5','La distro elle a mauvaise haleine',NULL,0),('9a6f4a28-c5e7-4dd8-b6aa-1a24087ba54e','Guerilla Vinyls',NULL,0),('9ab4bceb-2517-4300-909d-18071ca0261f','Alternative International Movement Roma',NULL,0),('a2228c8e-31cb-494c-a4e4-9881b7b364b1','Timebomb Records',NULL,0),('a2ead62f-81eb-452e-ae4d-a82fe6ad5660','Rumagna Sgroza',NULL,0),('a550e110-c4ce-4ed1-b964-3e97c7870294','Santa Diabla',NULL,0),('a83a67ca-760d-49e0-9661-c0b69755474f','Fire And Flames Music',NULL,1),('a89190af-f8e4-4791-8992-14dad08e6875','Destructure Records',NULL,0),('acb8b26f-4e6e-44d5-a38f-0c08613e7926','Maloka Collective',NULL,0),('afb1e3e7-b37a-4889-9785-fa07afd4aee3','Deviance',NULL,0),('c225d46d-2479-4df3-ab56-89643e31b9c7','Machete Records',NULL,0),('c6735dbe-1774-43f9-9f48-b58aaaa5561f',' Discos Machete',NULL,0),('cab5c192-e49e-4e52-a4b3-0be2d40aa69e','Urgence Disk Records ',NULL,0),('cd0c91cc-1717-443f-a8ff-43bfc471dd25','Kale Borroka Records',NULL,0),('d0903797-195d-48d3-8820-1378a62ab782','Keponteam ',NULL,0),('d625217f-ab29-4a2d-9339-abd9518ff8f0','Brigada Caoz',NULL,0),('dc549640-7d85-41df-8aa7-f6a571b51900','KeponTeam',NULL,0),('dd31412f-dacc-4ca5-a3e9-660d14e68f07','Boca Records',NULL,0),('e7f3e304-7360-4df1-bbc7-3c91458e9618','Blackout Brigade',NULL,0),('eb91d91d-9d37-44fe-9ea7-4f2e88434035','Rebel Time Records',NULL,0),('ebe903cf-22c8-4040-a3cc-18cbe182b65d','Rockers Records',NULL,0);
 /*!40000 ALTER TABLE `Labels` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Prices`
---
-
-DROP TABLE IF EXISTS `Prices`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Prices` (
-  `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `price` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Prices`
---
-
-LOCK TABLES `Prices` WRITE;
-/*!40000 ALTER TABLE `Prices` DISABLE KEYS */;
-INSERT INTO `Prices` VALUES ('01f77f9e-05fa-4fbc-8344-73681e469fdb',1000),('07e333b1-94fc-4fe1-8222-78584853346a',1500),('28a7c09d-7b02-44ec-96a6-cfc96b3fbe77',700),('735a8bbb-6462-4b1a-9ea3-2f5a7f174505',1200),('7bdd71f0-e81b-40e7-9841-536f48cc3eeb',1100),('80ccff6d-a2fc-40ea-9b99-1f4a5200d1f8',600),('e517b3c7-4228-4f90-aa5e-b527cd3af541',800),('f5481f55-c250-4313-bf52-06dccfac8fdb',1300);
-/*!40000 ALTER TABLE `Prices` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -299,27 +430,27 @@ INSERT INTO `Productors` VALUES ('10d93d56-c56e-4bbc-98a9-7d6452374986','082b5cb
 UNLOCK TABLES;
 
 --
--- Table structure for table `Quantities`
+-- Table structure for table `SequelizeMeta`
 --
 
-DROP TABLE IF EXISTS `Quantities`;
+DROP TABLE IF EXISTS `SequelizeMeta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Quantities` (
-  `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `quantity` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `SequelizeMeta` (
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`name`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Quantities`
+-- Dumping data for table `SequelizeMeta`
 --
 
-LOCK TABLES `Quantities` WRITE;
-/*!40000 ALTER TABLE `Quantities` DISABLE KEYS */;
-INSERT INTO `Quantities` VALUES ('b4ee7532-6834-4b85-b73f-b26bf6750e75',15);
-/*!40000 ALTER TABLE `Quantities` ENABLE KEYS */;
+LOCK TABLES `SequelizeMeta` WRITE;
+/*!40000 ALTER TABLE `SequelizeMeta` DISABLE KEYS */;
+INSERT INTO `SequelizeMeta` VALUES ('20220107220518-added_new_fields_for_articles_table.js'),('20220127153430-added_fields_articles.js'),('20220127154812-remove_association_article.js'),('20220127161839-added_fields_articles_2.js'),('20220128210303-remove_table_quantities_prices.js');
+/*!40000 ALTER TABLE `SequelizeMeta` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -346,7 +477,7 @@ CREATE TABLE `Songs` (
 
 LOCK TABLES `Songs` WRITE;
 /*!40000 ALTER TABLE `Songs` DISABLE KEYS */;
-INSERT INTO `Songs` VALUES ('0094436b-2a7b-422f-94ac-77edeb9022d6','Skinhead Girrls',2,NULL),('05f8694e-921e-4270-af9e-600b1f367024','1000 Voces',1,NULL),('09491fe8-7097-4d01-a903-27df05660082','Interlude ',7,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('0b024dff-cd5d-489a-bf3a-85b9e0ef6b0f','Opium - אופיום',3,NULL),('0b3f351c-beff-4c91-9d9b-20fccfada149','Never Surrender',6,NULL),('142c9b6c-62c5-4a7e-a037-1d638b731ac0','Remember October 4th 1936',3,NULL),('153e3df9-f6b7-49e7-913c-9245d547042a','202.0 Mhz',7,NULL),('18cb86f5-9297-4fe5-8b22-7ddaebbcb667','O.V.V.T.C',12,NULL),('1a45abac-6f15-4d0c-93f8-8eeb7a347fb2','Esprit D\'Bande',4,NULL),('1ab258c6-145f-4f8f-84cf-8e7bfd2fc161','Side By Side',3,NULL),('1f2be54e-0bfd-44cf-a636-0ed464b6b843','Faces To The Wall - עם הפנים לקיר',10,NULL),('21efaa85-2d1d-4679-8983-f2a41fae110b','K-1921',9,NULL),('2498207d-92c7-490e-ad71-40d2f1832fa4','Intro',1,NULL),('24b0417a-2d63-4036-8394-00d046b7305c','Tercian',9,NULL),('25425a93-850d-4fed-bfd6-3ab985eb4442','Risveglio',1,NULL),('27f95336-fbda-4b0b-8114-beec580f319b','Mon héroïne',1,NULL),('2984027f-e0b3-4af1-9a5b-06feda291b06','Intro',1,NULL),('29f58006-0ae9-47fe-bea0-d0e1c28b79c4','Empty Minds',3,NULL),('3052634b-68d8-4ee8-a8a0-d88bb849aa5d','Like Family',9,NULL),('33c2e20f-0a9f-4503-a6ee-ee76dc8092d2','Yunque Y Martillo',4,NULL),('3491bfa9-4281-4a2a-9a28-df270205f0c8','Brasero ',4,NULL),('351b0d08-04c1-4138-a299-b43c4465ebfd','Fumigène',3,NULL),('39a4abbe-e2ae-4456-a910-3da6d55c7eb9','Ceinture Ft. Skalpel, HPS',6,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('3a2761ce-1b81-4567-bf9f-91bfaf9fe348','My Way',1,NULL),('3b2f143e-2ec3-4297-8598-13f6474e58f2','Football Crowd',2,NULL),('3e0026e6-a7e5-45ec-abc1-33b213ca80c2','Vertigo Featuring – Sponty',2,NULL),('3e4655a4-86c4-47d8-8a35-683173ab0c16','Barrikade Featuring – Sara_ATH',5,NULL),('3e7841b5-c76c-48de-9d6e-3c58c07e8bd7','Tercian',9,NULL),('3e93182a-440a-4fa3-b531-01ce029c2b7b','Comme Un Coeur Qui Bat',5,NULL),('3faa2ca9-14f8-4505-8542-ab2d5e21dc76','I Don\'t Care',5,NULL),('4183211c-361e-45f5-947f-ba5f04c350c2','Poison',7,NULL),('41c2f055-b7cf-47b2-a96b-920cc6d789e8','O.V.V.T.C',13,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('44c64001-98f7-4a6d-8653-d198d5301527','Brasero ',4,NULL),('451f1f04-33dc-4bf5-b4fb-3c1e8ccd5285','War on the Workers',2,NULL),('4730ddbb-54f0-4250-a8c4-ca72c26caa91','A Day Will Come (Live) - יום יבוא',12,NULL),('49ac0658-763b-44a6-9845-99edb8ba8164','Années De Plomb',4,NULL),('4a856117-50e8-4460-a16b-2a6a753801c9','Silencio',3,NULL),('4e43aa9f-b1be-404c-af0b-57de4afdc2f7','Intro',1,NULL),('4f8ad73b-aa85-475c-89a1-1683bcee3451','City Hackers',9,NULL),('545c6323-eeb6-46d6-8eab-c6439d0cc738','Gas Mask',6,NULL),('54cc8426-adfd-4019-8a2c-610e6e679a4d','Souterrain',2,NULL),('551be9ab-4993-454e-8ddf-b802df51f2b7','Exil',5,NULL),('56931562-b5da-4a24-9bec-e0b5c90d8717','Interlude',7,NULL),('571bdbe0-c8c4-402f-9cf2-e6538a24b672','Fumigène',3,NULL),('57f48262-854d-4aaf-a52e-876b5df808e0','Synora Featuring – A. Atak Tos',8,NULL),('57fca404-b986-4c08-aca3-80f8de43e37c','Clandestin',8,NULL),('5c461526-216c-46ab-a793-c71f5b179389','Ceinture Featuring – Skalpel, Hps',6,NULL),('5d8af0ef-3239-440f-affa-7bfa236cc49e','Malelingue',1,NULL),('5e2ffb64-12f5-46af-aaba-210ee3ee812f','Road To Nowhere',8,NULL),('62063c0d-7c8c-40ef-a285-02c2cc8a7b64','Preambule to the IWW Constitution',7,NULL),('6785e3c8-baff-43bc-a0d6-c0116673e2c4','L’Etat Assassine',12,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('6b7c9c9e-98d1-445b-aada-dc7ba3c8d307','Union Maid',5,NULL),('6f7cd5da-0c62-4638-b3c5-00ad43262283','Vertigo Ft. Sponty',2,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('704aa7df-9633-434c-ba0a-fc70f209bcfe','Mauvais Rêves',2,NULL),('73c35184-5f58-4a8a-8944-2abf206670ca','All My Heroes Are Scums (Live) - כל הגיבורים שלי חלאות',11,NULL),('77d0b4c0-fc5e-4516-aa0c-2c5420f106b5','Revolution',5,NULL),('7a9c9ab9-639f-4e2f-bf28-2764bc7b9a85','Rinnegato Oi!',2,NULL),('7cb1eb2a-4cfc-4e6c-8923-62c7d785c698','Ultra Ft. Brigada Flores Magon',11,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('7cc72aa3-3f56-4a0b-a6be-bd1553120181','The Big Betrayal - הבגידה הגדולה',1,NULL),('7e39b325-d9ed-4975-b77d-4a7b65508e56','Amour',6,NULL),('807a8c08-dbcd-4b0e-92bd-aee03af9e14e','Un Seul Héros, Le Peuple',10,NULL),('847d4f49-6713-4cf4-bfbe-e8038d8a5499','Dying Everyday',7,NULL),('872d0c3b-8518-424d-9f0c-2fd4a2246f2b','Seguir Adelante',4,NULL),('87d096b1-7b30-4210-94d6-0a5290a76247','Invide The City',6,NULL),('88669c25-3d66-495d-8e1b-d1bc5f85f5b9','Interlude',7,NULL),('8b465275-7758-44e0-9c67-6ec64ad0fad9','La Ballade Des Vauriens',3,NULL),('8bb46009-175e-4d49-bc47-cbe7166e37fc','Barrikade Ft. Sara',5,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('8c6336f2-74bc-41d5-9086-d97b7f867d6b','Fumigène',3,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('8cc9f459-c23d-46ad-a8a3-ba01771a6d71','Antisocial - אנטיסוציאלי',2,NULL),('8fd4499e-22da-4550-90da-f4bb7962f3d6','Intro',1,NULL),('903d55f8-9d9c-4fcf-989c-6f2df238df09','No Place For You',4,NULL),('9642fef3-5b08-4847-8d4a-363f53df8b1b','A Day Will Come - יום יבוא',4,NULL),('96682182-334d-4730-8043-7c68b04eeae0','A L\'assaut Des Ondes',12,NULL),('9893d04c-452a-4e01-8911-c0925c21ebb6','	Ultra Featuring – Brigada Flores Magon',11,NULL),('99ce3d6b-4e8a-4426-a0af-eb4a385dcc45','The Red Button - הכפתור האדום',7,NULL),('9c3dc236-1c38-446e-9650-b54c373aef52','Ey Raquib',2,NULL),('a8aed12e-d24f-42b7-9777-ef8c132243c7','Deambular - Camera Siliens cover ',2,NULL),('a8bc66cb-d982-4905-a19d-a03c6661ca3f','Helem - חלם',5,NULL),('a951a917-9fcf-424e-a0c7-bc8cad1467e6','Zero Tolerance - אפס סובלנות',8,NULL),('aa063bc4-c618-47c4-8547-18d2595d7966','Dall\'alba Della Storia',11,NULL),('aa7e2280-5fd4-426f-b03f-3dee9b426330','Camtar',4,NULL),('abee8dde-bd92-4e23-91cf-014dfd52e9ec','Muses & Défaites',3,NULL),('ac7d1ede-3bac-46d2-a306-88c47b2fa76c','Rinnegato Oi!',2,NULL),('b3640ed2-5aac-452c-ab80-4eb3a89abc8f','Ceinture Featuring – Skalpel, Hps',6,NULL),('b421c53e-5ed0-4a18-9601-7d4ec63f26ad','Crust Riot',5,NULL),('b4f6f19f-bc29-4a50-877b-15a666aa1f45','Les Royaux',5,NULL),('b56763ba-3549-44cd-9781-0942fed49313','Kravmikaz',3,NULL),('b7526579-cb28-432a-8422-a47268a8f570','Mientras La Sangre Hierva',1,NULL),('baf9b650-3863-4ef1-bacd-bde598f68ad6','Divide & Conquer - הפרד ומשול',9,NULL),('bd910e8b-4e20-4502-9a4e-296b9c176347','Vertigo Featuring – Sponty',2,NULL),('bfab1876-7e82-4fae-8105-f006524c4cae','This Sound\'s For Us',6,NULL),('bfacd3a5-9012-4a1b-a619-50f4b7a99f14','Partisan',4,NULL),('bfb12398-2938-4e2c-805d-3e6c95d64022','Le Fardeau Des Années',2,NULL),('c2daeb9c-0d9f-45c6-8012-b4359a58790d','K.T.C Featuring – Call The Cops',10,NULL),('c6d485f6-b32b-4e98-be1f-1be1eb1fbeca','Synora Featuring – A. Atak Tos',8,NULL),('cf8eeee9-6496-422c-b43a-bc3b6371fc53','Les piqueteuses de la gloire',3,NULL),('d109b4e1-3cbc-42ab-a5b4-c1f53fcaa0f5','We Pay the Price',10,NULL),('d1b65ba1-565d-4e50-a24e-b22d28dfac1a','K.T.C Ft. Call The Cops',10,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('d3602312-d146-4c66-a14f-c31c3a748c05','Feu Sacré',8,NULL),('d5b43503-c393-4963-be7d-7cbeed6bc475','Deambula r ',1,NULL),('d6e5ba30-2af3-4276-83a6-a09e7993fbd7','Brasero',4,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('d876a771-4f5c-4874-81eb-5bc94f446da1','Malelingue',1,NULL),('d88cff9c-babc-428b-bea4-486464d1f392','Tercian',9,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('dc1326d7-1da1-4d9a-81dd-ca4966a13413','	Ultra Featuring – Brigada Flores Magon',11,NULL),('deb33fbb-fb9d-4b15-9d49-81879a5a59bc','O.V.V.T.C',12,NULL),('df69589f-f02c-4081-baf7-7174a1417875','Risveglio',1,NULL),('e04ffca6-2892-4c9c-9d10-06a87e4342f1','Weekend Offender',4,NULL),('e172ae73-fd25-4fdd-852e-d1b626d7ef7e','Barrikade Featuring – Sara_ATH',5,NULL),('e35fb502-5e0d-482d-9348-a879bbed9794','A Fighter\'s Heart',1,NULL),('e5a3e9f8-ebd0-4242-947f-85b068fa5a39','Mientras La Sangre Hierva',1,NULL),('e624aae4-b345-406b-8f4a-7d1c369858ee','Synora Ft. A. Atak Tos',8,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('e79fb520-b3a4-4148-9c42-b1001308d848','Un Seul Sens',1,NULL),('eae813ee-d008-42d2-99bf-83d35a53ae5c','Carte Postale',8,NULL),('f0eb2b3e-5284-4c47-ba44-f3ed9875afad','K.T.C Featuring – Call The Cops',10,NULL),('f4abebe9-310a-438f-945f-066d11d81083','Intro',1,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('fa554e93-304f-41a1-98ca-b9fa4eb56c76','La Complainte',6,NULL),('fb976f6d-3254-41dd-a9c2-f9c73bd81fa0','NLK',7,NULL),('fcd503db-d919-40c6-98ec-7ea97fdb4346','Wolfs - זאבים',6,NULL);
+INSERT INTO `Songs` VALUES ('0094436b-2a7b-422f-94ac-77edeb9022d6','Skinhead Girrls',2,NULL),('05f8694e-921e-4270-af9e-600b1f367024','1000 Voces',1,NULL),('09491fe8-7097-4d01-a903-27df05660082','Interlude ',7,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('0b024dff-cd5d-489a-bf3a-85b9e0ef6b0f','Opium - אופיום',3,NULL),('0b3f351c-beff-4c91-9d9b-20fccfada149','Never Surrender',6,NULL),('142c9b6c-62c5-4a7e-a037-1d638b731ac0','Remember October 4th 1936',3,NULL),('153e3df9-f6b7-49e7-913c-9245d547042a','202.0 Mhz',7,NULL),('18cb86f5-9297-4fe5-8b22-7ddaebbcb667','O.V.V.T.C',12,NULL),('1a45abac-6f15-4d0c-93f8-8eeb7a347fb2','Esprit D\'Bande',4,NULL),('1ab258c6-145f-4f8f-84cf-8e7bfd2fc161','Side By Side',3,NULL),('1bcf0160-2475-43e1-976a-a1590cd23c25','tetetete',1,NULL),('1f2be54e-0bfd-44cf-a636-0ed464b6b843','Faces To The Wall - עם הפנים לקיר',10,NULL),('21efaa85-2d1d-4679-8983-f2a41fae110b','K-1921',9,NULL),('2498207d-92c7-490e-ad71-40d2f1832fa4','Intro',1,NULL),('24b0417a-2d63-4036-8394-00d046b7305c','Tercian',9,NULL),('25425a93-850d-4fed-bfd6-3ab985eb4442','Risveglio',1,NULL),('27f95336-fbda-4b0b-8114-beec580f319b','Mon héroïne',1,NULL),('2984027f-e0b3-4af1-9a5b-06feda291b06','Intro',1,NULL),('29f58006-0ae9-47fe-bea0-d0e1c28b79c4','Empty Minds',3,NULL),('3052634b-68d8-4ee8-a8a0-d88bb849aa5d','Like Family',9,NULL),('33c2e20f-0a9f-4503-a6ee-ee76dc8092d2','Yunque Y Martillo',4,NULL),('3491bfa9-4281-4a2a-9a28-df270205f0c8','Brasero ',4,NULL),('351b0d08-04c1-4138-a299-b43c4465ebfd','Fumigène',3,NULL),('39a4abbe-e2ae-4456-a910-3da6d55c7eb9','Ceinture Ft. Skalpel, HPS',6,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('3a2761ce-1b81-4567-bf9f-91bfaf9fe348','My Way',1,NULL),('3b2f143e-2ec3-4297-8598-13f6474e58f2','Football Crowd',2,NULL),('3e0026e6-a7e5-45ec-abc1-33b213ca80c2','Vertigo Featuring – Sponty',2,NULL),('3e4655a4-86c4-47d8-8a35-683173ab0c16','Barrikade Featuring – Sara_ATH',5,NULL),('3e7841b5-c76c-48de-9d6e-3c58c07e8bd7','Tercian',9,NULL),('3e93182a-440a-4fa3-b531-01ce029c2b7b','Comme Un Coeur Qui Bat',5,NULL),('3faa2ca9-14f8-4505-8542-ab2d5e21dc76','I Don\'t Care',5,NULL),('4183211c-361e-45f5-947f-ba5f04c350c2','Poison',7,NULL),('41c2f055-b7cf-47b2-a96b-920cc6d789e8','O.V.V.T.C',13,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('44c64001-98f7-4a6d-8653-d198d5301527','Brasero ',4,NULL),('451f1f04-33dc-4bf5-b4fb-3c1e8ccd5285','War on the Workers',2,NULL),('4730ddbb-54f0-4250-a8c4-ca72c26caa91','A Day Will Come (Live) - יום יבוא',12,NULL),('49ac0658-763b-44a6-9845-99edb8ba8164','Années De Plomb',4,NULL),('4a856117-50e8-4460-a16b-2a6a753801c9','Silencio',3,NULL),('4e43aa9f-b1be-404c-af0b-57de4afdc2f7','Intro',1,NULL),('4f8ad73b-aa85-475c-89a1-1683bcee3451','City Hackers',9,NULL),('545c6323-eeb6-46d6-8eab-c6439d0cc738','Gas Mask',6,NULL),('54cc8426-adfd-4019-8a2c-610e6e679a4d','Souterrain',2,NULL),('551be9ab-4993-454e-8ddf-b802df51f2b7','Exil',5,NULL),('56931562-b5da-4a24-9bec-e0b5c90d8717','Interlude',7,NULL),('571bdbe0-c8c4-402f-9cf2-e6538a24b672','Fumigène',3,NULL),('57f48262-854d-4aaf-a52e-876b5df808e0','Synora Featuring – A. Atak Tos',8,NULL),('57fca404-b986-4c08-aca3-80f8de43e37c','Clandestin',8,NULL),('5c461526-216c-46ab-a793-c71f5b179389','Ceinture Featuring – Skalpel, Hps',6,NULL),('5d8af0ef-3239-440f-affa-7bfa236cc49e','Malelingue',1,NULL),('5e2ffb64-12f5-46af-aaba-210ee3ee812f','Road To Nowhere',8,NULL),('62063c0d-7c8c-40ef-a285-02c2cc8a7b64','Preambule to the IWW Constitution',7,NULL),('6785e3c8-baff-43bc-a0d6-c0116673e2c4','L’Etat Assassine',12,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('6b7c9c9e-98d1-445b-aada-dc7ba3c8d307','Union Maid',5,NULL),('6f7cd5da-0c62-4638-b3c5-00ad43262283','Vertigo Ft. Sponty',2,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('704aa7df-9633-434c-ba0a-fc70f209bcfe','Mauvais Rêves',2,NULL),('73c35184-5f58-4a8a-8944-2abf206670ca','All My Heroes Are Scums (Live) - כל הגיבורים שלי חלאות',11,NULL),('77d0b4c0-fc5e-4516-aa0c-2c5420f106b5','Revolution',5,NULL),('7a9c9ab9-639f-4e2f-bf28-2764bc7b9a85','Rinnegato Oi!',2,NULL),('7cb1eb2a-4cfc-4e6c-8923-62c7d785c698','Ultra Ft. Brigada Flores Magon',11,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('7cc72aa3-3f56-4a0b-a6be-bd1553120181','The Big Betrayal - הבגידה הגדולה',1,NULL),('7e39b325-d9ed-4975-b77d-4a7b65508e56','Amour',6,NULL),('807a8c08-dbcd-4b0e-92bd-aee03af9e14e','Un Seul Héros, Le Peuple',10,NULL),('847d4f49-6713-4cf4-bfbe-e8038d8a5499','Dying Everyday',7,NULL),('872d0c3b-8518-424d-9f0c-2fd4a2246f2b','Seguir Adelante',4,NULL),('87d096b1-7b30-4210-94d6-0a5290a76247','Invide The City',6,NULL),('88669c25-3d66-495d-8e1b-d1bc5f85f5b9','Interlude',7,NULL),('8b465275-7758-44e0-9c67-6ec64ad0fad9','La Ballade Des Vauriens',3,NULL),('8bb46009-175e-4d49-bc47-cbe7166e37fc','Barrikade Ft. Sara',5,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('8c6336f2-74bc-41d5-9086-d97b7f867d6b','Fumigène',3,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('8cc9f459-c23d-46ad-a8a3-ba01771a6d71','Antisocial - אנטיסוציאלי',2,NULL),('8fd4499e-22da-4550-90da-f4bb7962f3d6','Intro',1,NULL),('903d55f8-9d9c-4fcf-989c-6f2df238df09','No Place For You',4,NULL),('9642fef3-5b08-4847-8d4a-363f53df8b1b','A Day Will Come - יום יבוא',4,NULL),('96682182-334d-4730-8043-7c68b04eeae0','A L\'assaut Des Ondes',12,NULL),('9893d04c-452a-4e01-8911-c0925c21ebb6','	Ultra Featuring – Brigada Flores Magon',11,NULL),('99ce3d6b-4e8a-4426-a0af-eb4a385dcc45','The Red Button - הכפתור האדום',7,NULL),('9c3dc236-1c38-446e-9650-b54c373aef52','Ey Raquib',2,NULL),('a8aed12e-d24f-42b7-9777-ef8c132243c7','Deambular - Camera Siliens cover ',2,NULL),('a8bc66cb-d982-4905-a19d-a03c6661ca3f','Helem - חלם',5,NULL),('a951a917-9fcf-424e-a0c7-bc8cad1467e6','Zero Tolerance - אפס סובלנות',8,NULL),('aa063bc4-c618-47c4-8547-18d2595d7966','Dall\'alba Della Storia',11,NULL),('aa7e2280-5fd4-426f-b03f-3dee9b426330','Camtar',4,NULL),('abee8dde-bd92-4e23-91cf-014dfd52e9ec','Muses & Défaites',3,NULL),('ac7d1ede-3bac-46d2-a306-88c47b2fa76c','Rinnegato Oi!',2,NULL),('b3640ed2-5aac-452c-ab80-4eb3a89abc8f','Ceinture Featuring – Skalpel, Hps',6,NULL),('b421c53e-5ed0-4a18-9601-7d4ec63f26ad','Crust Riot',5,NULL),('b4f6f19f-bc29-4a50-877b-15a666aa1f45','Les Royaux',5,NULL),('b56763ba-3549-44cd-9781-0942fed49313','Kravmikaz',3,NULL),('b7526579-cb28-432a-8422-a47268a8f570','Mientras La Sangre Hierva',1,NULL),('baf9b650-3863-4ef1-bacd-bde598f68ad6','Divide & Conquer - הפרד ומשול',9,NULL),('bd910e8b-4e20-4502-9a4e-296b9c176347','Vertigo Featuring – Sponty',2,NULL),('bfab1876-7e82-4fae-8105-f006524c4cae','This Sound\'s For Us',6,NULL),('bfacd3a5-9012-4a1b-a619-50f4b7a99f14','Partisan',4,NULL),('bfb12398-2938-4e2c-805d-3e6c95d64022','Le Fardeau Des Années',2,NULL),('c2daeb9c-0d9f-45c6-8012-b4359a58790d','K.T.C Featuring – Call The Cops',10,NULL),('c6d485f6-b32b-4e98-be1f-1be1eb1fbeca','Synora Featuring – A. Atak Tos',8,NULL),('cf8eeee9-6496-422c-b43a-bc3b6371fc53','Les piqueteuses de la gloire',3,NULL),('d109b4e1-3cbc-42ab-a5b4-c1f53fcaa0f5','We Pay the Price',10,NULL),('d1b65ba1-565d-4e50-a24e-b22d28dfac1a','K.T.C Ft. Call The Cops',10,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('d3602312-d146-4c66-a14f-c31c3a748c05','Feu Sacré',8,NULL),('d5b43503-c393-4963-be7d-7cbeed6bc475','Deambula r ',1,NULL),('d6e5ba30-2af3-4276-83a6-a09e7993fbd7','Brasero',4,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('d876a771-4f5c-4874-81eb-5bc94f446da1','Malelingue',1,NULL),('d88cff9c-babc-428b-bea4-486464d1f392','Tercian',9,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('dc1326d7-1da1-4d9a-81dd-ca4966a13413','	Ultra Featuring – Brigada Flores Magon',11,NULL),('deb33fbb-fb9d-4b15-9d49-81879a5a59bc','O.V.V.T.C',12,NULL),('df69589f-f02c-4081-baf7-7174a1417875','Risveglio',1,NULL),('e04ffca6-2892-4c9c-9d10-06a87e4342f1','Weekend Offender',4,NULL),('e172ae73-fd25-4fdd-852e-d1b626d7ef7e','Barrikade Featuring – Sara_ATH',5,NULL),('e35fb502-5e0d-482d-9348-a879bbed9794','A Fighter\'s Heart',1,NULL),('e5a3e9f8-ebd0-4242-947f-85b068fa5a39','Mientras La Sangre Hierva',1,NULL),('e624aae4-b345-406b-8f4a-7d1c369858ee','Synora Ft. A. Atak Tos',8,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('e79fb520-b3a4-4148-9c42-b1001308d848','Un Seul Sens',1,NULL),('eae813ee-d008-42d2-99bf-83d35a53ae5c','Carte Postale',8,NULL),('f0eb2b3e-5284-4c47-ba44-f3ed9875afad','K.T.C Featuring – Call The Cops',10,NULL),('f4abebe9-310a-438f-945f-066d11d81083','Intro',1,'82d0f3ac-92f9-45f7-a4e6-4238f080fa37'),('fa554e93-304f-41a1-98ca-b9fa4eb56c76','La Complainte',6,NULL),('fb976f6d-3254-41dd-a9c2-f9c73bd81fa0','NLK',7,NULL),('fcd503db-d919-40c6-98ec-7ea97fdb4346','Wolfs - זאבים',6,NULL);
 /*!40000 ALTER TABLE `Songs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -418,7 +549,65 @@ CREATE TABLE `Users` (
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `username_2` (`username`),
+  UNIQUE KEY `email_2` (`email`),
+  UNIQUE KEY `username_3` (`username`),
+  UNIQUE KEY `email_3` (`email`),
+  UNIQUE KEY `username_4` (`username`),
+  UNIQUE KEY `email_4` (`email`),
+  UNIQUE KEY `username_5` (`username`),
+  UNIQUE KEY `email_5` (`email`),
+  UNIQUE KEY `username_6` (`username`),
+  UNIQUE KEY `email_6` (`email`),
+  UNIQUE KEY `username_7` (`username`),
+  UNIQUE KEY `email_7` (`email`),
+  UNIQUE KEY `username_8` (`username`),
+  UNIQUE KEY `email_8` (`email`),
+  UNIQUE KEY `username_9` (`username`),
+  UNIQUE KEY `email_9` (`email`),
+  UNIQUE KEY `username_10` (`username`),
+  UNIQUE KEY `email_10` (`email`),
+  UNIQUE KEY `username_11` (`username`),
+  UNIQUE KEY `email_11` (`email`),
+  UNIQUE KEY `username_12` (`username`),
+  UNIQUE KEY `email_12` (`email`),
+  UNIQUE KEY `username_13` (`username`),
+  UNIQUE KEY `email_13` (`email`),
+  UNIQUE KEY `username_14` (`username`),
+  UNIQUE KEY `email_14` (`email`),
+  UNIQUE KEY `username_15` (`username`),
+  UNIQUE KEY `email_15` (`email`),
+  UNIQUE KEY `username_16` (`username`),
+  UNIQUE KEY `email_16` (`email`),
+  UNIQUE KEY `username_17` (`username`),
+  UNIQUE KEY `email_17` (`email`),
+  UNIQUE KEY `username_18` (`username`),
+  UNIQUE KEY `email_18` (`email`),
+  UNIQUE KEY `username_19` (`username`),
+  UNIQUE KEY `email_19` (`email`),
+  UNIQUE KEY `username_20` (`username`),
+  UNIQUE KEY `email_20` (`email`),
+  UNIQUE KEY `username_21` (`username`),
+  UNIQUE KEY `email_21` (`email`),
+  UNIQUE KEY `username_22` (`username`),
+  UNIQUE KEY `email_22` (`email`),
+  UNIQUE KEY `username_23` (`username`),
+  UNIQUE KEY `email_23` (`email`),
+  UNIQUE KEY `username_24` (`username`),
+  UNIQUE KEY `email_24` (`email`),
+  UNIQUE KEY `username_25` (`username`),
+  UNIQUE KEY `email_25` (`email`),
+  UNIQUE KEY `username_26` (`username`),
+  UNIQUE KEY `email_26` (`email`),
+  UNIQUE KEY `username_27` (`username`),
+  UNIQUE KEY `email_27` (`email`),
+  UNIQUE KEY `username_28` (`username`),
+  UNIQUE KEY `email_28` (`email`),
+  UNIQUE KEY `username_29` (`username`),
+  UNIQUE KEY `email_29` (`email`),
+  UNIQUE KEY `username_30` (`username`),
+  UNIQUE KEY `email_30` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -445,7 +634,36 @@ CREATE TABLE `Videos` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `youtube_url` (`youtube_url`)
+  UNIQUE KEY `youtube_url` (`youtube_url`),
+  UNIQUE KEY `youtube_url_2` (`youtube_url`),
+  UNIQUE KEY `youtube_url_3` (`youtube_url`),
+  UNIQUE KEY `youtube_url_4` (`youtube_url`),
+  UNIQUE KEY `youtube_url_5` (`youtube_url`),
+  UNIQUE KEY `youtube_url_6` (`youtube_url`),
+  UNIQUE KEY `youtube_url_7` (`youtube_url`),
+  UNIQUE KEY `youtube_url_8` (`youtube_url`),
+  UNIQUE KEY `youtube_url_9` (`youtube_url`),
+  UNIQUE KEY `youtube_url_10` (`youtube_url`),
+  UNIQUE KEY `youtube_url_11` (`youtube_url`),
+  UNIQUE KEY `youtube_url_12` (`youtube_url`),
+  UNIQUE KEY `youtube_url_13` (`youtube_url`),
+  UNIQUE KEY `youtube_url_14` (`youtube_url`),
+  UNIQUE KEY `youtube_url_15` (`youtube_url`),
+  UNIQUE KEY `youtube_url_16` (`youtube_url`),
+  UNIQUE KEY `youtube_url_17` (`youtube_url`),
+  UNIQUE KEY `youtube_url_18` (`youtube_url`),
+  UNIQUE KEY `youtube_url_19` (`youtube_url`),
+  UNIQUE KEY `youtube_url_20` (`youtube_url`),
+  UNIQUE KEY `youtube_url_21` (`youtube_url`),
+  UNIQUE KEY `youtube_url_22` (`youtube_url`),
+  UNIQUE KEY `youtube_url_23` (`youtube_url`),
+  UNIQUE KEY `youtube_url_24` (`youtube_url`),
+  UNIQUE KEY `youtube_url_25` (`youtube_url`),
+  UNIQUE KEY `youtube_url_26` (`youtube_url`),
+  UNIQUE KEY `youtube_url_27` (`youtube_url`),
+  UNIQUE KEY `youtube_url_28` (`youtube_url`),
+  UNIQUE KEY `youtube_url_29` (`youtube_url`),
+  UNIQUE KEY `youtube_url_30` (`youtube_url`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -468,4 +686,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-16  7:59:40
+-- Dump completed on 2022-02-04 21:31:27

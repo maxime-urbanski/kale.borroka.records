@@ -1,29 +1,28 @@
 import { Overlay, Ribbon } from '../../styles/card'
 
 interface RibbonProps {
-  kbrNum: number,
-  kbrProd: boolean,
+  kbrNum: number
+  kbrProd: boolean
 }
 
 const numberProduction = (productionNum: number) => {
   let prodNum: number | string = 0
-  if ( productionNum < 9) {
-    prodNum =  '0' + productionNum
+  if (9 > productionNum) {
+    prodNum = '0' + productionNum
   } else {
     prodNum = productionNum
   }
   return `KBR#${prodNum}`
 }
 
-const RibbonCard = ({ kbrNum, kbrProd }: RibbonProps ): JSX.Element => {
+const RibbonCard = ({ kbrNum, kbrProd }: RibbonProps): JSX.Element => {
   return (
     <>
-      {
-        kbrProd &&
+      {kbrProd && (
         <Overlay>
           <Ribbon>{numberProduction(kbrNum)}</Ribbon>
         </Overlay>
-      }
+      )}
     </>
   )
 }

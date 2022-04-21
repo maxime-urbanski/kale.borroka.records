@@ -7,8 +7,6 @@ import {
   CardSubtitle,
   CardPrice,
   CardButton,
-  Ribbon,
-  Overlay,
 } from '../../styles/card'
 import RibbonCard from '../Article/Ribbon'
 

@@ -26,6 +26,7 @@ export interface AlbumProps {
     }
   }
   price: number
+  name: string
   Format: { name: string }
   quantity: number
   slug: string
