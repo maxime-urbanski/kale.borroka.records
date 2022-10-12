@@ -38,7 +38,7 @@ services:
         ports:
             - "5050:5050"
         volumes:
-            - /data:/data
+            - ./data:/data
             - ./back:/srv/back
             - ./back/Sequelize:/srv/back/Sequelize
             - /srv/back/node_modules
