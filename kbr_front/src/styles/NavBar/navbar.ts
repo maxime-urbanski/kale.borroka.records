@@ -26,7 +26,7 @@ export const NavBarDown = styled.div`
 export const NavLink = styled.a`
   color: white;
   font-family: Gobold, serif;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 100;
   letter-spacing: 2px;
   padding: 0 15px;

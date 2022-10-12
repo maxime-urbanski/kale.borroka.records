@@ -1,7 +1,6 @@
 import { GetServerSideProps } from 'next'
 import { getData } from '../../src/components/Data/data'
-import { Container, Column, Row, Title2 } from '../../src/styles/styled'
-
+import { Container, Column, Row } from '../../src/styles/styled'
 
 const homeCatalog = ({catgalogSection}) => {
   return (
@@ -16,7 +15,6 @@ const homeCatalog = ({catgalogSection}) => {
         })}
       </Row>
     </Container>
-
   )
 }
 
@@ -24,7 +22,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const catgalogSection = await getData('catalog')
   return {
     props: {
-      catgalogSection
+      catgalogSection,
     },
   }
 }

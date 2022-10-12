@@ -10,7 +10,6 @@ import {
 } from '../../styles/card'
 import RibbonCard from '../Article/Ribbon'
 
-
 const LittleCard = (): JSX.Element => {
   return (
     <Card width={400} height={150} flexDir={'row'}>

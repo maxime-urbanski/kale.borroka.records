@@ -9,6 +9,7 @@ import {
 import Chevron from '../Layout/Svg/chevron'
 import ArticleDetail from '../DetailArticle/ArticleDetail'
 import Tracklist from '../DetailArticle/Tracklist'
+import TitleColumn from '../DetailArticle/TitleColumn'
 
 interface ElementToSlide {
   title: string
@@ -16,6 +17,7 @@ interface ElementToSlide {
 }
 
 const Slider = (props): JSX.Element => {
+  console.log(props)
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const data: ElementToSlide[] = [
@@ -38,7 +40,7 @@ const Slider = (props): JSX.Element => {
 
   const previous = (): void => {
     setCurrentIndex(currentIndex - 1)
-    if (0 >= currentIndex) {
+    if (currentIndex <= 0) {
       setCurrentIndex(data.length - 1)
     }
   }
@@ -46,19 +48,22 @@ const Slider = (props): JSX.Element => {
   const translateX = `translateX(-${currentIndex * 100}%)`
 
   return (
-    <Carousel>
-      <ChevronActionPrevious onClick={previous}>
-        <Chevron />
-      </ChevronActionPrevious>
-      <CarouselContainer style={{ transform: translateX }}>
-        {data.map(({ component }, index) => (
-          <CarouselItem key={index}>{component}</CarouselItem>
-        ))}
-      </CarouselContainer>
-      <ChevronActionNext onClick={next}>
-        <Chevron />
-      </ChevronActionNext>
-    </Carousel>
+    <>
+      <TitleColumn title={props.name} mb={25} />
+      <Carousel>
+        <ChevronActionPrevious onClick={previous}>
+          <Chevron />
+        </ChevronActionPrevious>
+        <CarouselContainer style={{ transform: translateX }}>
+          {data.map(({ component }, index) => (
+            <CarouselItem key={index}>{component}</CarouselItem>
+          ))}
+        </CarouselContainer>
+        <ChevronActionNext onClick={next}>
+          <Chevron />
+        </ChevronActionNext>
+      </Carousel>
+    </>
   )
 }
 

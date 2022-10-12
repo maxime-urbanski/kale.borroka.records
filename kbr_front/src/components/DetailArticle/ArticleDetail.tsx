@@ -8,7 +8,6 @@ interface rowInfosProps {
 }
 
 const ArticleDetail = ({ Album, quantity, setQuantity, price }: AlbumProps): JSX.Element => {
-  console.log(Album)
   const quantityAvailable: number[] = []
   for (let i = 0; i <= quantity; i++) {
     quantityAvailable.push(i)

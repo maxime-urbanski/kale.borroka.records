@@ -7,7 +7,7 @@ const Breadcrumb = ({ links }: BreadCrumbProps): JSX.Element => {
   return (
     <RowOneColumn position={'start'} mb={50}>
       <BreadCrumb>
-        <BreadCrumbItem fontSize={14}>
+        <BreadCrumbItem fontSize={8}>
           <Link href={'/'}>kale borroka records</Link>
         </BreadCrumbItem>
         {links.map((link, index) => {

@@ -17,20 +17,18 @@ const Article = ({ disc }: DiscProps): JSX.Element => {
   const { folder } = Album
   const title = name
   return (
-    <>
+    <Container fluid>
       <Breadcrumb links={[Format.name, title]} />
-      <Container fluid>
-        <RowTwoColumn
-          firstColumn={<Folder {...Album} />}
-          secondColumn={<ArticleInformation {...disc} />}
-          lg={6}
-          xl={6}
-          xxl={6}
-          mb={150}
-          position={'start'}
-        />
-      </Container>
-    </>
+      <RowTwoColumn
+        firstColumn={<Folder {...Album} />}
+        secondColumn={<ArticleInformation {...disc} />}
+        lg={7²}
+        xl={7²}
+        xxl={7²}
+        mb={150}
+        position={'start'}
+      />
+    </Container>
   )
 }
 

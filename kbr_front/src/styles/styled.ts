@@ -86,9 +86,30 @@ export const BanLogo = styled.div`
   width: 100%;
 `
 export const Container = styled.div<{ fluid?: boolean }>`
-  max-width: ${({ fluid }) => (fluid ? '1300px' : '100%')};
+  width: ${({ fluid }) => (fluid ? 'auto' : '100%')};
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
+    width: 100%;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.sm}px`}) {
+    width: 540px;
+  }
+
+  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
+    width: 720px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.lg}px`}) {
+    width: 960px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.xl}px`}) {
+    width: 1140px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.xxl}px`}) {
+    width: 1320px;
+  }
 `
 export const Button = styled.div.attrs(
   ({ bg, border, color, width, height, fontSize, borderRadius }: ButtonProps) => ({
@@ -126,7 +147,7 @@ export const Row = styled.div.attrs(({ position, autoFlow, mb }: GridProps) => (
   column-gap: 20px;
   row-gap: 50px;
   grid-auto-flow: ${({ autoFlow }) => autoFlow};
-  margin-bottom: ${({ mb }) => (mb === 0 ? mb : `${mb}px`)};
+  margin-bottom: ${({ mb }) => (0 === mb ? mb : `${mb}px`)};
 
   @media (min-width: ${({ theme }) => theme.xs}) {
     grid-auto-flow: column;

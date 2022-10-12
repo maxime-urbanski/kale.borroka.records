@@ -16,8 +16,8 @@ export const Picture = styled.img.attrs(
   margin-top: ${({ mT }) => `${mT}px`};
   margin-bottom: ${({ mB }) => `${mB}px`};
   border-radius: ${({ borderRadius }) => `${borderRadius}px`};
-  box-shadow: 1px 4px 8px 6px rgba(26, 26, 26, 0.67);
-  -webkit-box-shadow: 1px 4px 8px 6px rgba(26, 26, 26, 0.67);
+  box-shadow: 1px 4px 8px 6px rgba(26, 26, 26, 0.2);
+  -webkit-box-shadow: 1px 4px 8px 6px rgba(26, 26, 26, 0.2);
   -moz-box-shadow: 1px 4px 8px 6px rgba(26, 26, 26, 0.2);
 
   @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
@@ -81,7 +81,7 @@ export const ListOl = styled.ol`
 export const ListLi = styled.li`
   padding-left: 15px;
   padding-right: 15px;
-
+  font-size: 14px;
   & > p {
     display: inline-block;
   }

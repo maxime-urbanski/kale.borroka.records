@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { BreadCrumbProps } from '../Interface/Interface'
 
 export const BreadCrumb = styled.ul`
   list-style: none;
+  padding: 0;
 
   & > li {
     display: inline-block;
@@ -13,10 +13,7 @@ export const BreadCrumb = styled.ul`
   }
 `
 
-export const BreadCrumbItem = styled.li.attrs(({ fontSize }: BreadCrumbProps) => ({
-  fontSize: fontSize || 20,
-}))<{ disable?: boolean }>`
-  font-size: ${({ fontSize }) => fontSize}px;
+export const BreadCrumbItem = styled.li<{ disable?: boolean }>`
   font-family: Gobold, serif;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -28,17 +25,18 @@ export const BreadCrumbItem = styled.li.attrs(({ fontSize }: BreadCrumbProps) =>
   }
 
   @media (min-width: ${({ theme }) => `${theme.xs}px`}) {
+    font-size: 8px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
     font-size: 10px;
   }
-
-  @media (min-width: ${({ theme }) => `${theme.sm}px`}) {
-    font-size: 18px;
-  }
-
-  @media (min-width: ${({ theme }) => `${theme.md}px`}) {
-    font-size: 20px;
-  }
   @media (min-width: ${({ theme }) => `${theme.lg}px`}) {
-    font-size: 22px;
+    font-size: 12px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.xl}px`}) {
+    font-size: 14px;
+  }
+  @media (min-width: ${({ theme }) => `${theme.xxl}px`}) {
+    font-size: 16px;
   }
 `
